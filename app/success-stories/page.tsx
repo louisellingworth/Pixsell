@@ -8,6 +8,23 @@ import CaseStudyPreview from '../components/success-stories/CaseStudyPreview'
 
 const caseStudies = [
   {
+    title: "Game Title XYZ's Successful China Launch",
+    description: "We helped Game Title XYZ launch in China, resulting in 500,000 downloads and $1M in revenue within the first 6 months. Our co-publishing partner handled marketing and compliance, while we focused on localization and player engagement.",
+    company: "Game Title XYZ",
+    metrics: [
+      {
+        label: "Downloads",
+        value: "500K"
+      },
+      {
+        label: "Revenue",
+        value: "$1M"
+      }
+    ],
+    imageUrl: "/case-studies/game-xyz-hero.jpg",
+    href: "/success-stories/game-xyz"
+  },
+  {
     title: "How We Helped Kluster Scale and Secure a Series A",
     description: "From operational chaos to securing $5M in Series A funding, discover how we transformed Kluster's business operations through AI-driven systems and strategic improvements.",
     company: "Kluster",
@@ -52,7 +69,7 @@ export default function SuccessStoriesPage() {
               Success Stories
             </h1>
             <p className="text-xl text-white/80 mb-8">
-              Real results from real businesses. Discover how we've helped companies transform their operations and achieve remarkable growth through AI-driven systems.
+              Discover how we've helped Western game developers successfully enter and thrive in the Chinese market through our comprehensive publishing and localization services.
             </p>
           </motion.div>
         </div>

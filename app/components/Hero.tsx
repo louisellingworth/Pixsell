@@ -27,7 +27,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Scale Without Limits.
+          Your Game, Adapted for China—No Risk, All Reward.
         </motion.h1>
 
         {/* Subheadline */}
@@ -37,7 +37,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          AI-Driven Systems for Effortless Business Growth.
+          We handle co-publishing, localization, and compliance. You focus on making great games.
         </motion.p>
 
         {/* Button */}
@@ -48,11 +48,38 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <GradientButton 
-            href="/survey"
+            href="/contact"
             className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-black/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/40 transition-all"
           >
-            Get Price →
+            Book a Free Consultation →
           </GradientButton>
+        </motion.div>
+
+        {/* Trust Indicators */}
+        <motion.div
+          className="mt-16 sm:mt-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+        >
+          <p className="text-lg text-primary-200 mb-8">Trusted by Industry Leaders</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+            <img 
+              src="/logos/kingdom-come-2.png" 
+              alt="Kingdom Come Deliverance 2" 
+              className="h-12 sm:h-16 opacity-80 hover:opacity-100 transition-opacity"
+            />
+            <img 
+              src="/logos/payday-3.png" 
+              alt="Payday 3" 
+              className="h-12 sm:h-16 opacity-80 hover:opacity-100 transition-opacity"
+            />
+            <img 
+              src="/logos/marvel-1943.png" 
+              alt="Marvel 1943: Rise of Hydra" 
+              className="h-12 sm:h-16 opacity-80 hover:opacity-100 transition-opacity"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
