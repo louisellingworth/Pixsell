@@ -43,11 +43,11 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section className="w-full py-24 relative overflow-hidden">
+    <section className="w-full py-24 relative overflow-hidden bg-gray-900">
       {/* Background glow effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4">
@@ -57,7 +57,7 @@ export default function FAQSection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
+          <h2 className="font-inter text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
             Frequently Asked Questions
           </h2>
         </motion.div>
@@ -69,7 +69,7 @@ export default function FAQSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-                className="text-2xl font-semibold mb-6 text-red-400"
+                className="font-inter text-2xl font-semibold mb-6 text-blue-400"
               >
                 {category.category}
               </motion.h3>
@@ -81,12 +81,12 @@ export default function FAQSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: (categoryIndex * 0.2) + (faqIndex * 0.1) }}
-                    className="bg-red-500/5 rounded-xl p-6 hover:bg-red-500/10 transition-colors duration-300"
+                    className="font-inter bg-gray-800/50 rounded-xl p-6 hover:bg-gray-800/70 transition-colors duration-300 backdrop-blur-sm"
                   >
-                    <h4 className="text-xl font-semibold mb-4 text-red-200">{faq.question}</h4>
+                    <h4 className="text-xl font-semibold mb-4 text-gray-200">{faq.question}</h4>
                     <div className="space-y-2">
                       {faq.answer.map((line, index) => (
-                        <p key={index} className="text-red-200/80">{line}</p>
+                        <p key={index} className="text-gray-300">{line}</p>
                       ))}
                     </div>
                   </motion.div>
@@ -104,7 +104,7 @@ export default function FAQSection() {
         >
           <GradientButton
             href="/contact"
-            className="text-lg px-8 py-4 bg-black/50 backdrop-blur-sm border border-red-500/20 hover:border-red-400/40 transition-all"
+            className="font-inter text-lg px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Learn More →
           </GradientButton>

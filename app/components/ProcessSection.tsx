@@ -32,11 +32,11 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="w-full py-24 relative overflow-hidden">
+    <section className="w-full py-24 relative overflow-hidden bg-black">
       {/* Background glow effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4">
@@ -46,7 +46,7 @@ export default function ProcessSection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
+          <h2 className="font-inter text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
             How We Bring Your Game to China
           </h2>
         </motion.div>
@@ -58,16 +58,17 @@ export default function ProcessSection() {
               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="flex items-start gap-6 mb-12"
+              className="flex items-start gap-6 mb-12 p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm hover:bg-gray-800/50 transition-colors duration-300"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-2xl font-bold text-red-400">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center text-2xl font-bold text-blue-400">
                 {step.number}
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                  <span className="text-red-400">Step {step.number}:</span> {step.title}
+                <h3 className="font-inter text-xl font-semibold mb-2 flex items-center gap-2">
+                  <span className="text-blue-400">Step {step.number}:</span> 
+                  <span className="text-gray-200">{step.title}</span>
                 </h3>
-                <p className="text-red-200/80 text-lg">{step.description}</p>
+                <p className="font-inter text-gray-300 text-lg">{step.description}</p>
               </div>
             </motion.div>
           ))}
@@ -81,7 +82,7 @@ export default function ProcessSection() {
         >
           <GradientButton
             href="/contact"
-            className="text-lg px-8 py-4 bg-black/50 backdrop-blur-sm border border-red-500/20 hover:border-red-400/40 transition-all"
+            className="font-inter text-lg px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Start Your Expansion Today →
           </GradientButton>

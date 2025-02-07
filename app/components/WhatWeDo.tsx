@@ -30,15 +30,15 @@ const WhatWeDo = () => {
     <section className="w-full py-[48px] relative">      
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center mb-[48px]">
-          <h2 className="text-[48px] leading-[1.2] font-bold mb-6 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
+          <h2 className="text-[48px] leading-[1.2] font-bold mb-6 bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
             Our Services
           </h2>
-          <p className="text-[18px] leading-[1.6] text-red-200/80 max-w-2xl mx-auto tracking-[-0.01em] mb-8">
+          <p className="text-[18px] leading-[1.6] text-white/80 max-w-2xl mx-auto tracking-[-0.01em] mb-8">
             Everything you need to successfully launch and grow your game in the Chinese market
           </p>
           <GradientButton 
             href="/services" 
-            className="hover:scale-105 transition-transform duration-200 border border-red-500/20 hover:border-red-400/40"
+            className="hover:scale-105 transition-transform duration-200 border border-indigo-500/20 hover:border-amber-400/40 text-amber-300 hover:text-amber-200"
             variant="compact"
           >
             Explore services
