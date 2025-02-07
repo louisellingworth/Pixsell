@@ -9,8 +9,8 @@ export default function Hero() {
     <section className="relative min-h-[100svh] flex items-center justify-center overflow-hidden py-16 sm:py-20">
       {/* Background glow effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-primary-500/20 rounded-full blur-3xl animate-glow-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-primary-500/20 rounded-full blur-3xl animate-glow-pulse [animation-delay:1s]" />
+        <div className="absolute top-1/4 left-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-primary-400/20 rounded-full blur-3xl animate-glow-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 sm:w-96 h-48 sm:h-96 bg-primary-400/20 rounded-full blur-3xl animate-glow-pulse [animation-delay:1s]" />
       </div>
 
       {/* Google Gemini Effect */}
@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
         {/* Headline */}
         <motion.h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#8A7FFB] to-[#B4B0FF] bg-clip-text text-transparent"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -32,7 +32,7 @@ export default function Hero() {
 
         {/* Subheadline */}
         <motion.p 
-          className="text-lg sm:text-xl md:text-2xl text-white/80 mb-8 sm:mb-12"
+          className="text-lg sm:text-xl md:text-2xl text-primary-200 mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -49,7 +49,7 @@ export default function Hero() {
         >
           <GradientButton 
             href="/survey"
-            className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-black/50 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all"
+            className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-black/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/40 transition-all"
           >
             Get Price →
           </GradientButton>

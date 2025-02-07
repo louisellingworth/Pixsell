@@ -24,18 +24,18 @@ const GradientButton = ({
     variant === 'compact' ? 'px-4 py-2 text-sm' : 'px-8 py-3 text-[16px]',
     'font-medium rounded-lg',
     'bg-[#111111] hover:bg-[#181818] transition-all duration-200',
-    'border border-primary-500/20',
+    'border border-primary-400/30 hover:border-primary-300/50',
     variant === 'wide' && 'w-full',
     className
   )
 
   const ButtonContent = () => (
     <>
-      <span className="relative text-white">
+      <span className="relative text-primary-200">
         {children}
       </span>
       {showArrow && (
-        <ArrowRightIcon className="w-4 h-4 text-primary-500 transition-transform duration-200 group-hover:translate-x-0.5" />
+        <ArrowRightIcon className="w-4 h-4 text-primary-400 transition-transform duration-200 group-hover:translate-x-0.5" />
       )}
     </>
   )
