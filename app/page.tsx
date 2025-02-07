@@ -8,6 +8,7 @@ import ProcessSection from './components/ProcessSection'
 import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
 import FloatingConsultButton from './components/FloatingConsultButton'
+import WhatWeDo from './components/WhatWeDo'
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       
       {/* Main Content */}
       <ComplexitySection />
+      <WhatWeDo />
       <ServicesSection />
       <ProcessSection />
       <FAQSection />

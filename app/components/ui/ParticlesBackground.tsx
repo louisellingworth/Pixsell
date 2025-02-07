@@ -164,7 +164,7 @@ export default function ParticlesBackground() {
         top: 0,
         left: 0,
         pointerEvents: 'none',
-        background: 'rgba(255,0,0,0.1)' // Temporary red background to verify positioning
+        background: 'transparent'
       }}
     />
   );

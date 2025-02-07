@@ -10,10 +10,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   swcMinify: true,
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['@heroicons/react'],
-  },
 }
 
 module.exports = nextConfig 

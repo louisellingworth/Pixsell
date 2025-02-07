@@ -40,6 +40,7 @@ module.exports = {
         'slide-left': 'slide-left 40s linear infinite',
         'slide-right': 'slide-right 40s linear infinite',
         'scroll-infinite': 'scroll-infinite 72s linear infinite',
+        gradient: 'gradient 8s ease infinite',
       },
       keyframes: {
         'slide-left': {
@@ -53,6 +54,10 @@ module.exports = {
         'scroll-infinite': {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
         },
       },
     },
