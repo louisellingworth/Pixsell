@@ -22,17 +22,17 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 text-center">
         {/* Headline */}
         <motion.h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Your Game, Adapted for China—No Risk, All Reward.
+          Your Gateway to the Chinese Gaming Market
         </motion.h1>
 
         {/* Subheadline */}
         <motion.p 
-          className="text-lg sm:text-xl md:text-2xl text-primary-200 mb-8 sm:mb-12"
+          className="text-lg sm:text-xl md:text-2xl text-red-200 mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -49,37 +49,10 @@ export default function Hero() {
         >
           <GradientButton 
             href="/contact"
-            className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-black/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/40 transition-all"
+            className="text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 bg-black/50 backdrop-blur-sm border border-red-500/20 hover:border-red-400/40 transition-all"
           >
             Book a Free Consultation →
           </GradientButton>
-        </motion.div>
-
-        {/* Trust Indicators */}
-        <motion.div
-          className="mt-16 sm:mt-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-        >
-          <p className="text-lg text-primary-200 mb-8">Trusted by Industry Leaders</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
-            <img 
-              src="/logos/kingdom-come-2.png" 
-              alt="Kingdom Come Deliverance 2" 
-              className="h-12 sm:h-16 opacity-80 hover:opacity-100 transition-opacity"
-            />
-            <img 
-              src="/logos/payday-3.png" 
-              alt="Payday 3" 
-              className="h-12 sm:h-16 opacity-80 hover:opacity-100 transition-opacity"
-            />
-            <img 
-              src="/logos/marvel-1943.png" 
-              alt="Marvel 1943: Rise of Hydra" 
-              className="h-12 sm:h-16 opacity-80 hover:opacity-100 transition-opacity"
-            />
-          </div>
         </motion.div>
       </div>
     </section>

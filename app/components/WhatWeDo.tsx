@@ -7,27 +7,22 @@ const WhatWeDo = () => {
     {
       title: "Co-Publishing Deals",
       description: "We connect you with trusted Chinese publishers who handle ISBN acquisition, marketing, and distribution. Once they recoup their marketing spend, you share the revenue—no upfront costs, no risk.",
-      icon: "🤝"
     },
     {
       title: "Localization",
       description: "Our team adapts your game for Chinese players, from translation to cultural adjustments. We ensure your game resonates with local audiences while staying true to your vision.",
-      icon: "🌏"
     },
     {
       title: "Compliance & Regulations",
       description: "Navigate China's gaming regulations with confidence. We handle all compliance requirements and ensure your game meets local standards.",
-      icon: "✅"
     },
     {
       title: "Market Research",
       description: "Get deep insights into Chinese player preferences, market trends, and monetization strategies to maximize your game's potential.",
-      icon: "📊"
     },
     {
       title: "Cultural Consulting",
       description: "Avoid cultural pitfalls and optimize your game's appeal with expert guidance on Chinese gaming culture and player expectations.",
-      icon: "🎮"
     }
   ];
 
@@ -35,15 +30,15 @@ const WhatWeDo = () => {
     <section className="w-full py-[48px] relative">      
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="text-center mb-[48px]">
-          <h2 className="text-[48px] leading-[1.2] font-bold mb-6 text-white tracking-[-0.02em]">
+          <h2 className="text-[48px] leading-[1.2] font-bold mb-6 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
             Our Services
           </h2>
-          <p className="text-[18px] leading-[1.6] text-white/80 max-w-2xl mx-auto tracking-[-0.01em] mb-8">
+          <p className="text-[18px] leading-[1.6] text-red-200/80 max-w-2xl mx-auto tracking-[-0.01em] mb-8">
             Everything you need to successfully launch and grow your game in the Chinese market
           </p>
           <GradientButton 
             href="/services" 
-            className="hover:scale-105 transition-transform duration-200"
+            className="hover:scale-105 transition-transform duration-200 border border-red-500/20 hover:border-red-400/40"
             variant="compact"
           >
             Explore services

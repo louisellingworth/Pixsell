@@ -57,7 +57,7 @@ export default function FAQSection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
             Frequently Asked Questions
           </h2>
         </motion.div>
@@ -69,7 +69,7 @@ export default function FAQSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
-                className="text-2xl font-semibold mb-6 text-primary-300"
+                className="text-2xl font-semibold mb-6 text-red-400"
               >
                 {category.category}
               </motion.h3>
@@ -81,12 +81,12 @@ export default function FAQSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: (categoryIndex * 0.2) + (faqIndex * 0.1) }}
-                    className="bg-white/5 rounded-xl p-6 hover:bg-white/10 transition-colors duration-300"
+                    className="bg-red-500/5 rounded-xl p-6 hover:bg-red-500/10 transition-colors duration-300"
                   >
-                    <h4 className="text-xl font-semibold mb-4">{faq.question}</h4>
+                    <h4 className="text-xl font-semibold mb-4 text-red-200">{faq.question}</h4>
                     <div className="space-y-2">
                       {faq.answer.map((line, index) => (
-                        <p key={index} className="text-white/80">{line}</p>
+                        <p key={index} className="text-red-200/80">{line}</p>
                       ))}
                     </div>
                   </motion.div>
@@ -104,7 +104,7 @@ export default function FAQSection() {
         >
           <GradientButton
             href="/contact"
-            className="text-lg px-8 py-4 bg-black/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/40 transition-all"
+            className="text-lg px-8 py-4 bg-black/50 backdrop-blur-sm border border-red-500/20 hover:border-red-400/40 transition-all"
           >
             Learn More →
           </GradientButton>

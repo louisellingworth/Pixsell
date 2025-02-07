@@ -46,7 +46,7 @@ export default function ProcessSection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
             How We Bring Your Game to China
           </h2>
         </motion.div>
@@ -60,14 +60,14 @@ export default function ProcessSection() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="flex items-start gap-6 mb-12"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary-500/20 flex items-center justify-center text-2xl font-bold text-primary-300">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-2xl font-bold text-red-400">
                 {step.number}
               </div>
               <div>
                 <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                  <span className="text-primary-300">Step {step.number}:</span> {step.title}
+                  <span className="text-red-400">Step {step.number}:</span> {step.title}
                 </h3>
-                <p className="text-white/80 text-lg">{step.description}</p>
+                <p className="text-red-200/80 text-lg">{step.description}</p>
               </div>
             </motion.div>
           ))}
@@ -81,7 +81,7 @@ export default function ProcessSection() {
         >
           <GradientButton
             href="/contact"
-            className="text-lg px-8 py-4 bg-black/50 backdrop-blur-sm border border-primary-500/20 hover:border-primary-400/40 transition-all"
+            className="text-lg px-8 py-4 bg-black/50 backdrop-blur-sm border border-red-500/20 hover:border-red-400/40 transition-all"
           >
             Start Your Expansion Today →
           </GradientButton>

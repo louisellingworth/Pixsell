@@ -16,7 +16,7 @@ export default function ComplexitySection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
             Entering China is Complex – We Make It Simple
           </h2>
 
@@ -27,8 +27,8 @@ export default function ComplexitySection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center p-6"
             >
-              <h3 className="text-3xl font-bold text-primary-300 mb-4">700M+</h3>
-              <p className="text-lg text-white/80">Players in China, making it the world's largest gaming market</p>
+              <h3 className="text-3xl font-bold text-red-400 mb-4">700M+</h3>
+              <p className="text-lg text-red-200/80">Players in China, making it the world's largest gaming market</p>
             </motion.div>
 
             <motion.div
@@ -37,8 +37,8 @@ export default function ComplexitySection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center p-6"
             >
-              <div className="text-3xl font-bold text-primary-300 mb-4">Regulated</div>
-              <p className="text-lg text-white/80">Strict regulations and cultural differences make entry challenging</p>
+              <div className="text-3xl font-bold text-red-400 mb-4">Regulated</div>
+              <p className="text-lg text-red-200/80">Strict regulations and cultural differences make entry challenging</p>
             </motion.div>
 
             <motion.div
@@ -47,8 +47,8 @@ export default function ComplexitySection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-center p-6"
             >
-              <div className="text-3xl font-bold text-primary-300 mb-4">Complete</div>
-              <p className="text-lg text-white/80">We manage everything: co-publishing, localisation, approvals, and marketing</p>
+              <div className="text-3xl font-bold text-red-400 mb-4">Complete</div>
+              <p className="text-lg text-red-200/80">We manage everything: co-publishing, localisation, approvals, and marketing</p>
             </motion.div>
           </div>
         </motion.div>
