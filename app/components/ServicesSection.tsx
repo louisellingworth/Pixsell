@@ -1,59 +1,41 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  GlobeAltIcon, 
-  LanguageIcon, 
-  ChartBarIcon,
-  DocumentCheckIcon,
-  UserGroupIcon,
-  ShieldCheckIcon
-} from '@heroicons/react/24/outline';
+'use client'
+
+import { motion } from 'framer-motion'
+import { CardSpotlight } from './ui/card-spotlight'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 const services = [
   {
     title: "Co-Publishing",
     description: "Partner with trusted Chinese publishers to handle ISBN acquisition, marketing, and distribution—no upfront costs, pure revenue sharing.",
-    Icon: GlobeAltIcon
+    emoji: "🤝"
   },
   {
     title: "Localisation",
     description: "Expert translation and cultural adaptation services to ensure your game resonates with Chinese players while maintaining its core appeal.",
-    Icon: LanguageIcon
+    emoji: "🌏"
   },
   {
     title: "Marketing",
     description: "Comprehensive marketing strategies including social media, influencer partnerships, and performance advertising tailored for the Chinese market.",
-    Icon: ChartBarIcon
+    emoji: "📈"
   },
   {
     title: "Compliance",
     description: "Navigate complex Chinese gaming regulations with confidence. We handle all necessary approvals and ensure your game meets local standards.",
-    Icon: DocumentCheckIcon
+    emoji: "✅"
   },
   {
     title: "Player Support",
     description: "24/7 native Chinese player support and community management to ensure high player satisfaction and retention.",
-    Icon: UserGroupIcon
+    emoji: "👥"
   },
   {
     title: "IP Protection",
     description: "Safeguard your intellectual property in China with our comprehensive legal protection and anti-piracy measures.",
-    Icon: ShieldCheckIcon
+    emoji: "🛡️"
   }
-];
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-};
-
-const iconVariants = {
-  hover: { 
-    scale: 1.1,
-    rotate: 5,
-    transition: { type: "spring", stiffness: 300 }
-  }
-};
+]
 
 export default function ServicesSection() {
   return (
@@ -80,41 +62,43 @@ export default function ServicesSection() {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative"
             >
-              {/* Card */}
-              <div className="h-full p-8 rounded-[24px] bg-[#0A0A0B] border border-white/10
-                             transition-all duration-300">
-                {/* Icon */}
-                <motion.div 
-                  className="w-12 h-12 mb-6 rounded-xl bg-[#0A0A0B] flex items-center justify-center"
-                  variants={iconVariants}
-                  whileHover="hover"
-                >
-                  <service.Icon className="w-6 h-6 text-[#B4C6EF]" />
-                </motion.div>
-
-                {/* Content */}
-                <h3 className="text-2xl font-semibold mb-4 text-white">
-                  {service.title}
-                </h3>
-                <p className="text-base text-gray-400 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
+              <CardSpotlight className="h-full">
+                <div className="flex flex-col items-center h-full">
+                  <div className="flex flex-col items-center gap-3 mb-4">
+                    <span className="text-3xl bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent filter drop-shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                      {service.emoji}
+                    </span>
+                    <motion.h3 
+                      className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors duration-300 text-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      {service.title}
+                    </motion.h3>
+                  </div>
+                  <p className="text-white/80 mb-6 group-hover:text-white/90 transition-colors duration-300 text-center">
+                    {service.description}
+                  </p>
+                  <div className="mt-auto flex items-center text-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="mr-2 text-sm font-medium">Learn more</span>
+                    <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </div>
+                </div>
+              </CardSpotlight>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 } 

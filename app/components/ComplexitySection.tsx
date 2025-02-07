@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import ColourfulText from './ui/ColourfulText';
@@ -34,11 +36,11 @@ const item = {
 
 export default function ComplexitySection() {
   return (
-    <section className="w-full py-24 relative overflow-hidden bg-gray-900">
+    <section className="w-full py-24 relative overflow-hidden bg-black">
       {/* Background glow effect */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div 
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-green-600/10 rounded-full blur-3xl"
+          className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#B4C6EF]/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.1, 0.2, 0.1],
