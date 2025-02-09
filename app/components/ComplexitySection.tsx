@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import ColourfulText from './ui/ColourfulText';
 import { CardSpotlight } from './ui/card-spotlight';
-import { AuroraBackground } from './ui/aurora-background';
 import { 
   UserGroupIcon,
   LanguageIcon,
@@ -35,8 +34,6 @@ const item = {
   }
 };
 
-<<<<<<< Updated upstream
-=======
 const getRandomGradient = () => {
   const colors = ['#B4C6EF', '#8A7FFB', '#B4B0FF', '#00BFFF', '#1E90FF'];
   const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -53,7 +50,6 @@ const gradientAnimation = `
 
 const gradientStyle = "bg-gradient-to-b from-white to-blue-100 animate-[gradientShift_10s_ease-in-out_infinite]";
 
->>>>>>> Stashed changes
 export default function ComplexitySection() {
   const ref = useRef(null);
 
@@ -67,147 +63,98 @@ export default function ComplexitySection() {
   }, []);
 
   return (
-    <AuroraBackground>
-      <section className="w-full py-24 relative overflow-hidden">
-        {/* Background glow effect */}
-        <div className="absolute inset-0 overflow-hidden">
+    <section className="w-full py-24 relative overflow-hidden">
+      {/* Background glow effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div 
+          className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#B4C6EF]/10 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center w-full"
+        >
+          <div className="space-y-4 max-w-4xl mx-auto">
+            <motion.h2 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className={`font-inter text-3xl md:text-4xl font-semibold text-transparent bg-clip-text ${gradientStyle}`}
+            >
+              Entering the China market is complex
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className={`font-inter text-3xl md:text-4xl font-semibold text-transparent bg-clip-text ${gradientStyle}`}
+            >
+              <ColourfulText text="We make it simple." />
+            </motion.div>
+          </div>
+
           <motion.div 
-            className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#B4C6EF]/10 rounded-full blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.1, 0.2, 0.1],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </div>
-
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center w-full"
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-20 w-full max-w-[2000px] mx-auto px-8"
           >
-            <div className="space-y-4 max-w-4xl mx-auto">
-              <motion.h2 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-<<<<<<< Updated upstream
-                className="font-inter text-4xl md:text-5xl font-bold text-white"
-=======
-                className={`font-inter text-3xl md:text-4xl font-semibold text-transparent bg-clip-text ${gradientStyle}`}
->>>>>>> Stashed changes
-              >
-                Entering the China market is complex
-              </motion.h2>
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-<<<<<<< Updated upstream
-                className="font-inter text-4xl md:text-5xl font-bold"
-=======
-                className={`font-inter text-3xl md:text-4xl font-semibold text-transparent bg-clip-text ${gradientStyle}`}
->>>>>>> Stashed changes
-              >
-                <ColourfulText text="We make it simple." />
-              </motion.div>
-            </div>
-<<<<<<< Updated upstream
-
-            <motion.div 
-              variants={container}
-              initial="hidden"
-              animate="show"
-              className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-20 w-full max-w-[2000px] mx-auto px-8"
-            >
-              <motion.div variants={item} className="w-full">
-                <CardSpotlight className="p-12">
-                  <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
-                    <UserGroupIcon className="w-10 h-10 text-[#B4C6EF]" />
-                  </div>
-                  <div className="font-inter text-2xl font-bold text-white mb-6">Established Co-Publishing Partnerships</div>
-                  <p className="font-inter text-xl text-gray-300">We secure you the best possible deal and manage your China launch from start to finish.</p>
-                </CardSpotlight>
-              </motion.div>
-
-              <motion.div variants={item} className="w-full">
-                <CardSpotlight className="p-12">
-                  <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
-                    <LanguageIcon className="w-10 h-10 text-[#B4C6EF]" />
-                  </div>
-                  <div className="font-inter text-2xl font-bold text-white mb-6">Full-Service Localisation & Compliance</div>
-                  <p className="font-inter text-xl text-gray-300">Your game, adapted for China—seamlessly translated, culturally localised, and fully compliant.</p>
-                </CardSpotlight>
-              </motion.div>
-
-              <motion.div variants={item} className="w-full">
-                <CardSpotlight className="p-12">
-                  <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
-                    <ChartBarIcon className="w-10 h-10 text-[#B4C6EF]" />
-                  </div>
-                  <div className="font-inter text-2xl font-bold text-white mb-6">Expert-Led Marketing & Growth Strategy</div>
-                  <p className="font-inter text-xl text-gray-300">We manage all marketing, influencer campaigns, and player engagement to maximise success.</p>
-                </CardSpotlight>
-              </motion.div>
-=======
-
-            <motion.div 
-              variants={container}
-              initial="hidden"
-              animate="show"
-              className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-20 w-full max-w-[2000px] mx-auto px-8"
-            >
-              <motion.div variants={item} className="w-full">
-                <CardSpotlight className="p-12">
-                  <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
-                    <UserGroupIcon className="w-10 h-10 text-[#B4C6EF]" />
-                  </div>
-                  <div className={`font-inter text-2xl font-semibold text-transparent bg-clip-text ${gradientStyle} mb-6`}>📑 Co-Publishing, Simplified</div>
-                  <p className="font-inter text-xl text-gray-300">We negotiate deals, vet publishers, and secure the best partner—stress-free.</p>
-                </CardSpotlight>
-              </motion.div>
-
-              <motion.div variants={item} className="w-full">
-                <CardSpotlight className="p-12">
-                  <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
-                    <LanguageIcon className="w-10 h-10 text-[#B4C6EF]" />
-                  </div>
-                  <div className={`font-inter text-2xl font-semibold text-transparent bg-clip-text ${gradientStyle} mb-6`}>🌍 Localisation & Compliance</div>
-                  <p className="font-inter text-xl text-gray-300">We connect you with top providers and guide the process to ensure top-tier quality and full approval.</p>
-                </CardSpotlight>
-              </motion.div>
-
-              <motion.div variants={item} className="w-full">
-                <CardSpotlight className="p-12">
-                  <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
-                    <ChartBarIcon className="w-10 h-10 text-[#B4C6EF]" />
-                  </div>
-                  <div className={`font-inter text-2xl font-semibold text-transparent bg-clip-text ${gradientStyle} mb-6`}>📈 Marketing & Growth</div>
-                  <p className="font-inter text-xl text-gray-300">We manage marketing, influencers, and player engagement with the co-publisher.</p>
-                </CardSpotlight>
-              </motion.div>
+            <motion.div variants={item} className="w-full">
+              <CardSpotlight className="p-12">
+                <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
+                  <UserGroupIcon className="w-10 h-10 text-[#B4C6EF]" />
+                </div>
+                <div className={`font-inter text-2xl font-semibold text-transparent bg-clip-text ${gradientStyle} mb-6`}>📑 Co-Publishing, Simplified</div>
+                <p className="font-inter text-xl text-gray-300">We negotiate deals, vet publishers, and secure the best partner—stress-free.</p>
+              </CardSpotlight>
             </motion.div>
 
-            <motion.div
-              ref={ref}
-              initial="hidden"
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mt-24 py-12"
-            >
-              <p className="font-inter text-3xl md:text-4xl font-semibold text-transparent bg-clip-text ${gradientStyle}">💰 Unlock New Revenue Opportunities</p>
-              <p className="font-inter text-lg text-gray-300 mt-4">Expand into the world's largest gaming market with ease, while we handle the complexities.</p>
->>>>>>> Stashed changes
+            <motion.div variants={item} className="w-full">
+              <CardSpotlight className="p-12">
+                <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
+                  <LanguageIcon className="w-10 h-10 text-[#B4C6EF]" />
+                </div>
+                <div className={`font-inter text-2xl font-semibold text-transparent bg-clip-text ${gradientStyle} mb-6`}>🌍 Localisation & Compliance</div>
+                <p className="font-inter text-xl text-gray-300">We connect you with top providers and guide the process to ensure top-tier quality and full approval.</p>
+              </CardSpotlight>
+            </motion.div>
+
+            <motion.div variants={item} className="w-full">
+              <CardSpotlight className="p-12">
+                <div className="w-20 h-20 mx-auto mb-8 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
+                  <ChartBarIcon className="w-10 h-10 text-[#B4C6EF]" />
+                </div>
+                <div className={`font-inter text-2xl font-semibold text-transparent bg-clip-text ${gradientStyle} mb-6`}>📈 Marketing & Growth</div>
+                <p className="font-inter text-xl text-gray-300">We manage marketing, influencers, and player engagement with the co-publisher.</p>
+              </CardSpotlight>
             </motion.div>
           </motion.div>
-        </div>
-      </section>
-    </AuroraBackground>
+
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mt-24 py-12"
+          >
+            <p className={`font-inter text-3xl md:text-4xl font-semibold text-transparent bg-clip-text ${gradientStyle}`}>💰 Unlock New Revenue Opportunities</p>
+            <p className="font-inter text-lg text-gray-300 mt-4">Expand into the world's largest gaming market with ease, while we handle the complexities.</p>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
   );
 } 

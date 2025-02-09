@@ -15,28 +15,28 @@ export const AuroraBackground = ({
       {/* Background container */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Aurora container */}
-        <div className="absolute h-[200%] w-[200%] -top-[50%] -left-[50%]">
-          {/* Top-left aurora */}
+        <div className="absolute h-[200%] w-[200%] -bottom-[50%] -left-[50%] rotate-180">
+          {/* Bottom-left aurora (formerly top-left) */}
           <div 
-            className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-br from-violet-600/50 via-purple-600/50 to-blue-600/50 blur-[120px] animate-aurora"
+            className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-tr from-violet-600/50 via-purple-600/50 to-blue-600/50 blur-[120px] animate-aurora"
             style={{ willChange: 'transform' }}
           />
           
-          {/* Bottom-right aurora */}
+          {/* Top-right aurora (formerly bottom-right) */}
           <div 
-            className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-br from-blue-600/50 via-cyan-600/50 to-teal-600/50 blur-[120px] animate-aurora-reverse"
+            className="absolute top-0 right-0 w-full h-1/2 bg-gradient-to-tr from-blue-600/50 via-cyan-600/50 to-teal-600/50 blur-[120px] animate-aurora-reverse"
             style={{ willChange: 'transform' }}
           />
         </div>
 
         {/* Additional aurora layers for more depth */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 rotate-180">
           <div 
-            className="absolute top-1/4 left-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-pink-500/30 via-purple-500/30 to-indigo-500/30 blur-[100px] animate-aurora"
+            className="absolute bottom-1/4 left-1/4 w-1/2 h-1/2 bg-gradient-to-br from-pink-500/30 via-purple-500/30 to-indigo-500/30 blur-[100px] animate-aurora"
             style={{ willChange: 'transform', animationDelay: '-3s' }}
           />
           <div 
-            className="absolute bottom-1/4 right-1/4 w-1/2 h-1/2 bg-gradient-to-bl from-blue-500/30 via-teal-500/30 to-emerald-500/30 blur-[100px] animate-aurora-reverse"
+            className="absolute top-1/4 right-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-blue-500/30 via-teal-500/30 to-emerald-500/30 blur-[100px] animate-aurora-reverse"
             style={{ willChange: 'transform', animationDelay: '-2s' }}
           />
         </div>

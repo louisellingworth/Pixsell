@@ -43,6 +43,7 @@ module.exports = {
         gradient: 'gradient 8s ease infinite',
         'aurora': 'aurora 25s cubic-bezier(0.4, 0.0, 0.2, 1) infinite',
         'aurora-reverse': 'aurora-reverse 30s cubic-bezier(0.4, 0.0, 0.2, 1) infinite',
+        'pulse': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         'slide-left': {
@@ -96,6 +97,16 @@ module.exports = {
             transform: 'translate(0%, 25%) rotate(-360deg)',
             opacity: 0.8
           }
+        },
+        'pulse': {
+          '0%, 100%': {
+            opacity: 0.5,
+            transform: 'scale(1)',
+          },
+          '50%': {
+            opacity: 0.1,
+            transform: 'scale(1.1)',
+          },
         },
       },
       backgroundSize: {
