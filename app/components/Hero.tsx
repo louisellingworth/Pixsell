@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { AuroraBackground } from './ui/aurora-background'
 
 export default function Hero() {
   return (
