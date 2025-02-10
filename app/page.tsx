@@ -11,20 +11,64 @@ import WhatWeOffer from './components/WhatWeOffer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden">
-      <Navigation />
+    <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden relative">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B] via-[#0A0A0B] to-[#0F0F11] pointer-events-none" />
       
-      {/* Introduction */}
-      <Hero />
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Navigation with backdrop blur */}
+        <div className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-xl border-b border-white/5">
+          <Navigation />
+        </div>
+        
+        {/* Hero Section */}
+        <section className="relative">
+          <Hero />
+        </section>
+        
+        {/* Main Content */}
+        <div className="relative space-y-40 pb-40">
+          {/* Complexity Section */}
+          <section className="mt-20 relative">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A0B]/80 to-transparent" />
+            <ComplexitySection />
+          </section>
+          
+          {/* What We Offer Section with contrast background */}
+          <section className="relative py-20 bg-[#0C0C0D]">
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B] to-transparent opacity-60" />
+            <div className="relative">
+              <WhatWeOffer />
+            </div>
+          </section>
+          
+          {/* Process Section with enhanced contrast */}
+          <section className="relative py-32 bg-gradient-to-b from-[#0F0F11] to-[#0A0A0B]">
+            <div className="relative max-w-8xl mx-auto">
+              <ProcessSection />
+            </div>
+          </section>
+          
+          {/* FAQ Section with container width */}
+          <section className="relative py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <FAQSection />
+            </div>
+          </section>
+        </div>
+        
+        {/* Footer with gradient border */}
+        <div className="relative">
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <Footer />
+        </div>
+      </div>
       
-      {/* Main Content */}
-      <ComplexitySection />
-      <WhatWeOffer />
-      <ProcessSection />
-      <FAQSection />
-      
-      <Footer />
-      <FloatingConsultButton />
+      {/* Floating button with enhanced z-index */}
+      <div className="relative z-50">
+        <FloatingConsultButton />
+      </div>
     </main>
   )
 } 
