@@ -9,21 +9,27 @@ import { motion } from 'framer-motion'
 const services = [
   {
     title: "Co-Publishing Solutions",
-    description: "Partner with us to bring your research to a global audience. Our co-publishing service ensures your work reaches the right readers while maintaining the highest publishing standards.",
-    features: ["Global Distribution", "Quality Control", "Marketing Support", "Author Services"],
+    description: "Partner with us to bring your game to the Chinese market. Our co-publishing service ensures your game reaches the right audience while maintaining the highest publishing standards.",
+    features: ["Publisher Partnerships", "Market Strategy", "Revenue Optimization", "Launch Support"],
     link: "/services/co-publishing"
   },
   {
-    title: "Analytics & Reporting",
-    description: "Make data-driven decisions with our comprehensive analytics and reporting tools. Track your publications' performance and understand your audience better.",
-    features: ["Real-time Analytics", "Custom Reports", "Audience Insights", "Performance Metrics"],
-    link: "/services/reporting"
+    title: "Marketing & Promotion",
+    description: "Reach Chinese gamers through strategic marketing campaigns. Our expertise in local platforms and influencer networks helps your game stand out.",
+    features: ["KOL Partnerships", "Social Media Strategy", "Platform Optimization", "Community Building"],
+    link: "/services/marketing"
   },
   {
-    title: "Content Strategy",
-    description: "Develop a winning content strategy that aligns with your academic goals and target audience. Our experts help you plan, create, and optimize your research content.",
-    features: ["Strategic Planning", "Content Optimization", "Audience Targeting", "Impact Measurement"],
-    link: "#"
+    title: "Localization Services",
+    description: "Adapt your game for Chinese players with our comprehensive localization services. We ensure cultural authenticity while maintaining your game's core appeal.",
+    features: ["Cultural Adaptation", "Text Translation", "Asset Localization", "Quality Assurance"],
+    link: "/services/localization"
+  },
+  {
+    title: "Analytics & Reporting",
+    description: "Make data-driven decisions with our comprehensive analytics and reporting tools. Track your game's performance and understand your audience better.",
+    features: ["Real-time Analytics", "Performance Metrics", "Market Insights", "Regular Updates"],
+    link: "/services/reporting"
   }
 ]
 

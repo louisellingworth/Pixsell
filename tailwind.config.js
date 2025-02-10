@@ -17,8 +17,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'press-start-2p': ['var(--font-press-start-2p)'],
-        'inter': ['Inter', 'sans-serif'],
+        'press-start': ['var(--font-press-start-2p)'],
+        'space-grotesk': ['var(--font-space-grotesk)']
       },
       colors: {
         border: "hsl(var(--border))",
@@ -102,17 +102,9 @@ module.exports = {
             'background-position': 'right center'
           }
         },
-        'gradient': {
-          '0%': {
-            'background-position': '0% 50%'
-          },
-          '50%': {
-            'background-position': '100% 50%'
-          },
-          '100%': {
-            'background-position': '0% 50%'
-          },
-        },
+        gradient: {
+          to: { 'background-position': '200% center' },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -120,7 +112,7 @@ module.exports = {
         shimmer: 'shimmer 2s infinite',
         'gradient-y': 'gradient-y 3s ease infinite',
         'gradient-x': 'gradient-x 3s ease infinite',
-        'gradient': 'gradient 3s ease infinite',
+        'gradient': 'gradient 8s linear infinite',
       },
     },
   },

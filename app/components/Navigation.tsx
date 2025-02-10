@@ -10,8 +10,7 @@ const Navigation = () => {
   
   const navItems = [
     { name: 'Process', href: '/#process' },
-    { name: 'Testimonials', href: '/#testimonials' },
-    { name: 'Success Stories', href: '/success-stories' },
+    { name: 'Services', href: '/services' },
     { name: 'FAQ', href: '/#faq' }
   ]
 
@@ -22,14 +21,12 @@ const Navigation = () => {
       href: '/services',
       submenu: [
         { label: 'Co-Publishing', href: '/services/co-publishing' },
-        { label: 'Localisation', href: '/services/localisation' },
+        { label: 'Localization', href: '/services/localization' },
         { label: 'Marketing', href: '/services/marketing' },
-        // Add other services here as needed
+        { label: 'Reporting', href: '/services/reporting' }
       ]
     },
-    { label: 'Testimonials', href: '/testimonials' },
-    { label: 'Case Studies', href: '/case-studies' },
-    { label: 'FAQ', href: '/faq' },
+    { label: 'FAQ', href: '/#faq' },
     { label: 'Contact', href: '/contact' }
   ]
 
@@ -41,13 +38,15 @@ const Navigation = () => {
             {/* Logo */}
             <Link 
               href="/"
-              className="relative text-white font-inter text-xl font-bold transition-colors duration-200
-                after:content-[''] after:absolute after:inset-0 after:-z-10 
-                after:bg-gradient-to-r after:from-[#fc00ff]/20 after:to-[#00dbde]/20
-                after:blur-[10px] after:opacity-0 hover:after:opacity-100
-                after:transition-all after:duration-300"
+              className="group relative flex items-center font-space-grotesk text-white font-bold text-2xl tracking-tight"
             >
-              Pixsell
+              <span className="bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#6366F1] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+                Pix
+              </span>
+              <span className="bg-gradient-to-r from-[#8B5CF6] via-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient [animation-delay:0.2s]">
+                sell
+              </span>
+              <div className="absolute -inset-x-4 -inset-y-2 group-hover:bg-gradient-to-r from-[#6366F1]/10 via-[#8B5CF6]/10 to-[#6366F1]/10 rounded-lg transition-all duration-300 opacity-0 group-hover:opacity-100 blur-xl"></div>
             </Link>
 
             {/* Navigation Links */}

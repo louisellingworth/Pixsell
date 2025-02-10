@@ -11,62 +11,54 @@ import WhatWeOffer from './components/WhatWeOffer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden relative">
+    <main className="min-h-screen bg-[#0F0F1A] text-white overflow-x-hidden relative">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B] via-[#0A0A0B] to-[#0F0F11] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B] via-[#0F0F1A] to-[#0F0F1A] pointer-events-none" />
       
       {/* Content */}
       <div className="relative z-10">
-        {/* Navigation with backdrop blur */}
+        {/* Navigation */}
         <div className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-xl border-b border-white/5">
           <Navigation />
         </div>
         
-        {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center">
+        {/* Hero Section - Immediate attention grabber */}
+        <section className="relative bg-gradient-to-b from-[#0A0A0B] to-[#0F0F1A]">
           <Hero />
         </section>
         
+        {/* Complexity Section - Problem statement */}
+        <section className="relative py-20 md:py-32 bg-[#0F0F1A]">
+          <ComplexitySection />
+        </section>
+        
         {/* Main Content */}
-        <div className="relative space-y-60 md:space-y-80 pb-60">
-          {/* Complexity Section */}
-          <section className="relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A0B]/80 to-transparent" />
-            <ComplexitySection />
+        <div className="relative space-y-20 md:space-y-40 bg-[#0F0F1A]">
+          {/* What We Offer Section - Solution */}
+          <section className="relative py-20 md:py-32 bg-[#0F0F1A]">
+            <WhatWeOffer />
           </section>
           
-          {/* What We Offer Section with contrast background */}
-          <section className="relative py-40 bg-[#0C0C0D]">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B] to-transparent opacity-60" />
-            <div className="relative max-w-[1400px] mx-auto px-6 md:px-8">
-              <WhatWeOffer />
-            </div>
+          {/* Process Section - How it works */}
+          <section className="relative py-20 md:py-32 bg-[#0F0F1A]">
+            <ProcessSection />
           </section>
           
-          {/* Process Section with enhanced contrast */}
-          <section className="relative py-40 bg-gradient-to-b from-[#0F0F11] to-[#0A0A0B]">
-            <div className="relative max-w-[1400px] mx-auto px-6 md:px-8">
-              <ProcessSection />
-            </div>
-          </section>
-          
-          {/* FAQ Section with container width */}
-          <section className="relative py-40">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-8">
-              <FAQSection />
-            </div>
+          {/* FAQ Section - Address concerns */}
+          <section className="relative py-20 md:py-32 bg-[#0F0F1A]">
+            <FAQSection />
           </section>
         </div>
         
-        {/* Footer with gradient border */}
-        <div className="relative mt-40">
+        {/* Footer - Final CTA and info */}
+        <div className="relative bg-[#0F0F1A]">
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <Footer />
         </div>
       </div>
       
-      {/* Floating button with enhanced z-index */}
-      <div className="relative z-50">
+      {/* Floating button - Always accessible CTA */}
+      <div className="fixed bottom-8 right-8 z-50">
         <FloatingConsultButton />
       </div>
     </main>

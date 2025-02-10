@@ -60,7 +60,7 @@ const cardVariants = {
 }
 
 const gradientText = "bg-gradient-to-r from-[#8A7FFB] to-[#B4C6EF] bg-clip-text text-transparent"
-const cardStyle = "p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#B4C6EF]/50 transition-colors backdrop-blur-sm relative overflow-hidden group"
+const cardStyle = "p-8 rounded-2xl bg-white/[0.02] border border-white/10 hover:border-[#B4C6EF]/50 transition-colors backdrop-blur-sm relative overflow-hidden group text-center"
 const cardGlow = "absolute inset-0 bg-gradient-to-r from-[#8A7FFB]/20 to-[#B4C6EF]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10"
 
 const shimmer = "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent"
@@ -82,7 +82,7 @@ export default function CoPublishingPage() {
       <Navigation />
       
       {/* Hero Section with enhanced gradient background and parallax */}
-      <section ref={targetRef} className="relative min-h-screen flex items-center justify-center py-32 sm:py-40 md:py-48">
+      <section ref={targetRef} className="relative min-h-screen flex items-center justify-center py-24 sm:py-32 md:py-40">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
             style={{ scale, opacity, y }}
@@ -159,114 +159,14 @@ export default function CoPublishingPage() {
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#B4C6EF] to-[#8A7FFB] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.button>
-                <motion.button 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group px-8 py-4 border border-[#B4C6EF]/30 rounded-full text-white font-semibold text-lg hover:bg-white/5 transition-all duration-300 flex items-center gap-2 relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center gap-2">
-                    Watch Demo
-                    <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none">
-                      <path d="M8 5v14l11-7-11-7z" fill="currentColor" />
-                    </svg>
-                  </span>
-                  <div className="absolute inset-0 bg-[#B4C6EF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.button>
               </motion.div>
             </motion.div>
           </div>
         </div>
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 cursor-pointer hover:text-[#B4C6EF] transition-colors duration-300"
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-        >
-          <ArrowRightIcon className="w-6 h-6 rotate-90" />
-        </motion.div>
-      </section>
-
-      {/* Stats Section with improved animations */}
-      <section className="py-12 border-y border-white/10 bg-white/[0.02] backdrop-blur-xl relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#8A7FFB]/5 to-[#B4C6EF]/5 opacity-50" />
-        <div className="container mx-auto px-4 sm:px-6 relative">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: "50+", label: "Games Published", prefix: "" },
-              { number: "100", label: "Revenue Generated", prefix: "$", suffix: "M+" },
-              { number: "20+", label: "Publisher Partners", prefix: "" },
-              { number: "100", label: "Players Reached", prefix: "", suffix: "M+" }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center relative group"
-              >
-                <motion.div 
-                  initial={{ scale: 0.5, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.2 + index * 0.1, duration: 0.5 }}
-                  className="absolute -inset-4 bg-gradient-to-r from-[#8A7FFB]/10 to-[#B4C6EF]/10 rounded-lg blur-xl group-hover:opacity-75 transition-opacity duration-500"
-                />
-                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${gradientText} relative`}>
-                  <span className="inline-flex items-center">
-                    {stat.prefix}
-                    <motion.span
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                    >
-                      {stat.number}
-                    </motion.span>
-                    {stat.suffix}
-                  </span>
-                </div>
-                <div className="text-gray-400 text-sm sm:text-base relative">
-                  {stat.label}
-                  <motion.div
-                    className="absolute -bottom-1 left-1/2 h-px bg-gradient-to-r from-transparent via-[#B4C6EF] to-transparent w-0 -translate-x-1/2"
-                    whileInView={{ width: "80%" }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
-                  />
-                </div>
-                <motion.div
-                  className="absolute inset-0 border border-[#B4C6EF]/20 rounded-lg"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(10)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-[#B4C6EF]/20 rounded-full"
-              animate={{
-                y: [0, -20],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 2 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-              style={{
-                left: `${Math.random() * 100}%`,
-                bottom: 0,
-              }}
-            />
-          ))}
-        </div>
       </section>
 
       {/* Introduction Section with enhanced styling */}
-      <section className="py-24 bg-gradient-to-b from-[#0A0A0B] to-black relative">
+      <section className="py-12 bg-gradient-to-b from-[#0A0A0B] to-black relative text-center">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:32px_32px]" />
         <div className="container mx-auto px-4 sm:px-6 relative">
           <motion.div 
@@ -289,7 +189,7 @@ export default function CoPublishingPage() {
       </section>
 
       {/* Why Need Section with enhanced card animations */}
-      <section className="py-24 bg-black/30 relative">
+      <section className="py-24 bg-black/30 relative text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#B4C6EF]/5 to-transparent" />
         <div className="container mx-auto px-4 sm:px-6 relative">
           <motion.div
@@ -310,7 +210,7 @@ export default function CoPublishingPage() {
                 {
                   icon: DocumentCheckIcon,
                   title: "ISBN Licensing & Compliance",
-                  description: "The Chinese government requires all games to be approved and assigned an ISBN number. This process can be complex, but a co-publisher facilitates approvals and ensures compliance with strict content regulations."
+                  description: "While an ISBN number isn't always necessary, ensuring compliance with Chinese regulations is crucial. A co-publisher provides invaluable guidance through the complex regulatory landscape and helps secure any required approvals for your game."
                 },
                 {
                   icon: GlobeAltIcon,
@@ -336,7 +236,7 @@ export default function CoPublishingPage() {
                 >
                   <div className={cardGlow} />
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-[#8A7FFB] to-[#B4C6EF] p-3 mb-6">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-[#8A7FFB] to-[#B4C6EF] p-3 mb-6 mx-auto">
                       <item.icon className="w-full h-full text-white" />
                     </div>
                     <h3 className="text-2xl font-semibold mb-4 text-white">{item.title}</h3>
@@ -350,7 +250,7 @@ export default function CoPublishingPage() {
       </section>
 
       {/* Process Section with interactive timeline */}
-      <section className="py-24 relative">
+      <section className="py-24 relative text-center">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:32px_32px]" />
         <div className="container mx-auto px-4 sm:px-6 relative">
           <motion.div
@@ -428,7 +328,7 @@ export default function CoPublishingPage() {
                       <p className="text-gray-300 mb-6 text-lg">{step.description}</p>
                       <ul className="space-y-3">
                         {step.items.map((item, itemIndex) => (
-                          <li key={itemIndex} className="flex items-start space-x-3 text-gray-400">
+                          <li key={itemIndex} className="flex items-center justify-center space-x-3 text-gray-400">
                             <span className="text-[#B4C6EF] mt-1">•</span>
                             <span className="text-lg">{item}</span>
                           </li>
@@ -444,7 +344,7 @@ export default function CoPublishingPage() {
       </section>
 
       {/* Revenue Section with enhanced cards */}
-      <section className="py-24 bg-black/30 relative">
+      <section className="py-24 bg-black/30 relative text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#B4C6EF]/5 to-transparent" />
         <div className="container mx-auto px-4 sm:px-6 relative">
           <motion.div
@@ -481,7 +381,7 @@ export default function CoPublishingPage() {
                 >
                   <div className={cardGlow} />
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#8A7FFB] to-[#B4C6EF] flex items-center justify-center mb-6 shadow-lg shadow-[#B4C6EF]/20">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#8A7FFB] to-[#B4C6EF] flex items-center justify-center mb-6 shadow-lg shadow-[#B4C6EF]/20 mx-auto">
                       <span className="text-2xl">🔹</span>
                     </div>
                     <h3 className="text-2xl font-semibold mb-4 text-white">{item.title}</h3>
@@ -502,7 +402,7 @@ export default function CoPublishingPage() {
       </section>
 
       {/* Why Choose Us Section with enhanced cards */}
-      <section className="py-24 relative">
+      <section className="py-24 relative text-center">
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:32px_32px]" />
         <div className="container mx-auto px-4 sm:px-6 relative">
           <motion.div
@@ -547,7 +447,7 @@ export default function CoPublishingPage() {
                 >
                   <div className={cardGlow} />
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-[#8A7FFB] to-[#B4C6EF] p-3 mb-6 shadow-lg shadow-[#B4C6EF]/20">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-[#8A7FFB] to-[#B4C6EF] p-3 mb-6 shadow-lg shadow-[#B4C6EF]/20 mx-auto">
                       <item.icon className="w-full h-full text-white" />
                     </div>
                     <h3 className="text-2xl font-semibold mb-4 text-white">{item.title}</h3>
@@ -561,7 +461,7 @@ export default function CoPublishingPage() {
       </section>
 
       {/* Enhanced CTA Section */}
-      <section className="py-24 relative">
+      <section className="py-24 relative text-center">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-[800px] h-[800px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#B4C6EF]/5 rounded-full blur-3xl animate-pulse" />
           {/* Add animated particles */}

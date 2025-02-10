@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { CardSpotlight } from './ui/card-spotlight';
 import GradientButton from './ui/GradientButton';
+import ParticlesBackground from './ui/ParticlesBackground';
 import { 
   GlobeAltIcon, 
   ChartBarIcon, 
@@ -10,6 +11,7 @@ import {
   ChatBubbleBottomCenterTextIcon,
   PresentationChartLineIcon
 } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 const container = {
   hidden: { opacity: 0 },
@@ -49,22 +51,10 @@ const services = [
     href: "/services/marketing"
   },
   {
-    title: "Localisation",
+    title: "Localization",
     description: "Adapt your game for Chinese players while maintaining its core appeal.",
     Icon: LanguageIcon,
-    href: "/services/localisation"
-  },
-  {
-    title: "Compliance",
-    description: "Navigate ISBN applications and regulatory requirements with confidence.",
-    Icon: DocumentCheckIcon,
-    href: "/services/compliance"
-  },
-  {
-    title: "Community",
-    description: "Build and engage your Chinese player base on local platforms.",
-    Icon: ChatBubbleBottomCenterTextIcon,
-    href: "/services/community"
+    href: "/services/localization"
   },
   {
     title: "Reporting",
@@ -74,95 +64,153 @@ const services = [
   }
 ];
 
+const gradientAnimation = `
+  @keyframes gradient {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+`;
+
+const gradientStyle = "bg-gradient-to-r from-[#6366F1] via-[#8B5CF6] to-[#6366F1] bg-clip-text bg-[length:200%_100%] animate-gradient";
+
 export default function WhatWeOffer() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden bg-black">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="w-full py-20 lg:py-32 relative overflow-hidden bg-gradient-to-b from-[#0F0F1A] to-[#1A1A2E]"
+    >
+      <style jsx>{gradientAnimation}</style>
+      {isMounted && <ParticlesBackground />}
+      
       {/* Background glow effect */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#B4C6EF]/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.2, 0.1],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
+        {isMounted && (
+          <>
+            <motion.div 
+              className="absolute top-1/4 right-1/4 w-[50vw] h-[50vw] bg-[#6366F1]/5 rounded-full blur-[120px]"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.05, 0.15, 0.05],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div 
+              className="absolute bottom-1/4 left-1/4 w-[50vw] h-[50vw] bg-[#8B5CF6]/5 rounded-full blur-[120px]"
+              animate={{
+                scale: [1.2, 1, 1.2],
+                opacity: [0.05, 0.15, 0.05],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </>
+        )}
       </div>
 
-      <div className="relative container mx-auto px-4 sm:px-6">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1200px]">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-[#B4C6EF]"
-          >
-            What We Offer
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-400 px-4"
-          >
-            Everything you need to successfully launch your game in China
-          </motion.p>
-        </div>
-
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
-            <motion.div 
-              key={index} 
-              variants={item}
-              className="group relative"
-            >
-              <a 
-                href={service.href}
-                className="block h-full group cursor-pointer"
-              >
-                <div className="h-full p-8 rounded-[24px] bg-[#0A0A0B] border border-white/10 transition-all duration-300 text-center group-hover:border-[#B4C6EF]/50 group-hover:shadow-lg">
-                  <div className="w-12 h-12 mx-auto mb-6 rounded-xl bg-[#0A0A0B] flex items-center justify-center">
-                    <service.Icon className="w-6 h-6 text-[#B4C6EF] group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-white group-hover:text-[#B4C6EF] transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
-                    {service.description}
-                  </p>
-                  <div className="mt-6 text-[#B4C6EF] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Learn more →
-                  </div>
-                </div>
-              </a>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* View All Services Button */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-12 text-center"
+          transition={{ duration: 0.8 }}
+          className="text-center w-full mb-24 lg:mb-40"
         >
-          <a 
-            href="/services"
-            className="inline-flex items-center px-8 py-3 rounded-full bg-gradient-to-r from-[#B4C6EF] to-[#8A9FD9] text-black font-semibold hover:opacity-90 transition-opacity"
+          <div className="space-y-6 max-w-3xl mx-auto mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+            >
+              <span className={gradientStyle}>
+                What We Offer
+              </span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg md:text-xl text-gray-300 leading-relaxed"
+            >
+              Everything you need to successfully launch your game in China
+            </motion.p>
+          </div>
+
+          {/* Services Grid */}
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto"
           >
-            View All Services
-            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+            {services.map((service, index) => (
+              <CardSpotlight
+                key={service.title}
+                className="p-8 bg-gradient-to-br from-[#1A1A2E]/90 to-[#2A2A3F]/90 backdrop-blur-sm border border-[#6366F1]/10 rounded-2xl"
+              >
+                <Link href={service.href} className="block">
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-[#6366F1]/10 to-[#8B5CF6]/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <service.Icon className="w-8 h-8 text-[#8B5CF6]" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4 text-center">{service.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed text-center">{service.description}</p>
+                </Link>
+              </CardSpotlight>
+            ))}
+          </motion.div>
+
+          {/* Book a Consultation Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-12"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <button
+                onClick={() => window.location.href = '/contact'}
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] rounded-lg text-white font-semibold text-lg transition-all duration-300 hover:opacity-90 cursor-pointer"
+              >
+                <span className="flex items-center">
+                  🛠 Book a Consultation
+                  <svg 
+                    className="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M9 5l7 7-7 7" 
+                    />
+                  </svg>
+                </span>
+              </button>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 } 

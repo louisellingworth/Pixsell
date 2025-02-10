@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import { Press_Start_2P } from 'next/font/google'
 import './globals.css'
 import Navigation from './components/Navigation'
@@ -17,6 +17,11 @@ const pressStart2P = Press_Start_2P({
   variable: '--font-press-start-2p',
 })
 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk'
+})
+
 export const metadata: Metadata = {
   title: 'Systems That Scale | AI Consultancy',
   description: 'Professional AI implementation and system scaling solutions for enterprise companies.',
@@ -28,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${pressStart2P.variable}`}>
+    <html lang="en" className={`${inter.variable} ${pressStart2P.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased">
         <Navigation />
         {children}

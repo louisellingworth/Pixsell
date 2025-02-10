@@ -30,6 +30,27 @@ eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'Press Star
 
 /***/ }),
 
+/***/ "(rsc)/./node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Space_Grotesk\",\"arguments\":[{\"subsets\":[\"latin\"],\"variable\":\"--font-space-grotesk\"}],\"variableName\":\"spaceGrotesk\"}":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Space_Grotesk","arguments":[{"subsets":["latin"],"variable":"--font-space-grotesk"}],"variableName":"spaceGrotesk"} ***!
+  \*********************************************************************************************************************************************************************************************************/
+/***/ ((module) => {
+
+eval("// Exports\nmodule.exports = {\n\t\"style\": {\"fontFamily\":\"'Space Grotesk', 'Space Grotesk Fallback'\",\"fontStyle\":\"normal\"},\n\t\"className\": \"__className_0aa4ae\",\n\t\"variable\": \"__variable_0aa4ae\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvbmV4dC9mb250L2dvb2dsZS90YXJnZXQuY3NzP3tcInBhdGhcIjpcImFwcC9sYXlvdXQudHN4XCIsXCJpbXBvcnRcIjpcIlNwYWNlX0dyb3Rlc2tcIixcImFyZ3VtZW50c1wiOlt7XCJzdWJzZXRzXCI6W1wibGF0aW5cIl0sXCJ2YXJpYWJsZVwiOlwiLS1mb250LXNwYWNlLWdyb3Rlc2tcIn1dLFwidmFyaWFibGVOYW1lXCI6XCJzcGFjZUdyb3Rlc2tcIn0iLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBLFdBQVcsOEVBQThFO0FBQ3pGO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsiL1VzZXJzL2xvdWlzZWxsaW5nd29ydGgvRG93bmxvYWRzL1BpeHNlbGwvbm9kZV9tb2R1bGVzL25leHQvZm9udC9nb29nbGUvdGFyZ2V0LmNzcz97XCJwYXRoXCI6XCJhcHAvbGF5b3V0LnRzeFwiLFwiaW1wb3J0XCI6XCJTcGFjZV9Hcm90ZXNrXCIsXCJhcmd1bWVudHNcIjpbe1wic3Vic2V0c1wiOltcImxhdGluXCJdLFwidmFyaWFibGVcIjpcIi0tZm9udC1zcGFjZS1ncm90ZXNrXCJ9XSxcInZhcmlhYmxlTmFtZVwiOlwic3BhY2VHcm90ZXNrXCJ9Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIEV4cG9ydHNcbm1vZHVsZS5leHBvcnRzID0ge1xuXHRcInN0eWxlXCI6IHtcImZvbnRGYW1pbHlcIjpcIidTcGFjZSBHcm90ZXNrJywgJ1NwYWNlIEdyb3Rlc2sgRmFsbGJhY2snXCIsXCJmb250U3R5bGVcIjpcIm5vcm1hbFwifSxcblx0XCJjbGFzc05hbWVcIjogXCJfX2NsYXNzTmFtZV8wYWE0YWVcIixcblx0XCJ2YXJpYWJsZVwiOiBcIl9fdmFyaWFibGVfMGFhNGFlXCJcbn07XG4iXSwibmFtZXMiOltdLCJpZ25vcmVMaXN0IjpbMF0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/next/font/google/target.css?{\"path\":\"app/layout.tsx\",\"import\":\"Space_Grotesk\",\"arguments\":[{\"subsets\":[\"latin\"],\"variable\":\"--font-space-grotesk\"}],\"variableName\":\"spaceGrotesk\"}\n");
+
+/***/ }),
+
+/***/ "(ssr)/./node_modules/next/dist/api/navigation.js":
+/*!**************************************************!*\
+  !*** ./node_modules/next/dist/api/navigation.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _client_components_navigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../client/components/navigation */ \"(ssr)/./node_modules/next/dist/client/components/navigation.js\");\n/* harmony import */ var _client_components_navigation__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_client_components_navigation__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};\n/* harmony reexport (unknown) */ for(const __WEBPACK_IMPORT_KEY__ in _client_components_navigation__WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== \"default\") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = () => _client_components_navigation__WEBPACK_IMPORTED_MODULE_0__[__WEBPACK_IMPORT_KEY__]\n/* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);\n\n\n//# sourceMappingURL=navigation.js.map//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvbmV4dC9kaXN0L2FwaS9uYXZpZ2F0aW9uLmpzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFnRDs7QUFFaEQiLCJzb3VyY2VzIjpbIi9Vc2Vycy9sb3Vpc2VsbGluZ3dvcnRoL0Rvd25sb2Fkcy9QaXhzZWxsL25vZGVfbW9kdWxlcy9uZXh0L2Rpc3QvYXBpL25hdmlnYXRpb24uanMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi4vY2xpZW50L2NvbXBvbmVudHMvbmF2aWdhdGlvbic7XG5cbi8vIyBzb3VyY2VNYXBwaW5nVVJMPW5hdmlnYXRpb24uanMubWFwIl0sIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6WzBdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/next/dist/api/navigation.js\n");
+
+/***/ }),
+
 /***/ "(ssr)/./node_modules/next/dist/client/add-base-path.js":
 /*!********************************************************!*\
   !*** ./node_modules/next/dist/client/add-base-path.js ***!

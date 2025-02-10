@@ -171,4 +171,87 @@
   * {
     @apply border-border;
   }
+}
+
+@layer utilities {
+  .animate-gradient {
+    animation: gradient 4s linear infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+}
+
+/* Contact Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-family: inherit;
+  gap: 10px;
+  padding: 2em;
+  background-color: #171717;
+  border-radius: 20px;
+}
+
+.form-heading {
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 1.5em;
+  font-weight: 600;
+  background: linear-gradient(to right, #8B5CF6, #6D28D9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  border-radius: 10px;
+  padding: 0.8em;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #1f1f1f;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+}
+
+.input-field {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: #ccd6f6;
+  padding-inline: 1em;
+  font-size: 0.95em;
+}
+
+.input-field::placeholder {
+  color: #6b7280;
+}
+
+.form-card1 {
+  background: linear-gradient(163deg, #8B5CF6 0%, #6D28D9 50%, #4C1D95 100%);
+  border-radius: 22px;
+  padding: 2px;
+  transition: all 0.3s;
+}
+
+.form-card1:hover {
+  box-shadow: 0px 0px 30px 1px rgba(139, 92, 246, 0.3);
+}
+
+.form-card2 {
+  background-color: #171717;
+  border-radius: 20px;
+  transition: transform 0.2s;
+}
+
+.form-card2:hover {
+  transform: scale(0.98);
 } 
