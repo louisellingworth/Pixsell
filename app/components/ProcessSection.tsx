@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import GradientButton from './ui/GradientButton';
+import ClockButton from './ui/ClockButton';
 
 const steps = [
   {
@@ -80,12 +80,12 @@ export default function ProcessSection() {
           transition={{ duration: 0.8, delay: 1 }}
           className="text-center mt-12"
         >
-          <GradientButton
+          <ClockButton
             href="/contact"
-            className="font-inter text-lg px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+            className="font-inter text-lg"
           >
             Start Your Expansion Today →
-          </GradientButton>
+          </ClockButton>
         </motion.div>
       </div>
     </section>

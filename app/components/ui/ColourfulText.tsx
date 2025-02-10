@@ -3,9 +3,16 @@ import { motion } from 'framer-motion';
 
 interface ColourfulTextProps {
   text: string;
+  variant?: 'blue' | 'green' | 'blue-purple';
 }
 
-const ColourfulText: React.FC<ColourfulTextProps> = ({ text }) => {
+const gradients = {
+  blue: 'linear-gradient(180deg, #ffffff 0%, #3b82f6 30%, #60a5fa 70%, #ffffff 100%)',
+  green: 'linear-gradient(180deg, #ffffff 0%, #22c55e 30%, #10b981 70%, #ffffff 100%)',
+  'blue-purple': 'linear-gradient(180deg, #ffffff 0%, #3b82f6 30%, #a78bfa 70%, #ffffff 100%)'
+};
+
+const ColourfulText: React.FC<ColourfulTextProps> = ({ text, variant = 'blue' }) => {
   return (
     <motion.span
       initial={{ opacity: 0, scale: 0.95 }}
@@ -21,15 +28,15 @@ const ColourfulText: React.FC<ColourfulTextProps> = ({ text }) => {
       }}
       className="relative inline-block text-transparent bg-clip-text"
       style={{
-        backgroundImage: 'linear-gradient(90deg, #22c55e 0%, #10b981 30%, #14b8a6 70%, #22c55e 100%)',
-        backgroundSize: '200% auto',
+        backgroundImage: gradients[variant],
+        backgroundSize: 'auto 200%',
         animation: 'shine 3s linear infinite'
       }}
     >
       <style jsx>{`
         @keyframes shine {
-          0% { background-position: 0% center; }
-          100% { background-position: 200% center; }
+          0% { background-position: center 0%; }
+          100% { background-position: center 200%; }
         }
       `}</style>
       {text}

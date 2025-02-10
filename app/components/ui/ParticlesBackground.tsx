@@ -13,7 +13,7 @@ interface Particle {
 export default function ParticlesBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particles = useRef<Particle[]>([]);
-  const animationFrameId = useRef<number>();
+  const animationFrameId = useRef<number | undefined>(undefined);
   const mousePosition = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -41,15 +41,15 @@ export default function ParticlesBackground() {
 
     // Initialize particles with varying colors
     const initParticles = () => {
-      const particleCount = window.innerWidth < 768 ? 30 : 50;
+      const particleCount = window.innerWidth < 768 ? 100 : 200;
       particles.current = Array.from({ length: particleCount }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2 + 1,
+        size: Math.random() * 3 + 1.5,
         speedX: (Math.random() - 0.5) * 0.3,
         speedY: (Math.random() - 0.5) * 0.3,
-        opacity: Math.random() * 0.5 + 0.3,
-        hue: Math.random() * 40 + 220 // Range from 220 to 260 (blue to purple)
+        opacity: Math.random() * 0.6 + 0.4,
+        hue: Math.random() * 40 + 220
       }));
     };
 
@@ -77,7 +77,7 @@ export default function ParticlesBackground() {
           particle.x, particle.y, 0,
           particle.x, particle.y, particle.size
         );
-        const color = `hsla(${particle.hue}, 70%, 70%, ${particle.opacity})`;
+        const color = `hsla(${particle.hue}, 80%, 75%, ${particle.opacity})`;
         gradient.addColorStop(0, color);
         gradient.addColorStop(1, 'hsla(0, 0%, 0%, 0)');
         
@@ -89,9 +89,9 @@ export default function ParticlesBackground() {
         const dx = mousePosition.current.x - particle.x;
         const dy = mousePosition.current.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < 100) {
-          particle.x += (dx / distance) * 0.5;
-          particle.y += (dy / distance) * 0.5;
+        if (distance < 150) {
+          particle.x += (dx / distance) * 1.2;
+          particle.y += (dy / distance) * 1.2;
         }
       });
 
@@ -102,15 +102,15 @@ export default function ParticlesBackground() {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 150) {
+          if (distance < 200) {
             ctx.beginPath();
             const gradient = ctx.createLinearGradient(
               particle.x, particle.y,
               otherParticle.x, otherParticle.y
             );
-            const opacity = (1 - distance / 150) * 0.15;
-            gradient.addColorStop(0, `hsla(${particle.hue}, 70%, 70%, ${opacity})`);
-            gradient.addColorStop(1, `hsla(${otherParticle.hue}, 70%, 70%, ${opacity})`);
+            const opacity = (1 - distance / 200) * 0.2;
+            gradient.addColorStop(0, `hsla(${particle.hue}, 80%, 75%, ${opacity})`);
+            gradient.addColorStop(1, `hsla(${otherParticle.hue}, 80%, 75%, ${opacity})`);
             
             ctx.strokeStyle = gradient;
             ctx.lineWidth = 1;

@@ -3,12 +3,11 @@
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import ComplexitySection from './components/ComplexitySection'
-import ServicesSection from './components/ServicesSection'
 import ProcessSection from './components/ProcessSection'
 import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
 import FloatingConsultButton from './components/FloatingConsultButton'
-import WhatWeDo from './components/WhatWeDo'
+import WhatWeOffer from './components/WhatWeOffer'
 
 export default function Home() {
   return (
@@ -20,8 +19,7 @@ export default function Home() {
       
       {/* Main Content */}
       <ComplexitySection />
-      <WhatWeDo />
-      <ServicesSection />
+      <WhatWeOffer />
       <ProcessSection />
       <FAQSection />
       
