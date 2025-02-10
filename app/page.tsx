@@ -23,43 +23,43 @@ export default function Home() {
         </div>
         
         {/* Hero Section */}
-        <section className="relative">
+        <section className="relative min-h-screen flex items-center">
           <Hero />
         </section>
         
         {/* Main Content */}
-        <div className="relative space-y-40 pb-40">
+        <div className="relative space-y-60 md:space-y-80 pb-60">
           {/* Complexity Section */}
-          <section className="mt-20 relative">
+          <section className="relative">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0A0B]/80 to-transparent" />
             <ComplexitySection />
           </section>
           
           {/* What We Offer Section with contrast background */}
-          <section className="relative py-20 bg-[#0C0C0D]">
+          <section className="relative py-40 bg-[#0C0C0D]">
             <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0B] to-transparent opacity-60" />
-            <div className="relative">
+            <div className="relative max-w-[1400px] mx-auto px-6 md:px-8">
               <WhatWeOffer />
             </div>
           </section>
           
           {/* Process Section with enhanced contrast */}
-          <section className="relative py-32 bg-gradient-to-b from-[#0F0F11] to-[#0A0A0B]">
-            <div className="relative max-w-8xl mx-auto">
+          <section className="relative py-40 bg-gradient-to-b from-[#0F0F11] to-[#0A0A0B]">
+            <div className="relative max-w-[1400px] mx-auto px-6 md:px-8">
               <ProcessSection />
             </div>
           </section>
           
           {/* FAQ Section with container width */}
-          <section className="relative py-24">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="relative py-40">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-8">
               <FAQSection />
             </div>
           </section>
         </div>
         
         {/* Footer with gradient border */}
-        <div className="relative">
+        <div className="relative mt-40">
           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <Footer />
         </div>
