@@ -40,7 +40,7 @@ const item = {
 const services = [
   {
     title: "Co-Publishing",
-    description: "Connect with trusted Chinese publishers and secure revenue-optimized deals.",
+    description: "Connect with trusted Chinese publishers and secure revenue-optimised deals.",
     Icon: GlobeAltIcon,
     href: "/services/co-publishing"
   },
@@ -51,7 +51,7 @@ const services = [
     href: "/services/marketing"
   },
   {
-    title: "Localization",
+    title: "Localisation",
     description: "Adapt your game for Chinese players while maintaining its core appeal.",
     Icon: LanguageIcon,
     href: "/services/localization"

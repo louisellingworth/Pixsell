@@ -13,7 +13,9 @@ import {
   RocketLaunchIcon,
   ArrowRightIcon,
   CheckCircleIcon,
-  SparklesIcon
+  SparklesIcon,
+  BanknotesIcon,
+  DocumentMagnifyingGlassIcon
 } from '@heroicons/react/24/outline'
 import { useRef, useState } from 'react'
 
@@ -140,7 +142,7 @@ export default function CoPublishingPage() {
                 <div className="absolute inset-0 -z-10 animate-shimmer bg-gradient-to-r from-transparent via-white/10 to-transparent" />
               </h1>
               <p className="text-2xl sm:text-3xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Partner with trusted Chinese publishers and optimize your game's success in the Chinese market
+                Partner with trusted Chinese publishers and optimise your game's success in the Chinese market
               </p>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -267,42 +269,28 @@ export default function CoPublishingPage() {
             <div className="space-y-16">
               {[
                 {
-                  title: "1. Market Assessment & Game Readiness Check",
-                  description: "Before securing a co-publisher, we conduct an in-depth evaluation of your game's market fit in China, including:",
-                  items: [
-                    "Genre popularity and player demand",
-                    "Potential regulatory challenges",
-                    "Competitive analysis"
-                  ]
+                  title: "Strategic Budget Optimisation",
+                  description: "We collaborate with publishers to establish and secure optimal marketing budgets, aligned with your market entry objectives and revenue targets.",
+                  icon: BanknotesIcon,
+                  keyPoints: ["Budget planning", "Revenue forecasting", "Resource allocation"]
                 },
                 {
-                  title: "2. Identifying & Negotiating with the Right Co-Publisher",
-                  description: "Not all Chinese publishers are the same. We use our network of trusted partners to match you with a publisher who aligns with your game's goals. Key considerations include:",
-                  items: [
-                    "Revenue split negotiations to ensure you get the best deal",
-                    "Marketing budget commitments from the publisher",
-                    "Their track record with similar game genres",
-                    "Experience in handling regulatory approvals"
-                  ]
+                  title: "Comprehensive Planning",
+                  description: "Our team conducts thorough analyses and optimisation of marketing strategies, ensuring harmonisation with both Western and Chinese market requirements.",
+                  icon: DocumentMagnifyingGlassIcon,
+                  keyPoints: ["Market analysis", "Strategy development", "Timeline planning"]
                 },
                 {
-                  title: "3. Structuring the Revenue Model",
-                  description: "Getting the right revenue structure is critical for a profitable deal. Common revenue models include:",
-                  items: [
-                    "Revenue Share Model: The co-publisher takes a percentage of revenue after launch (e.g., 30-50%), covering marketing and operational costs",
-                    "Recoup Model: The publisher funds marketing and localisation upfront, and revenue is split after costs are recouped",
-                    "Hybrid Model: A mix of both models, ensuring developers keep a larger share of long-term revenue after initial recoupment"
-                  ]
+                  title: "Precision Execution",
+                  description: "We implement campaigns with meticulous attention to detail, ensuring cultural authenticity and maximising market impact.",
+                  icon: RocketLaunchIcon,
+                  keyPoints: ["Campaign launch", "Content delivery", "Platform management"]
                 },
                 {
-                  title: "4. Managing Marketing, Distribution, and Launch",
-                  description: "Once a deal is secured, we coordinate all aspects of your China launch, including:",
-                  items: [
-                    "Social media and influencer campaigns on Weibo, WeChat, Douyin, and Bilibili",
-                    "Advertising on key gaming platforms",
-                    "Community engagement and Chinese player support",
-                    "Ongoing content updates and post-launch optimisations"
-                  ]
+                  title: "Performance Optimisation",
+                  description: "Continuous monitoring and refinement of campaigns using advanced analytics to maximise return on marketing investment.",
+                  icon: ChartBarIcon,
+                  keyPoints: ["Data analysis", "Performance tracking", "Strategy refinement"]
                 }
               ].map((step, index) => (
                 <motion.div
@@ -327,7 +315,7 @@ export default function CoPublishingPage() {
                       <h3 className="text-2xl font-semibold mb-4 text-white">{step.title}</h3>
                       <p className="text-gray-300 mb-6 text-lg">{step.description}</p>
                       <ul className="space-y-3">
-                        {step.items.map((item, itemIndex) => (
+                        {step.keyPoints.map((item, itemIndex) => (
                           <li key={itemIndex} className="flex items-center justify-center space-x-3 text-gray-400">
                             <span className="text-[#B4C6EF] mt-1">•</span>
                             <span className="text-lg">{item}</span>

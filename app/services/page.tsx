@@ -10,19 +10,19 @@ const services = [
   {
     title: "Co-Publishing Solutions",
     description: "Partner with us to bring your game to the Chinese market. Our co-publishing service ensures your game reaches the right audience while maintaining the highest publishing standards.",
-    features: ["Publisher Partnerships", "Market Strategy", "Revenue Optimization", "Launch Support"],
+    features: ["Publisher Partnerships", "Market Strategy", "Revenue Optimisation", "Launch Support"],
     link: "/services/co-publishing"
   },
   {
     title: "Marketing & Promotion",
     description: "Reach Chinese gamers through strategic marketing campaigns. Our expertise in local platforms and influencer networks helps your game stand out.",
-    features: ["KOL Partnerships", "Social Media Strategy", "Platform Optimization", "Community Building"],
+    features: ["KOL Partnerships", "Social Media Strategy", "Platform Optimisation", "Community Building"],
     link: "/services/marketing"
   },
   {
-    title: "Localization Services",
-    description: "Adapt your game for Chinese players with our comprehensive localization services. We ensure cultural authenticity while maintaining your game's core appeal.",
-    features: ["Cultural Adaptation", "Text Translation", "Asset Localization", "Quality Assurance"],
+    title: "Localisation Services",
+    description: "Adapt your game for Chinese players with our comprehensive localisation services. We ensure cultural authenticity while maintaining your game's core appeal.",
+    features: ["Cultural Adaptation", "Text Translation", "Asset Localisation", "Quality Assurance"],
     link: "/services/localization"
   },
   {

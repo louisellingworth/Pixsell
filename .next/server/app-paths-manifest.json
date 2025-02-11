@@ -1,6 +1,6 @@
 {
-  "/services/reporting/page": "app/services/reporting/page.js",
   "/services/co-publishing/page": "app/services/co-publishing/page.js",
+  "/services/reporting/page": "app/services/reporting/page.js",
   "/services/marketing/page": "app/services/marketing/page.js",
   "/services/localization/page": "app/services/localization/page.js",
   "/page": "app/page.js"

@@ -3,7 +3,7 @@ import CoPublishingPage from './CoPublishingPage'
 
 export const metadata: Metadata = {
   title: 'Co-Publishing | Pixsell',
-  description: 'Partner with trusted Chinese publishers and optimize your games success in the Chinese market'
+  description: 'Partner with trusted Chinese publishers and optimise your games success in the Chinese market'
 }
 
 export default function Page() {
