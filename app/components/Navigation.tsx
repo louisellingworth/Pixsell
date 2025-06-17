@@ -67,12 +67,19 @@ export default function Navigation() {
     <nav className={`fixed top-0 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 backdrop-blur-xl bg-black/80 border-b border-purple-500/10 z-50 transition-all duration-300 ${scrolled ? 'py-1' : 'py-2 sm:py-3'}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center py-2">
+        <Link href="/" className="flex items-center">
           <img 
             src="/Pixsell Logo.png" 
             alt="Pixsell" 
-            className="h-10 md:h-12 w-auto" 
-            style={{ objectFit: 'contain' }}
+            className="h-24 md:h-32 w-auto" 
+            style={{ 
+              objectFit: 'cover',
+              objectPosition: 'center',
+              width: 'auto',
+              maxWidth: 'none',
+              marginTop: '-0.75rem',
+              marginBottom: '-0.75rem'
+            }}
           />
         </Link>
 
