@@ -1,0 +1,58 @@
+"use client";
+
+import { motion } from 'framer-motion'
+import { cn } from "../../../lib/utils"
+import React from "react";
+
+export const AuroraBackground = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={cn("relative min-h-screen w-full bg-zinc-950", className)}>
+      {/* Background container */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Aurora container */}
+        <div className="absolute h-[200%] w-[200%] -bottom-[50%] -left-[50%] rotate-180">
+          {/* Bottom-left aurora (formerly top-left) */}
+          <div 
+            className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-tr from-gray-600/50 via-gray-700/50 to-gray-800/50 blur-[120px] animate-aurora"
+            style={{ willChange: 'transform' }}
+          />
+          
+          {/* Top-right aurora (formerly bottom-right) */}
+          <div 
+            className="absolute top-0 right-0 w-full h-1/2 bg-gradient-to-tr from-gray-800/50 via-gray-700/50 to-gray-600/50 blur-[120px] animate-aurora-reverse"
+            style={{ willChange: 'transform' }}
+          />
+        </div>
+
+        {/* Additional aurora layers for more depth */}
+        <div className="absolute inset-0 rotate-180">
+          <div 
+            className="absolute bottom-1/4 left-1/4 w-1/2 h-1/2 bg-gradient-to-br from-gray-600/30 via-gray-700/30 to-gray-800/30 blur-[100px] animate-aurora"
+            style={{ willChange: 'transform', animationDelay: '-3s' }}
+          />
+          <div 
+            className="absolute top-1/4 right-1/4 w-1/2 h-1/2 bg-gradient-to-tr from-gray-800/30 via-gray-700/30 to-gray-600/30 blur-[100px] animate-aurora-reverse"
+            style={{ willChange: 'transform', animationDelay: '-2s' }}
+          />
+        </div>
+
+        {/* Noise texture overlay */}
+        <div 
+          className="absolute inset-0 bg-repeat opacity-[0.02] mix-blend-soft-light pointer-events-none select-none"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            backgroundSize: '200px 200px'
+          }}
+        />
+      </div>
+
+      {children}
+    </div>
+  );
+}; 
