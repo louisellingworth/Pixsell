@@ -20,7 +20,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://pixsell.games'),
   title: 'Pixsell - Game Publishing in China',
-  description: 'Pixsell Games is a specialised co-publishing service that helps Western game developers successfully launch their games in the Chinese market. We provide complete localisation, marketing, and compliance solutions without requiring IP transfers or upfront costs.',
+  description: 'We make it easy to launch your game in China. From finding the right partners to approvals and marketing setup — we handle the hard stuff, so you can focus on making great games.',
   keywords: ['game publishing', 'China market entry', 'game localization', 'mobile game publishing', 'Western developers', 'China game market'],
   authors: [{ name: 'Pixsell Games' }],
   creator: 'Pixsell Games',
@@ -148,7 +148,7 @@ export default function RootLayout({
               "name": "Pixsell Games",
               "url": "https://pixsell.games",
               "logo": "https://pixsell.games/icons/icon-512x512.png",
-              "description": "Pixsell Games helps Western developers launch in China with trusted co-publishing partners.",
+              "description": "We make it easy to launch your game in China. From finding the right partners to approvals and marketing setup — we handle the hard stuff, so you can focus on making great games.",
               "sameAs": [
                 "https://twitter.com/pixsellgames",
                 "https://linkedin.com/company/pixsellgames"
