@@ -3,6 +3,20 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { useRef } from 'react'
+import { 
+  ShieldCheckIcon, 
+  UserGroupIcon, 
+  ChartBarIcon, 
+  CogIcon,
+  SparklesIcon,
+  RocketLaunchIcon,
+  CheckCircleIcon,
+  XMarkIcon,
+  ArrowRightIcon,
+  StarIcon,
+  GlobeAltIcon,
+  HeartIcon
+} from '@heroicons/react/24/outline'
 
 export default function AboutContent() {
   const containerRef = useRef(null)
@@ -19,32 +33,45 @@ export default function AboutContent() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3
+        staggerChildren: 0.2,
+        delayChildren: 0.1
       }
     }
   }
 
   const textRevealVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
-      y: 0
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
     }
   }
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
     }
   }
 
   const hoverVariants = {
     hover: {
-      scale: 1.03,
-      y: -5
+      scale: 1.02,
+      y: -8,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
     }
   }
 
@@ -62,119 +89,108 @@ export default function AboutContent() {
 
   const philosophyPoints = [
     {
-      icon: "🔹",
+      icon: ShieldCheckIcon,
       title: "Transparency",
-      description: "No hidden terms, no restrictive contracts. Just clear, fair agreements."
+      description: "No hidden terms, no restrictive contracts. Just clear, fair agreements that protect your interests.",
+      color: "from-emerald-500 to-teal-500"
     },
     {
-      icon: "🔹",
+      icon: UserGroupIcon,
       title: "Control",
-      description: "Developers should own their IP, their decisions, and their future."
+      description: "Developers should own their IP, their decisions, and their future. We ensure you maintain full creative control.",
+      color: "from-blue-500 to-indigo-500"
     },
     {
-      icon: "🔹",
+      icon: SparklesIcon,
       title: "Simplicity",
-      description: "Expanding into China should be straightforward, not overwhelming."
+      description: "Expanding into China should be straightforward, not overwhelming. We handle the complexity so you don't have to.",
+      color: "from-purple-500 to-pink-500"
     },
     {
-      icon: "🔹",
+      icon: ChartBarIcon,
       title: "Sustainability",
-      description: "Long-term success matters more than just a strong launch."
+      description: "Long-term success matters more than just a strong launch. We build lasting partnerships that grow with you.",
+      color: "from-orange-500 to-red-500"
     }
   ]
 
   const services = [
     {
-      icon: (
-        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 13h2.25l2-6 3.5 10.5L13.75 7l2 6H18" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21H3" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 3v18" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 7v8" />
-          <circle cx="12" cy="15" r="1" />
-        </svg>
-      ),
-      title: "1. Publisher Matching & Market Entry",
-      description: "Finding the Right Partner – We match your game with a vetted Chinese co-publisher that aligns with your genre, audience, and business goals.",
+      icon: UserGroupIcon,
+      title: "Strategic Partner Matching",
+      subtitle: "Finding the Right Partner",
+      description: "We match your game with a vetted Chinese co-publisher that aligns with your genre, audience, and business goals.",
       features: [
-        "Negotiating the Best Deal – We secure fair revenue terms and ensure both parties' responsibilities are clear",
-        "Regulatory Guidance – We navigate ISBN requirements and content approvals where necessary"
-      ]
+        "Comprehensive partner qualification and vetting process",
+        "Negotiating fair revenue terms and clear responsibilities",
+        "Regulatory guidance for ISBN requirements and content approvals"
+      ],
+      color: "from-blue-500 to-indigo-500"
     },
     {
-      icon: (
-        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 9a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17.5 19.5c-1.5-2-3.3-3-5.5-3s-4 1-5.5 3" />
-        </svg>
-      ),
-      title: "2. Full-Service Marketing & Community Management",
-      description: "Localised Marketing – We manage Chinese social media (WeChat, Weibo) and collaborate with influencers to amplify reach.",
+      icon: ChartBarIcon,
+      title: "Full-Service Marketing & Community",
+      subtitle: "Localized Growth Strategy",
+      description: "We manage Chinese social media platforms and collaborate with influencers to amplify your reach and build engaged communities.",
       features: [
-        "Community Growth – Working closely with your co-publisher, we build and engage player communities on platforms like QQ and Bilibili",
-        "Performance Tracking – We monitor data and adjust marketing strategies for sustained growth"
-      ]
+        "Multi-platform social media management (WeChat, Weibo, Bilibili)",
+        "Influencer partnerships and content strategy",
+        "Performance tracking and data-driven optimization"
+      ],
+      color: "from-purple-500 to-pink-500"
     },
     {
-      icon: (
-        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5h18" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12h18" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 19h18" />
-          <circle cx="7" cy="5" r="1" />
-          <circle cx="12" cy="12" r="1" />
-          <circle cx="17" cy="19" r="1" />
-        </svg>
-      ),
-      title: "3. Revenue Optimisation & Ongoing Support",
-      description: "Pricing & Monetisation – Tailored strategies to maximise revenue while staying competitive.",
+      icon: CogIcon,
+      title: "Revenue Optimization & Support",
+      subtitle: "Maximizing Your Success",
+      description: "Tailored strategies to maximize revenue while staying competitive, with ongoing support to ensure long-term success.",
       features: [
-        "Long-Term Engagement – Ongoing support beyond launch to ensure your game thrives in China"
-      ]
+        "Pricing strategy and monetization optimization",
+        "Continuous performance monitoring and improvement",
+        "Long-term engagement and growth support"
+      ],
+      color: "from-emerald-500 to-teal-500"
     }
   ]
 
   const comparison = {
     traditional: [
-      "Loss of IP control",
-      "Opaque revenue terms",
-      "Limited post-launch support",
-      "Complex publishing process"
+      "Loss of IP control and creative freedom",
+      "Opaque revenue terms and hidden fees",
+      "Limited post-launch support and engagement",
+      "Complex publishing process with long timelines"
     ],
     pixsell: [
-      "Full developer ownership",
-      "Transparent revenue-sharing model",
-      "Long-term growth focus",
-      "We handle everything—seamless and stress-free"
+      "Full developer ownership and creative control",
+      "Transparent revenue-sharing with no hidden costs",
+      "Comprehensive long-term growth and support",
+      "Streamlined process handled entirely by our team"
     ]
   }
 
   return (
-    <div ref={containerRef} className="min-h-screen py-32 relative overflow-hidden">
-      {/* Enhanced Background Effects */}
-      <motion.div 
-        className="absolute inset-0 pointer-events-none"
-        style={{ y: backgroundY, opacity }}
-      >
-        <div className="absolute inset-0 bg-gradient-radial from-purple-500/10 via-transparent to-transparent animate-pulse" />
-        <div className="absolute -top-1/2 -right-1/4 w-full h-full bg-gradient-radial from-blue-500/10 via-transparent to-transparent animate-pulse" />
+    <div ref={containerRef} className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Enhanced Background Effects - Matching Partnership Page */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-black/50 to-black opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-pink-900/20 via-black/50 to-black opacity-60" />
         <motion.div 
           animate={{ 
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2] 
+            opacity: [0.15, 0.25, 0.15] 
           }} 
           transition={{ 
             duration: 10,
             repeat: Infinity,
             ease: "easeInOut" 
           }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full filter blur-[100px]" 
+          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-pink-500/20 rounded-full filter blur-[150px]" 
         />
         <motion.div 
           animate={{ 
             scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2] 
+            opacity: [0.15, 0.25, 0.15] 
           }} 
           transition={{ 
             duration: 10,
@@ -182,285 +198,474 @@ export default function AboutContent() {
             ease: "easeInOut",
             delay: 5 
           }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full filter blur-[100px]" 
+          className="absolute bottom-1/4 right-1/4 w-[800px] h-[800px] bg-purple-500/20 rounded-full filter blur-[150px]" 
         />
-      </motion.div>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 space-y-40 relative">
-        {/* Hero Section */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="text-center relative max-w-5xl mx-auto"
-        >
-          <motion.div
-            className="absolute -inset-x-20 -top-16 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-50"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1.5, delay: 0.2 }}
-          />
-          <motion.h1 
-            variants={textRevealVariants}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.1] tracking-tight mb-8"
-          >
-            <motion.span 
-              className="block bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      <div className="pt-24 pb-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          {/* Premium Hero Section - Matching Partnership Page Style */}
+          <div className="min-h-[80vh] flex flex-col justify-center items-center mb-32 relative">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="max-w-4xl mx-auto space-y-8 text-center relative"
             >
-              About Pixsell Games
-            </motion.span>
-          </motion.h1>
-          <motion.div
-            className="absolute -inset-x-20 -bottom-16 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-50"
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1.5, delay: 0.4 }}
-          />
-        </motion.div>
-
-        {/* Introduction Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-4xl mx-auto text-center relative"
-        >
-          <div className="absolute -inset-x-32 -inset-y-16 bg-gradient-to-b from-purple-500/5 via-transparent to-purple-500/5 rounded-3xl" />
-          <motion.div 
-            className="bg-gradient-to-br from-purple-900/30 via-black/30 to-purple-900/30 backdrop-blur-xl rounded-2xl p-12 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 shadow-xl shadow-purple-500/5 relative"
-            variants={cardVariants}
-            whileHover={hoverVariants.hover}
-          >
-            <motion.p 
-              variants={textRevealVariants} 
-              className="text-2xl leading-relaxed text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-pink-200 mb-10"
-            >
-              Pixsell Games helps Western PC developers enter the Chinese market with clarity, confidence, and control. We specialise in matching developers with the right Chinese co-publisher and managing the entire process, making expansion into China seamless, profitable, and sustainable.
-            </motion.p>
-            <motion.p 
-              variants={textRevealVariants} 
-              className="text-xl leading-relaxed text-gray-300 mb-10"
-            >
-              Founded by an industry professional with experience publishing AAA games, Pixsell Games was built on a simple idea: developers should have a fair, transparent path to global success. We eliminate guesswork, protect your creative vision, and handle the complexities of the Chinese market so you can focus on making great games.
-            </motion.p>
-            <motion.p 
-              variants={textRevealVariants} 
-              className="text-xl leading-relaxed text-gray-300"
-            >
-              At Pixsell Games, we act as a plug-in to your company, handling everything from publisher matchmaking to marketing, compliance, and revenue optimisation. We seamlessly integrate into your workflow, making the process as easy as possible.
-            </motion.p>
-          </motion.div>
-        </motion.div>
-
-        {/* Our Philosophy Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-6xl mx-auto text-center relative"
-        >
-          <div className="absolute -inset-x-32 -inset-y-16 bg-gradient-to-b from-purple-500/5 via-transparent to-purple-500/5 rounded-3xl" />
-          <motion.h2 
-            variants={cardVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 text-center relative"
-          >
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Our Philosophy
-            </span>
-          </motion.h2>
-          <motion.p variants={cardVariants} className="text-xl text-gray-300 text-center mb-16">
-            We believe in:
-          </motion.p>
-          <div className="grid md:grid-cols-2 gap-10">
-            {philosophyPoints.map((item, index) => (
+              {/* Decorative Elements */}
               <motion.div
-                key={index}
-                variants={cardVariants}
-                whileHover={hoverVariants.hover}
-                className="bg-gradient-to-br from-purple-900/30 via-black/30 to-purple-900/30 backdrop-blur-xl rounded-2xl p-10 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 shadow-xl shadow-purple-500/5 relative"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full blur-2xl"
+              />
+              
+              <div className="relative">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                  className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"
+                />
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                  <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent inline-block">
+                    About Pixsell Games
+                  </span>
+                </h1>
+              </div>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="text-2xl sm:text-3xl text-white/70 font-light"
               >
-                <div className="flex flex-col items-center gap-6">
-                  <span className="text-3xl">{item.icon}</span>
-                  <div>
-                    <h3 className="text-2xl font-semibold text-white mb-4">{item.title}</h3>
-                    <p className="text-gray-300 leading-relaxed text-lg">{item.description}</p>
-                  </div>
-                </div>
+                Empowering Western Developers in China
+              </motion.p>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed text-center"
+              >
+                Pixsell Games helps Western PC developers enter the Chinese market with{' '}
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                >
+                  clarity
+                </motion.span>
+                ,{' '}
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                >
+                  confidence
+                </motion.span>
+                , and{' '}
+                <motion.span
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                >
+                  control
+                </motion.span>
+                . We specialize in matching developers with the right Chinese co-publisher and managing the entire process, making expansion into China seamless, profitable, and sustainable.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="pt-8"
+              >
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300"
+                >
+                  <motion.div
+                    initial={{ x: "100%" }}
+                    whileHover={{ x: "-100%" }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                  />
+                  <span className="relative flex items-center gap-2">
+                    Schedule a Consultation
+                    <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
               </motion.div>
-            ))}
-          </div>
-        </motion.div>
+            </motion.div>
 
-        {/* How We Help Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-6xl mx-auto text-center relative"
-        >
-          <div className="absolute -inset-x-32 -inset-y-16 bg-gradient-to-b from-purple-500/5 via-transparent to-purple-500/5 rounded-3xl" />
-          <motion.h2 
-            variants={cardVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 text-center relative"
-          >
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              How We Help
-            </span>
-          </motion.h2>
-          <motion.p variants={cardVariants} className="text-xl text-gray-300 text-center mb-16 max-w-4xl mx-auto">
-            The Chinese market is full of opportunity, but it comes with challenges—language barriers, legal requirements, and cultural differences that can hold developers back. We remove these obstacles, offering a streamlined approach to market entry.
-          </motion.p>
-          <div className="space-y-10">
-            {services.map((service, index) => (
+            {/* Scroll Indicator */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            >
               <motion.div
-                key={index}
-                variants={cardVariants}
-                whileHover={hoverVariants.hover}
-                className="bg-gradient-to-br from-purple-900/30 via-black/30 to-purple-900/30 backdrop-blur-xl rounded-2xl p-10 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 shadow-xl shadow-purple-500/5 relative"
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2"
               >
-                <div className="flex flex-col items-center gap-8">
-                  <div className="text-purple-400 transform hover:scale-110 transition-transform duration-300">{service.icon}</div>
-                  <div>
-                    <h3 className="text-2xl font-semibold text-white mb-6">{service.title}</h3>
-                    <p className="text-gray-300 leading-relaxed mb-8 text-lg">{service.description}</p>
-                    <div className="space-y-4">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start gap-4">
-                          <span className="text-emerald-400 text-xl mt-1">✓</span>
-                          <p className="text-gray-300 text-left text-lg">{feature}</p>
-                        </div>
-                      ))}
+                <div className="w-1 h-2 bg-white/60 rounded-full" />
+              </motion.div>
+            </motion.div>
+          </div>
+
+          {/* Enhanced Introduction Section */}
+          <div className="mb-40">
+            <div className="max-w-2xl mx-auto text-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+              >
+                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                  Our Story
+                </span>
+              </motion.div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                Built on Experience
+              </h2>
+              <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
+                Founded by industry professionals with experience publishing AAA games, we understand what developers need to succeed globally.
+              </p>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="space-y-8 text-center">
+                  <motion.p 
+                    variants={textRevealVariants} 
+                    className="text-xl sm:text-2xl leading-relaxed text-white/90 font-medium"
+                  >
+                    Pixsell Games was built on a simple principle: developers deserve a fair, transparent path to global success. We eliminate guesswork, protect your creative vision, and handle the complexities of the Chinese market so you can focus on making great games.
+                  </motion.p>
+                  
+                  <motion.p 
+                    variants={textRevealVariants} 
+                    className="text-lg sm:text-xl leading-relaxed text-white/60"
+                  >
+                    At Pixsell Games, we act as a seamless extension of your team, handling everything from publisher matchmaking to marketing, compliance, and revenue optimization. We integrate into your workflow, making the process as effortless as possible.
+                  </motion.p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Enhanced Philosophy Section */}
+          <div className="mb-40">
+            <div className="max-w-2xl mx-auto text-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+              >
+                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                  Our Philosophy
+                </span>
+              </motion.div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                Building Lasting Partnerships
+              </h2>
+              <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
+                We believe in building lasting partnerships based on mutual trust and shared success.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+              {philosophyPoints.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full">
+                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <div className="flex items-start gap-6">
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className={`flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br ${item.color} p-4 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300`}
+                      >
+                        <item.icon className="w-8 h-8 text-white" />
+                      </motion.div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors duration-300">{item.title}</h3>
+                        <p className="text-white/60 leading-relaxed">{item.description}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Why Choose Pixsell Games Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-6xl mx-auto text-center relative"
-        >
-          <div className="absolute -inset-x-32 -inset-y-16 bg-gradient-to-b from-purple-500/5 via-transparent to-purple-500/5 rounded-3xl" />
-          <motion.h2 
-            variants={cardVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-16 text-center relative"
-          >
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Why Choose Pixsell Games?
-            </span>
-          </motion.h2>
-          <motion.div 
-            className="bg-gradient-to-br from-purple-900/30 via-black/30 to-purple-900/30 backdrop-blur-xl rounded-2xl p-12 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 shadow-xl shadow-purple-500/5 relative"
-            variants={cardVariants}
-          >
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-8">
-                <h3 className="text-2xl font-semibold text-white mb-8">Traditional Publishers</h3>
-                <ul className="space-y-6">
-                  {comparison.traditional.map((point, index) => (
-                    <li key={index} className="flex items-center gap-4">
-                      <span className="text-red-400 text-2xl">✗</span>
-                      <span className="text-gray-300 text-lg">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="space-y-8">
-                <h3 className="text-2xl font-semibold text-white mb-8">Pixsell Games Advantage</h3>
-                <ul className="space-y-6">
-                  {comparison.pixsell.map((point, index) => (
-                    <li key={index} className="flex items-center gap-4">
-                      <span className="text-emerald-400 text-2xl">✓</span>
-                      <span className="text-gray-300 text-lg">{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                </motion.div>
+              ))}
             </div>
-          </motion.div>
-        </motion.div>
+          </div>
 
-        {/* Our Vision Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-4xl mx-auto text-center relative"
-        >
-          <div className="absolute -inset-x-32 -inset-y-16 bg-gradient-to-b from-purple-500/5 via-transparent to-purple-500/5 rounded-3xl" />
-          <motion.h2 
-            variants={cardVariants}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12 text-center relative"
-          >
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Our Vision
-            </span>
-          </motion.h2>
-          <motion.div 
-            className="bg-gradient-to-br from-purple-900/30 via-black/30 to-purple-900/30 backdrop-blur-xl rounded-2xl p-12 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-500 shadow-xl shadow-purple-500/5 relative"
-            variants={cardVariants}
-            whileHover={hoverVariants.hover}
-          >
-            <motion.p 
-              variants={textRevealVariants} 
-              className="text-xl leading-relaxed text-gray-300 text-lg"
-            >
-              We want to redefine how Western developers succeed in China—no more vague deals, no more complicated partnerships. Just a clear, efficient, and fair way to expand.
-            </motion.p>
-          </motion.div>
-        </motion.div>
-
-        {/* Final CTA Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-4xl mx-auto text-center relative"
-        >
-          <div className="absolute -inset-x-32 -inset-y-16 bg-gradient-to-b from-purple-500/5 via-transparent to-purple-500/5 rounded-3xl" />
-          <motion.div 
-            variants={cardVariants}
-            whileHover={hoverVariants.hover}
-            className="bg-gradient-to-br from-purple-900/30 via-black/30 to-purple-900/30 backdrop-blur-xl rounded-2xl p-16 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 shadow-xl shadow-purple-500/5 relative"
-          >
-            <h2 className="text-4xl font-bold mb-8 text-white">Let's Talk</h2>
-            <p className="text-xl text-gray-300 mb-12">
-              If you're ready to bring your game to China without the stress, Pixsell Games is here to manage everything for you.
-            </p>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-12 py-6 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 rounded-xl font-semibold text-white text-xl transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 group transform hover:scale-[1.02]"
+          {/* Enhanced Services Section */}
+          <div className="mb-40">
+            <div className="max-w-2xl mx-auto text-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
               >
-                Schedule a Consultation
-                <svg 
-                  className="w-6 h-6 ml-3 transform transition-transform group-hover:translate-x-1" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                  How We Help
+                </span>
+              </motion.div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                Comprehensive Support
+              </h2>
+              <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
+                The Chinese market offers tremendous opportunities, but navigating its complexities requires expertise. We remove these obstacles with our comprehensive, streamlined approach to market entry.
+              </p>
+            </div>
+
+            <div className="space-y-8 max-w-6xl mx-auto">
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="group relative"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
+                  <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
+                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    <div className="flex flex-col lg:flex-row items-start gap-8">
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className={`flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br ${service.color} p-5 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300`}
+                      >
+                        <service.icon className="w-10 h-10 text-white" />
+                      </motion.div>
+                      <div className="flex-1">
+                        <div className="mb-4">
+                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors duration-300">{service.title}</h3>
+                          <p className="text-pink-300 font-medium">{service.subtitle}</p>
+                        </div>
+                        <p className="text-white/60 leading-relaxed mb-6 text-lg">{service.description}</p>
+                        <div className="space-y-3">
+                          {service.features.map((feature, featureIndex) => (
+                            <motion.div 
+                              key={featureIndex} 
+                              className="flex items-start gap-3"
+                              variants={listItemVariants}
+                            >
+                              <CheckCircleIcon className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                              <p className="text-white/70">{feature}</p>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Enhanced Comparison Section */}
+          <div className="mb-40">
+            <div className="max-w-2xl mx-auto text-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+              >
+                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                  Why Choose Us
+                </span>
+              </motion.div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                The Pixsell Advantage
+              </h2>
+              <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
+                Compare our approach with traditional publishing models and see why developers choose us for their China market entry.
+              </p>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8 }}
+              className="max-w-6xl mx-auto"
+            >
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3 mb-8">
+                      <XMarkIcon className="w-8 h-8 text-red-400" />
+                      <h3 className="text-2xl font-bold text-white">Traditional Publishers</h3>
+                    </div>
+                    <ul className="space-y-4">
+                      {comparison.traditional.map((point, index) => (
+                        <motion.li 
+                          key={index} 
+                          className="flex items-start gap-4"
+                          variants={listItemVariants}
+                        >
+                          <XMarkIcon className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
+                          <span className="text-white/70">{point}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3 mb-8">
+                      <CheckCircleIcon className="w-8 h-8 text-emerald-400" />
+                      <h3 className="text-2xl font-bold text-white">Pixsell Games Advantage</h3>
+                    </div>
+                    <ul className="space-y-4">
+                      {comparison.pixsell.map((point, index) => (
+                        <motion.li 
+                          key={index} 
+                          className="flex items-start gap-4"
+                          variants={listItemVariants}
+                        >
+                          <CheckCircleIcon className="w-5 h-5 text-emerald-400 mt-1 flex-shrink-0" />
+                          <span className="text-white/70">{point}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </motion.div>
-          </motion.div>
-        </motion.div>
+          </div>
+
+          {/* Enhanced Vision Section */}
+          <div className="mb-40">
+            <div className="max-w-2xl mx-auto text-center mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+              >
+                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                  Our Vision
+                </span>
+              </motion.div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                Redefining Success
+              </h2>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                
+                <motion.p 
+                  variants={textRevealVariants} 
+                  className="text-xl sm:text-2xl leading-relaxed text-white/90 font-medium text-center"
+                >
+                  We want to redefine how Western developers succeed in China—no more vague deals, no more complicated partnerships. Just a clear, efficient, and fair way to expand your game's reach and revenue.
+                </motion.p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Enhanced CTA Section */}
+          <div className="mb-40">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="bg-gradient-to-br from-pink-900/30 via-black/50 to-purple-900/30 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300 relative overflow-hidden">
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="text-center relative z-10">
+                  <motion.div
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 mb-8"
+                  >
+                    <RocketLaunchIcon className="w-10 h-10 text-white" />
+                  </motion.div>
+                  
+                  <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
+                  <p className="text-white/70 text-xl mb-12 max-w-2xl mx-auto">
+                    If you're ready to bring your game to China without the stress, Pixsell Games is here to manage everything for you. Let's discuss your project and create a tailored strategy for success.
+                  </p>
+                  
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-flex items-center justify-center gap-3"
+                  >
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300"
+                    >
+                      <motion.div
+                        initial={{ x: "100%" }}
+                        whileHover={{ x: "-100%" }}
+                        transition={{ duration: 0.7, ease: "easeInOut" }}
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                      />
+                      <span className="relative flex items-center gap-2">
+                        Schedule a Consultation
+                        <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Link>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   )
