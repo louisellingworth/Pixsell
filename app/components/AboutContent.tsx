@@ -28,12 +28,7 @@ export default function AboutContent() {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 50,
-        damping: 20
-      }
+      y: 0
     }
   }
 
@@ -42,25 +37,14 @@ export default function AboutContent() {
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        duration: 0.8
-      }
+      scale: 1
     }
   }
 
   const hoverVariants = {
     hover: {
       scale: 1.03,
-      y: -5,
-      transition: {
-        type: "spring",
-        stiffness: 400,
-        damping: 25
-      }
+      y: -5
     }
   }
 

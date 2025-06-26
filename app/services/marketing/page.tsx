@@ -249,7 +249,7 @@ export default function MarketingPage() {
         >
           <div className="text-center space-y-6">
             <h2 className={`text-3xl font-bold mb-6 ${gradientText}`}>
-              Your Gateway to the Chinese Gaming Market
+              Streamlining Your Entry to China's Gaming Market
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed font-light">
               At Pixsell Games, we provide comprehensive marketing solutions tailored for successful market entry and sustained growth in China's gaming sector. Our strategic approach combines data-driven insights with deep market understanding to ensure optimal resource allocation and maximum return on investment.

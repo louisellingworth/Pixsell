@@ -115,7 +115,7 @@ export default function Features() {
       <div className="mx-auto max-w-2xl lg:text-center">
         <h2 className="text-base font-semibold leading-7 text-blue-600">Why Choose Pixsell Games</h2>
         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Your Gateway to China's Gaming Market
+          Streamlining Your Entry to China's Gaming Market
         </p>
         <p className="mt-6 text-lg leading-8 text-gray-600">
           We combine deep market expertise with a developer-first approach to help you succeed in China.

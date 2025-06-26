@@ -39,14 +39,93 @@ const nextConfig = {
     // Keep only the most stable experimental features
     optimizeCss: true,
     scrollRestoration: true,
-    optimizePackageImports: ['framer-motion', 'gsap', '@heroicons/react', 'lodash'],
+    optimizePackageImports: ['framer-motion', 'gsap', '@heroicons/react', 'lodash', 'react-intersection-observer'],
     // Updated turbo config using rules instead of loaders
     turbo: {
       rules: {
         '*.svg': ['@svgr/webpack'],
       },
     },
+    // Add modern features
+    optimizeServerReact: true,
+    serverComponentsExternalPackages: ['sharp'],
   },
+  // Webpack optimizations
+  webpack: (config, { dev, isServer }) => {
+    // Optimize bundle splitting for production
+    if (!dev && !isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            priority: 10,
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+          // Separate framer-motion for better caching
+          framerMotion: {
+            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+            name: 'framer-motion',
+            chunks: 'all',
+            priority: 20,
+          },
+          // Separate GSAP for better caching
+          gsap: {
+            test: /[\\/]node_modules[\\/]gsap[\\/]/,
+            name: 'gsap',
+            chunks: 'all',
+            priority: 20,
+          },
+        },
+      }
+    }
+
+    // Add bundle analyzer
+    if (process.env.ANALYZE === 'true') {
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+        })
+      )
+    }
+
+    return config
+  },
+  // Add redirects for better SEO
+  async redirects() {
+    return [
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
+  // Add rewrites for better routing
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+    ]
+  },
+  // Optimize output
+  output: 'standalone',
+  // Add trailing slash for better SEO
+  trailingSlash: false,
+  // Optimize for static generation
+  generateEtags: false,
 }
 
 // Enable bundle analyzer when ANALYZE is set to true

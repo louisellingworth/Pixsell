@@ -76,7 +76,7 @@ const LazyLoadedSection: React.FC<LazyLoadedSectionProps> = ({
 
   return (
     <div 
-      ref={ref} 
+      ref={ref as React.RefObject<HTMLDivElement>} 
       className={className}
       id={id}
       data-loaded={isLoaded}

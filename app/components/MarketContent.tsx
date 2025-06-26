@@ -249,18 +249,10 @@ const cardVariants = {
   },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
+    y: 0
   },
   hover: {
-    scale: 1.02,
-    transition: {
-      duration: 0.2,
-      ease: "easeInOut"
-    }
+    scale: 1.02
   }
 }
 
@@ -305,8 +297,7 @@ const timelineVariants = {
     y: 0,
     transition: {
       delay: index * 0.2,
-      duration: 0.8,
-      ease: "easeOut"
+      duration: 0.8
     }
   })
 }
@@ -320,8 +311,7 @@ const timelineContentVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
-      ease: "easeOut"
+      duration: 0.5
     }
   }
 }
@@ -335,8 +325,7 @@ const timelineLineVariants = {
     scaleY: 1,
     opacity: 1,
     transition: {
-      duration: 1.2,
-      ease: "easeInOut"
+      duration: 1.2
     }
   }
 }
@@ -348,12 +337,7 @@ const timelineDotVariants = {
   },
   visible: {
     scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 200,
-      damping: 20
-    }
+    opacity: 1
   }
 }
 
@@ -366,8 +350,7 @@ const finalCTAVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
-      ease: "easeOut"
+      duration: 0.8
     }
   }
 }
@@ -515,17 +498,41 @@ export default function MarketContent() {
                   className="space-y-4 w-full"
                 >
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight px-4 sm:px-0 text-center md:text-left pt-2">
-                    <motion.span 
-                      className="block bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient"
-                      variants={cardVariants}
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                      whileHover={{ 
+                        scale: 1.02,
+                        transition: { duration: 0.3 }
+                      }}
+                      className="inline-block bg-gradient-to-r from-purple-400 via-pink-500 to-blue-400 bg-clip-text text-transparent relative"
+                      style={{
+                        backgroundSize: '200% 200%',
+                        animation: 'premiumGradient 3s ease-in-out infinite'
+                      }}
                     >
-                      Your Gateway to
+                      Streamlining
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-pink-500/20 to-blue-400/20 blur-xl"
+                        animate={{
+                          opacity: [0.3, 0.6, 0.3],
+                          scale: [1, 1.05, 1]
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
                     </motion.span>
-                    <motion.span 
-                      className="block text-white mt-2"
-                      variants={cardVariants}
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.4 }}
+                      className="block text-white"
                     >
-                      the Chinese Gaming Market
+                      Your Entry to China&apos;s Gaming Market
                     </motion.span>
                   </h1>
 
@@ -533,7 +540,7 @@ export default function MarketContent() {
                     variants={cardVariants}
                     className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0 text-center md:text-left px-4 sm:px-0"
                   >
-                    Pixsell Games helps indie developers navigate Steam publishing in China by connecting you with reputable Chinese co-publishers and guiding your marketing strategy.
+                    Bringing your game to China doesn't have to be hard. We take care of the messy bits - partners, neogtations, approvals, marketing - so you can stay focused on making great games.
                   </motion.p>
                 </motion.div>
 

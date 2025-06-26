@@ -1,115 +1,253 @@
 // Service Worker for Pixsell Games
-const CACHE_NAME = 'pixsell-cache-v1';
-const RUNTIME_CACHE = 'runtime-cache';
+const CACHE_NAME = 'pixsell-v1'
+const STATIC_CACHE = 'pixsell-static-v1'
+const DYNAMIC_CACHE = 'pixsell-dynamic-v1'
+const API_CACHE = 'pixsell-api-v1'
 
-// Assets to cache on install
-const PRECACHE_ASSETS = [
+// Files to cache immediately
+const STATIC_FILES = [
   '/',
-  '/index.html',
+  '/offline.html',
   '/manifest.json',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png'
-];
+  '/Pixsell Logo.png',
+  '/pixsell-meta-image.jpg',
+  '/fonts/inter-var.woff2',
+  '/favicon.ico'
+]
 
-// Install event - precache key assets
-self.addEventListener('install', event => {
+// Install event - cache static files
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(PRECACHE_ASSETS);
-      })
-      .then(() => self.skipWaiting())
-  );
-});
+    caches.open(STATIC_CACHE).then((cache) => {
+      return cache.addAll(STATIC_FILES)
+    })
+  )
+  self.skipWaiting()
+})
 
 // Activate event - clean up old caches
-self.addEventListener('activate', event => {
-  const currentCaches = [CACHE_NAME, RUNTIME_CACHE];
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return cacheNames.filter(cacheName => !currentCaches.includes(cacheName));
-    }).then(cachesToDelete => {
-      return Promise.all(cachesToDelete.map(cacheToDelete => {
-        return caches.delete(cacheToDelete);
-      }));
-    }).then(() => self.clients.claim())
-  );
-});
-
-// Fetch event - serve from cache or network
-self.addEventListener('fetch', event => {
-  // Skip cross-origin requests
-  if (event.request.url.startsWith(self.location.origin)) {
-    event.respondWith(
-      caches.match(event.request).then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse;
-        }
-
-        return caches.open(RUNTIME_CACHE).then(cache => {
-          return fetch(event.request).then(response => {
-            // Cache valid responses for future use
-            if (response.status === 200 && !event.request.url.includes('/api/')) {
-              const responseToCache = response.clone();
-              cache.put(event.request, responseToCache);
-            }
-            return response;
-          }).catch(error => {
-            console.error('Fetch error:', error);
-            // Offline fallback
-            if (event.request.destination === 'document') {
-              return caches.match('/');
-            }
-            // No fallback for other resources
-            return new Response('Network error', {
-              status: 408,
-              headers: { 'Content-Type': 'text/plain' },
-            });
-          });
-        });
-      })
-    );
-  }
-});
-
-// Handle push notifications
-self.addEventListener('push', event => {
-  if (event.data) {
-    const data = event.data.json();
-    const options = {
-      body: data.body || 'Something new from Pixsell Games',
-      icon: '/icons/icon-192x192.png',
-      badge: '/icons/icon-72x72.png',
-      vibrate: [100, 50, 100],
-      data: {
-        url: data.url || '/'
-      }
-    };
-
-    event.waitUntil(
-      self.registration.showNotification(data.title || 'Pixsell Games', options)
-    );
-  }
-});
-
-// Handle click on notifications
-self.addEventListener('notificationclick', event => {
-  event.notification.close();
-  event.waitUntil(
-    clients.openWindow(event.notification.data.url || '/')
-  );
-});
-
-// Periodic cache cleanup
-self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'CLEAR_CACHE') {
-    caches.keys().then(cacheNames => {
+    caches.keys().then((cacheNames) => {
       return Promise.all(
-        cacheNames.map(cache => {
-          return caches.delete(cache);
+        cacheNames.map((cacheName) => {
+          if (cacheName !== STATIC_CACHE && 
+              cacheName !== DYNAMIC_CACHE && 
+              cacheName !== API_CACHE) {
+            return caches.delete(cacheName)
+          }
         })
-      );
-    });
+      )
+    })
+  )
+  self.clients.claim()
+})
+
+// Fetch event - handle different caching strategies
+self.addEventListener('fetch', (event) => {
+  const { request } = event
+  const url = new URL(request.url)
+
+  // Skip non-GET requests
+  if (request.method !== 'GET') {
+    return
   }
-}); 
+
+  // Handle different types of requests
+  if (request.destination === 'image') {
+    // Images: Cache first, then network
+    event.respondWith(handleImageRequest(request))
+  } else if (url.pathname.startsWith('/api/')) {
+    // API requests: Network first, then cache
+    event.respondWith(handleApiRequest(request))
+  } else if (request.destination === 'font') {
+    // Fonts: Cache first, then network
+    event.respondWith(handleFontRequest(request))
+  } else if (request.destination === 'style' || request.destination === 'script') {
+    // CSS/JS: Stale while revalidate
+    event.respondWith(handleStaticAssetRequest(request))
+  } else {
+    // HTML pages: Network first, then cache
+    event.respondWith(handlePageRequest(request))
+  }
+})
+
+// Image caching strategy
+async function handleImageRequest(request) {
+  const cache = await caches.open(STATIC_CACHE)
+  const cachedResponse = await cache.match(request)
+  
+  if (cachedResponse) {
+    return cachedResponse
+  }
+
+  try {
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone())
+    }
+    return networkResponse
+  } catch (error) {
+    // Return a placeholder image if available
+    const placeholderResponse = await cache.match('/placeholder-image.png')
+    return placeholderResponse || new Response('Image not available', { status: 404 })
+  }
+}
+
+// API caching strategy
+async function handleApiRequest(request) {
+  try {
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      const cache = await caches.open(API_CACHE)
+      cache.put(request, networkResponse.clone())
+    }
+    return networkResponse
+  } catch (error) {
+    const cachedResponse = await caches.match(request)
+    return cachedResponse || new Response('API not available', { status: 503 })
+  }
+}
+
+// Font caching strategy
+async function handleFontRequest(request) {
+  const cache = await caches.open(STATIC_CACHE)
+  const cachedResponse = await cache.match(request)
+  
+  if (cachedResponse) {
+    return cachedResponse
+  }
+
+  try {
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone())
+    }
+    return networkResponse
+  } catch (error) {
+    return new Response('Font not available', { status: 404 })
+  }
+}
+
+// Static asset caching strategy (CSS/JS)
+async function handleStaticAssetRequest(request) {
+  const cache = await caches.open(STATIC_CACHE)
+  const cachedResponse = await cache.match(request)
+  
+  // Return cached version immediately if available
+  if (cachedResponse) {
+    // Update cache in background
+    fetch(request).then((networkResponse) => {
+      if (networkResponse.ok) {
+        cache.put(request, networkResponse)
+      }
+    }).catch(() => {
+      // Ignore network errors for background updates
+    })
+    return cachedResponse
+  }
+
+  // If not cached, fetch from network
+  try {
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone())
+    }
+    return networkResponse
+  } catch (error) {
+    return new Response('Asset not available', { status: 404 })
+  }
+}
+
+// Page caching strategy
+async function handlePageRequest(request) {
+  try {
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE)
+      cache.put(request, networkResponse.clone())
+    }
+    return networkResponse
+  } catch (error) {
+    const cachedResponse = await caches.match(request)
+    if (cachedResponse) {
+      return cachedResponse
+    }
+    
+    // Return offline page for navigation requests
+    if (request.mode === 'navigate') {
+      const offlineResponse = await caches.match('/offline.html')
+      return offlineResponse || new Response('Offline', { status: 503 })
+    }
+    
+    return new Response('Page not available', { status: 404 })
+  }
+}
+
+// Background sync for offline actions
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'background-sync') {
+    event.waitUntil(doBackgroundSync())
+  }
+})
+
+async function doBackgroundSync() {
+  // Handle background sync tasks
+  console.log('Background sync triggered')
+}
+
+// Push notification handling
+self.addEventListener('push', (event) => {
+  const options = {
+    body: event.data ? event.data.text() : 'New update available',
+    icon: '/Pixsell Logo.png',
+    badge: '/Pixsell Logo.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    },
+    actions: [
+      {
+        action: 'explore',
+        title: 'View',
+        icon: '/Pixsell Logo.png'
+      },
+      {
+        action: 'close',
+        title: 'Close',
+        icon: '/Pixsell Logo.png'
+      }
+    ]
+  }
+
+  event.waitUntil(
+    self.registration.showNotification('Pixsell Games', options)
+  )
+})
+
+// Notification click handling
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close()
+
+  if (event.action === 'explore') {
+    event.waitUntil(
+      clients.openWindow('/')
+    )
+  }
+})
+
+// Message handling for communication with main thread
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting()
+  }
+  
+  if (event.data && event.data.type === 'CACHE_URLS') {
+    event.waitUntil(
+      caches.open(STATIC_CACHE).then((cache) => {
+        return cache.addAll(event.data.urls)
+      })
+    )
+  }
+}) 

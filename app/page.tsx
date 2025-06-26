@@ -1,9 +1,11 @@
 'use client'
 
-import { Suspense, memo } from 'react'
+import { Suspense, memo, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import Footer from './components/Footer'
 import MarketContent from './components/MarketContent'
+import LoadingSkeleton from './components/LoadingSkeleton'
+import { trackPageView } from './lib/analytics'
 
 // Dynamically import FloatingConsultButton with no SSR
 const FloatingConsultButton = dynamic(
@@ -17,24 +19,31 @@ const FloatingConsultButton = dynamic(
 // Optimized loading fallback with accessibility
 const MarketContentFallback = memo(() => (
   <div 
-    className="min-h-[300px] w-full grid place-items-center" 
+    className="min-h-[600px] w-full grid place-items-center" 
     style={{ 
       contain: 'strict', 
-      containIntrinsicSize: '0 300px',
+      containIntrinsicSize: '0 600px',
       contentVisibility: 'auto'
     }}
     role="status"
     aria-label="Loading market content"
   >
-    <div 
-      className="w-12 h-12 rounded-full border-4 border-purple-500/20 border-t-purple-500 animate-spin"
-      aria-hidden="true"
-    />
+    <div className="space-y-4 w-full max-w-md">
+      <LoadingSkeleton variant="card" />
+      <LoadingSkeleton lines={4} />
+    </div>
   </div>
 ))
 
 // Memoize the home component to prevent unnecessary re-renders
 const Home = () => {
+  // Track page view on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      trackPageView(window.location.pathname)
+    }
+  }, [])
+
   return (
     <main 
       className="min-h-screen bg-black text-white overflow-x-hidden relative will-change-transform"
@@ -43,6 +52,14 @@ const Home = () => {
         containIntrinsicSize: '0 100vh',
       }}
     >
+      {/* Skip to main content link for accessibility */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-purple-600 text-white px-4 py-2 rounded-lg z-50"
+      >
+        Skip to main content
+      </a>
+
       {/* Background gradient - optimized to avoid repaints */}
       <div 
         className="absolute inset-0 bg-gradient-to-b from-black via-black to-[#0A0118] pointer-events-none"
@@ -56,7 +73,7 @@ const Home = () => {
       />
       
       {/* Content - optimized with content-visibility */}
-      <div className="relative z-10">
+      <div id="main-content" className="relative z-10">
         {/* Market Content - Optimized with contain and content-visibility */}
         <section 
           className="relative pt-10 sm:pt-14 px-4 sm:px-6 lg:px-8"

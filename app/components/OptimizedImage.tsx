@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { performanceConfig } from '../lib/config'
 import { cn } from '../utils/cn'
@@ -8,24 +8,26 @@ import { cn } from '../utils/cn'
 interface OptimizedImageProps {
   src: string;
   alt: string;
-  width: number;
-  height: number;
   className?: string;
   priority?: boolean;
-  objectFit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
-  objectPosition?: string;
+  sizes?: string;
+  fill?: boolean;
+  width?: number;
+  height?: number;
 }
 
-const OptimizedImage: React.FC<OptimizedImageProps> = ({
-  src,
-  alt,
-  width,
-  height,
-  className = '',
+export default function OptimizedImage({ 
+  src, 
+  alt, 
+  className = '', 
   priority = false,
-  objectFit = 'cover',
-  objectPosition = 'center',
-}) => {
+  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+  fill = false,
+  width,
+  height
+}: OptimizedImageProps) {
+  const [isLoading, setIsLoading] = useState(true)
+
   // Generate the WebP source path
   const getWebPSrc = (originalSrc: string) => {
     // Handle paths that already have a query string
@@ -42,33 +44,21 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const imageSrc = isExternalUrl ? src : getWebPSrc(src);
 
   return (
-    <picture>
-      {!isExternalUrl && (
-        <source
-          srcSet={getWebPSrc(src)}
-          type="image/webp"
-        />
-      )}
-      <source
-        srcSet={src}
-        type={src.match(/\.jpe?g$/i) ? 'image/jpeg' : 
-               src.match(/\.png$/i) ? 'image/png' : 
-               src.match(/\.gif$/i) ? 'image/gif' : 'image/jpeg'}
-      />
+    <div className={`relative overflow-hidden ${className}`}>
       <Image
         src={imageSrc}
         alt={alt}
-        width={width}
-        height={height}
-        className={className}
+        fill={fill}
+        width={!fill ? width : undefined}
+        height={!fill ? height : undefined}
         priority={priority}
-        style={{
-          objectFit,
-          objectPosition,
-        }}
+        sizes={sizes}
+        className={`
+          duration-700 ease-in-out
+          ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}
+        `}
+        onLoadingComplete={() => setIsLoading(false)}
       />
-    </picture>
+    </div>
   );
-};
-
-export default OptimizedImage; 
+} 

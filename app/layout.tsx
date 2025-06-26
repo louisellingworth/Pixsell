@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import Navigation from './components/Navigation'
 import Script from 'next/script'
 import FontPreload from './components/FontPreload'
+import PerformanceMonitor from './components/PerformanceMonitor'
 
 // Optimize font loading with display swap and preload
 const inter = Inter({
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://pixsell.games'),
   title: 'Pixsell - Game Publishing in China',
   description: 'We make it easy to launch your game in China. From finding the right partners to approvals and marketing setup — we handle the hard stuff, so you can focus on making great games.',
-  keywords: ['game publishing', 'China market entry', 'game localization', 'mobile game publishing', 'Western developers', 'China game market'],
+  keywords: ['game publishing', 'China market entry', 'game localization', 'mobile game publishing', 'Western developers', 'China game market', 'game co-publishing', 'Chinese game market'],
   authors: [{ name: 'Pixsell Games' }],
   creator: 'Pixsell Games',
   publisher: 'Pixsell Games',
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: {
       'en-US': '/en-US',
+      'zh-CN': '/zh-CN',
     },
   },
   robots: {
@@ -74,6 +76,8 @@ export const metadata: Metadata = {
     'application-name': 'Pixsell',
     'msapplication-TileColor': '#000000',
     'msapplication-tap-highlight': 'no',
+    'google-site-verification': 'your-verification-code',
+    'msvalidate.01': 'your-bing-verification-code',
   }
 }
 
@@ -86,6 +90,7 @@ export const viewport: Viewport = {
   userScalable: true,
   viewportFit: 'cover',
   colorScheme: 'dark',
+  interactiveWidget: 'resizes-content',
 }
 
 export default function RootLayout({
@@ -104,6 +109,7 @@ export default function RootLayout({
         
         {/* Add preload for critical resources */}
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/Pixsell Logo.png" as="image" />
         
         {/* Font preloading from our optimization script */}
         <FontPreload />
@@ -159,6 +165,54 @@ export default function RootLayout({
                 "contactType": "customer service",
                 "email": "contact@pixsell.games",
                 "availableLanguage": ["English", "Chinese"]
+              },
+              "serviceType": "Game Publishing",
+              "areaServed": "China",
+              "industry": "Video Games"
+            }
+          `}
+        </Script>
+
+        {/* Structured Data for SEO - Service */}
+        <Script id="schema-service" type="application/ld+json" strategy="beforeInteractive">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "name": "Game Publishing in China",
+              "description": "Comprehensive game publishing services for Western developers entering the Chinese market",
+              "provider": {
+                "@type": "Organization",
+                "name": "Pixsell Games"
+              },
+              "serviceType": "Game Publishing",
+              "areaServed": "China",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Publishing Services",
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Co-Publishing"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Localization"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Marketing"
+                    }
+                  }
+                ]
               }
             }
           `}
@@ -170,6 +224,7 @@ export default function RootLayout({
           aria-hidden="true"
         />
         <Navigation />
+        <PerformanceMonitor />
         <main className="relative z-10 pt-16 md:pt-20">{children}</main>
       </body>
     </html>

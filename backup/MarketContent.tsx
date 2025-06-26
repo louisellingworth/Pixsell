@@ -522,13 +522,7 @@ export default function MarketContent() {
                       className="block bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient"
                       variants={cardVariants}
                     >
-                      Your Gateway to
-                    </motion.span>
-                    <motion.span 
-                      className="block text-white mt-2"
-                      variants={cardVariants}
-                    >
-                      the Chinese Gaming Market
+                      Streamlining Your Entry to China's Gaming Market
                     </motion.span>
                   </h1>
 

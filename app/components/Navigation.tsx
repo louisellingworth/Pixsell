@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import GradientButton from './ui/GradientButton'
+import { useReducedMotion } from '../hooks/useProgressiveEnhancement'
 
 // Navigation items with services submenu
 const navItems = [
@@ -25,20 +26,42 @@ const navItems = [
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
-  // Basic scroll handler
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  // Optimized scroll handler with throttling
+  const handleScroll = useCallback(() => {
+    const scrollY = window.scrollY;
+    setScrolled(scrollY > 20);
+    
+    // Track scroll depth for analytics
+    const scrollDepth = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    if (scrollDepth % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+      // trackScrollDepth(scrollDepth);
+    }
   }, []);
 
-  // Toggle menu
-  function toggleMobileMenu() {
-    setMobileMenuOpen(!mobileMenuOpen);
-  }
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+    
+    const throttledScrollHandler = () => {
+      setIsScrolling(true);
+      handleScroll();
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => setIsScrolling(false), 150);
+    };
+
+    window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', throttledScrollHandler);
+      clearTimeout(timeoutId);
+    };
+  }, [handleScroll]);
+
+  // Toggle menu with keyboard support
+  const toggleMobileMenu = useCallback(() => {
+    setMobileMenuOpen(prev => !prev);
+  }, []);
 
   // Close menu on window resize
   useEffect(() => {
@@ -55,6 +78,9 @@ export default function Navigation() {
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      // Focus management for accessibility
+      const firstFocusableElement = document.querySelector('[data-mobile-menu] button, [data-mobile-menu] a') as HTMLElement;
+      firstFocusableElement?.focus();
     } else {
       document.body.style.overflow = '';
     }
@@ -63,14 +89,34 @@ export default function Navigation() {
     };
   }, [mobileMenuOpen]);
 
+  // Handle escape key to close mobile menu
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    
+    if (mobileMenuOpen) {
+      document.addEventListener('keydown', handleEscape);
+      return () => document.removeEventListener('keydown', handleEscape);
+    }
+  }, [mobileMenuOpen]);
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 backdrop-blur-xl bg-black/80 border-b border-purple-500/10 z-50 transition-all duration-300 ${scrolled ? 'py-1' : 'py-2 sm:py-3'}`}>
+    <nav 
+      className={`fixed top-0 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 backdrop-blur-xl border-b border-purple-500/10 z-50 transition-all duration-300 ${
+        scrolled ? 'py-1' : 'py-2 sm:py-3'
+      } ${isScrolling ? 'bg-black/95' : 'bg-black/80'}`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-lg">
           <img 
             src="/Pixsell Logo.png" 
-            alt="Pixsell" 
+            alt="Pixsell Games - Game Publishing in China" 
             className="h-24 md:h-32 w-auto" 
             style={{ 
               objectFit: 'cover',
@@ -89,12 +135,14 @@ export default function Navigation() {
             <div key={item.name} className="relative group">
               <Link
                 href={item.href}
-                className="text-gray-300 hover:text-white text-sm font-medium hover:bg-white/5 px-3 py-2 rounded-lg transition-colors duration-200 flex items-center"
+                className="text-gray-300 hover:text-white text-sm font-medium hover:bg-white/5 px-3 py-2 rounded-lg transition-colors duration-200 flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500"
+                aria-expanded={item.submenu ? undefined : undefined}
+                aria-haspopup={item.submenu ? 'true' : undefined}
               >
                 {item.name}
                 {item.submenu && (
                   <svg 
-                    className="w-4 h-4 ml-1" 
+                    className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24" 
@@ -113,7 +161,7 @@ export default function Navigation() {
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10"
                       >
                         {subItem.name}
                       </Link>
@@ -133,8 +181,10 @@ export default function Navigation() {
           <button
             type="button"
             onClick={toggleMobileMenu}
-            className="p-2 rounded-md text-white hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+            className="p-2 rounded-md text-white hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500/50 touch-target"
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <span className="sr-only">
               {mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -167,15 +217,27 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[48px] bg-black/95 backdrop-blur-xl border-t border-purple-500/10 z-50 overflow-y-auto transition-all duration-300 animate-fadeIn"
-             style={{height: 'calc(100vh - 48px)', boxShadow: '0 10px 25px -5px rgba(138, 75, 175, 0.2)'}}>
+        <div 
+          id="mobile-menu"
+          data-mobile-menu
+          className="md:hidden fixed inset-x-0 top-[48px] bg-black/95 backdrop-blur-xl border-t border-purple-500/10 z-50 overflow-y-auto transition-all duration-300 animate-fadeIn"
+          style={{
+            height: 'calc(100vh - 48px)', 
+            boxShadow: '0 10px 25px -5px rgba(138, 75, 175, 0.2)'
+          }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation menu"
+        >
           <div className="px-4 py-8 space-y-2">
             {navItems.map((item) => (
               <div key={item.name} className="mb-2">
                 <Link
                   href={item.href}
-                  className="flex items-center justify-between px-4 py-4 text-base font-medium text-gray-200 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 border-b border-purple-500/10"
+                  className="flex items-center justify-between px-4 py-4 text-base font-medium text-gray-200 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 border-b border-purple-500/10 focus:outline-none focus:ring-2 focus:ring-purple-500 touch-target"
                   onClick={() => !item.submenu && setMobileMenuOpen(false)}
+                  aria-expanded={item.submenu ? undefined : undefined}
+                  aria-haspopup={item.submenu ? 'true' : undefined}
                 >
                   {item.name}
                   {item.submenu && (
@@ -197,10 +259,9 @@ export default function Navigation() {
                       <Link
                         key={subItem.name}
                         href={subItem.href}
-                        className="flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200"
+                        className="flex items-center px-4 py-3 text-sm font-medium text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 touch-target"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-purple-500/50 mr-2"></span>
                         {subItem.name}
                       </Link>
                     ))}
@@ -208,13 +269,10 @@ export default function Navigation() {
                 )}
               </div>
             ))}
-            <div className="pt-6 pb-4 px-4">
-              <GradientButton 
-                href="/contact" 
-                variant="wide" 
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full justify-center"
-              >
+            
+            {/* Mobile CTA */}
+            <div className="pt-4 border-t border-purple-500/10">
+              <GradientButton href="/contact" variant="compact" className="w-full justify-center">
                 Get Started
               </GradientButton>
             </div>
@@ -222,5 +280,5 @@ export default function Navigation() {
         </div>
       )}
     </nav>
-  );
+  )
 } 

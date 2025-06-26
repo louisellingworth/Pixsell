@@ -1,17 +1,6 @@
-'use client';
-
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const FontPreload: React.FC = () => {
-  // Handle font loading on the client side
-  useEffect(() => {
-    // Find the print media stylesheet and change it to 'all'
-    const fontStylesheet = document.querySelector('link[data-font-stylesheet="true"]');
-    if (fontStylesheet) {
-      fontStylesheet.setAttribute('media', 'all');
-    }
-  }, []);
-
   return (
     <>
       {/* Critical font preloading for better CLS and LCP */}
@@ -37,8 +26,7 @@ const FontPreload: React.FC = () => {
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-        media="print"
-        data-font-stylesheet="true"
+        media="all"
       />
       {/* Fallback if JavaScript is disabled */}
       <noscript>
