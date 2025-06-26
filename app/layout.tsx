@@ -217,6 +217,23 @@ export default function RootLayout({
             }
           `}
         </Script>
+        
+        {/* Structured Data for SEO - WebSite */}
+        <Script id="schema-website" type="application/ld+json" strategy="beforeInteractive">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Pixsell Games",
+              "url": "https://pixsell.games",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://pixsell.games/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+          `}
+        </Script>
       </head>
       <body className="bg-black text-white antialiased">
         <div 

@@ -742,6 +742,33 @@ export default function CoPublishingPage() {
         </div>
       </div>
 
+      {/* Internal Links Section for SEO */}
+      <div className="max-w-5xl mx-auto mb-20">
+        <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/10">
+          <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Explore More</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold text-white mb-2">Related Services</h4>
+              <ul className="list-disc list-inside text-white/80 space-y-1">
+                <li><Link href="/services/localisation" className="hover:underline text-pink-400">Game Localisation</Link></li>
+                <li><Link href="/services/market-strategy" className="hover:underline text-pink-400">Market Strategy</Link></li>
+                <li><Link href="/services/marketing" className="hover:underline text-pink-400">Game Marketing</Link></li>
+                <li><Link href="/services/publisher-matching" className="hover:underline text-pink-400">Publisher Matching</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-white mb-2">Related Blog Posts</h4>
+              <ul className="list-disc list-inside text-white/80 space-y-1">
+                <li><Link href="/blog/co-publishing-vs-self-publishing-china" className="hover:underline text-pink-400">Co-Publishing vs Self-Publishing in China</Link></li>
+                <li><Link href="/blog/how-to-find-chinese-co-publisher" className="hover:underline text-pink-400">How to Find a Chinese Co-Publisher</Link></li>
+                <li><Link href="/blog/revenue-share-models-chinese-game-publishing" className="hover:underline text-pink-400">Revenue Share Models in Chinese Game Publishing</Link></li>
+                <li><Link href="/blog/5-mistakes-western-developers-make-in-china" className="hover:underline text-pink-400">5 Mistakes Western Developers Make in China</Link></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <Footer />
       <FloatingConsultButton />
     </main>
