@@ -54,6 +54,54 @@ export default function HowToFindChineseCoPublisher() {
 
   return (
     <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'How to Find a Chinese Co-Publisher for Your Game',
+        description: 'Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game\'s success in the market.',
+        image: 'https://pixsell.games/blog/finding-chinese-publisher.jpg',
+        author: {
+          '@type': 'Person',
+          name: 'Pixsell Team',
+          description: 'China Gaming Market Specialists'
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Pixsell Games',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+          }
+        },
+        datePublished: '2024-03-05',
+        dateModified: '2024-03-05',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://pixsell.games/blog/how-to-find-chinese-co-publisher'
+        },
+        wordCount: 1200,
+        timeRequired: 'PT8M',
+        url: 'https://pixsell.games/blog/how-to-find-chinese-co-publisher',
+        articleSection: 'Strategy'
+      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Blog',
+            item: 'https://pixsell.games/blog'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'How to Find a Chinese Co-Publisher for Your Game',
+            item: 'https://pixsell.games/blog/how-to-find-chinese-co-publisher'
+          }
+        ]
+      })}} />
       {/* Fixed Navigation */}
       <div 
         className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
@@ -456,4 +504,25 @@ export default function HowToFindChineseCoPublisher() {
       <Footer />
     </main>
   )
+}
+
+export function Head() {
+  return (
+    <>
+      <title>How to Find a Chinese Co-Publisher for Your Game | Pixsell Games</title>
+      <meta name="description" content="Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game's success in the market." />
+      <link rel="canonical" href="https://pixsell.games/blog/how-to-find-chinese-co-publisher" />
+      {/* Open Graph */}
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content="How to Find a Chinese Co-Publisher for Your Game | Pixsell Games" />
+      <meta property="og:description" content="Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game's success in the market." />
+      <meta property="og:image" content="https://pixsell.games/blog/finding-chinese-publisher.jpg" />
+      <meta property="og:url" content="https://pixsell.games/blog/how-to-find-chinese-co-publisher" />
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="How to Find a Chinese Co-Publisher for Your Game | Pixsell Games" />
+      <meta name="twitter:description" content="Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game's success in the market." />
+      <meta name="twitter:image" content="https://pixsell.games/blog/finding-chinese-publisher.jpg" />
+    </>
+  );
 } 

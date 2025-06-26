@@ -35,7 +35,7 @@ const FounderTestimonialCard = ({
           <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 transition-colors duration-300 border-white/20 group-hover:border-primary-500">
             <OptimizedImage
               src={avatarUrl}
-              alt={name}
+              alt={`Portrait of ${name}, ${role}`}
               width={64}
               height={64}
               className="object-cover w-full h-full"
@@ -48,7 +48,7 @@ const FounderTestimonialCard = ({
           <div className="ml-auto">
             <OptimizedImage
               src={logoUrl}
-              alt={company}
+              alt={`Logo of ${company}`}
               width={120}
               height={40}
               className="opacity-80"

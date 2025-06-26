@@ -5,10 +5,61 @@ import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BlogPost() {
   return (
     <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden">
+      {/* Article Schema for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: "Steam Global vs Steam China: What's the Difference for Developers?",
+        description: 'A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies.',
+        image: 'https://pixsell.games/blog/steam-global-vs-china.jpg',
+        author: {
+          '@type': 'Person',
+          name: 'Pixsell Team',
+          description: 'China Gaming Market Specialists'
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Pixsell Games',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+          }
+        },
+        datePublished: '2024-03-05',
+        dateModified: '2024-03-05',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://pixsell.games/blog/steam-global-vs-steam-china'
+        },
+        wordCount: 1500,
+        timeRequired: 'PT10M',
+        url: 'https://pixsell.games/blog/steam-global-vs-steam-china',
+        articleSection: 'Strategy'
+      })}} />
+      {/* BreadcrumbList Schema for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Blog',
+            item: 'https://pixsell.games/blog'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: "Steam Global vs Steam China: What's the Difference for Developers?",
+            item: 'https://pixsell.games/blog/steam-global-vs-steam-china'
+          }
+        ]
+      })}} />
       {/* Fixed Navigation */}
       <div 
         className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
@@ -54,9 +105,11 @@ export default function BlogPost() {
             <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
               Steam Global vs Steam China: What's the Difference for Developers?
             </h1>
-            <img
+            <Image
               src="/blog/steam-global-vs-china.jpg"
-              alt="Steam Global vs Steam China"
+              alt="Hero image for Steam Global vs Steam China blog post"
+              width={800}
+              height={450}
               className="w-full aspect-video object-cover rounded-xl mb-16 shadow-lg"
             />
           </motion.div>
@@ -337,9 +390,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/how-to-publish-a-game-on-steam-in-china">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/steam-china-publishing.jpg" 
-                    alt="How to Publish a Game on Steam in China"
+                    alt="Related article: How to Publish a Game on Steam in China – A Step-by-Step Guide"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -365,9 +420,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/isbn-license-china-game-release">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/isbn-license-china.jpg" 
-                    alt="ISBN License in China"
+                    alt="Related article: Do I Need an ISBN License to Release My Game in China?"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -393,9 +450,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/what-chinese-players-want">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/chinese-player-preferences.jpg" 
                     alt="What Chinese Players Want"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -419,4 +478,25 @@ export default function BlogPost() {
       <Footer />
     </main>
   )
+}
+
+export function Head() {
+  return (
+    <>
+      <title>Steam Global vs Steam China: What's the Difference for Developers? | Pixsell Games</title>
+      <meta name="description" content="A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies." />
+      <link rel="canonical" href="https://pixsell.games/blog/steam-global-vs-steam-china" />
+      {/* Open Graph */}
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content="Steam Global vs Steam China: What's the Difference for Developers? | Pixsell Games" />
+      <meta property="og:description" content="A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies." />
+      <meta property="og:image" content="https://pixsell.games/blog/steam-global-vs-china.jpg" />
+      <meta property="og:url" content="https://pixsell.games/blog/steam-global-vs-steam-china" />
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Steam Global vs Steam China: What's the Difference for Developers? | Pixsell Games" />
+      <meta name="twitter:description" content="A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies." />
+      <meta name="twitter:image" content="https://pixsell.games/blog/steam-global-vs-china.jpg" />
+    </>
+  );
 } 

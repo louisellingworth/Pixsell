@@ -5,6 +5,7 @@ import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BlogPost() {
   return (
@@ -54,9 +55,11 @@ export default function BlogPost() {
             <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
               How to Publish a Game on Steam in China – A Step-by-Step Guide
             </h1>
-            <img
+            <Image
               src="/blog/steam-china-publishing.jpg"
               alt="How to Publish a Game on Steam in China"
+              width={800}
+              height={450}
               className="w-full aspect-video object-cover rounded-xl mb-16 shadow-lg"
             />
           </motion.div>
@@ -241,9 +244,11 @@ export default function BlogPost() {
               </div>
               
               <div className="my-12 bg-white/5 p-8 border border-white/10 rounded-xl shadow-lg">
-                <img
+                <Image
                   src="/blog/steam-china-storefront.jpg"
                   alt="Steam China storefront"
+                  width={800}
+                  height={450}
                   className="w-full rounded-lg mb-6 shadow-md"
                 />
                 <p className="text-sm text-white/70 italic">
@@ -387,9 +392,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/steam-global-vs-steam-china">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/steam-global-vs-china.jpg" 
                     alt="Steam Global vs Steam China"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -415,9 +422,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/isbn-license-china-game-release">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/isbn-license-china.jpg" 
                     alt="ISBN License in China"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -443,9 +452,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/marketing-your-game-in-china">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/marketing-china-games.jpg" 
                     alt="Marketing Games in China"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>

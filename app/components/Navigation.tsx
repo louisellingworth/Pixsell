@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import GradientButton from './ui/GradientButton'
 import { useReducedMotion } from '../hooks/useProgressiveEnhancement'
+import Image from 'next/image'
 
 // Navigation items with services submenu
 const navItems = [
@@ -114,11 +115,13 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-lg">
-          <img 
-            src="/Pixsell Logo.png" 
-            alt="Pixsell Games - Game Publishing in China" 
-            className="h-24 md:h-32 w-auto" 
-            style={{ 
+          <Image
+            src="/Pixsell Logo.png"
+            alt="Pixsell Games - Game Publishing in China"
+            width={32}
+            height={32}
+            className="h-24 md:h-32 w-auto"
+            style={{
               objectFit: 'cover',
               objectPosition: 'center',
               width: 'auto',

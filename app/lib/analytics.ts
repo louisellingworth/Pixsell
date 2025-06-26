@@ -28,17 +28,6 @@ export function trackEvent(eventName: string, properties?: Record<string, any>) 
     if (window.gtag) {
       window.gtag('event', eventName, properties)
     }
-    
-    // Example: Custom analytics endpoint
-    try {
-      fetch('/api/analytics', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ event: eventName, properties, timestamp: Date.now() })
-      }).catch(console.error)
-    } catch (error) {
-      console.warn('Failed to send analytics:', error)
-    }
   }
 }
 

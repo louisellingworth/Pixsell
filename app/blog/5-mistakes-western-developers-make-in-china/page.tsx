@@ -6,6 +6,7 @@ import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import { calculateReadingTime, formatReadingTime } from '../../utils/readingTime'
+import Image from 'next/image'
 
 export default function MistakesWesternDevelopersMake() {
   // Blog content for reading time calculation
@@ -62,6 +63,56 @@ export default function MistakesWesternDevelopersMake() {
 
   return (
     <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden">
+      {/* Article Schema for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: '5 Mistakes Western Developers Make in China',
+        description: 'The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them.',
+        image: 'https://pixsell.games/blog/mistakes-hero.jpg',
+        author: {
+          '@type': 'Person',
+          name: 'Pixsell Team',
+          description: 'China Gaming Market Specialists'
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Pixsell Games',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+          }
+        },
+        datePublished: '2024-02-07',
+        dateModified: '2024-02-07',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://pixsell.games/blog/5-mistakes-western-developers-make-in-china'
+        },
+        wordCount: 1200,
+        timeRequired: 'PT8M',
+        url: 'https://pixsell.games/blog/5-mistakes-western-developers-make-in-china',
+        articleSection: 'Strategy'
+      })}} />
+      {/* BreadcrumbList Schema for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Blog',
+            item: 'https://pixsell.games/blog'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: '5 Mistakes Western Developers Make in China',
+            item: 'https://pixsell.games/blog/5-mistakes-western-developers-make-in-china'
+          }
+        ]
+      })}} />
       {/* Fixed Navigation */}
       <div 
         className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
@@ -127,9 +178,11 @@ export default function MistakesWesternDevelopersMake() {
             {/* Author section */}
             <div className="flex items-center mb-10">
               <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border border-purple-500/30">
-                <img 
-                  src="/team/author-avatar.jpg" 
-                  alt="Author"
+                <Image
+                  src="/team/author-avatar.jpg"
+                  alt="Portrait of Pixsell Team, China Gaming Market Specialists"
+                  width={48}
+                  height={48}
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     e.currentTarget.src = "https://ui-avatars.com/api/?name=Pixsell+Team&background=8B5CF6&color=fff";
@@ -143,9 +196,11 @@ export default function MistakesWesternDevelopersMake() {
             </div>
             
             <div className="aspect-video overflow-hidden rounded-xl mb-12 backdrop-blur-sm bg-black/40 border border-purple-500/20 p-1">
-              <img
+              <Image
                 src="/blog/mistakes-hero.jpg"
-                alt="5 Mistakes Western Developers Make in China"
+                alt="Hero image for 5 Mistakes Western Developers Make in China blog post"
+                width={800}
+                height={450}
                 className="w-full h-full object-cover rounded-lg"
               />
             </div>
@@ -269,9 +324,11 @@ export default function MistakesWesternDevelopersMake() {
                 
                 <Link href={`/blog/${post.slug}`} className="relative block">
                   <div className="aspect-video overflow-hidden">
-                    <img 
+                    <Image 
                       src={post.imageUrl} 
-                      alt={post.title}
+                      alt={`Related article: ${post.title}`}
+                      width={800}
+                      height={450}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
@@ -341,4 +398,25 @@ export default function MistakesWesternDevelopersMake() {
       `}</style>
     </main>
   )
+}
+
+export function Head() {
+  return (
+    <>
+      <title>5 Mistakes Western Developers Make in China | Pixsell Games</title>
+      <meta name="description" content="The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them." />
+      <link rel="canonical" href="https://pixsell.games/blog/5-mistakes-western-developers-make-in-china" />
+      {/* Open Graph */}
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content="5 Mistakes Western Developers Make in China | Pixsell Games" />
+      <meta property="og:description" content="The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them." />
+      <meta property="og:image" content="https://pixsell.games/blog/mistakes-hero.jpg" />
+      <meta property="og:url" content="https://pixsell.games/blog/5-mistakes-western-developers-make-in-china" />
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="5 Mistakes Western Developers Make in China | Pixsell Games" />
+      <meta name="twitter:description" content="The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them." />
+      <meta name="twitter:image" content="https://pixsell.games/blog/mistakes-hero.jpg" />
+    </>
+  );
 } 

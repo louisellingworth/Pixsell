@@ -5,10 +5,61 @@ import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BlogPost() {
   return (
     <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden">
+      {/* Article Schema for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: 'ISBN Licence in China: The Complete Guide for Game Developers',
+        description: 'A comprehensive guide to ISBN licensing for games in China, including requirements, process, and alternatives for indie developers.',
+        image: 'https://pixsell.games/blog/isbn-license-china.jpg',
+        author: {
+          '@type': 'Person',
+          name: 'Pixsell Team',
+          description: 'China Gaming Market Specialists'
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Pixsell Games',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+          }
+        },
+        datePublished: '2024-03-05',
+        dateModified: '2024-03-05',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://pixsell.games/blog/isbn-license-china-game-release'
+        },
+        wordCount: 1200,
+        timeRequired: 'PT8M',
+        url: 'https://pixsell.games/blog/isbn-license-china-game-release',
+        articleSection: 'Regulation'
+      })}} />
+      {/* BreadcrumbList Schema for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Blog',
+            item: 'https://pixsell.games/blog'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'ISBN Licence in China: The Complete Guide for Game Developers',
+            item: 'https://pixsell.games/blog/isbn-license-china-game-release'
+          }
+        ]
+      })}} />
       {/* Fixed Navigation */}
       <div 
         className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
@@ -54,9 +105,11 @@ export default function BlogPost() {
             <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
               ISBN Licence in China: The Complete Guide for Game Developers
             </h1>
-            <img
+            <Image
               src="/blog/isbn-license-china.jpg"
-              alt="ISBN License in China"
+              alt="Hero image for ISBN Licence in China: The Complete Guide for Game Developers blog post"
+              width={800}
+              height={450}
               className="w-full aspect-video object-cover rounded-xl mb-16 shadow-lg"
             />
           </motion.div>
@@ -610,9 +663,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/steam-global-vs-steam-china">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/steam-global-vs-china.jpg" 
                     alt="Steam Global vs Steam China"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -638,9 +693,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/how-to-publish-a-game-on-steam-in-china">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/steam-china-publishing.jpg" 
                     alt="How to Publish a Game on Steam in China"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -666,9 +723,11 @@ export default function BlogPost() {
             >
               <Link href="/blog/co-publishing-vs-self-publishing-china">
                 <div className="aspect-video overflow-hidden">
-                  <img 
+                  <Image 
                     src="/blog/publishing-models-china.jpg" 
                     alt="Co-Publishing vs Self-Publishing in China"
+                    width={800}
+                    height={450}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
@@ -692,4 +751,25 @@ export default function BlogPost() {
       <Footer />
     </main>
   )
+}
+
+export function Head() {
+  return (
+    <>
+      <title>ISBN Licence in China: The Complete Guide for Game Developers | Pixsell Games</title>
+      <meta name="description" content="A comprehensive guide to ISBN licensing for games in China, including requirements, process, and alternatives for indie developers." />
+      <link rel="canonical" href="https://pixsell.games/blog/isbn-license-china-game-release" />
+      {/* Open Graph */}
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content="ISBN Licence in China: The Complete Guide for Game Developers | Pixsell Games" />
+      <meta property="og:description" content="A comprehensive guide to ISBN licensing for games in China, including requirements, process, and alternatives for indie developers." />
+      <meta property="og:image" content="https://pixsell.games/blog/isbn-license-china.jpg" />
+      <meta property="og:url" content="https://pixsell.games/blog/isbn-license-china-game-release" />
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="ISBN Licence in China: The Complete Guide for Game Developers | Pixsell Games" />
+      <meta name="twitter:description" content="A comprehensive guide to ISBN licensing for games in China, including requirements, process, and alternatives for indie developers." />
+      <meta name="twitter:image" content="https://pixsell.games/blog/isbn-license-china.jpg" />
+    </>
+  );
 } 

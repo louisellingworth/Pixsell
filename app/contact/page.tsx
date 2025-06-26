@@ -4,6 +4,27 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import Navigation from '../components/Navigation'
 
+export function Head() {
+  return (
+    <>
+      <title>Contact Pixsell Games | Game Publishing in China</title>
+      <meta name="description" content="Contact Pixsell Games to discuss your project, get expert advice, or start your journey to publishing success in China." />
+      <link rel="canonical" href="https://pixsell.games/contact" />
+      {/* Open Graph */}
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Contact Pixsell Games | Game Publishing in China" />
+      <meta property="og:description" content="Contact Pixsell Games to discuss your project, get expert advice, or start your journey to publishing success in China." />
+      <meta property="og:image" content="https://pixsell.games/pixsell-meta-image.jpg" />
+      <meta property="og:url" content="https://pixsell.games/contact" />
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Contact Pixsell Games | Game Publishing in China" />
+      <meta name="twitter:description" content="Contact Pixsell Games to discuss your project, get expert advice, or start your journey to publishing success in China." />
+      <meta name="twitter:image" content="https://pixsell.games/pixsell-meta-image.jpg" />
+    </>
+  );
+}
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -43,6 +64,21 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen py-32 relative">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ContactPage',
+        name: 'Contact Pixsell Games',
+        description: 'Contact Pixsell Games to discuss your project, get expert advice, or start your journey to publishing success in China.',
+        url: 'https://pixsell.games/contact',
+        publisher: {
+          '@type': 'Organization',
+          name: 'Pixsell Games',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+          }
+        }
+      })}} />
       {/* Fixed Navigation */}
       <div 
         className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"

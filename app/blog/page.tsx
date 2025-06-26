@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation'
 import Footer from '../components/Footer'
 import { motion } from 'framer-motion'
 import { calculateReadingTime, formatReadingTime } from '../utils/readingTime'
+import Image from 'next/image'
 
 export default function BlogIndex() {
   // Use useEffect to ensure the component is fully mounted before any state changes
@@ -306,9 +307,11 @@ export default function BlogIndex() {
             >
               <div className="flex flex-col lg:flex-row">
                 <div className="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden">
-                  <img 
-                    src={blogPosts[0].imageUrl} 
+                  <Image
+                    src={blogPosts[0].imageUrl}
                     alt={blogPosts[0].title}
+                    width={800}
+                    height={450}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
@@ -385,9 +388,11 @@ export default function BlogIndex() {
                 >
                   <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
                     <div className="aspect-video overflow-hidden relative">
-                      <img 
-                        src={post.imageUrl} 
+                      <Image
+                        src={post.imageUrl}
                         alt={post.title}
+                        width={800}
+                        height={450}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-3 left-3">
