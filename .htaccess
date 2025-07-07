@@ -14,6 +14,9 @@ RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
 RewriteRule ^ - [L]
 
+# Handle extensionless URLs for blog_assets
+RewriteRule ^blog_assets/([^/]+)/?$ /blog_assets/$1.html [L]
+
 # Handle Next.js static HTML files for blog routes
 RewriteRule ^blog/([^/]+)/?$ /blog/$1.html [L]
 

@@ -20,16 +20,16 @@ const ParticlesBackground = () => {
 
   // Reduce number of particles and optimize animation settings
   const smallParticles = useMemo(() => Array.from({ length: 20 }, () => ({
-    width: Math.random() * 3 + 2,
-    height: Math.random() * 3 + 2,
+    width: `${Math.random() * 3 + 2}px`,
+    height: `${Math.random() * 3 + 2}px`,
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
     duration: Math.random() * 3 + 2
   })), []);
 
   const largeParticles = useMemo(() => Array.from({ length: 10 }, () => ({
-    width: Math.random() * 6 + 3,
-    height: Math.random() * 6 + 3,
+    width: `${Math.random() * 6 + 3}px`,
+    height: `${Math.random() * 6 + 3}px`,
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
     duration: Math.random() * 4 + 3

@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2025-06-26T04:29:47.125Z",
+  "resources": {
+    "critical": [
+      "/",
+      "/fonts/inter-var.woff2",
+      "/Pixsell Logo.png"
+    ],
+    "static": [
+      "/manifest.json",
+      "/robots.txt",
+      "/sitemap.xml",
+      "/fonts/inter-var.woff2",
+      "/fonts/optimized-fonts.css"
+    ],
+    "images": [
+      "/blog/.DS_Store",
+      "/blog/chinese-player-preferences.jpg",
+      "/blog/chinese-player-preferences.webp",
+      "/blog/finding-chinese-publisher.jpg",
+      "/blog/finding-chinese-publisher.webp",
+      "/blog/isbn-license-china.jpg",
+      "/blog/isbn-license-china.webp",
+      "/blog/marketing-china-games.jpg",
+      "/blog/marketing-china-games.webp",
+      "/blog/mistakes-hero.jpg",
+      "/blog/mistakes-hero.webp",
+      "/blog/publishing-models-china.jpg",
+      "/blog/publishing-models-china.svg",
+      "/blog/publishing-models-china.webp",
+      "/blog/revenue-share-china.jpg",
+      "/blog/revenue-share-china.webp",
+      "/blog/revenue-share-models-chinese-game-publishing.png",
+      "/blog/revenue-share-models-chinese-game-publishing.webp",
+      "/blog/revenue-share-models-chinese-game-publishing3.png",
+      "/blog/revenue-share-models-chinese-game-publishing3.webp",
+      "/blog/revenue-share-models-chinese-game-publishing4.webp",
+      "/blog/revenue-share-models-chinese-game-publishing5.png",
+      "/blog/revenue-share-models-chinese-game-publishing5.webp",
+      "/blog/steam-china-publishing.jpg",
+      "/blog/steam-china-publishing.webp",
+      "/blog/steam-global-vs-china.jpg",
+      "/blog/steam-global-vs-china.webp"
+    ],
+    "scripts": [],
+    "styles": []
+  }
+}

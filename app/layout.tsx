@@ -6,6 +6,7 @@ import Navigation from './components/Navigation'
 import Script from 'next/script'
 import FontPreload from './components/FontPreload'
 import PerformanceMonitor from './components/PerformanceMonitor'
+import ParticlesBackground from "./components/ui/ParticlesBackground"
 
 // Optimize font loading with display swap and preload
 const inter = Inter({
@@ -240,6 +241,9 @@ export default function RootLayout({
           className="fixed inset-0 z-[-1] bg-gradient-to-br from-black via-[#0C0C0E] to-[#1A1A24] pointer-events-none" 
           aria-hidden="true"
         />
+        <div className="fixed inset-0 z-[-1] pointer-events-none">
+          <ParticlesBackground />
+        </div>
         <Navigation />
         <PerformanceMonitor />
         <main className="relative z-10 pt-16 md:pt-20">{children}</main>
