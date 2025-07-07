@@ -51,7 +51,16 @@ module.exports = {
       changefreq,
       priority,
       lastmod: new Date().toISOString(),
-      alternateRefs: [],
+      alternateRefs: [
+        {
+          href: `https://pixsellgames.com${path}`,
+          hreflang: 'en',
+        },
+        {
+          href: `https://pixsellgames.com${path}`,
+          hreflang: 'x-default',
+        },
+      ],
     };
   },
 }; 

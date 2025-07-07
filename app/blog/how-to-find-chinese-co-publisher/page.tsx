@@ -59,7 +59,7 @@ export default function HowToFindChineseCoPublisher() {
         '@type': 'Article',
         headline: 'How to Find a Chinese Co-Publisher for Your Game',
         description: 'Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game\'s success in the market.',
-        image: 'https://pixsell.games/blog/finding-chinese-publisher.jpg',
+        image: 'https://pixsellgames.com/blog/finding-chinese-publisher.jpg',
         author: {
           '@type': 'Person',
           name: 'Pixsell Team',
@@ -70,18 +70,18 @@ export default function HowToFindChineseCoPublisher() {
           name: 'Pixsell Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsell.games/blog/how-to-find-chinese-co-publisher'
+          '@id': 'https://pixsellgames.com/blog/how-to-find-chinese-co-publisher'
         },
         wordCount: 1200,
         timeRequired: 'PT8M',
-        url: 'https://pixsell.games/blog/how-to-find-chinese-co-publisher',
+        url: 'https://pixsellgames.com/blog/how-to-find-chinese-co-publisher',
         articleSection: 'Strategy'
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -92,13 +92,13 @@ export default function HowToFindChineseCoPublisher() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsell.games/blog'
+            item: 'https://pixsellgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'How to Find a Chinese Co-Publisher for Your Game',
-            item: 'https://pixsell.games/blog/how-to-find-chinese-co-publisher'
+            item: 'https://pixsellgames.com/blog/how-to-find-chinese-co-publisher'
           }
         ]
       })}} />
@@ -504,25 +504,4 @@ export default function HowToFindChineseCoPublisher() {
       <Footer />
     </main>
   )
-}
-
-export function Head() {
-  return (
-    <>
-      <title>How to Find a Chinese Co-Publisher for Your Game | Pixsell Games</title>
-      <meta name="description" content="Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game's success in the market." />
-      <link rel="canonical" href="https://pixsell.games/blog/how-to-find-chinese-co-publisher" />
-      {/* Open Graph */}
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content="How to Find a Chinese Co-Publisher for Your Game | Pixsell Games" />
-      <meta property="og:description" content="Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game's success in the market." />
-      <meta property="og:image" content="https://pixsell.games/blog/finding-chinese-publisher.jpg" />
-      <meta property="og:url" content="https://pixsell.games/blog/how-to-find-chinese-co-publisher" />
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="How to Find a Chinese Co-Publisher for Your Game | Pixsell Games" />
-      <meta name="twitter:description" content="Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game's success in the market." />
-      <meta name="twitter:image" content="https://pixsell.games/blog/finding-chinese-publisher.jpg" />
-    </>
-  );
 } 

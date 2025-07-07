@@ -1,0 +1,26 @@
+{
+  "processed": 68,
+  "skipped": 0,
+  "totalOriginalSize": 3119080,
+  "totalNewSize": 3025163,
+  "savings": 93917,
+  "savingsPercentage": "3.01",
+  "stats": {
+    "js": {
+      "count": 0,
+      "originalSize": 0,
+      "newSize": 0
+    },
+    "css": {
+      "count": 2,
+      "originalSize": 139659,
+      "newSize": 127754
+    },
+    "html": {
+      "count": 26,
+      "originalSize": 1485936,
+      "newSize": 1410128
+    }
+  },
+  "timestamp": "2025-07-07T23:12:25.155Z"
+}

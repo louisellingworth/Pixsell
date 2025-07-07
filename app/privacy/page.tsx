@@ -199,8 +199,8 @@ export default function PrivacyPolicyPage() {
                   If you have any questions about your privacy while playing our games, please reach out to us at:
                 </p>
                 <p className="text-purple-300">
-                  Email: privacy@pixsell.games<br />
-                  Support: support@pixsell.games
+                  Email: privacy@pixsellgames.com<br />
+Support: support@pixsellgames.com
                 </p>
               </section>
             </div>

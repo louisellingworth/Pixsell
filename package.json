@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "optimize-images": "mkdir -p scripts && node scripts/optimize-images.js",
+    "optimize-images:enhanced": "node scripts/enhanced-image-optimizer.js",
     "optimize-fonts": "mkdir -p scripts && node scripts/optimize-fonts.js",
     "generate-cache": "mkdir -p scripts && node scripts/generate-cache-config.js",
     "optimize-third-party": "mkdir -p scripts && node scripts/optimize-third-party.js",
@@ -15,7 +16,12 @@
     "extract-critical-css": "node scripts/extract-critical-css.js",
     "build:optimized": "npm run build && npm run extract-critical-css",
     "compress": "node scripts/compress-assets.js",
-    "postbuild": "next-sitemap --config next-sitemap.config.js"
+    "minify:enhanced": "node scripts/enhanced-code-minifier.js",
+    "optimize:performance": "node scripts/performance-optimizer.js",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "add-hreflang": "node scripts/add-hreflang.js",
+    "build:complete": "npm run build && npm run add-hreflang",
+    "build:full-optimized": "npm run optimize:performance"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
@@ -43,8 +49,10 @@
     "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.4.16",
     "chalk": "^4.1.2",
+    "clean-css": "^5.3.3",
     "critical": "^5.0.4",
     "glob": "^10.4.5",
+    "html-minifier": "^4.0.0",
     "image-minimizer-webpack-plugin": "^3.8.3",
     "next-sitemap": "^4.2.3",
     "postcss": "^8.4.31",

@@ -7,14 +7,14 @@ export const siteConfig = {
   name: "Pixsell Games",
   shortName: "Pixsell",
   description: "Game Publishing in China - Helping Western developers enter the Chinese market",
-  url: "https://pixsell.games",
-  ogImageUrl: "https://pixsell.games/images/og-image.jpg",
+  url: "https://pixsellgames.com",
+  ogImageUrl: "https://pixsellgames.com/images/og-image.jpg",
   links: {
     twitter: "https://twitter.com/pixsellgames",
     linkedin: "https://linkedin.com/company/pixsellgames",
   },
   contact: {
-    email: "contact@pixsell.games",
+    email: "contact@pixsellgames.com",
   },
   metaTags: {
     themeColor: "#000000",

@@ -121,7 +121,7 @@ const nextConfig = {
     ]
   },
   // Optimize output
-  output: 'standalone',
+  output: 'export',
   // Add trailing slash for better SEO
   trailingSlash: false,
   // Optimize for static generation

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import { ChartBarIcon, ShieldCheckIcon, UserGroupIcon, CogIcon, CheckCircleIcon, RocketLaunchIcon, SparklesIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { useCallback, useEffect, useMemo, useState, useRef } from 'react'
 // Import throttle directly without debounce
@@ -474,7 +474,7 @@ export default function MarketContent() {
 
   return (
     <div className="relative">
-      <div className="relative pt-16">
+      <div className="relative pt-16 print:pt-32">
         {/* Static background gradient instead of particle animation for better performance */}
         <div className="fixed inset-0 pointer-events-none">
           {/* Background overlays removed for pure black background */}
@@ -598,7 +598,7 @@ export default function MarketContent() {
                   </motion.div>
                   <motion.div variants={cardVariants} className="w-full sm:w-auto">
                     <Link
-                      href="services/co-publishing"
+                      href="/services/co-publishing"
                       className="flex w-full sm:w-auto justify-center items-center px-6 py-4 sm:py-3 border border-purple-500/20 hover:border-purple-500/40 rounded-xl font-semibold text-base transition-all duration-300 hover:bg-purple-500/10"
                       role="button"
                       aria-label="Learn how it works"

@@ -45,7 +45,7 @@ export default function BlogPost() {
         '@type': 'Article',
         headline: 'Marketing Your Game in China: 5 Strategies for Steam Titles',
         description: 'A guide to marketing your Steam game in China, with five actionable strategies for Western developers.',
-        image: 'https://pixsell.games/blog/marketing-china-games.jpg',
+        image: 'https://pixsellgames.com/blog/marketing-china-games.jpg',
         author: {
           '@type': 'Person',
           name: 'Pixsell Team',
@@ -56,18 +56,18 @@ export default function BlogPost() {
           name: 'Pixsell Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsell.games/blog/marketing-your-game-in-china'
+          '@id': 'https://pixsellgames.com/blog/marketing-your-game-in-china'
         },
         wordCount: 1400,
         timeRequired: 'PT9M',
-        url: 'https://pixsell.games/blog/marketing-your-game-in-china',
+        url: 'https://pixsellgames.com/blog/marketing-your-game-in-china',
         articleSection: 'Marketing'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -79,13 +79,13 @@ export default function BlogPost() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsell.games/blog'
+            item: 'https://pixsellgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Marketing Your Game in China: 5 Strategies for Steam Titles',
-            item: 'https://pixsell.games/blog/marketing-your-game-in-china'
+            item: 'https://pixsellgames.com/blog/marketing-your-game-in-china'
           }
         ]
       })}} />
@@ -628,25 +628,4 @@ export default function BlogPost() {
       <Footer />
     </main>
   )
-}
-
-export function Head() {
-  return (
-    <>
-      <title>Marketing Your Game in China: 5 Strategies for Steam Titles | Pixsell Games</title>
-      <meta name="description" content="A guide to marketing your Steam game in China, with five actionable strategies for Western developers." />
-      <link rel="canonical" href="https://pixsell.games/blog/marketing-your-game-in-china" />
-      {/* Open Graph */}
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content="Marketing Your Game in China: 5 Strategies for Steam Titles | Pixsell Games" />
-      <meta property="og:description" content="A guide to marketing your Steam game in China, with five actionable strategies for Western developers." />
-      <meta property="og:image" content="https://pixsell.games/blog/marketing-china-games.jpg" />
-      <meta property="og:url" content="https://pixsell.games/blog/marketing-your-game-in-china" />
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Marketing Your Game in China: 5 Strategies for Steam Titles | Pixsell Games" />
-      <meta name="twitter:description" content="A guide to marketing your Steam game in China, with five actionable strategies for Western developers." />
-      <meta name="twitter:image" content="https://pixsell.games/blog/marketing-china-games.jpg" />
-    </>
-  );
 } 

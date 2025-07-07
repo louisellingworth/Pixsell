@@ -71,7 +71,7 @@ export default function RevenueShareModelsChineseGamePublishing() {
         '@type': 'Article',
         headline: 'Understanding Revenue-Share Models for Co-Publishing PC Games in China: A Comprehensive Guide',
         description: 'A comprehensive guide to revenue-share models for co-publishing PC games in China, including negotiation tips, pitfalls, and market insights.',
-        image: 'https://pixsell.games/blog/revenue-share-china.jpg',
+        image: 'https://pixsellgames.com/blog/revenue-share-china.jpg',
         author: {
           '@type': 'Person',
           name: 'Pixsell Team',
@@ -82,18 +82,18 @@ export default function RevenueShareModelsChineseGamePublishing() {
           name: 'Pixsell Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsell.games/blog/revenue-share-models-chinese-game-publishing'
+          '@id': 'https://pixsellgames.com/blog/revenue-share-models-chinese-game-publishing'
         },
         wordCount: 2000,
         timeRequired: 'PT12M',
-        url: 'https://pixsell.games/blog/revenue-share-models-chinese-game-publishing',
+        url: 'https://pixsellgames.com/blog/revenue-share-models-chinese-game-publishing',
         articleSection: 'Business'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -105,13 +105,13 @@ export default function RevenueShareModelsChineseGamePublishing() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsell.games/blog'
+            item: 'https://pixsellgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Understanding Revenue-Share Models for Co-Publishing PC Games in China: A Comprehensive Guide',
-            item: 'https://pixsell.games/blog/revenue-share-models-chinese-game-publishing'
+            item: 'https://pixsellgames.com/blog/revenue-share-models-chinese-game-publishing'
           }
         ]
       })}} />
@@ -413,26 +413,5 @@ export default function RevenueShareModelsChineseGamePublishing() {
       {/* Footer */}
       <Footer />
     </main>
-  );
-}
-
-export function Head() {
-  return (
-    <>
-      <title>Understanding Revenue-Share Models for Co-Publishing PC Games in China: A Comprehensive Guide | Pixsell Games</title>
-      <meta name="description" content="A comprehensive guide to revenue-share models for co-publishing PC games in China, including negotiation tips, pitfalls, and market insights." />
-      <link rel="canonical" href="https://pixsell.games/blog/revenue-share-models-chinese-game-publishing" />
-      {/* Open Graph */}
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content="Understanding Revenue-Share Models for Co-Publishing PC Games in China: A Comprehensive Guide | Pixsell Games" />
-      <meta property="og:description" content="A comprehensive guide to revenue-share models for co-publishing PC games in China, including negotiation tips, pitfalls, and market insights." />
-      <meta property="og:image" content="https://pixsell.games/blog/revenue-share-china.jpg" />
-      <meta property="og:url" content="https://pixsell.games/blog/revenue-share-models-chinese-game-publishing" />
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Understanding Revenue-Share Models for Co-Publishing PC Games in China: A Comprehensive Guide | Pixsell Games" />
-      <meta name="twitter:description" content="A comprehensive guide to revenue-share models for co-publishing PC games in China, including negotiation tips, pitfalls, and market insights." />
-      <meta name="twitter:image" content="https://pixsell.games/blog/revenue-share-china.jpg" />
-    </>
   );
 } 

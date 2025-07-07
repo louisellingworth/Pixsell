@@ -6,6 +6,8 @@ import Navigation from './components/Navigation'
 import Script from 'next/script'
 import FontPreload from './components/FontPreload'
 import PerformanceMonitor from './components/PerformanceMonitor'
+import ParticlesBackgroundClient from './components/ui/ParticlesBackgroundClient'
+
 
 // Optimize font loading with display swap and preload
 const inter = Inter({
@@ -19,7 +21,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pixsell.games'),
+  metadataBase: new URL('https://pixsellgames.com'),
   title: 'Pixsell - Game Publishing in China',
   description: 'We make it easy to launch your game in China. From finding the right partners to approvals and marketing setup — we handle the hard stuff, so you can focus on making great games.',
   keywords: ['game publishing', 'China market entry', 'game localization', 'mobile game publishing', 'Western developers', 'China game market', 'game co-publishing', 'Chinese game market'],
@@ -29,8 +31,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
     languages: {
-      'en-US': '/en-US',
-      'zh-CN': '/zh-CN',
+      'en': '/',
+      'x-default': '/',
     },
   },
   robots: {
@@ -47,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://pixsell.games',
+    url: 'https://pixsellgames.com',
     title: 'Pixsell - Game Publishing in China',
     description: 'Pixsell Games is a specialised co-publishing service that helps Western game developers successfully launch their games in the Chinese market.',
     siteName: 'Pixsell Games',
@@ -127,6 +129,10 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         
+        {/* Hreflang tags for internationalization */}
+        <link rel="alternate" hrefLang="en" href="https://pixsellgames.com" />
+        <link rel="alternate" hrefLang="x-default" href="https://pixsellgames.com" />
+        
         {/* Service Worker Registration */}
         <Script id="register-sw" strategy="afterInteractive">
           {`
@@ -152,8 +158,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Pixsell Games",
-              "url": "https://pixsell.games",
-              "logo": "https://pixsell.games/icons/icon-512x512.png",
+              "url": "https://pixsellgames.com",
+              "logo": "https://pixsellgames.com/icons/icon-512x512.png",
               "description": "We make it easy to launch your game in China. From finding the right partners to approvals and marketing setup — we handle the hard stuff, so you can focus on making great games.",
               "sameAs": [
                 "https://twitter.com/pixsellgames",
@@ -163,7 +169,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 "telephone": "",
                 "contactType": "customer service",
-                "email": "contact@pixsell.games",
+                "email": "contact@pixsellgames.com",
                 "availableLanguage": ["English", "Chinese"]
               },
               "serviceType": "Game Publishing",
@@ -225,21 +231,18 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Pixsell Games",
-              "url": "https://pixsell.games",
+              "url": "https://pixsellgames.com",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://pixsell.games/search?q={search_term_string}",
+                "target": "https://pixsellgames.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }
           `}
         </Script>
       </head>
-      <body className="bg-black text-white antialiased">
-        <div 
-          className="fixed inset-0 z-[-1] bg-gradient-to-br from-black via-[#0C0C0E] to-[#1A1A24] pointer-events-none" 
-          aria-hidden="true"
-        />
+      <body className="relative min-h-screen w-full bg-black text-white antialiased">
+        <ParticlesBackgroundClient />
         <Navigation />
         <PerformanceMonitor />
         <main className="relative z-10 pt-16 md:pt-20">{children}</main>

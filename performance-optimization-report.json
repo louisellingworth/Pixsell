@@ -1,0 +1,56 @@
+{
+  "timestamp": "2025-07-07T23:12:29.269Z",
+  "steps": [
+    {
+      "success": true,
+      "duration": "112.36",
+      "step": "Image Optimization"
+    },
+    {
+      "success": true,
+      "duration": "0.22",
+      "step": "Font Optimization"
+    },
+    {
+      "success": true,
+      "duration": "0.17",
+      "step": "Third-party Optimization"
+    },
+    {
+      "success": true,
+      "duration": "10.65",
+      "step": "Build Project"
+    },
+    {
+      "success": true,
+      "duration": "4.42",
+      "step": "Code Minification"
+    },
+    {
+      "success": true,
+      "duration": "3.58",
+      "step": "Asset Compression"
+    },
+    {
+      "success": false,
+      "skipped": true,
+      "step": "Critical CSS Extraction"
+    },
+    {
+      "success": true,
+      "duration": "0.17",
+      "step": "Cache Configuration"
+    }
+  ],
+  "summary": {
+    "total": 8,
+    "successful": 7,
+    "failed": 0,
+    "skipped": 1,
+    "totalDuration": "0112.360.220.1710.654.423.5800.17"
+  },
+  "recommendations": [
+    "Consider running 1 optional optimization steps",
+    "Optimize 12 files that exceed size thresholds"
+  ]
+}

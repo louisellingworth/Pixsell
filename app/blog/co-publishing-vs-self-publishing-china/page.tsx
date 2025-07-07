@@ -16,7 +16,7 @@ export default function CoPublishingVsSelfPublishingChina() {
         '@type': 'Article',
         headline: 'Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global',
         description: 'A comparison of self-publishing and co-publishing models for launching games in China, including pros, cons, and regulatory insights.',
-        image: 'https://pixsell.games/blog/co-publishing-vs-self-publishing-china.jpg',
+        image: 'https://pixsellgames.com/blog/co-publishing-vs-self-publishing-china.jpg',
         author: {
           '@type': 'Person',
           name: 'Pixsell Team',
@@ -27,18 +27,18 @@ export default function CoPublishingVsSelfPublishingChina() {
           name: 'Pixsell Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsell.games/blog/co-publishing-vs-self-publishing-china'
+          '@id': 'https://pixsellgames.com/blog/co-publishing-vs-self-publishing-china'
         },
         wordCount: 1600,
         timeRequired: 'PT10M',
-        url: 'https://pixsell.games/blog/co-publishing-vs-self-publishing-china',
+        url: 'https://pixsellgames.com/blog/co-publishing-vs-self-publishing-china',
         articleSection: 'Strategy'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -50,13 +50,13 @@ export default function CoPublishingVsSelfPublishingChina() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsell.games/blog'
+            item: 'https://pixsellgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global',
-            item: 'https://pixsell.games/blog/co-publishing-vs-self-publishing-china'
+            item: 'https://pixsellgames.com/blog/co-publishing-vs-self-publishing-china'
           }
         ]
       })}} />
@@ -684,26 +684,5 @@ export default function CoPublishingVsSelfPublishingChina() {
       
       <Footer />
     </main>
-  );
-}
-
-export function Head() {
-  return (
-    <>
-      <title>Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global | Pixsell Games</title>
-      <meta name="description" content="A comparison of self-publishing and co-publishing models for launching games in China, including pros, cons, and regulatory insights." />
-      <link rel="canonical" href="https://pixsell.games/blog/co-publishing-vs-self-publishing-china" />
-      {/* Open Graph */}
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content="Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global | Pixsell Games" />
-      <meta property="og:description" content="A comparison of self-publishing and co-publishing models for launching games in China, including pros, cons, and regulatory insights." />
-      <meta property="og:image" content="https://pixsell.games/blog/co-publishing-vs-self-publishing-china.jpg" />
-      <meta property="og:url" content="https://pixsell.games/blog/co-publishing-vs-self-publishing-china" />
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global | Pixsell Games" />
-      <meta name="twitter:description" content="A comparison of self-publishing and co-publishing models for launching games in China, including pros, cons, and regulatory insights." />
-      <meta name="twitter:image" content="https://pixsell.games/blog/co-publishing-vs-self-publishing-china.jpg" />
-    </>
   );
 } 

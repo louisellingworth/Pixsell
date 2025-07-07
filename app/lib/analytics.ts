@@ -1,15 +1,22 @@
 // Performance monitoring and analytics utilities
 
+// Add this at the top of the file for TypeScript support
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 export function trackPerformance() {
   if (typeof window !== 'undefined') {
     // Track Core Web Vitals - make it optional to prevent SSR issues
     try {
-      import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-        getCLS(console.log)
-        getFID(console.log)
-        getFCP(console.log)
-        getLCP(console.log)
-        getTTFB(console.log)
+      import('web-vitals').then(({ onCLS, onFCP, onLCP, onTTFB, onINP }) => {
+        onCLS(console.log)
+        onFCP(console.log)
+        onLCP(console.log)
+        onTTFB(console.log)
+        onINP(console.log)
       }).catch((error) => {
         console.warn('Web Vitals not available:', error)
       })

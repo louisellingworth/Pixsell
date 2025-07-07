@@ -16,7 +16,7 @@ export default function BlogPost() {
         '@type': 'Article',
         headline: "Steam Global vs Steam China: What's the Difference for Developers?",
         description: 'A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies.',
-        image: 'https://pixsell.games/blog/steam-global-vs-china.jpg',
+        image: 'https://pixsellgames.com/blog/steam-global-vs-china.jpg',
         author: {
           '@type': 'Person',
           name: 'Pixsell Team',
@@ -27,18 +27,18 @@ export default function BlogPost() {
           name: 'Pixsell Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsell.games/favicon_io/android-chrome-192x192.png'
+            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsell.games/blog/steam-global-vs-steam-china'
+          '@id': 'https://pixsellgames.com/blog/steam-global-vs-steam-china'
         },
         wordCount: 1500,
         timeRequired: 'PT10M',
-        url: 'https://pixsell.games/blog/steam-global-vs-steam-china',
+        url: 'https://pixsellgames.com/blog/steam-global-vs-steam-china',
         articleSection: 'Strategy'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -50,13 +50,13 @@ export default function BlogPost() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsell.games/blog'
+            item: 'https://pixsellgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: "Steam Global vs Steam China: What's the Difference for Developers?",
-            item: 'https://pixsell.games/blog/steam-global-vs-steam-china'
+            item: 'https://pixsellgames.com/blog/steam-global-vs-steam-china'
           }
         ]
       })}} />
@@ -478,25 +478,4 @@ export default function BlogPost() {
       <Footer />
     </main>
   )
-}
-
-export function Head() {
-  return (
-    <>
-      <title>Steam Global vs Steam China: What's the Difference for Developers? | Pixsell Games</title>
-      <meta name="description" content="A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies." />
-      <link rel="canonical" href="https://pixsell.games/blog/steam-global-vs-steam-china" />
-      {/* Open Graph */}
-      <meta property="og:type" content="article" />
-      <meta property="og:title" content="Steam Global vs Steam China: What's the Difference for Developers? | Pixsell Games" />
-      <meta property="og:description" content="A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies." />
-      <meta property="og:image" content="https://pixsell.games/blog/steam-global-vs-china.jpg" />
-      <meta property="og:url" content="https://pixsell.games/blog/steam-global-vs-steam-china" />
-      {/* Twitter Card */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Steam Global vs Steam China: What's the Difference for Developers? | Pixsell Games" />
-      <meta name="twitter:description" content="A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies." />
-      <meta name="twitter:image" content="https://pixsell.games/blog/steam-global-vs-china.jpg" />
-    </>
-  );
 } 
