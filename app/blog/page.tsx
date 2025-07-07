@@ -144,15 +144,6 @@ export default function BlogIndex() {
       category: 'Business',
     },
     {
-      slug: 'what-chinese-players-want',
-      title: 'What Do Chinese Players Want? Adapting Your Game for the Chinese Market',
-      excerpt: 'Gain insights into Chinese player preferences and learn how to adapt your game to meet their expectations without compromising your vision.',
-      date: 'March 5, 2024',
-      readTime: calculateBlogReadingTime('what-chinese-players-want'),
-      imageUrl: '/blog/chinese-player-preferences.jpg',
-      category: 'Market Research',
-    },
-    {
       slug: '5-mistakes-western-developers-make-in-china',
       title: '5 Mistakes Western Developers Make in China',
       excerpt: 'Avoid these common pitfalls that Western developers encounter when entering the Chinese gaming market.',
