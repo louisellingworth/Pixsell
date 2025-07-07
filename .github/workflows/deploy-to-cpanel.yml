@@ -21,4 +21,6 @@ jobs:
           username: ${{ secrets.CPANEL_FTP_USER }}
           password: ${{ secrets.CPANEL_FTP_PASS }}
           local-dir: ./out
-          server-dir: /public_html/ 
+          server-dir: /public_html/
+
+# Trigger workflow run - no functional change 
