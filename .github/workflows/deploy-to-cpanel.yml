@@ -15,7 +15,7 @@ jobs:
       - name: Build and export static site
         run: yarn build && yarn export
       - name: Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.CPANEL_FTP_SERVER }}
           username: ${{ secrets.CPANEL_FTP_USER }}
