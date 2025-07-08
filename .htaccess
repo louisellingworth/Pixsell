@@ -22,7 +22,7 @@ RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
 RewriteRule ^ - [L]
 
-# Handle services routes - check if HTML file exists first
+# Handle service sub-routes - check if HTML file exists first
 RewriteCond %{DOCUMENT_ROOT}/services/$1.html -f
 RewriteRule ^services/([^/]+)/?$ /services/$1.html [L]
 
@@ -39,8 +39,8 @@ RewriteRule ^blog/?$ /blog.html [L]
 # Handle Next.js static HTML files for direct routes
 RewriteRule ^(about|contact|privacy|terms|survey)/?$ /$1.html [L]
 
-# If the requested resource doesn't exist, use index.html
-RewriteRule ^ /index.html
+# If the requested resource doesn't exist, use 404.html instead of index.html
+RewriteRule ^ /404.html [L]
 
 # Enable Gzip compression
 <IfModule mod_deflate.c>

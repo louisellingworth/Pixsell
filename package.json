@@ -21,7 +21,9 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "add-hreflang": "node scripts/add-hreflang.js",
     "build:complete": "npm run build && npm run add-hreflang",
-    "build:full-optimized": "npm run optimize:performance"
+    "build:full-optimized": "npm run optimize:performance",
+    "fix-assets": "node scripts/fix-missing-assets.js",
+    "build:with-assets": "npm run build && npm run fix-assets"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

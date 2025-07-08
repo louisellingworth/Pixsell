@@ -1,238 +1,253 @@
-// Pixsell Games Service Worker - Enhanced Performance Version
-const CACHE_VERSION = 'v2';
-const CACHE_NAMES = {
-  static: `static-${CACHE_VERSION}`,
-  images: `images-${CACHE_VERSION}`,
-  pages: `pages-${CACHE_VERSION}`,
-  fonts: `fonts-${CACHE_VERSION}`,
-  api: `api-${CACHE_VERSION}`,
-};
+// Service Worker for Pixsell Games
+const CACHE_NAME = 'pixsell-v1'
+const STATIC_CACHE = 'pixsell-static-v1'
+const DYNAMIC_CACHE = 'pixsell-dynamic-v1'
+const API_CACHE = 'pixsell-api-v1'
 
-// Assets to precache immediately
-const PRECACHE_ASSETS = [
+// Files to cache immediately
+const STATIC_FILES = [
   '/',
-  '/index.html',
+  '/offline.html',
   '/manifest.json',
-  '/favicon_io/favicon.ico',
-  '/favicon_io/apple-touch-icon.png',
-  '/favicon_io/android-chrome-192x192.png',
-  '/favicon_io/android-chrome-512x512.png',
-];
+  '/Pixsell Logo.png',
+  '/pixsell-meta-image.jpg',
+  '/fonts/inter-var.woff2',
+  '/favicon.ico'
+]
 
-// Cache duration in milliseconds
-const CACHE_DURATIONS = {
-  static: 30 * 24 * 60 * 60 * 1000, // 30 days
-  images: 14 * 24 * 60 * 60 * 1000, // 14 days
-  pages: 1 * 24 * 60 * 60 * 1000,   // 1 day
-  fonts: 90 * 24 * 60 * 60 * 1000,  // 90 days
-  api: 5 * 60 * 1000,               // 5 minutes
-};
-
-// Helper functions
-const isUrlMatch = (url, patterns) => {
-  return patterns.some(pattern => url.includes(pattern));
-};
-
-const getCacheForUrl = (url) => {
-  const urlObj = new URL(url);
-  const pathname = urlObj.pathname;
-
-  // Determine appropriate cache based on URL pattern
-  if (isUrlMatch(pathname, ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif', '.svg'])) {
-    return CACHE_NAMES.images;
-  } else if (isUrlMatch(pathname, ['.woff', '.woff2', '.ttf', '.otf'])) {
-    return CACHE_NAMES.fonts;
-  } else if (isUrlMatch(pathname, ['.js', '.css'])) {
-    return CACHE_NAMES.static;
-  } else if (isUrlMatch(url, ['/api/'])) {
-    return CACHE_NAMES.api;
-  } else {
-    return CACHE_NAMES.pages;
-  }
-};
-
-// Install event - precache critical assets
-self.addEventListener('install', event => {
+// Install event - cache static files
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    Promise.all([
-      caches.open(CACHE_NAMES.static).then(cache => cache.addAll(PRECACHE_ASSETS)),
-      self.skipWaiting()
-    ])
-  );
-});
+    caches.open(STATIC_CACHE).then((cache) => {
+      return cache.addAll(STATIC_FILES)
+    })
+  )
+  self.skipWaiting()
+})
 
 // Activate event - clean up old caches
-self.addEventListener('activate', event => {
-  const validCacheNames = Object.values(CACHE_NAMES);
-  
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys()
-      .then(cacheNames => {
-        return Promise.all(
-          cacheNames
-            .filter(cacheName => !validCacheNames.includes(cacheName))
-            .map(cacheName => caches.delete(cacheName))
-        );
-      })
-      .then(() => self.clients.claim())
-  );
-});
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== STATIC_CACHE && 
+              cacheName !== DYNAMIC_CACHE && 
+              cacheName !== API_CACHE) {
+            return caches.delete(cacheName)
+          }
+        })
+      )
+    })
+  )
+  self.clients.claim()
+})
 
-// Fetch event with sophisticated caching strategies
-self.addEventListener('fetch', event => {
-  // Skip non-GET requests or those that aren't from our origin
-  if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) {
-    return;
+// Fetch event - handle different caching strategies
+self.addEventListener('fetch', (event) => {
+  const { request } = event
+  const url = new URL(request.url)
+
+  // Skip non-GET requests
+  if (request.method !== 'GET') {
+    return
   }
 
-  const requestUrl = event.request.url;
-  const cacheName = getCacheForUrl(requestUrl);
-  
-  // Choose strategy based on resource type
-  if (cacheName === CACHE_NAMES.static || cacheName === CACHE_NAMES.fonts) {
-    // Cache-first strategy for static assets and fonts
-    event.respondWith(cacheFirst(event.request, cacheName));
-  } else if (cacheName === CACHE_NAMES.images) {
-    // Stale-while-revalidate for images
-    event.respondWith(staleWhileRevalidate(event.request, cacheName));
-  } else if (cacheName === CACHE_NAMES.api) {
-    // Network-first for API calls
-    event.respondWith(networkFirst(event.request, cacheName));
+  // Handle different types of requests
+  if (request.destination === 'image') {
+    // Images: Cache first, then network
+    event.respondWith(handleImageRequest(request))
+  } else if (url.pathname.startsWith('/api/')) {
+    // API requests: Network first, then cache
+    event.respondWith(handleApiRequest(request))
+  } else if (request.destination === 'font') {
+    // Fonts: Cache first, then network
+    event.respondWith(handleFontRequest(request))
+  } else if (request.destination === 'style' || request.destination === 'script') {
+    // CSS/JS: Stale while revalidate
+    event.respondWith(handleStaticAssetRequest(request))
   } else {
-    // Stale-while-revalidate for pages and everything else
-    event.respondWith(staleWhileRevalidate(event.request, cacheName));
+    // HTML pages: Network first, then cache
+    event.respondWith(handlePageRequest(request))
   }
-});
+})
 
-// Cache-first strategy: try cache, fall back to network
-async function cacheFirst(request, cacheName) {
-  const cache = await caches.open(cacheName);
-  const cachedResponse = await cache.match(request);
+// Image caching strategy
+async function handleImageRequest(request) {
+  const cache = await caches.open(STATIC_CACHE)
+  const cachedResponse = await cache.match(request)
   
   if (cachedResponse) {
-    return cachedResponse;
+    return cachedResponse
   }
-  
+
   try {
-    const networkResponse = await fetch(request);
-    if (networkResponse && networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone())
     }
-    return networkResponse;
+    return networkResponse
   } catch (error) {
-    // Return a fallback for navigation requests
-    if (request.destination === 'document') {
-      return cache.match('/');
-    }
-    return new Response('Network error occurred', {
-      status: 408,
-      headers: { 'Content-Type': 'text/plain' }
-    });
+    // Return a placeholder image if available
+    const placeholderResponse = await cache.match('/placeholder-image.png')
+    return placeholderResponse || new Response('Image not available', { status: 404 })
   }
 }
 
-// Network-first strategy: try network, fall back to cache
-async function networkFirst(request, cacheName) {
-  const cache = await caches.open(cacheName);
-  
+// API caching strategy
+async function handleApiRequest(request) {
   try {
-    const networkResponse = await fetch(request);
-    if (networkResponse && networkResponse.ok) {
-      cache.put(request, networkResponse.clone());
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      const cache = await caches.open(API_CACHE)
+      cache.put(request, networkResponse.clone())
     }
-    return networkResponse;
+    return networkResponse
   } catch (error) {
-    const cachedResponse = await cache.match(request);
-    if (cachedResponse) {
-      return cachedResponse;
-    }
-    return new Response('Network error occurred', {
-      status: 408,
-      headers: { 'Content-Type': 'text/plain' }
-    });
+    const cachedResponse = await caches.match(request)
+    return cachedResponse || new Response('API not available', { status: 503 })
   }
 }
 
-// Stale-while-revalidate: return cached version immediately, then update
-async function staleWhileRevalidate(request, cacheName) {
-  const cache = await caches.open(cacheName);
+// Font caching strategy
+async function handleFontRequest(request) {
+  const cache = await caches.open(STATIC_CACHE)
+  const cachedResponse = await cache.match(request)
   
-  // Get from cache
-  const cachedResponse = await cache.match(request);
+  if (cachedResponse) {
+    return cachedResponse
+  }
+
+  try {
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone())
+    }
+    return networkResponse
+  } catch (error) {
+    return new Response('Font not available', { status: 404 })
+  }
+}
+
+// Static asset caching strategy (CSS/JS)
+async function handleStaticAssetRequest(request) {
+  const cache = await caches.open(STATIC_CACHE)
+  const cachedResponse = await cache.match(request)
   
-  // Fetch in the background to update cache
-  const fetchAndCache = fetch(request)
-    .then(networkResponse => {
-      if (networkResponse && networkResponse.ok) {
-        cache.put(request, networkResponse.clone());
+  // Return cached version immediately if available
+  if (cachedResponse) {
+    // Update cache in background
+    fetch(request).then((networkResponse) => {
+      if (networkResponse.ok) {
+        cache.put(request, networkResponse)
       }
-      return networkResponse;
+    }).catch(() => {
+      // Ignore network errors for background updates
     })
-    .catch(error => {
-      console.warn(`Failed to update cache for ${request.url}:`, error);
-      // Just return null to indicate fetch failed - we'll use cached version
-      return null;
-    });
-  
-  // Return the cached response if we have it, otherwise wait for the network response
-  return cachedResponse || fetchAndCache;
-}
-
-// Periodic cache cleanup (once per day)
-self.addEventListener('message', event => {
-  if (event.data && event.data.type === 'CLEAR_CACHE') {
-    cleanupCaches();
+    return cachedResponse
   }
-});
 
-// Clean up expired cache entries
-async function cleanupCaches() {
-  const now = Date.now();
-  
-  for (const [cacheType, cacheName] of Object.entries(CACHE_NAMES)) {
-    const maxAge = CACHE_DURATIONS[cacheType];
-    const cache = await caches.open(cacheName);
-    const requests = await cache.keys();
-    
-    for (const request of requests) {
-      const responseFromCache = await cache.match(request);
-      if (responseFromCache) {
-        const timestamp = responseFromCache.headers.get('sw-timestamp');
-        if (timestamp && (now - Number(timestamp)) > maxAge) {
-          await cache.delete(request);
-        }
-      }
+  // If not cached, fetch from network
+  try {
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      cache.put(request, networkResponse.clone())
     }
+    return networkResponse
+  } catch (error) {
+    return new Response('Asset not available', { status: 404 })
   }
 }
 
-// Run cache cleanup once a day
-setInterval(cleanupCaches, 24 * 60 * 60 * 1000);
-
-// Handle push notifications
-self.addEventListener('push', event => {
-  if (event.data) {
-    const data = event.data.json();
-    const options = {
-      body: data.body || 'Something new from Pixsell Games',
-      icon: '/favicon_io/android-chrome-192x192.png',
-      badge: '/favicon_io/favicon-32x32.png',
-      vibrate: [100, 50, 100],
-      data: {
-        url: data.url || '/'
-      }
-    };
-
-    event.waitUntil(
-      self.registration.showNotification(data.title || 'Pixsell Games', options)
-    );
+// Page caching strategy
+async function handlePageRequest(request) {
+  try {
+    const networkResponse = await fetch(request)
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE)
+      cache.put(request, networkResponse.clone())
+    }
+    return networkResponse
+  } catch (error) {
+    const cachedResponse = await caches.match(request)
+    if (cachedResponse) {
+      return cachedResponse
+    }
+    
+    // Return offline page for navigation requests
+    if (request.mode === 'navigate') {
+      const offlineResponse = await caches.match('/offline.html')
+      return offlineResponse || new Response('Offline', { status: 503 })
+    }
+    
+    return new Response('Page not available', { status: 404 })
   }
-});
+}
 
-// Handle notification clicks
-self.addEventListener('notificationclick', event => {
-  event.notification.close();
+// Background sync for offline actions
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'background-sync') {
+    event.waitUntil(doBackgroundSync())
+  }
+})
+
+async function doBackgroundSync() {
+  // Handle background sync tasks
+  console.log('Background sync triggered')
+}
+
+// Push notification handling
+self.addEventListener('push', (event) => {
+  const options = {
+    body: event.data ? event.data.text() : 'New update available',
+    icon: '/Pixsell Logo.png',
+    badge: '/Pixsell Logo.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    },
+    actions: [
+      {
+        action: 'explore',
+        title: 'View',
+        icon: '/Pixsell Logo.png'
+      },
+      {
+        action: 'close',
+        title: 'Close',
+        icon: '/Pixsell Logo.png'
+      }
+    ]
+  }
+
   event.waitUntil(
-    clients.openWindow(event.notification.data.url || '/')
-  );
-}); 
+    self.registration.showNotification('Pixsell Games', options)
+  )
+})
+
+// Notification click handling
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close()
+
+  if (event.action === 'explore') {
+    event.waitUntil(
+      clients.openWindow('/')
+    )
+  }
+})
+
+// Message handling for communication with main thread
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting()
+  }
+  
+  if (event.data && event.data.type === 'CACHE_URLS') {
+    event.waitUntil(
+      caches.open(STATIC_CACHE).then((cache) => {
+        return cache.addAll(event.data.urls)
+      })
+    )
+  }
+}) 

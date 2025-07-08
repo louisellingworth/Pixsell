@@ -7,6 +7,7 @@ import Script from 'next/script'
 import FontPreload from './components/FontPreload'
 import PerformanceMonitor from './components/PerformanceMonitor'
 import ParticlesBackgroundClient from './components/ui/ParticlesBackgroundClient'
+import CriticalCSS from './components/CriticalCSS'
 
 
 // Optimize font loading with display swap and preload
@@ -23,7 +24,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://pixsellgames.com'),
   title: 'Pixsell - Game Publishing in China',
-  description: 'We make it easy to launch your game in China. From finding the right partners to approvals and marketing setup — we handle the hard stuff, so you can focus on making great games.',
+  description: 'Launch your game in China with trusted co-publishing partners. We handle approvals, marketing, and partnerships so you can focus on making great games.',
   keywords: ['game publishing', 'China market entry', 'game localization', 'mobile game publishing', 'Western developers', 'China game market', 'game co-publishing', 'Chinese game market'],
   authors: [{ name: 'Pixsell Games' }],
   creator: 'Pixsell Games',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://pixsellgames.com',
     title: 'Pixsell - Game Publishing in China',
-    description: 'Pixsell Games is a specialised co-publishing service that helps Western game developers successfully launch their games in the Chinese market.',
+    description: 'Launch your game in China with trusted co-publishing partners. We handle approvals, marketing, and partnerships.',
     siteName: 'Pixsell Games',
     images: [
       {
@@ -65,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Pixsell - Game Publishing in China',
-    description: 'Pixsell Games helps Western developers launch in China with trusted co-publishing partners.',
+    description: 'Launch your game in China with trusted co-publishing partners.',
     images: ['/pixsell-meta-image.jpg'],
     creator: '@pixsell_games',
     site: '@pixsell_games',
@@ -103,6 +104,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn(inter.variable)} style={{ scrollBehavior: 'smooth' }}>
       <head>
+        {/* Favicon */}
+        <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png" />
+        
         {/* Preconnect to domains for faster resource loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -111,7 +120,7 @@ export default function RootLayout({
         
         {/* Add preload for critical resources */}
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/Pixsell Logo.png" as="image" />
+        <link rel="preload" href="/Pixsell Logo-640w.webp" as="image" />
         
         {/* Font preloading from our optimization script */}
         <FontPreload />
@@ -134,7 +143,7 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="x-default" href="https://pixsellgames.com" />
         
         {/* Service Worker Registration */}
-        <Script id="register-sw" strategy="afterInteractive">
+        <Script id="register-sw" strategy="lazyOnload">
           {`
             if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
               window.addEventListener('load', function() {
@@ -150,6 +159,54 @@ export default function RootLayout({
             }
           `}
         </Script>
+
+        {/* Additional Structured Data - WebSite */}
+        <Script id="schema-website" type="application/ld+json" strategy="beforeInteractive">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Pixsell Games",
+              "url": "https://pixsellgames.com",
+              "description": "Launch your game in China with trusted co-publishing partners",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://pixsellgames.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }
+          `}
+        </Script>
+
+        {/* Additional Structured Data - BreadcrumbList */}
+        <Script id="schema-breadcrumb" type="application/ld+json" strategy="beforeInteractive">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://pixsellgames.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Services",
+                  "item": "https://pixsellgames.com/services"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "About",
+                  "item": "https://pixsellgames.com/about"
+                }
+              ]
+            }
+          `}
+        </Script>
         
         {/* Structured Data for SEO - Organization */}
         <Script id="schema-organization" type="application/ld+json" strategy="beforeInteractive">
@@ -159,8 +216,8 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Pixsell Games",
               "url": "https://pixsellgames.com",
-              "logo": "https://pixsellgames.com/icons/icon-512x512.png",
-              "description": "We make it easy to launch your game in China. From finding the right partners to approvals and marketing setup — we handle the hard stuff, so you can focus on making great games.",
+              "logo": "https://pixsellgames.com/favicon/android-chrome-512x512.png",
+              "description": "Launch your game in China with trusted co-publishing partners. We handle approvals, marketing, and partnerships.",
               "sameAs": [
                 "https://twitter.com/pixsellgames",
                 "https://linkedin.com/company/pixsellgames"
@@ -174,7 +231,12 @@ export default function RootLayout({
               },
               "serviceType": "Game Publishing",
               "areaServed": "China",
-              "industry": "Video Games"
+              "industry": "Video Games",
+              "foundingDate": "2024",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "China"
+              }
             }
           `}
         </Script>
@@ -245,6 +307,7 @@ export default function RootLayout({
         <ParticlesBackgroundClient />
         <Navigation />
         <PerformanceMonitor />
+        <CriticalCSS />
         <main className="relative z-10 pt-16 md:pt-20">{children}</main>
       </body>
     </html>

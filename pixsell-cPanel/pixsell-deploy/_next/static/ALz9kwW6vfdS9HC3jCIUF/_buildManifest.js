@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST={__rewrites:{afterFiles:[{has:void 0,source:"/sitemap.xml",destination:"/api/sitemap"}],beforeFiles:[],fallback:[]},"/_error":["static/chunks/pages/_error-e5b4d61ed02fe2b7.js"],sortedPages:["/_app","/_error"]},self.__BUILD_MANIFEST_CB&&self.__BUILD_MANIFEST_CB();

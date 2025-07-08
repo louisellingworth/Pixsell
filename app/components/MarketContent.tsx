@@ -514,13 +514,13 @@ export default function MarketContent() {
                     >
                       Streamlining
                       <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-pink-500/20 to-blue-400/20 blur-xl"
+                        className="absolute inset-0 bg-gradient-to-r from-purple-400/30 via-pink-500/30 to-blue-400/30"
                         animate={{
-                          opacity: [0.3, 0.6, 0.3],
-                          scale: [1, 1.05, 1]
+                          opacity: [0.4, 0.7, 0.4],
+                          scale: [1, 1.02, 1]
                         }}
                         transition={{
-                          duration: 2,
+                          duration: 3,
                           repeat: Infinity,
                           ease: "easeInOut"
                         }}
