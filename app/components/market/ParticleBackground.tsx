@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { throttle } from 'lodash'
+import { throttle } from '@/utils/performance'
 
 export const ParticleBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)

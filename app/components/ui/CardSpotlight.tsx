@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 import { motion } from 'framer-motion'
 
 interface CardSpotlightProps extends React.HTMLAttributes<HTMLDivElement> {

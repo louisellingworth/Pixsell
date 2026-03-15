@@ -716,4 +716,81 @@ img {
 .animate-premium-gradient {
   background-size: 200% 200%;
   animation: premiumGradient 3s ease-in-out infinite;
-} 
+}
+
+/* ── Utilities migrated from MarketContent inline styles ── */
+
+:root {
+  --section-spacing: clamp(2rem, 5vw, 4rem);
+  --content-max-width: 1400px;
+  --header-height: 5rem;
+}
+
+@supports (height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
+.reduce-animation {
+  transition-duration: 200ms !important;
+  animation-duration: 200ms !important;
+}
+
+@media (max-width: 768px) {
+  .reduce-animation {
+    transition-duration: 200ms !important;
+    animation-duration: 200ms !important;
+  }
+}
+
+@media (hover: none) {
+  .hover\:scale-105 {
+    transform: none !important;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.scroll-margin-top {
+  scroll-margin-top: var(--header-height);
+}
+
+.content-visibility-auto {
+  content-visibility: auto;
+}
+
+.backdrop-blur-optimized {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.optimize-legibility {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.optimize-performance {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}

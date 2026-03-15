@@ -5,48 +5,50 @@ let performanceMetrics: any[] = [];
 
 export async function POST(request: NextRequest) {
   try {
-    const metric = await request.json();
-    
-    // Validate the metric data
-    if (!metric.name || typeof metric.value !== 'number') {
-      return NextResponse.json(
-        { error: 'Invalid metric data' },
-        { status: 400 }
-      );
+    const body = await request.json();
+
+    // Accept both a single metric object and a batch (array)
+    const incoming: any[] = Array.isArray(body) ? body : [body];
+
+    const userAgent = request.headers.get('user-agent');
+    const url = request.headers.get('referer') || 'unknown';
+    const ip = request.headers.get('x-forwarded-for') ||
+               request.headers.get('x-real-ip') ||
+               'unknown';
+
+    for (const metric of incoming) {
+      // Validate each metric
+      if (!metric.name || typeof metric.value !== 'number') {
+        return NextResponse.json(
+          { error: 'Invalid metric data' },
+          { status: 400 }
+        );
+      }
+
+      if (!metric.timestamp) {
+        metric.timestamp = Date.now();
+      }
+
+      metric.userAgent = userAgent;
+      metric.url = url;
+      metric.ip = ip;
+
+      performanceMetrics.push(metric);
+
+      if (metric.rating === 'poor') {
+        console.warn('Poor performance metric:', {
+          name: metric.name,
+          value: metric.value,
+          url: metric.url,
+          timestamp: new Date(metric.timestamp).toISOString(),
+        });
+      }
     }
-
-    // Add timestamp if not provided
-    if (!metric.timestamp) {
-      metric.timestamp = Date.now();
-    }
-
-    // Add user agent and other context
-    metric.userAgent = request.headers.get('user-agent');
-    metric.url = request.headers.get('referer') || 'unknown';
-    metric.ip = request.headers.get('x-forwarded-for') || 
-                request.headers.get('x-real-ip') || 
-                'unknown';
-
-    // Store the metric
-    performanceMetrics.push(metric);
 
     // Keep only the last 1000 metrics to prevent memory issues
     if (performanceMetrics.length > 1000) {
       performanceMetrics = performanceMetrics.slice(-1000);
     }
-
-    // Log important metrics
-    if (metric.rating === 'poor') {
-      console.warn('Poor performance metric:', {
-        name: metric.name,
-        value: metric.value,
-        url: metric.url,
-        timestamp: new Date(metric.timestamp).toISOString(),
-      });
-    }
-
-    // In production, you would save to a database here
-    // await saveMetricToDatabase(metric);
 
     return NextResponse.json({ success: true });
   } catch (error) {
