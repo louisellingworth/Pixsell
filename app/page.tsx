@@ -1,26 +1,11 @@
 'use client'
 
-import { Suspense, memo, useEffect, Component, type ReactNode } from 'react'
+import { Suspense, memo, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import Footer from './components/Footer'
 import MarketContent from './components/MarketContent'
 import LoadingSkeleton from './components/LoadingSkeleton'
 import { trackPageView } from './lib/analytics'
-
-class ErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
-  state = { error: null }
-  static getDerivedStateFromError(error: Error) { return { error } }
-  render() {
-    if (this.state.error) {
-      return (
-        <div style={{ color: 'red', background: '#111', padding: 32, fontFamily: 'monospace', fontSize: 14, whiteSpace: 'pre-wrap' }}>
-          <strong>RENDER ERROR:</strong>{'\n'}{(this.state.error as Error).message}{'\n\n'}{(this.state.error as Error).stack}
-        </div>
-      )
-    }
-    return this.props.children
-  }
-}
 
 // Dynamically import FloatingConsultButton with no SSR
 const FloatingConsultButton = dynamic(
@@ -89,11 +74,9 @@ const Home = () => {
         <section
           className="relative pt-10 sm:pt-14 px-4 sm:px-6 lg:px-8"
         >
-          <ErrorBoundary>
-            <Suspense fallback={<MarketContentFallback />}>
-              <MarketContent />
-            </Suspense>
-          </ErrorBoundary>
+          <Suspense fallback={<MarketContentFallback />}>
+            <MarketContent />
+          </Suspense>
         </section>
         
         {/* Footer - Static content optimized with content-visibility */}
