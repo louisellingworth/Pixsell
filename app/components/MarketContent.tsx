@@ -1,6 +1,7 @@
 'use client'
 
 import HeroSection from './market/HeroSection'
+import PlatformSelection from './market/PlatformSelection'
 import CoPublishingWorks from './market/CoPublishingWorks'
 import WhyChooseSection from './market/WhyChooseSection'
 import ServicesSection from './market/ServicesSection'
@@ -16,6 +17,7 @@ export default function MarketContent() {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-purple-900/20 mix-blend-overlay" />
         </div>
         <HeroSection />
+        <PlatformSelection />
         <CoPublishingWorks />
         <WhyChooseSection />
         <ServicesSection />

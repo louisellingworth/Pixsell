@@ -7,8 +7,10 @@ import GradientButton from './ui/GradientButton'
 // Navigation items with services submenu
 const navItems = [
   { name: 'Home', href: '/' },
-  { 
-    name: 'Services', 
+  { name: 'Steam Publishing', href: '/services/co-publishing' },
+  { name: 'Mobile Publishing', href: '/services/mobile-publishing' },
+  {
+    name: 'Services',
     href: '/services',
     submenu: [
       { name: 'Co-Publishing', href: '/services/co-publishing' },
@@ -128,7 +130,7 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-5">
           {navItems.map((item) => (
             <div key={item.name} className="relative group">
               <Link

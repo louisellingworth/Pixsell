@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 const STATS = [
   { value: 320, suffix: 'M+', label: 'PC Gamers in China', color: 'rgba(168,85,247,0.7)' },
-  { value: 15.21, suffix: 'B', prefix: '$', label: 'Market Size (USD)', color: 'rgba(236,72,153,0.7)' },
-  { value: 90, suffix: ' days', label: 'Average Time to Launch', color: 'rgba(99,102,241,0.7)' },
+  { value: 700, suffix: 'M+', label: 'Mobile Gamers in China', color: 'rgba(236,72,153,0.7)' },
+  { value: 90, suffix: ' days', label: 'Avg. Time to Launch', color: 'rgba(99,102,241,0.7)' },
 ]
 
 const TICKER_ITEMS = [
@@ -191,7 +191,7 @@ export default function HeroSection() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs sm:text-sm font-medium tracking-widest uppercase"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-              Game Publishing in China
+              PC & Mobile Publishing in China
             </motion.div>
 
             {/* ── Heading ───────────────────────────────────────────── */}
@@ -234,9 +234,9 @@ export default function HeroSection() {
               ref={subRef}
               className="max-w-xl text-base sm:text-lg text-gray-400 leading-relaxed"
             >
-              Most Western developers miss China&apos;s 320M PC gamers because they
-              can&apos;t find a trustworthy publisher, negotiate deal terms blind, or afford
-              the upfront cost. We fix all three — no guesswork, no risk, no ISBN required.
+              Most Western developers miss China&apos;s 320M PC gamers and 700M+ mobile
+              players because they can&apos;t find a trustworthy publisher, negotiate deal
+              terms blind, or afford the upfront cost. We fix all three — for both PC and mobile.
             </p>
 
             {/* ── CTA Buttons ──────────────────────────────────────── */}
@@ -273,12 +273,12 @@ export default function HeroSection() {
               </Link>
 
               <Link
-                href="/services/co-publishing"
+                href="/services"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-gray-300 border border-white/10 hover:border-purple-500/40 hover:text-white hover:bg-white/5 transition-all duration-300"
                 role="button"
-                aria-label="See how it works"
+                aria-label="See our services"
               >
-                See How It Works
+                See Our Services
               </Link>
             </div>
 
@@ -294,7 +294,6 @@ export default function HeroSection() {
                     style={{ background: stat.color }}
                   />
                   <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white tabular-nums">
-                    {stat.prefix && <span>{stat.prefix}</span>}
                     <span className="stat-number">0</span>
                     <span>{stat.suffix}</span>
                   </div>

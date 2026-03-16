@@ -137,7 +137,7 @@ export default function FinalCTA() {
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs font-medium tracking-widest uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-          Your game is already missing China revenue
+          Your game is missing China revenue — PC and Mobile
         </div>
 
         {/* Heading */}
@@ -166,9 +166,9 @@ export default function FinalCTA() {
           ref={subRef}
           className="max-w-2xl text-lg sm:text-xl text-gray-400 leading-relaxed"
         >
-          We&apos;ll assess your game&apos;s China market potential, identify the right
-          co-publisher candidates, and give you a clear picture of what a deal would
-          look like — all in a single 30-minute call. No pitch, no obligation.
+          We&apos;ll assess your game&apos;s China market potential across PC and mobile,
+          identify the right publishing partners, and give you a clear picture of what
+          a deal would look like — all in a single 30-minute call. No pitch, no obligation.
         </p>
 
         {/* Trust signals */}
