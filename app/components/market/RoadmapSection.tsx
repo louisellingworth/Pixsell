@@ -1,175 +1,261 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { RocketLaunchIcon } from '@heroicons/react/24/outline'
+import { useEffect, useRef } from 'react'
 import { processSteps } from '@/lib/market-data'
-import {
-  timelineVariants,
-  timelineContentVariants,
-  timelineLineVariants,
-  timelineDotVariants,
-} from '@/lib/animation-variants'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const STEP_ACCENTS = [
+  { border: 'border-l-violet-500/70', dot: 'from-violet-500 to-purple-600', glow: 'rgba(124,58,237,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
+  { border: 'border-l-pink-500/70',   dot: 'from-pink-500 to-rose-600',     glow: 'rgba(236,72,153,0.35)', tag: 'text-pink-400 bg-pink-500/10 border-pink-500/30' },
+  { border: 'border-l-blue-500/70',   dot: 'from-blue-500 to-indigo-600',   glow: 'rgba(59,130,246,0.35)', tag: 'text-blue-400 bg-blue-500/10 border-blue-500/30' },
+  { border: 'border-l-emerald-500/70',dot: 'from-emerald-500 to-green-600', glow: 'rgba(16,185,129,0.35)', tag: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30' },
+  { border: 'border-l-amber-500/70',  dot: 'from-amber-500 to-orange-600',  glow: 'rgba(245,158,11,0.35)', tag: 'text-amber-400 bg-amber-500/10 border-amber-500/30' },
+  { border: 'border-l-cyan-500/70',   dot: 'from-cyan-500 to-sky-600',      glow: 'rgba(6,182,212,0.35)',  tag: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/30' },
+]
 
 export default function RoadmapSection() {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const headingRef = useRef<HTMLDivElement>(null)
+  const lineRef = useRef<SVGLineElement>(null)
+  const svgRef = useRef<SVGSVGElement>(null)
+  const stepsContainerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Heading reveal
+      gsap.from(headingRef.current, {
+        y: 32,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: 'top 85%',
+          once: true,
+        },
+      })
+
+      // Step cards stagger from alternating sides
+      const cards = stepsContainerRef.current?.querySelectorAll<HTMLDivElement>('.roadmap-card')
+      if (cards) {
+        cards.forEach((card, i) => {
+          const fromLeft = i % 2 === 0
+          gsap.from(card, {
+            x: fromLeft ? -40 : 40,
+            opacity: 0,
+            duration: 0.65,
+            ease: 'power3.out',
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 82%',
+              once: true,
+            },
+          })
+
+          // Stagger bullet items within the card
+          const bullets = card.querySelectorAll<HTMLLIElement>('ul li')
+          if (bullets.length) {
+            gsap.from(bullets, {
+              x: -12,
+              opacity: 0,
+              duration: 0.35,
+              stagger: 0.06,
+              ease: 'power2.out',
+              delay: 0.3,
+              immediateRender: false,
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 82%',
+                once: true,
+              },
+            })
+          }
+        })
+      }
+
+      // SVG line draw via strokeDashoffset
+      const line = lineRef.current
+      if (line) {
+        const length = line.getTotalLength?.() ?? 1200
+        gsap.set(line, { strokeDasharray: length, strokeDashoffset: length })
+        gsap.to(line, {
+          strokeDashoffset: 0,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: stepsContainerRef.current,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: 1,
+          },
+        })
+      }
+
+      // Dot pops
+      const dots = stepsContainerRef.current?.querySelectorAll<HTMLDivElement>('.timeline-dot')
+      if (dots) {
+        dots.forEach((dot) => {
+          gsap.from(dot, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.4,
+            ease: 'back.out(2)',
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: dot,
+              start: 'top 85%',
+              once: true,
+            },
+          })
+        })
+      }
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className="container mx-auto px-4 py-24 relative">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1 }}
-        className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-3xl"
+    <section ref={sectionRef} className="relative py-28 overflow-hidden">
+      {/* Background ambient glow */}
+      <div
+        className="absolute left-1/2 top-1/4 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none"
+        aria-hidden="true"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.10) 0%, transparent 65%)',
+          filter: 'blur(60px)',
+        }}
       />
 
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="inline-block mb-6"
-          >
-            <div className="relative">
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{
-                  duration: 30,
-                  repeat: Infinity,
-                  ease: 'linear',
-                  type: 'tween',
-                }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl"
-                style={{ willChange: 'transform', backfaceVisibility: 'hidden' }}
-              />
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 flex items-center justify-center transform-gpu">
-                <RocketLaunchIcon className="w-8 h-8 text-purple-400" />
-              </div>
-            </div>
-          </motion.div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+        {/* ── Heading ─────────────────────────────────────────────────── */}
+        <div ref={headingRef} className="text-center mb-20">
+          <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">
+            Timeline
+          </p>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
             Co-Publishing{' '}
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-clip-text text-transparent animate-gradient">
+            <span
+              style={{
+                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundSize: '200% 200%',
+                animation: 'premiumGradient 3s ease-in-out infinite',
+              }}
+            >
               Roadmap
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            We&apos;ve laid out a structured timeline for securing the right co-publisher and executing a successful Steam Global launch in China
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            A structured path from initial assessment to full market launch — typically completed within 12 months.
           </p>
-        </motion.div>
+        </div>
 
+        {/* ── Timeline ────────────────────────────────────────────────── */}
         <div className="relative">
-          {/* Timeline Line Container */}
-          <div className="absolute left-[15%] sm:left-[50%] top-0 bottom-0 w-px">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-100px' }}
-              variants={timelineLineVariants}
-              className="w-full h-full bg-gradient-to-b from-purple-500/50 via-pink-500/50 to-purple-500/50 origin-top"
-            >
-              <motion.div
-                animate={{
-                  y: ['0%', '100%'],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
-                className="absolute w-2 h-2 -left-[3px] rounded-full bg-purple-400/50 blur-sm"
-              />
-            </motion.div>
-          </div>
 
-          {/* Timeline Steps */}
-          <div className="space-y-24">
-            {processSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-100px' }}
-                variants={timelineVariants}
-                custom={index}
-                className="relative"
-              >
-                <div className={`flex flex-col ${index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse'} items-center gap-8`}>
-                  <div className="w-full sm:w-[45%]">
-                    <motion.div
-                      variants={timelineContentVariants}
-                      whileHover={{ scale: 1.02, y: -5 }}
-                      className={`backdrop-blur-sm bg-black/30 border border-purple-500/20 rounded-2xl p-8 hover:border-purple-500/40 transition-all duration-300 relative group ${
-                        index % 2 === 0 ? 'text-left' : 'text-left sm:text-right'
-                      }`}
+          {/* SVG line — absolutely positioned, drawn via GSAP strokeDashoffset */}
+          <svg
+            ref={svgRef}
+            className="absolute left-[27px] sm:left-1/2 top-0 bottom-0 pointer-events-none"
+            style={{ width: 2, height: '100%', transform: 'translateX(-1px)', overflow: 'visible' }}
+            aria-hidden="true"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"   stopColor="rgba(168,85,247,0.8)" />
+                <stop offset="40%"  stopColor="rgba(236,72,153,0.7)" />
+                <stop offset="80%"  stopColor="rgba(168,85,247,0.6)" />
+                <stop offset="100%" stopColor="rgba(59,130,246,0.4)" />
+              </linearGradient>
+            </defs>
+            <line
+              ref={lineRef}
+              x1="1" y1="0"
+              x2="1" y2="10000"
+              stroke="url(#lineGrad)"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+
+          {/* Steps */}
+          <div ref={stepsContainerRef} className="space-y-10">
+            {processSteps.map((step, index) => {
+              const accent = STEP_ACCENTS[index] ?? STEP_ACCENTS[0]
+              const isRight = index % 2 !== 0
+
+              return (
+                <div
+                  key={index}
+                  className={`roadmap-card relative flex items-start gap-6 sm:gap-0 ${
+                    isRight ? 'sm:flex-row-reverse' : 'sm:flex-row'
+                  }`}
+                >
+                  {/* ── Card (desktop: 45% width, offset from center) ── */}
+                  <div className={`flex-1 sm:w-[45%] sm:flex-none ${isRight ? 'sm:mr-[10%]' : 'sm:ml-[10%]'} pl-14 sm:pl-0`}>
+                    <div
+                      className={`relative rounded-2xl border-l-4 ${accent.border} bg-black/60 backdrop-blur-sm p-6 transition-all duration-300 hover:-translate-y-1`}
+                      style={{
+                        background: 'linear-gradient(135deg, rgba(12,4,24,0.92) 0%, rgba(6,2,14,0.96) 100%)',
+                        boxShadow: `0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px ${accent.glow.replace('0.35', '0.08')}`,
+                      }}
+                      onMouseEnter={e => {
+                        (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.08), 0 16px 48px ${accent.glow.replace('0.35', '0.18')}`
+                      }}
+                      onMouseLeave={e => {
+                        (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px ${accent.glow.replace('0.35', '0.08')}`
+                      }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-purple-500/30 rounded-tl-lg group-hover:border-purple-400/60 transition-colors duration-300" />
-                      <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-purple-500/30 rounded-br-lg group-hover:border-purple-400/60 transition-colors duration-300" />
+                      {/* When tag */}
+                      <span className={`inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full border mb-3 ${accent.tag}`}>
+                        {step.when}
+                      </span>
 
-                      <div className="relative">
-                        <div className="text-purple-400 font-semibold mb-4 flex items-center gap-2">
-                          <motion.span
-                            whileHover={{ scale: 1.05 }}
-                            className="bg-purple-500/20 px-4 py-2 rounded-full text-sm border border-purple-500/30 hover:border-purple-500/50 transition-colors duration-300"
-                          >
-                            {step.when}
-                          </motion.span>
-                        </div>
-                        <h3 className="text-2xl font-bold text-white mb-4 bg-gradient-to-r from-white to-gray-100 bg-clip-text">{step.what}</h3>
-                        <div className="text-gray-300 space-y-3">
-                          {step.details.split('\n').map((detail, i) => (
-                            <motion.div
-                              key={i}
-                              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              transition={{ delay: i * 0.1 }}
-                              className="flex items-start gap-3 group/item"
-                            >
-                              <span className="flex-shrink-0 w-2 h-2 rounded-full bg-purple-400/50 group-hover/item:bg-purple-400 transition-colors duration-300 mt-2" />
-                              <p className="leading-relaxed group-hover/item:text-white transition-colors duration-300">{detail.substring(2)}</p>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-                    </motion.div>
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-white mb-3">
+                        {step.what}
+                      </h3>
+
+                      {/* Detail bullets */}
+                      <ul className="space-y-2">
+                        {step.details.split('\n').map((detail, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-sm text-gray-400">
+                            <span
+                              className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5"
+                              style={{ background: accent.glow }}
+                            />
+                            {detail.substring(2)}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  <div className="relative">
-                    <motion.div
-                      variants={timelineDotVariants}
-                      whileHover={{ scale: 1.2, rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                      className="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center relative z-10 transform-gpu"
-                    >
-                      <span className="text-white text-xl font-bold">{index + 1}</span>
-                      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 animate-ping opacity-20" />
-                      <div className="absolute inset-0 rounded-xl bg-purple-500/30 blur-xl" />
-                    </motion.div>
-                    <motion.div
-                      animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.5, 0.8, 0.5],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      }}
-                      className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-xl blur-xl"
-                    />
+                  {/* ── Centre dot — absolute on mobile, part of flow on desktop ── */}
+                  <div
+                    className={`timeline-dot absolute left-0 sm:static flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${accent.dot} flex items-center justify-center z-10 shadow-lg mt-4 sm:mt-0 sm:self-center`}
+                    style={{
+                      boxShadow: `0 0 0 4px rgba(0,0,0,0.8), 0 0 20px ${accent.glow}`,
+                    }}
+                  >
+                    <span className="text-white font-black text-lg leading-none">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                   </div>
 
-                  <div className="hidden sm:block w-[45%]" />
+                  {/* ── Spacer (right side on desktop, left on reversed) ── */}
+                  <div className={`hidden sm:block flex-1 sm:w-[45%] sm:flex-none ${isRight ? 'sm:ml-[10%]' : 'sm:mr-[10%]'}`} />
                 </div>
-              </motion.div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>

@@ -114,7 +114,7 @@ export default function ContactPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to explore opportunities in the Chinese gaming market? We're here to help you navigate your journey to success.
+            Tell us about your game and we&apos;ll come back within 24 hours with an honest assessment of its China market potential — including which co-publisher types are the best fit and what a realistic revenue share looks like.
           </p>
         </motion.div>
 

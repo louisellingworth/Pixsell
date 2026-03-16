@@ -6,35 +6,35 @@ export const uniqueFeatures = [
     description: 'Our team has deep knowledge of the Chinese gaming ecosystem, helping Western developers navigate market challenges with confidence.',
     icon: 'trophy',
     stats: {
-      value: 'Expert',
-      label: 'Market Knowledge',
+      value: '10+',
+      label: 'Yrs China market experience',
     },
   },
   {
     title: 'Tailored Market Strategies',
-    description: 'Every game is unique, and so is our approach. We design customised marketing and engagement plans to maximise impact.',
+    description: 'Every game is unique, and so is our approach. We design a dedicated go-to-market strategy for your specific game, genre, and audience — not a template.',
     icon: 'target',
     stats: {
-      value: '100%',
-      label: 'Custom Plans',
+      value: '1',
+      label: 'Dedicated strategy per game',
     },
   },
   {
     title: 'Seamless Market Entry',
-    description: 'From compliance to marketing and publisher negotiations, we handle everything — so you can focus on making great games.',
+    description: 'We handle publisher vetting, contract negotiation, and compliance coordination — so you never have to navigate Chinese regulatory complexity alone.',
     icon: 'shield',
     stats: {
       value: '0',
-      label: 'Hassle',
+      label: 'Upfront approvals to manage',
     },
   },
   {
     title: 'Data-Driven Growth',
-    description: 'We continously look to optimise and improve campaigns, boost visibility, and drive revenue. Our approach ensures regular performance improvements.',
+    description: 'We verify revenue reports, track campaign performance, and send you regular summaries so you always have a clear picture of how your game is doing in China.',
     icon: 'chart',
     stats: {
-      value: 'Smart',
-      label: 'Analytics',
+      value: 'Monthly',
+      label: 'Revenue & campaign reports',
     },
   },
   {
@@ -47,12 +47,12 @@ export const uniqueFeatures = [
     },
   },
   {
-    title: 'Built for Success',
-    description: "Pixsell Games is founded with a clear mission: to help Western games succeed in China through strategic partnerships and market expertise.",
+    title: 'Built for Speed',
+    description: "From your first call to Steam Global launch, our structured process keeps things moving. Most developers reach their China launch within 90 days of signing.",
     icon: 'star',
     stats: {
-      value: 'Ready',
-      label: 'To Launch',
+      value: '90',
+      label: 'Days to first launch',
     },
   },
 ] as const
@@ -84,7 +84,7 @@ export const comparisonData: ComparisonOption[] = [
       { label: 'Market Entry', value: 'Streamlined', status: 'best', detail: 'Fast, hassle-free entry to the Chinese market with our proven co-publishing model and established partnerships.' },
       { label: 'Revenue Model', value: 'Performance-Based', status: 'best', detail: 'Fair, transparent revenue sharing with no upfront costs. Your success is our success.' },
       { label: 'Local Support', value: 'Full Service', status: 'best', detail: 'Comprehensive local marketing, community management, and technical support tailored to the Chinese market.' },
-      { label: 'Best For', value: 'Growth-Focused Devs', status: 'best', detail: 'Perfect for developers of any size wanting efficient China market entry with maximum control and minimal risk.' },
+      { label: 'Best For', value: 'Indie & AA Studios', status: 'best', detail: 'Western PC developers with a shipped game on Steam who want China revenue without a China team. No legal entity, no upfront spend, no ISBN required.' },
     ],
     highlight: true,
   },
@@ -133,8 +133,8 @@ export const services = [
       'Growth planning',
     ],
     stats: {
-      value: 'Strategic',
-      label: 'Matching',
+      value: 'Vetted',
+      label: 'Publisher network',
     },
   },
   {
@@ -153,15 +153,15 @@ export const services = [
       'Market testing',
     ],
     stats: {
-      value: 'Perfect',
-      label: 'Adaptation',
+      value: 'CN',
+      label: 'Cultural QA included',
     },
   },
   {
     title: 'Growth & Marketing',
     icon: ChartBarIcon,
     href: '/services/marketing',
-    description: 'Create impactful marketing strategies that resonate with Chinese players and drive sustainable growth.',
+    description: 'We oversee your co-publisher\'s marketing across WeChat, Weibo, Bilibili, and Douyin — reviewing campaign plans, approving content direction, and tracking spend against commitments.',
     primaryFeatures: [
       'Market positioning',
       'Audience building',
@@ -173,8 +173,8 @@ export const services = [
       'ROI optimisation',
     ],
     stats: {
-      value: 'Growth',
-      label: 'Driven',
+      value: '4',
+      label: 'Platforms: WeChat Weibo Bilibili Douyin',
     },
   },
   {
@@ -193,8 +193,8 @@ export const services = [
       'Strategic support',
     ],
     stats: {
-      value: 'Success',
-      label: 'Focused',
+      value: 'Active',
+      label: 'Partnership monitoring',
     },
   },
 ] as const
@@ -203,32 +203,32 @@ export const processSteps = [
   {
     when: 'Months 1-2',
     what: 'Strategic Assessment',
-    details: "• Initial consultation and market opportunity analysis.\n• Evaluate game potential and identify optimal partnership models.\n• Develop preliminary market entry strategy.",
+    details: "• Pixsell: Market opportunity analysis for your specific game.\n• Pixsell: Identify ideal co-publisher profile and deal structure.\n• You: Provide game build, genre details, and revenue targets.",
   },
   {
     when: 'Months 3-5',
-    what: 'Partnership Development',
-    details: "• Connect with qualified Chinese co-publishers.\n• Facilitate partnership discussions and strategic alignment.\n• Structure mutually beneficial collaboration frameworks.",
+    what: 'Publisher Shortlisting & Vetting',
+    details: "• Pixsell: Research and screen co-publisher candidates.\n• Pixsell: Conduct introductory calls and assess publisher fit.\n• You: Review shortlist and select preferred candidates.",
   },
   {
     when: 'Months 5-7',
-    what: 'Market Strategy',
-    details: "• Collaborative go-to-market planning with partners.\n• Market positioning and audience strategy development.\n• Localisation and cultural adaptation planning.",
+    what: 'Deal Negotiation & Signing',
+    details: "• Pixsell: Negotiate revenue share, marketing commitments, and recoupment terms.\n• Pixsell: Review contract for developer-unfavourable clauses.\n• You: Approve final deal terms and sign agreement.",
   },
   {
     when: 'Months 8-10',
     what: 'Launch Preparation',
-    details: "• Coordinated marketing campaign development.\n• Community building on key platforms.\n• Performance tracking framework setup.",
+    details: "• Pixsell: Coordinate localisation and cultural QA via partner network.\n• Pixsell: Review co-publisher's marketing campaign plan.\n• You: Provide game assets, approve localised content and marketing direction.",
   },
   {
     when: 'Months 11-12',
-    what: 'Market Entry',
-    details: "• Orchestrated Steam Global launch.\n• Active performance monitoring and optimisation.\n• Rapid response to market feedback.",
+    what: 'Steam Global Launch',
+    details: "• Pixsell: Monitor launch performance and hold co-publisher accountable.\n• Pixsell: Escalate issues and track revenue reporting accuracy.\n• You: Receive weekly performance summaries during launch window.",
   },
   {
     when: 'Months 12+',
-    what: 'Growth & Optimisation',
-    details: "• Ongoing partnership support and optimiation.\n• Data-driven growth strategy implementation.\n• Long-term success planning and execution.",
+    what: 'Growth & Oversight',
+    details: "• Pixsell: Ongoing revenue verification and partner performance reviews.\n• Pixsell: Identify growth opportunities (DLC, events, platform expansion).\n• You: Receive monthly reports, approve major strategic decisions.",
   },
 ] as const
 
