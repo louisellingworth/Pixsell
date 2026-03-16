@@ -42,9 +42,9 @@ describe('Navigation', () => {
     render(<Navigation />)
   })
 
-  it('renders the Pixsell Games logo link pointing to /', () => {
+  it('renders the EightSix Games logo link pointing to /', () => {
     render(<Navigation />)
-    const logoLink = screen.getByRole('link', { name: /pixsell games/i })
+    const logoLink = screen.getByRole('link', { name: /eightsix games/i })
     expect(logoLink).toHaveAttribute('href', '/')
   })
 

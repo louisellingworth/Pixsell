@@ -61,7 +61,7 @@ const uniqueFeatures = [
   },
   {
     title: 'Built for Success',
-    description: "Pixsell Games is founded with a clear mission: to help Western games succeed in China through strategic partnerships and market expertise.",
+    description: "EightSix Games is founded with a clear mission: to help Western games succeed in China through strategic partnerships and market expertise.",
     icon: 'star',
     stats: {
       value: 'Ready',
@@ -127,7 +127,7 @@ export const UniqueFeatures = ({ registerSectionRef }: UniqueFeaturesProps) => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="section-title"
         >
-          Why Pixsell Games for China?
+          Why EightSix Games for China?
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}

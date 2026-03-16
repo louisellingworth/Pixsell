@@ -21,7 +21,7 @@ interface ComparisonOption {
 
 const comparisonData: ComparisonOption[] = [
   {
-    name: 'Pixsell Games',
+    name: 'EightSix Games',
     subtitle: '(Developer-First Partnership)',
     icon: '🚀',
     features: [
@@ -114,7 +114,7 @@ export default function Comparison() {
           Choose the Right Path to China
         </p>
         <p className="mt-6 text-lg leading-8 text-gray-600">
-          See how different approaches to entering the Chinese market compare, and why Pixsell Games offers the best balance of control, support, and success potential.
+          See how different approaches to entering the Chinese market compare, and why EightSix Games offers the best balance of control, support, and success potential.
         </p>
       </div>
       <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3">

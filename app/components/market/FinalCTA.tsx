@@ -195,7 +195,7 @@ export default function FinalCTA() {
             style={{
               background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%)',
             }}
-            aria-label="Get started with Pixsell"
+            aria-label="Get started with EightSix"
           >
             {/* Shine sweep */}
             <span

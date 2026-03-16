@@ -132,7 +132,7 @@ export default function WhyChooseSection() {
         {/* ── Heading ────────────────────────────────────────────────── */}
         <div ref={headingRef} className="text-center mb-16">
           <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">
-            Why Pixsell
+            Why EightSix
           </p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
             Why Choose{' '}
@@ -146,7 +146,7 @@ export default function WhyChooseSection() {
                 animation: 'premiumGradient 3s ease-in-out infinite',
               }}
             >
-              Pixsell Games
+              EightSix Games
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">

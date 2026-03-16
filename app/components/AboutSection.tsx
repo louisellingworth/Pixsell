@@ -71,7 +71,7 @@ export default function AboutSection() {
           className="text-center mb-24"
         >
           <div className="inline-block mb-4 px-6 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
-            <span className="text-sm text-white/80">About Pixsell Games</span>
+            <span className="text-sm text-white/80">About EightSix Games</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
             Steam-First China Publishing

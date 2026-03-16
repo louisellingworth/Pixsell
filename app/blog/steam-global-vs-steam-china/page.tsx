@@ -16,29 +16,29 @@ export default function BlogPost() {
         '@type': 'Article',
         headline: "Steam Global vs Steam China: What's the Difference for Developers?",
         description: 'A detailed comparison of Steam Global and Steam China, including platform differences, approval processes, and developer strategies.',
-        image: 'https://pixsellgames.com/blog/steam-global-vs-china.jpg',
+        image: 'https://eightsixgames.com/blog/steam-global-vs-china.jpg',
         author: {
           '@type': 'Person',
-          name: 'Pixsell Team',
+          name: 'EightSix Team',
           description: 'China Gaming Market Specialists'
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsellgames.com/blog/steam-global-vs-steam-china'
+          '@id': 'https://eightsixgames.com/blog/steam-global-vs-steam-china'
         },
         wordCount: 1500,
         timeRequired: 'PT10M',
-        url: 'https://pixsellgames.com/blog/steam-global-vs-steam-china',
+        url: 'https://eightsixgames.com/blog/steam-global-vs-steam-china',
         articleSection: 'Strategy'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -50,13 +50,13 @@ export default function BlogPost() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsellgames.com/blog'
+            item: 'https://eightsixgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: "Steam Global vs Steam China: What's the Difference for Developers?",
-            item: 'https://pixsellgames.com/blog/steam-global-vs-steam-china'
+            item: 'https://eightsixgames.com/blog/steam-global-vs-steam-china'
           }
         ]
       })}} />
@@ -316,9 +316,9 @@ export default function BlogPost() {
                 However, if your game gains traction in China and you want long-term security and official recognition, you may consider applying for an ISBN and transitioning to Steam China.
               </p>
 
-              <h2 className="text-3xl font-bold mt-12 mb-6">7. How Pixsell Can Help You Publish in China</h2>
+              <h2 className="text-3xl font-bold mt-12 mb-6">7. How EightSix Can Help You Publish in China</h2>
               <p className="leading-relaxed mb-8">
-                Navigating the Chinese market can be complex, but Pixsell simplifies the process. Here's how we help developers:
+                Navigating the Chinese market can be complex, but EightSix simplifies the process. Here's how we help developers:
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
@@ -342,7 +342,7 @@ export default function BlogPost() {
               </div>
               
               <p className="leading-relaxed mb-10">
-                If you're unsure which path to take, Pixsell can assess your game and recommend the best approach.
+                If you're unsure which path to take, EightSix can assess your game and recommend the best approach.
               </p>
 
               <h2 className="text-3xl font-bold mt-12 mb-6">Conclusion: Steam Global or Steam China?</h2>
@@ -356,14 +356,14 @@ export default function BlogPost() {
                   </li>
                 </ul>
                 <p className="mt-6 text-lg leading-relaxed">
-                  Whatever your strategy, Pixsell can help you maximise your success in China. Contact us today to discuss how we can guide your publishing journey!
+                  Whatever your strategy, EightSix can help you maximise your success in China. Contact us today to discuss how we can guide your publishing journey!
                 </p>
               </div>
 
               <div className="bg-gradient-to-r from-purple-900/30 to-black/30 rounded-xl p-8 my-12 border border-purple-500/30 shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-white">Need help navigating Steam in China?</h3>
                 <p className="mb-6 text-lg leading-relaxed">
-                  Pixsell Games offers specialized consulting for developers considering Steam Global or Steam China. Our team can help you make strategic decisions based on your game type and business goals.
+                  EightSix Games offers specialized consulting for developers considering Steam Global or Steam China. Our team can help you make strategic decisions based on your game type and business goals.
                 </p>
                 <Link href="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all">
                   Get in touch

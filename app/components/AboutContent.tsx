@@ -160,7 +160,7 @@ export default function AboutContent() {
       "Limited post-launch support and engagement",
       "Complex publishing process with long timelines"
     ],
-    pixsell: [
+    eightsix: [
       "Full developer ownership and creative control",
       "Transparent revenue-sharing with no hidden costs",
       "Comprehensive long-term growth and support",
@@ -229,7 +229,7 @@ export default function AboutContent() {
                 />
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
                   <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent inline-block">
-                    About Pixsell Games
+                    About EightSix Games
                   </span>
                 </h1>
               </div>
@@ -249,7 +249,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed text-center"
               >
-                Pixsell Games helps Western PC developers enter the Chinese market with{' '}
+                EightSix Games helps Western PC developers enter the Chinese market with{' '}
                 <motion.span
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -358,14 +358,14 @@ export default function AboutContent() {
                     variants={textRevealVariants} 
                     className="text-xl sm:text-2xl leading-relaxed text-white/90 font-medium"
                   >
-                    Pixsell Games was built on a simple principle: developers deserve a fair, transparent path to global success. We eliminate guesswork, protect your creative vision, and handle the complexities of the Chinese market so you can focus on making great games.
+                    EightSix Games was built on a simple principle: developers deserve a fair, transparent path to global success. We eliminate guesswork, protect your creative vision, and handle the complexities of the Chinese market so you can focus on making great games.
                   </motion.p>
                   
                   <motion.p 
                     variants={textRevealVariants} 
                     className="text-lg sm:text-xl leading-relaxed text-white/60"
                   >
-                    At Pixsell Games, we act as a seamless extension of your team, handling everything from publisher matchmaking to marketing, compliance, and revenue optimization. We integrate into your workflow, making the process as effortless as possible.
+                    At EightSix Games, we act as a seamless extension of your team, handling everything from publisher matchmaking to marketing, compliance, and revenue optimization. We integrate into your workflow, making the process as effortless as possible.
                   </motion.p>
                 </div>
               </div>
@@ -512,7 +512,7 @@ export default function AboutContent() {
                 </span>
               </motion.div>
               <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-                The Pixsell Advantage
+                The EightSix Advantage
               </h2>
               <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
                 Compare our approach with traditional publishing models and see why developers choose us for their China market entry.
@@ -552,10 +552,10 @@ export default function AboutContent() {
                   <div className="space-y-6">
                     <div className="flex items-center gap-3 mb-8">
                       <CheckCircleIcon className="w-8 h-8 text-emerald-400" />
-                      <h3 className="text-2xl font-bold text-white">Pixsell Games Advantage</h3>
+                      <h3 className="text-2xl font-bold text-white">EightSix Games Advantage</h3>
                     </div>
                     <ul className="space-y-4">
-                      {comparison.pixsell.map((point, index) => (
+                      {comparison.eightsix.map((point, index) => (
                         <motion.li 
                           key={index} 
                           className="flex items-start gap-4"
@@ -637,7 +637,7 @@ export default function AboutContent() {
                   
                   <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
                   <p className="text-white/70 text-xl mb-12 max-w-2xl mx-auto">
-                    If you're ready to bring your game to China without the stress, Pixsell Games is here to manage everything for you. Let's discuss your project and create a tailored strategy for success.
+                    If you're ready to bring your game to China without the stress, EightSix Games is here to manage everything for you. Let's discuss your project and create a tailored strategy for success.
                   </p>
                   
                   <motion.div

@@ -6,7 +6,7 @@ import { ComparisonOption, SectionProps } from './types'
 
 const comparisonData: ComparisonOption[] = [
   {
-    name: 'Pixsell Games',
+    name: 'EightSix Games',
     subtitle: '(Developer-First Partnership)',
     icon: '🚀',
     features: [
@@ -153,7 +153,7 @@ export const ComparisonTable = ({ registerSectionRef }: SectionProps) => {
             Simplified <span className="heading-gradient">Comparison</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how Pixsell Games compares to traditional publishing options for Western developers entering China
+            See how EightSix Games compares to traditional publishing options for Western developers entering China
           </p>
         </motion.div>
         

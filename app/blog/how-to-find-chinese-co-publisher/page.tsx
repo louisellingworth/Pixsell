@@ -39,7 +39,7 @@ export default function HowToFindChineseCoPublisher() {
       publish there.
       
       This detailed guide will walk you through the steps to secure the right Chinese co-publishing partner, from research and pitching 
-      to networking and contract considerations. Throughout, we'll highlight how Pixsell Games can support you as an authoritative 
+      to networking and contract considerations. Throughout, we'll highlight how EightSix Games can support you as an authoritative 
       facilitator in the process – not a traditional publisher, but a matchmaker connecting you to the perfect partner in China.
       
       [Content continues with the rest of the blog post...]
@@ -59,29 +59,29 @@ export default function HowToFindChineseCoPublisher() {
         '@type': 'Article',
         headline: 'How to Find a Chinese Co-Publisher for Your Game',
         description: 'Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game\'s success in the market.',
-        image: 'https://pixsellgames.com/blog/finding-chinese-publisher.jpg',
+        image: 'https://eightsixgames.com/blog/finding-chinese-publisher.jpg',
         author: {
           '@type': 'Person',
-          name: 'Pixsell Team',
+          name: 'EightSix Team',
           description: 'China Gaming Market Specialists'
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsellgames.com/blog/how-to-find-chinese-co-publisher'
+          '@id': 'https://eightsixgames.com/blog/how-to-find-chinese-co-publisher'
         },
         wordCount: 1200,
         timeRequired: 'PT8M',
-        url: 'https://pixsellgames.com/blog/how-to-find-chinese-co-publisher',
+        url: 'https://eightsixgames.com/blog/how-to-find-chinese-co-publisher',
         articleSection: 'Strategy'
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -92,13 +92,13 @@ export default function HowToFindChineseCoPublisher() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsellgames.com/blog'
+            item: 'https://eightsixgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'How to Find a Chinese Co-Publisher for Your Game',
-            item: 'https://pixsellgames.com/blog/how-to-find-chinese-co-publisher'
+            item: 'https://eightsixgames.com/blog/how-to-find-chinese-co-publisher'
           }
         ]
       })}} />
@@ -174,7 +174,7 @@ export default function HowToFindChineseCoPublisher() {
               animate="visible"
             >
               <motion.p variants={fadeIn}>
-                This detailed guide will walk you through the steps to secure the right Chinese co-publishing partner, from research and pitching to networking and contract considerations. Throughout, we'll highlight how Pixsell Games can support you as an authoritative facilitator in the process – not a traditional publisher, but a matchmaker connecting you to the perfect partner in China.
+                This detailed guide will walk you through the steps to secure the right Chinese co-publishing partner, from research and pitching to networking and contract considerations. Throughout, we'll highlight how EightSix Games can support you as an authoritative facilitator in the process – not a traditional publisher, but a matchmaker connecting you to the perfect partner in China.
               </motion.p>
               
               <div className="my-10 border-l-4 border-purple-500 pl-6 py-2">
@@ -377,10 +377,10 @@ export default function HowToFindChineseCoPublisher() {
 
               <LazyLoad>
                 <motion.div variants={fadeIn}>
-                  <h2 className="mt-12 mb-6 text-3xl font-bold bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Pixsell Games: Simplifying Game Publisher Matchmaking</h2>
+                  <h2 className="mt-12 mb-6 text-3xl font-bold bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">EightSix Games: Simplifying Game Publisher Matchmaking</h2>
                   
                   <p>
-                    If all of the above sounds like a lot to manage – from researching trustworthy partners, to networking across language barriers, to vetting contracts – that's because it is a lot. This is where Pixsell Games comes in as a facilitator and guide to simplify the entire process of finding a Chinese co-publisher. Unlike a traditional publisher, Pixsell Games acts as your partner in connecting you with the right publisher, rather than publishing the game ourselves. Here's how Pixsell adds value to your journey:
+                    If all of the above sounds like a lot to manage – from researching trustworthy partners, to networking across language barriers, to vetting contracts – that's because it is a lot. This is where EightSix Games comes in as a facilitator and guide to simplify the entire process of finding a Chinese co-publisher. Unlike a traditional publisher, EightSix Games acts as your partner in connecting you with the right publisher, rather than publishing the game ourselves. Here's how EightSix adds value to your journey:
                   </p>
                 </motion.div>
               </LazyLoad>
@@ -391,34 +391,34 @@ export default function HowToFindChineseCoPublisher() {
                     <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/20 p-6 rounded-xl border border-purple-500/30 transition-transform duration-300 hover:scale-[1.02]">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Publisher Matchmaking</h3>
                       <p>
-                        Pixsell Games specialises in matching developers with vetted Chinese co-publishers, streamlining the hunt for the ideal partner. We maintain relationships with a network of reliable, pre-vetted publishers in China. This means we already know who has a good track record in various genres, who has fair contract practices, and who might be the best fit for your specific game.
+                        EightSix Games specialises in matching developers with vetted Chinese co-publishers, streamlining the hunt for the ideal partner. We maintain relationships with a network of reliable, pre-vetted publishers in China. This means we already know who has a good track record in various genres, who has fair contract practices, and who might be the best fit for your specific game.
                       </p>
                     </div>
                     
                     <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/20 p-6 rounded-xl border border-purple-500/30 transition-transform duration-300 hover:scale-[1.02]">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Industry Expertise & Guidance</h3>
                       <p>
-                        Our team has deep knowledge of China's gaming landscape. We stay up-to-date on market trends, player preferences, and regulatory changes. When you partner with Pixsell, you get more than just an introduction service – we guide you through the entire co-publishing process.
+                        Our team has deep knowledge of China's gaming landscape. We stay up-to-date on market trends, player preferences, and regulatory changes. When you partner with EightSix, you get more than just an introduction service – we guide you through the entire co-publishing process.
                       </p>
                     </div>
                     
                     <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/20 p-6 rounded-xl border border-purple-500/30 transition-transform duration-300 hover:scale-[1.02]">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Marketing and Launch Support</h3>
                       <p>
-                        A big part of successful publishing is marketing. Pixsell Games stays involved during your game's launch to coordinate with the co-publisher on marketing campaigns. We help tailor the marketing strategy to Chinese platforms (like Bilibili, Weibo, Douyin) and gamer communities, often working hand-in-hand with the publisher's marketing team.
+                        A big part of successful publishing is marketing. EightSix Games stays involved during your game's launch to coordinate with the co-publisher on marketing campaigns. We help tailor the marketing strategy to Chinese platforms (like Bilibili, Weibo, Douyin) and gamer communities, often working hand-in-hand with the publisher's marketing team.
                       </p>
                     </div>
                     
                     <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/20 p-6 rounded-xl border border-purple-500/30 transition-transform duration-300 hover:scale-[1.02]">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Negotiation and Fair Deals</h3>
                       <p>
-                        Because we've seen many publishing deals, Pixsell can help you evaluate and negotiate contract terms with your Chinese co-publisher. Our goal is to help you secure a fair deal – we aim for terms where both you and the publisher benefit, avoiding the lopsided arrangements we warned about earlier.
+                        Because we've seen many publishing deals, EightSix can help you evaluate and negotiate contract terms with your Chinese co-publisher. Our goal is to help you secure a fair deal – we aim for terms where both you and the publisher benefit, avoiding the lopsided arrangements we warned about earlier.
                       </p>
                     </div>
                   </div>
 
                   <p>
-                    In short, Pixsell Games is there to simplify and de-risk the process of finding a Chinese co-publisher. Instead of going it alone, you have an experienced guide at each step – from the moment you start looking for candidates, to the day your game launches in China (and beyond). We're not here to take ownership of your game; we're here to ensure you find the right publisher and get the best possible arrangement, so you can unlock China's massive market potential without losing focus on what you do best: making a great game.
+                    In short, EightSix Games is there to simplify and de-risk the process of finding a Chinese co-publisher. Instead of going it alone, you have an experienced guide at each step – from the moment you start looking for candidates, to the day your game launches in China (and beyond). We're not here to take ownership of your game; we're here to ensure you find the right publisher and get the best possible arrangement, so you can unlock China's massive market potential without losing focus on what you do best: making a great game.
                   </p>
                 </motion.div>
               </LazyLoad>
@@ -439,7 +439,7 @@ export default function HowToFindChineseCoPublisher() {
                       <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Ready to Launch Your Game in China?</h2>
                       
                       <p className="text-xl mb-8 max-w-3xl">
-                        Let Pixsell Games connect you with the perfect Chinese co-publisher. Our expert team will guide you through the entire process, from publisher matching to contract negotiation and launch support.
+                        Let EightSix Games connect you with the perfect Chinese co-publisher. Our expert team will guide you through the entire process, from publisher matching to contract negotiation and launch support.
                       </p>
                       
                       <div className="flex flex-col sm:flex-row gap-4">
@@ -471,7 +471,7 @@ export default function HowToFindChineseCoPublisher() {
                       PG
                     </div>
                     <div className="ml-4">
-                      <p className="font-medium text-white">Pixsell Games Team</p>
+                      <p className="font-medium text-white">EightSix Games Team</p>
                       <p className="text-sm text-gray-400">Last updated: June 2023</p>
                     </div>
                   </div>

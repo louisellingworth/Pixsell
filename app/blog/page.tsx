@@ -236,7 +236,7 @@ export default function BlogIndex() {
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
               <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-                Pixsell Blog
+                EightSix Blog
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">

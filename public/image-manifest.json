@@ -1,0 +1,166 @@
+{
+  "images": [
+    {
+      "path": "/Pixsell Logo.png",
+      "size": 152837,
+      "type": ".png"
+    },
+    {
+      "path": "/Pixsell Logo.webp",
+      "size": 64676,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/chinese-player-preferences.jpg",
+      "size": 182220,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/chinese-player-preferences.webp",
+      "size": 123808,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/finding-chinese-publisher.jpg",
+      "size": 984701,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/finding-chinese-publisher.webp",
+      "size": 128696,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/isbn-license-china.jpg",
+      "size": 284698,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/isbn-license-china.webp",
+      "size": 177034,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/marketing-china-games.jpg",
+      "size": 825556,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/marketing-china-games.webp",
+      "size": 656940,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/mistakes-hero.jpg",
+      "size": 39688,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/mistakes-hero.webp",
+      "size": 31126,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/publishing-models-china.jpg",
+      "size": 181320,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/publishing-models-china.webp",
+      "size": 16958,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/revenue-share-china.jpg",
+      "size": 77889,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/revenue-share-china.webp",
+      "size": 53134,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/revenue-share-models-chinese-game-publishing.png",
+      "size": 54163,
+      "type": ".png"
+    },
+    {
+      "path": "/blog/revenue-share-models-chinese-game-publishing.webp",
+      "size": 10494,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/revenue-share-models-chinese-game-publishing3.png",
+      "size": 41537,
+      "type": ".png"
+    },
+    {
+      "path": "/blog/revenue-share-models-chinese-game-publishing3.webp",
+      "size": 14232,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/revenue-share-models-chinese-game-publishing4.webp",
+      "size": 46394,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/revenue-share-models-chinese-game-publishing5.png",
+      "size": 33544,
+      "type": ".png"
+    },
+    {
+      "path": "/blog/revenue-share-models-chinese-game-publishing5.webp",
+      "size": 29858,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/steam-china-publishing.jpg",
+      "size": 182675,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/steam-china-publishing.webp",
+      "size": 122898,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog/steam-global-vs-china.jpg",
+      "size": 72333,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog/steam-global-vs-china.webp",
+      "size": 10836,
+      "type": ".webp"
+    },
+    {
+      "path": "/blog_fixed/isbn-license-china.jpg",
+      "size": 284698,
+      "type": ".jpg"
+    },
+    {
+      "path": "/blog_fixed/isbn-license-china.webp",
+      "size": 177034,
+      "type": ".webp"
+    },
+    {
+      "path": "/pixsell-meta-image.png",
+      "size": 152837,
+      "type": ".png"
+    },
+    {
+      "path": "/pixsell-meta-image.webp",
+      "size": 64676,
+      "type": ".webp"
+    },
+    {
+      "path": "/steam Logo .webp",
+      "size": 9232,
+      "type": ".webp"
+    }
+  ],
+  "preload": [],
+  "critical": []
+}

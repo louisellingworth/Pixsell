@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">1. Introduction</h2>
                 <p className="text-white/80 mb-4">
-                  Welcome to Pixsell Games! We're committed to protecting your privacy while providing you with an amazing gaming experience. This Privacy Policy explains how we collect, use, and protect your information when you play our games or use our services.
+                  Welcome to EightSix Games! We're committed to protecting your privacy while providing you with an amazing gaming experience. This Privacy Policy explains how we collect, use, and protect your information when you play our games or use our services.
                 </p>
               </section>
 
@@ -166,7 +166,7 @@ export default function PrivacyPolicyPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">6. Your Gaming Rights</h2>
                 <p className="text-white/80 mb-4">
-                  As a Pixsell player, you have the right to:
+                  As a EightSix player, you have the right to:
                 </p>
                 <ul className="list-disc pl-6 text-white/80 mb-4 space-y-2">
                   <li className="flex items-center gap-2">
@@ -199,8 +199,8 @@ export default function PrivacyPolicyPage() {
                   If you have any questions about your privacy while playing our games, please reach out to us at:
                 </p>
                 <p className="text-purple-300">
-                  Email: privacy@pixsellgames.com<br />
-Support: support@pixsellgames.com
+                  Email: privacy@eightsixgames.com<br />
+Support: support@eightsixgames.com
                 </p>
               </section>
             </div>

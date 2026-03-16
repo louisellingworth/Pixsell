@@ -324,23 +324,23 @@ export default function BlogPost() {
                 In many cases, developers adopt a hybrid strategy: release on Steam global first (to start generating revenue and see if the game gains traction in China), and then pursue the Steam China route if the demand is high or if they want to solidify long-term earnings. This way, you get the best of both worlds – you're not foregoing the grey market revenue, and you can still plan for an official launch down the line.
               </p>
 
-              <h2 className="text-3xl font-bold mt-12 mb-6">Step 5: How Pixsell Can Assist with Your China Publishing Strategy</h2>
+              <h2 className="text-3xl font-bold mt-12 mb-6">Step 5: How EightSix Can Assist with Your China Publishing Strategy</h2>
               <p className="mb-6 leading-relaxed">
-                Deciding between Steam Global and Steam China can be daunting. The right approach depends on your game's content, your resources, and your goals in the Chinese market. This is where Pixsell comes in. Pixsell has expertise in the Chinese gaming landscape and can guide developers through the entire process of Steam publishing in China – from initial market entry to full official launch.
+                Deciding between Steam Global and Steam China can be daunting. The right approach depends on your game's content, your resources, and your goals in the Chinese market. This is where EightSix comes in. EightSix has expertise in the Chinese gaming landscape and can guide developers through the entire process of Steam publishing in China – from initial market entry to full official launch.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                 <div className="bg-white/5 p-6 rounded-xl border border-white/10 shadow-md hover:shadow-lg transition-shadow">
                   <h4 className="font-bold text-xl text-purple-300 mb-4">Choosing the best route:</h4>
                   <p className="leading-relaxed">
-                    Not sure which option suits your game? Pixsell can help analyse your game's potential in China (genre fit, existing Chinese fan interest, etc.) and weigh the pros and cons specific to your situation. For example, if your game has strong organic uptake on Steam global, Pixsell might suggest building on that momentum through community engagement. If your game would greatly benefit from an official release (say, a multiplayer title that needs local servers and official support), Pixsell can advise when and how to pursue the ISBN route.
+                    Not sure which option suits your game? EightSix can help analyse your game's potential in China (genre fit, existing Chinese fan interest, etc.) and weigh the pros and cons specific to your situation. For example, if your game has strong organic uptake on Steam global, EightSix might suggest building on that momentum through community engagement. If your game would greatly benefit from an official release (say, a multiplayer title that needs local servers and official support), EightSix can advise when and how to pursue the ISBN route.
                   </p>
                 </div>
                 
                 <div className="bg-white/5 p-6 rounded-xl border border-white/10 shadow-md hover:shadow-lg transition-shadow">
                   <h4 className="font-bold text-xl text-purple-300 mb-4">Navigating regulations:</h4>
                   <p className="leading-relaxed">
-                    If you do aim for an ISBN for Steam China, Pixsell can demystify the regulatory requirements. We'll explain the compliance checklist in plain terms and help identify any content in your game that might raise red flags with censors. Early guidance in this area can save you time – you can proactively make culturally appropriate adjustments with our insight, increasing your chances of approval.
+                    If you do aim for an ISBN for Steam China, EightSix can demystify the regulatory requirements. We'll explain the compliance checklist in plain terms and help identify any content in your game that might raise red flags with censors. Early guidance in this area can save you time – you can proactively make culturally appropriate adjustments with our insight, increasing your chances of approval.
                   </p>
                 </div>
               </div>
@@ -348,7 +348,7 @@ export default function BlogPost() {
               <div className="bg-white/5 border border-white/10 rounded-xl p-6 my-8">
                 <h3 className="text-xl font-bold mb-4">Need help with your China publishing strategy?</h3>
                 <p className="mb-4">
-                  At Pixsell Games, we specialize in helping Western developers navigate the complexities of the Chinese market. Our team of experts can guide you through the entire process, from choosing the right publishing route to finding a Chinese partner and marketing your game to Chinese players.
+                  At EightSix Games, we specialize in helping Western developers navigate the complexities of the Chinese market. Our team of experts can guide you through the entire process, from choosing the right publishing route to finding a Chinese partner and marketing your game to Chinese players.
                 </p>
                 <Link href="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all">
                   Get in touch
@@ -368,7 +368,7 @@ export default function BlogPost() {
               </p>
               
               <p>
-                Whichever route you choose, keep the experience of Chinese players in mind. Respect the cultural differences, listen to feedback, and adapt your strategy as needed. Many foreign developers have navigated this journey successfully – and with partners like Pixsell by your side, you can confidently chart your course in China.
+                Whichever route you choose, keep the experience of Chinese players in mind. Respect the cultural differences, listen to feedback, and adapt your strategy as needed. Many foreign developers have navigated this journey successfully – and with partners like EightSix by your side, you can confidently chart your course in China.
               </p>
               
               <p>

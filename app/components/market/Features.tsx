@@ -61,7 +61,7 @@ export const uniqueFeatures: Feature[] = [
   },
   {
     title: 'Built for Success',
-    description: "Pixsell Games is founded with a clear mission: to help Western games succeed in China through strategic partnerships and market expertise.",
+    description: "EightSix Games is founded with a clear mission: to help Western games succeed in China through strategic partnerships and market expertise.",
     icon: 'star',
     stats: {
       value: 'Ready',
@@ -113,7 +113,7 @@ export default function Features() {
   return (
     <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-2xl lg:text-center">
-        <h2 className="text-base font-semibold leading-7 text-blue-600">Why Choose Pixsell Games</h2>
+        <h2 className="text-base font-semibold leading-7 text-blue-600">Why Choose EightSix Games</h2>
         <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Streamlining Your Entry to China's Gaming Market
         </p>
