@@ -422,18 +422,18 @@ export default function MobilePublishingPage() {
       </section>
 
       {/* ── What Pixsell Delivers ───────────────────────────────────────── */}
-      <section className="relative py-20">
+      <section className="relative py-24">
         <div
           className="absolute left-0 top-1/3 w-[500px] h-[400px] pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.07) 0%, transparent 70%)', filter: 'blur(60px)' }}
+          style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
 
-          {/* Header */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+          {/* Header row */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
             <div>
-              <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">Scope of Work</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Scope of Work</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                 What Pixsell{' '}
                 <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
@@ -441,103 +441,80 @@ export default function MobilePublishingPage() {
                 </span>
               </h2>
             </div>
-            <p className="text-gray-400 md:max-w-xs text-sm leading-relaxed md:text-right">
+            <p className="text-gray-500 md:max-w-xs text-sm leading-relaxed md:text-right">
               Your advocate and deal architect — ensuring you don&apos;t enter China&apos;s mobile market blind, under-informed, or alone.
             </p>
           </div>
 
-          {/* Deliverables — full-width stacked rows */}
-          <div className="flex flex-col gap-4">
+          {/* Deliverables — open list, no card containers */}
+          <div>
             {WHAT_WE_DELIVER.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.07, ease: 'easeOut' }}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-60px' }}
-                className="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(12,4,24,0.97) 0%, rgba(6,2,14,0.98) 100%)',
-                  boxShadow: `0 0 0 1px ${item.border}, 0 4px 20px rgba(0,0,0,0.25)`,
-                }}
+                className="group relative"
               >
-                {/* Left accent bar */}
-                <div
-                  className="absolute left-0 top-0 bottom-0 w-0.5"
-                  style={{ background: `linear-gradient(to bottom, ${item.accentColor}, transparent)` }}
-                />
+                {/* Divider */}
+                {i === 0 && (
+                  <div className="h-px w-full mb-0" style={{ background: 'rgba(255,255,255,0.06)' }} />
+                )}
 
-                <div className="flex items-start gap-6 px-7 py-6 pl-10">
+                <div className="flex items-start gap-8 py-9 sm:py-10 transition-all duration-300">
+
                   {/* Step number */}
-                  <div className="flex-shrink-0 w-10 text-right">
+                  <div className="flex-shrink-0 w-8 pt-0.5">
                     <span
-                      className="text-xs font-black tracking-widest tabular-nums"
-                      style={{ color: item.accentColor, opacity: 0.7 }}
+                      className="text-xs font-black tracking-widest tabular-nums select-none"
+                      style={{ color: item.accentColor, opacity: 0.5 }}
                     >
                       {item.step}
                     </span>
                   </div>
 
-                  {/* Icon */}
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: item.color, border: `1px solid ${item.border}` }}
-                  >
-                    <item.icon className={`w-5 h-5 ${item.iconColor}`} />
-                  </div>
+                  {/* Main content */}
+                  <div className="flex-1 min-w-0 grid md:grid-cols-[1fr_auto] gap-6 md:gap-12 items-start">
+                    <div>
+                      <h3
+                        className="text-lg sm:text-xl font-bold text-white mb-3 transition-colors duration-300"
+                        style={{ lineHeight: 1.2 }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
+                    </div>
 
-                  {/* Copy */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-base font-bold text-white mb-1.5">{item.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{item.body}</p>
-                  </div>
-
-                  {/* Outcome pill — right-aligned, desktop only */}
-                  <div className="hidden md:flex items-center flex-shrink-0 self-center ml-4">
-                    <span
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap"
-                      style={{ color: item.accentColor, background: item.color, border: `1px solid ${item.border}` }}
-                    >
-                      <svg className="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {item.outcome}
-                    </span>
+                    {/* Outcome — right column on desktop, below on mobile */}
+                    <div className="md:text-right md:pt-1 md:w-56 flex-shrink-0">
+                      <p
+                        className="text-xs font-semibold leading-relaxed"
+                        style={{ color: item.accentColor }}
+                      >
+                        {item.outcome}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Mobile: outcome shown below copy */}
-                <div className="md:hidden px-10 pb-5 pl-[5.5rem]">
-                  <span
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full"
-                    style={{ color: item.accentColor, background: item.color, border: `1px solid ${item.border}` }}
-                  >
-                    <svg className="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                    </svg>
-                    {item.outcome}
-                  </span>
-                </div>
+                {/* Bottom divider */}
+                <div className="h-px w-full" style={{ background: 'rgba(255,255,255,0.06)' }} />
               </motion.div>
             ))}
           </div>
 
-          {/* Performance note */}
+          {/* Performance footnote */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.25, ease: 'easeOut' }}
             viewport={{ once: true, margin: '-40px' }}
-            className="mt-6 rounded-2xl px-7 py-5 flex items-center gap-4"
-            style={{
-              background: 'linear-gradient(135deg, rgba(16,185,129,0.06) 0%, rgba(12,4,24,0.97) 100%)',
-              border: '1px solid rgba(16,185,129,0.15)',
-            }}
+            className="mt-10 flex items-center gap-3"
           >
-            <BanknotesIcon className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-            <p className="text-gray-400 text-sm leading-relaxed">
-              <span className="text-emerald-400 font-semibold">Performance-based model.</span>{' '}
-              Pixsell earns when you earn — no retainer, no upfront consulting fee. Our incentives are fully aligned with yours.
+            <BanknotesIcon className="w-4 h-4 text-emerald-500/60 flex-shrink-0" />
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Performance-based model — Pixsell earns when you earn. No retainer, no upfront fee.
             </p>
           </motion.div>
         </div>
