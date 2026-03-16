@@ -42,10 +42,50 @@ const STAT_CARDS = [
 ]
 
 const WHAT_WE_DELIVER = [
-  { icon: MagnifyingGlassIcon, title: 'Game Assessment', body: 'We review your genre, metrics, and market potential — and give you an honest read on whether CN mobile is right for your game.', color: 'rgba(168,85,247,0.12)', border: 'rgba(168,85,247,0.22)', iconColor: 'text-violet-400' },
-  { icon: UserGroupIcon, title: 'Publisher Introductions', body: 'We source multiple vetted publisher candidates from our CN network and facilitate introductions so you receive competing offers.', color: 'rgba(236,72,153,0.10)', border: 'rgba(236,72,153,0.22)', iconColor: 'text-pink-400' },
-  { icon: DocumentCheckIcon, title: 'Deal Negotiation', body: 'We advise on terms — revenue share, IP protection, source build scope, and reversion clauses — so you sign with confidence.', color: 'rgba(59,130,246,0.10)', border: 'rgba(59,130,246,0.22)', iconColor: 'text-blue-400' },
-  { icon: SignalIcon, title: 'Performance Monitoring', body: 'Post-launch, we track ad revenue, verify publisher reporting, and ensure the deal you signed is the deal being honoured.', color: 'rgba(16,185,129,0.10)', border: 'rgba(16,185,129,0.22)', iconColor: 'text-emerald-400' },
+  {
+    icon: MagnifyingGlassIcon,
+    step: '01',
+    title: 'Game Assessment',
+    body: 'We review your genre, existing metrics, and monetisation model to assess how your game is likely to perform in the CN mobile market — and give you an honest read before any introductions are made.',
+    outcome: 'You know where you stand before any commitment.',
+    color: 'rgba(168,85,247,0.10)',
+    border: 'rgba(168,85,247,0.20)',
+    accentColor: '#a855f7',
+    iconColor: 'text-violet-400',
+  },
+  {
+    icon: UserGroupIcon,
+    step: '02',
+    title: 'Publisher Introductions',
+    body: 'We tap our established CN publisher network to source multiple candidates suited to your game\'s genre and metrics. You receive competing offers — not a single take-it-or-leave-it option.',
+    outcome: 'Multiple competing offers to evaluate side by side.',
+    color: 'rgba(236,72,153,0.08)',
+    border: 'rgba(236,72,153,0.20)',
+    accentColor: '#ec4899',
+    iconColor: 'text-pink-400',
+  },
+  {
+    icon: DocumentCheckIcon,
+    step: '03',
+    title: 'Deal Negotiation',
+    body: 'We advise on every material term — revenue share structure, source build usage scope, IP reversion clauses, and reporting obligations — so you sign from a position of full understanding.',
+    outcome: 'Agreement terms that protect your IP and your earnings.',
+    color: 'rgba(59,130,246,0.08)',
+    border: 'rgba(59,130,246,0.20)',
+    accentColor: '#6366f1',
+    iconColor: 'text-blue-400',
+  },
+  {
+    icon: SignalIcon,
+    step: '04',
+    title: 'Performance Monitoring',
+    body: 'Post-launch, we track in-game ad revenue, cross-reference publisher reporting, and hold the publisher to the marketing commitments they agreed to. If something\'s off, we escalate on your behalf.',
+    outcome: 'The deal you signed is the deal being honoured.',
+    color: 'rgba(16,185,129,0.08)',
+    border: 'rgba(16,185,129,0.20)',
+    accentColor: '#10b981',
+    iconColor: 'text-emerald-400',
+  },
 ]
 
 const GENRE_FIT = [
@@ -389,57 +429,117 @@ export default function MobilePublishingPage() {
           style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.07) 0%, transparent 70%)', filter: 'blur(60px)' }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12">
-            <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">Scope of Work</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              What Pixsell{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                delivers
-              </span>
-            </h2>
-            <p className="text-gray-400 max-w-xl mx-auto">
-              We are your advocate and deal architect — not the publisher, not a middleman taking a cut of nothing, but the party ensuring you don&apos;t enter this market blind.
+
+          {/* Header */}
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
+            <div>
+              <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">Scope of Work</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+                What Pixsell{' '}
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  delivers
+                </span>
+              </h2>
+            </div>
+            <p className="text-gray-400 md:max-w-xs text-sm leading-relaxed md:text-right">
+              Your advocate and deal architect — ensuring you don&apos;t enter China&apos;s mobile market blind, under-informed, or alone.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5">
+          {/* Deliverables — full-width stacked rows */}
+          <div className="flex flex-col gap-4">
             {WHAT_WE_DELIVER.map((item, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: i * 0.08, ease: 'easeOut' }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.07, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-60px' }}
-                className="relative rounded-2xl p-7 flex gap-5 transition-all duration-300 hover:-translate-y-0.5"
+                className="group relative rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5"
                 style={{
-                  background: `linear-gradient(135deg, ${item.color} 0%, rgba(12,4,24,0.97) 60%)`,
-                  boxShadow: `0 0 0 1px ${item.border}, 0 4px 20px rgba(0,0,0,0.3)`,
+                  background: 'linear-gradient(135deg, rgba(12,4,24,0.97) 0%, rgba(6,2,14,0.98) 100%)',
+                  boxShadow: `0 0 0 1px ${item.border}, 0 4px 20px rgba(0,0,0,0.25)`,
                 }}
               >
+                {/* Left accent bar */}
                 <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
-                  style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${item.border}` }}
-                >
-                  <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                  className="absolute left-0 top-0 bottom-0 w-0.5"
+                  style={{ background: `linear-gradient(to bottom, ${item.accentColor}, transparent)` }}
+                />
+
+                <div className="flex items-start gap-6 px-7 py-6 pl-10">
+                  {/* Step number */}
+                  <div className="flex-shrink-0 w-10 text-right">
+                    <span
+                      className="text-xs font-black tracking-widest tabular-nums"
+                      style={{ color: item.accentColor, opacity: 0.7 }}
+                    >
+                      {item.step}
+                    </span>
+                  </div>
+
+                  {/* Icon */}
+                  <div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: item.color, border: `1px solid ${item.border}` }}
+                  >
+                    <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                  </div>
+
+                  {/* Copy */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white mb-1.5">{item.title}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{item.body}</p>
+                  </div>
+
+                  {/* Outcome pill — right-aligned, desktop only */}
+                  <div className="hidden md:flex items-center flex-shrink-0 self-center ml-4">
+                    <span
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full whitespace-nowrap"
+                      style={{ color: item.accentColor, background: item.color, border: `1px solid ${item.border}` }}
+                    >
+                      <svg className="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {item.outcome}
+                    </span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.body}</p>
+
+                {/* Mobile: outcome shown below copy */}
+                <div className="md:hidden px-10 pb-5 pl-[5.5rem]">
+                  <span
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{ color: item.accentColor, background: item.color, border: `1px solid ${item.border}` }}
+                  >
+                    <svg className="w-3 h-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {item.outcome}
+                  </span>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Divider note */}
-          <div
-            className="mt-6 rounded-xl px-6 py-4 flex items-start gap-3"
-            style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)' }}
+          {/* Performance note */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-40px' }}
+            className="mt-6 rounded-2xl px-7 py-5 flex items-center gap-4"
+            style={{
+              background: 'linear-gradient(135deg, rgba(16,185,129,0.06) 0%, rgba(12,4,24,0.97) 100%)',
+              border: '1px solid rgba(16,185,129,0.15)',
+            }}
           >
-            <BanknotesIcon className="w-4 h-4 text-gray-500 flex-shrink-0 mt-0.5" />
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Pixsell operates on a performance-based model aligned with yours. We earn when you earn — no retainer, no upfront consulting fee.
+            <BanknotesIcon className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+            <p className="text-gray-400 text-sm leading-relaxed">
+              <span className="text-emerald-400 font-semibold">Performance-based model.</span>{' '}
+              Pixsell earns when you earn — no retainer, no upfront consulting fee. Our incentives are fully aligned with yours.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
