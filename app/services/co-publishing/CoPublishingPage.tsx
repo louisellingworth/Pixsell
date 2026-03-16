@@ -532,7 +532,7 @@ export default function CoPublishingPage() {
                     <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Find the Right Partner</h3>
                   </div>
                   <p className="text-white/60 leading-relaxed">
-                    We carefully select a co-publisher that fits your game's needs and secure the most favourable deal for you.
+                    We screen our network of vetted Chinese co-publishers and shortlist candidates based on your game&apos;s genre, audience, and commercial goals. You review the shortlist and approve your preferred publisher before we move forward.
                   </p>
                 </motion.div>
                 
@@ -547,10 +547,10 @@ export default function CoPublishingPage() {
                     <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mr-4">
                       <span className="text-xl font-bold text-white">2</span>
                     </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Marketing & Localisation</h3>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Negotiate Deal Terms</h3>
                   </div>
                   <p className="text-white/60 leading-relaxed">
-                    We work directly with the co-publisher to ensure they invest in effective Chinese marketing, social media, and player engagement—all while keeping your interests protected.
+                    We handle all contract negotiations — revenue share, marketing spend commitments, recoupment thresholds — and flag anything that isn&apos;t in your favour. You approve the final terms before anything is signed.
                   </p>
                 </motion.div>
                 
@@ -565,10 +565,10 @@ export default function CoPublishingPage() {
                     <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mr-4">
                       <span className="text-xl font-bold text-white">3</span>
                     </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Revenue Sharing</h3>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Oversee Marketing & Localisation</h3>
                   </div>
                   <p className="text-white/60 leading-relaxed">
-                    We negotiate a performance-based revenue split that maximises your earnings while ensuring the co-publisher delivers results.
+                    We hold the co-publisher accountable for their marketing commitments on WeChat, Weibo, Bilibili, and Douyin — reviewing campaign plans, approving content direction, and coordinating localisation through our partner network.
                   </p>
                 </motion.div>
                 
@@ -583,10 +583,10 @@ export default function CoPublishingPage() {
                     <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mr-4">
                       <span className="text-xl font-bold text-white">4</span>
                     </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Ongoing Support</h3>
+                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Monitor Revenue & Performance</h3>
                   </div>
                   <p className="text-white/60 leading-relaxed">
-                    The co-publisher provides local customer support and continuously optimises game performance, with us ensuring they meet their obligations.
+                    We track revenue reports, verify accuracy, escalate issues with the co-publisher, and send you regular performance summaries — so you always know exactly where things stand.
                   </p>
                 </motion.div>
               </div>

@@ -3,8 +3,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import GradientButton from './ui/GradientButton'
-import { useReducedMotion } from '../hooks/useProgressiveEnhancement'
-import Image from 'next/image'
 
 // Navigation items with services submenu
 const navItems = [
@@ -28,7 +26,6 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
-  const prefersReducedMotion = useReducedMotion();
 
   // Optimized scroll handler with throttling
   const handleScroll = useCallback(() => {
@@ -136,17 +133,17 @@ export default function Navigation() {
             <div key={item.name} className="relative group">
               <Link
                 href={item.href}
-                className="text-gray-300 hover:text-white text-sm font-medium hover:bg-white/5 px-3 py-2 rounded-lg transition-colors duration-200 flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500"
+                className="relative text-gray-300 hover:text-white text-sm font-medium px-3 py-2 rounded-lg transition-colors duration-200 flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 nav-link-underline"
                 aria-expanded={item.submenu ? undefined : undefined}
                 aria-haspopup={item.submenu ? 'true' : undefined}
               >
                 {item.name}
                 {item.submenu && (
-                  <svg 
-                    className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24" 
+                  <svg
+                    className="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                     aria-hidden="true"
                     width="16"
                     height="16"
@@ -154,6 +151,12 @@ export default function Navigation() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 )}
+                {/* Sliding underline */}
+                <span
+                  className="absolute bottom-0.5 left-3 right-3 h-px scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
+                  style={{ background: 'linear-gradient(90deg, #a855f7, #ec4899)' }}
+                  aria-hidden="true"
+                />
               </Link>
               {item.submenu && (
                 <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-black/95 backdrop-blur-xl border border-purple-500/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
