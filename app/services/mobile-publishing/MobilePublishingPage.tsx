@@ -14,6 +14,10 @@ import {
   RocketLaunchIcon,
   ArrowRightIcon,
   CheckCircleIcon,
+  BanknotesIcon,
+  MagnifyingGlassIcon,
+  DocumentCheckIcon,
+  SignalIcon,
 } from '@heroicons/react/24/outline'
 import { mobileProcessSteps } from '@/lib/market-data'
 import Navigation from '../../components/Navigation'
@@ -31,56 +35,91 @@ const STEP_ACCENTS = [
   { border: 'border-l-cyan-500/70',   dot: 'from-cyan-500 to-sky-600',      glow: 'rgba(6,182,212,0.35)',  tag: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/30' },
 ]
 
-const GENRE_CARDS = [
+const STAT_CARDS = [
+  { value: '700M+', label: 'Mobile Gamers in China', sub: 'The largest mobile gaming market globally by active player count.', color: '#a855f7' },
+  { value: '$28B', label: 'Annual Mobile Revenue', sub: 'In-game advertising and IAP revenue from CN mobile games, growing year on year.', color: '#ec4899' },
+  { value: '60%', label: 'of CN Gaming Revenue', sub: 'Mobile accounts for the majority of China\'s total gaming market.', color: '#6366f1' },
+]
+
+const WHAT_WE_DELIVER = [
+  { icon: MagnifyingGlassIcon, title: 'Game Assessment', body: 'We review your genre, metrics, and market potential — and give you an honest read on whether CN mobile is right for your game.', color: 'rgba(168,85,247,0.12)', border: 'rgba(168,85,247,0.22)', iconColor: 'text-violet-400' },
+  { icon: UserGroupIcon, title: 'Publisher Introductions', body: 'We source multiple vetted publisher candidates from our CN network and facilitate introductions so you receive competing offers.', color: 'rgba(236,72,153,0.10)', border: 'rgba(236,72,153,0.22)', iconColor: 'text-pink-400' },
+  { icon: DocumentCheckIcon, title: 'Deal Negotiation', body: 'We advise on terms — revenue share, IP protection, source build scope, and reversion clauses — so you sign with confidence.', color: 'rgba(59,130,246,0.10)', border: 'rgba(59,130,246,0.22)', iconColor: 'text-blue-400' },
+  { icon: SignalIcon, title: 'Performance Monitoring', body: 'Post-launch, we track ad revenue, verify publisher reporting, and ensure the deal you signed is the deal being honoured.', color: 'rgba(16,185,129,0.10)', border: 'rgba(16,185,129,0.22)', iconColor: 'text-emerald-400' },
+]
+
+const GENRE_FIT = [
   {
     title: 'Hypercasual & Casual',
-    description: 'Low barrier to entry and broad demographic appeal make these the fastest to scale. Short session lengths match CN mobile usage patterns perfectly.',
+    description: 'Fast to scale. Short session lengths align perfectly with CN mobile usage. Broad demographic appeal with minimal adaptation needed.',
     icon: SparklesIcon,
-    accent: 'rgba(168,85,247,0.15)',
-    border: 'rgba(168,85,247,0.25)',
-    iconColor: 'text-violet-400',
+    fit: 'Best fit',
+    fitColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30',
   },
   {
     title: 'Merge & Idle',
-    description: 'Strong retention loops and incremental progression make these well-suited to CN monetisation preferences. Passive play translates well across cultures.',
+    description: 'Strong retention loops and passive play mechanics translate well. CN monetisation preferences favour incremental progression.',
     icon: ChartBarIcon,
-    accent: 'rgba(236,72,153,0.12)',
-    border: 'rgba(236,72,153,0.25)',
-    iconColor: 'text-pink-400',
-  },
-  {
-    title: 'Lightweight Adventure / RPG',
-    description: 'Narrative-driven games with culturally adaptable hooks can perform strongly. Character customisation and gacha mechanics resonate with CN players.',
-    icon: RocketLaunchIcon,
-    accent: 'rgba(59,130,246,0.12)',
-    border: 'rgba(59,130,246,0.25)',
-    iconColor: 'text-blue-400',
+    fit: 'Best fit',
+    fitColor: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30',
   },
   {
     title: 'Puzzle & Mid-core',
-    description: 'Evergreen genres with steady demand in China. Puzzle games benefit from word-of-mouth and community sharing, both strong in the CN mobile ecosystem.',
+    description: 'Evergreen demand in China. Strong word-of-mouth sharing patterns in the CN mobile ecosystem drive organic growth.',
     icon: DevicePhoneMobileIcon,
-    accent: 'rgba(16,185,129,0.12)',
-    border: 'rgba(16,185,129,0.25)',
-    iconColor: 'text-emerald-400',
+    fit: 'Good fit',
+    fitColor: 'text-blue-400 bg-blue-500/10 border-blue-500/30',
+  },
+  {
+    title: 'Lightweight RPG / Adventure',
+    description: 'Culturally adaptable narrative hooks can perform well. Gacha mechanics and character customisation resonate with CN players.',
+    icon: RocketLaunchIcon,
+    fit: 'Good fit',
+    fitColor: 'text-blue-400 bg-blue-500/10 border-blue-500/30',
+  },
+  {
+    title: 'Hardcore / Large-scale MMO',
+    description: 'Higher adaptation costs, complex live ops, and CN regulatory requirements make these harder to scale through a co-publishing model.',
+    icon: ShieldCheckIcon,
+    fit: 'Harder to scale',
+    fitColor: 'text-amber-400 bg-amber-500/10 border-amber-500/30',
   },
 ]
 
-const STAT_CARDS = [
-  { value: '700M+', label: 'Mobile Gamers in China', sub: 'The largest mobile gaming market in the world by player count.', color: '#a855f7' },
-  { value: '$28B', label: 'Mobile Market Size (USD)', sub: 'Annual revenue from mobile games in China, growing year on year.', color: '#ec4899' },
-  { value: '60%', label: 'of CN Gaming Revenue', sub: 'The majority of China\'s gaming revenue comes from mobile platforms.', color: '#6366f1' },
+const FAQS = [
+  {
+    q: 'Do I lose my IP?',
+    a: 'No. You retain full ownership throughout. We ensure the publisher agreement clearly scopes what the source build can be used for, with IP reversion clauses and data handling obligations built in.',
+  },
+  {
+    q: 'Why does the publisher need my source code?',
+    a: 'To localise the game for simplified Chinese, integrate CN-specific SDKs (payment, analytics, anti-addiction compliance), and handle platform submission for WeChat Mini Games and Android stores. This is standard practice across CN mobile publishing — not specific to any one deal.',
+  },
+  {
+    q: 'How does the revenue model work exactly?',
+    a: 'The publisher monetises your game through in-game advertising on CN platforms. They pay you 50% of that ad revenue on agreed reporting cycles. There are no upfront costs to you — the publisher funds all localisation and UA.',
+  },
+  {
+    q: 'How do I know the publisher is reporting revenue accurately?',
+    a: 'Pixsell tracks performance data independently and cross-references publisher reports. If there are discrepancies or communication gaps, we escalate on your behalf. You deal with us, not the publisher directly.',
+  },
+  {
+    q: 'How many publisher offers will I receive?',
+    a: 'We aim to generate multiple competing offers so you can evaluate terms side by side. The number depends on your genre and metrics, but we never present you with a single take-it-or-leave-it option.',
+  },
+  {
+    q: 'What happens if the publisher underperforms post-launch?',
+    a: 'We monitor marketing spend commitments and performance KPIs. If the publisher isn\'t delivering, we hold them accountable and can advise on whether renegotiation or exit is the right path.',
+  },
 ]
 
 export default function MobilePublishingPage() {
   const timelineRef = useRef<HTMLDivElement>(null)
   const lineRef = useRef<SVGLineElement>(null)
-  const svgRef = useRef<SVGSVGElement>(null)
   const stepsContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Timeline cards stagger from alternating sides
       const cards = stepsContainerRef.current?.querySelectorAll<HTMLDivElement>('.roadmap-card')
       if (cards) {
         cards.forEach((card, i) => {
@@ -93,7 +132,6 @@ export default function MobilePublishingPage() {
             immediateRender: false,
             scrollTrigger: { trigger: card, start: 'top 82%', once: true },
           })
-
           const bullets = card.querySelectorAll<HTMLLIElement>('ul li')
           if (bullets.length) {
             gsap.from(bullets, {
@@ -110,7 +148,6 @@ export default function MobilePublishingPage() {
         })
       }
 
-      // SVG line draw
       const line = lineRef.current
       if (line) {
         const length = line.getTotalLength?.() ?? 1200
@@ -127,7 +164,6 @@ export default function MobilePublishingPage() {
         })
       }
 
-      // Dot pops
       const dots = stepsContainerRef.current?.querySelectorAll<HTMLDivElement>('.timeline-dot')
       if (dots) {
         dots.forEach((dot) => {
@@ -151,18 +187,23 @@ export default function MobilePublishingPage() {
       <Navigation />
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background glow */}
+      <section className="relative pt-32 pb-24 overflow-hidden">
+        {/* Background */}
         <div
-          className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[500px] pointer-events-none"
+          className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[600px] pointer-events-none"
           aria-hidden="true"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.18) 0%, rgba(124,58,237,0.08) 45%, transparent 70%)',
-            filter: 'blur(60px)',
+            background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.16) 0%, rgba(124,58,237,0.08) 45%, transparent 70%)',
+            filter: 'blur(70px)',
           }}
         />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.6))' }}
+        />
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -176,7 +217,7 @@ export default function MobilePublishingPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white mb-6">
-              Publish Your{' '}
+              Access China&apos;s{' '}
               <span style={{
                 backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7, #ec4899)',
                 backgroundClip: 'text',
@@ -185,14 +226,30 @@ export default function MobilePublishingPage() {
                 backgroundSize: '200% 200%',
                 animation: 'premiumGradient 3s ease-in-out infinite',
               }}>
-                Mobile Game
+                700M mobile gamers
               </span>{' '}
-              in China
+              without building a China team
             </h1>
 
-            <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto mb-10">
-              China has 700M+ mobile gamers across WeChat Mini Games, TapTap, Bilibili Games, and major Android stores. Pixsell connects you with vetted Chinese publishers — so you receive multiple competing offers, negotiate from a position of strength, and enter on terms that protect your IP. The publisher handles the build and distribution. You earn 50% of in-game ad revenue.
+            <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto mb-4">
+              Pixsell connects Western mobile developers with vetted Chinese publishers across WeChat Mini Games, TapTap, Bilibili Games, and major Android stores. You receive multiple competing offers, negotiate from a position of strength, and earn 50% of in-game ad revenue — with zero upfront cost.
             </p>
+
+            {/* Authority strip */}
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-10 mt-6">
+              {[
+                '50% ad revenue to you',
+                'Multiple publisher offers',
+                'No upfront cost',
+                'IP stays yours',
+                'Publisher-side technical work',
+              ].map((item, i) => (
+                <span key={i} className="flex items-center gap-2 text-sm text-gray-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-pink-500/70 flex-shrink-0" />
+                  {item}
+                </span>
+              ))}
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
               <Link
@@ -200,6 +257,10 @@ export default function MobilePublishingPage() {
                 className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/30 hover:-translate-y-0.5"
                 style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #7c3aed 100%)' }}
               >
+                <span
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%)', backgroundSize: '200% 100%', animation: 'shimmerSweep 0.6s ease forwards' }}
+                />
                 <span className="relative">Book a Free Consultation</span>
                 <ArrowRightIcon className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
@@ -207,31 +268,26 @@ export default function MobilePublishingPage() {
                 href="/services/co-publishing"
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-gray-300 border border-white/10 hover:border-purple-500/40 hover:text-white hover:bg-white/5 transition-all duration-300"
               >
-                Steam Publishing instead?
+                PC / Steam instead?
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Market Context ────────────────────────────────────────────── */}
+      {/* ── Market Numbers ─────────────────────────────────────────────── */}
       <section className="relative py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-4">Market Scale</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-4">The Opportunity</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Why China&apos;s Mobile Market{' '}
-              <span style={{
-                backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                matters
+              The world&apos;s largest{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                mobile market
               </span>
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              The numbers are large, but the right partnership model makes them accessible.
+              Most Western developers aren&apos;t in it — not because their game isn&apos;t good enough, but because the right publisher relationships don&apos;t exist yet.
             </p>
           </div>
 
@@ -251,12 +307,7 @@ export default function MobilePublishingPage() {
               >
                 <div
                   className="text-5xl sm:text-6xl font-black leading-none mb-3"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, ${card.color}, rgba(255,255,255,0.6))`,
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                  }}
+                  style={{ backgroundImage: `linear-gradient(135deg, ${card.color}, rgba(255,255,255,0.6))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
                 >
                   {card.value}
                 </div>
@@ -268,7 +319,7 @@ export default function MobilePublishingPage() {
         </div>
       </section>
 
-      {/* ── How the Revenue Model Works ──────────────────────────────── */}
+      {/* ── Revenue Model ──────────────────────────────────────────────── */}
       <section className="relative py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -282,24 +333,33 @@ export default function MobilePublishingPage() {
               boxShadow: '0 0 0 1px rgba(168,85,247,0.14), 0 8px 40px rgba(0,0,0,0.35)',
             }}
           >
-            <div className="flex flex-col md:flex-row md:items-start gap-8">
+            <div className="flex flex-col md:flex-row md:items-start gap-10">
               <div className="flex-1">
                 <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-4">Revenue Model</p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-5 leading-snug">
                   The publisher does the work.<br />You earn 50% of ad revenue.
                 </h2>
                 <p className="text-gray-400 text-base leading-relaxed mb-4">
-                  Chinese publishers adapt your game for WeChat Mini Games and other CN platforms, then monetise it through in-game advertising. You receive 50% of that advertising revenue — paid out by the publisher on agreed cycles.
+                  Chinese publishers adapt your game for WeChat Mini Games and other CN platforms at their own cost, then monetise through in-game advertising. You receive 50% of that advertising revenue on agreed reporting cycles — with no capital outlay required.
                 </p>
-                <p className="text-gray-400 text-base leading-relaxed">
-                  Pixsell&apos;s role is to ensure you get multiple offers from reputable publishers, negotiate favourable terms, and then stay in the loop so the publisher holds up their end of the deal once you&apos;re live.
+                <p className="text-gray-400 text-base leading-relaxed mb-6">
+                  Pixsell&apos;s role is to make sure you receive multiple competing offers, that deal terms genuinely protect your interests, and that the publisher continues to communicate and pay out correctly after launch.
                 </p>
+                <div className="flex flex-wrap gap-3">
+                  {['No upfront investment', 'Publisher funds localisation & UA', 'You approve before anything is signed'].map((item, i) => (
+                    <span key={i} className="inline-flex items-center gap-1.5 text-xs font-medium text-purple-300 bg-purple-500/10 border border-purple-500/20 rounded-full px-3 py-1">
+                      <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className="md:w-64 flex-shrink-0 flex flex-col gap-4">
+              <div className="md:w-60 flex-shrink-0 flex flex-col gap-3">
                 {[
                   { label: 'Your revenue share', value: '50%', color: '#ec4899' },
                   { label: 'Upfront cost to you', value: '$0', color: '#a855f7' },
-                  { label: 'Competing publisher offers', value: 'Multiple', color: '#6366f1' },
+                  { label: 'Publisher offers', value: 'Multiple', color: '#6366f1' },
+                  { label: 'IP ownership', value: 'Yours', color: '#10b981' },
                 ].map((item, i) => (
                   <div
                     key={i}
@@ -308,13 +368,8 @@ export default function MobilePublishingPage() {
                   >
                     <span className="text-gray-400 text-sm">{item.label}</span>
                     <span
-                      className="text-2xl font-black"
-                      style={{
-                        backgroundImage: `linear-gradient(135deg, ${item.color}, rgba(255,255,255,0.7))`,
-                        backgroundClip: 'text',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                      }}
+                      className="text-xl font-black"
+                      style={{ backgroundImage: `linear-gradient(135deg, ${item.color}, rgba(255,255,255,0.7))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
                     >
                       {item.value}
                     </span>
@@ -326,116 +381,147 @@ export default function MobilePublishingPage() {
         </div>
       </section>
 
-      {/* ── Which Games Work Best ─────────────────────────────────────── */}
+      {/* ── What Pixsell Delivers ───────────────────────────────────────── */}
+      <section className="relative py-20">
+        <div
+          className="absolute left-0 top-1/3 w-[500px] h-[400px] pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.07) 0%, transparent 70%)', filter: 'blur(60px)' }}
+        />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12">
+            <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">Scope of Work</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              What Pixsell{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                delivers
+              </span>
+            </h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              We are your advocate and deal architect — not the publisher, not a middleman taking a cut of nothing, but the party ensuring you don&apos;t enter this market blind.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-5">
+            {WHAT_WE_DELIVER.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: i * 0.08, ease: 'easeOut' }}
+                viewport={{ once: true, margin: '-60px' }}
+                className="relative rounded-2xl p-7 flex gap-5 transition-all duration-300 hover:-translate-y-0.5"
+                style={{
+                  background: `linear-gradient(135deg, ${item.color} 0%, rgba(12,4,24,0.97) 60%)`,
+                  boxShadow: `0 0 0 1px ${item.border}, 0 4px 20px rgba(0,0,0,0.3)`,
+                }}
+              >
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${item.border}` }}
+                >
+                  <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{item.body}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Divider note */}
+          <div
+            className="mt-6 rounded-xl px-6 py-4 flex items-start gap-3"
+            style={{ background: 'rgba(255,255,255,0.025)', border: '1px solid rgba(255,255,255,0.06)' }}
+          >
+            <BanknotesIcon className="w-4 h-4 text-gray-500 flex-shrink-0 mt-0.5" />
+            <p className="text-gray-500 text-sm leading-relaxed">
+              Pixsell operates on a performance-based model aligned with yours. We earn when you earn — no retainer, no upfront consulting fee.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Game Fit ───────────────────────────────────────────────────── */}
       <section className="relative py-20">
         <div
           className="absolute right-0 top-1/4 w-[500px] h-[400px] pointer-events-none"
           aria-hidden="true"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.08) 0%, transparent 70%)',
-            filter: 'blur(60px)',
-          }}
+          style={{ background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.07) 0%, transparent 70%)', filter: 'blur(60px)' }}
         />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-12">
             <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-4">Game Fit</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Which games perform{' '}
-              <span style={{
-                backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                best in China?
+              Is your game a{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                good fit?
               </span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              The Chinese mobile market rewards games that are accessible, culturally adaptable, and designed around retention. These genres consistently outperform.
+              The CN mobile market rewards accessible, retention-focused games. We&apos;ll tell you honestly during your consultation — but here&apos;s a quick read.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-5 mb-8">
-            {GENRE_CARDS.map((card, i) => (
+          <div className="flex flex-col gap-3">
+            {GENRE_FIT.map((card, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: i * 0.1, ease: 'easeOut' }}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.45, delay: i * 0.07, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-60px' }}
-                className="relative rounded-2xl p-7 flex flex-col gap-4 transition-all duration-300 hover:-translate-y-0.5"
+                className="relative rounded-2xl px-6 py-5 flex items-start gap-5 transition-all duration-300 hover:-translate-y-0.5"
                 style={{
-                  background: `linear-gradient(135deg, ${card.accent} 0%, rgba(12,4,24,0.97) 60%)`,
-                  boxShadow: `0 0 0 1px ${card.border}, 0 4px 20px rgba(0,0,0,0.3)`,
+                  background: 'linear-gradient(135deg, rgba(12,4,24,0.97) 0%, rgba(6,2,14,0.98) 100%)',
+                  boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 4px 16px rgba(0,0,0,0.25)',
                 }}
               >
-                <div
-                  className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(255,255,255,0.04)', border: `1px solid ${card.border}` }}
-                >
-                  <card.icon className={`w-5 h-5 ${card.iconColor}`} />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <card.icon className="w-5 h-5 text-gray-400" />
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-white mb-2">{card.title}</h3>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-3 mb-1.5 flex-wrap">
+                    <h3 className="text-base font-bold text-white">{card.title}</h3>
+                    <span className={`text-xs font-semibold tracking-wide px-2.5 py-0.5 rounded-full border ${card.fitColor}`}>
+                      {card.fit}
+                    </span>
+                  </div>
                   <p className="text-gray-400 text-sm leading-relaxed">{card.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {/* Caveat note */}
-          <div
-            className="rounded-xl px-6 py-4 flex items-start gap-3"
-            style={{
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.07)',
-            }}
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-gray-500 flex-shrink-0 mt-2" />
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Complex hardcore titles, large-scale MMOs, and games requiring significant ongoing live operations are harder to scale through a co-publishing model in China. We&apos;ll give you an honest assessment during your consultation.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* ── Mobile Publishing Process (timeline) ─────────────────────── */}
+      {/* ── Process Timeline ───────────────────────────────────────────── */}
       <section className="relative py-20" ref={timelineRef}>
         <div
           className="absolute left-1/2 top-1/4 -translate-x-1/2 w-[700px] h-[500px] pointer-events-none"
           aria-hidden="true"
-          style={{
-            background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.08) 0%, transparent 65%)',
-            filter: 'blur(60px)',
-          }}
+          style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.07) 0%, transparent 65%)', filter: 'blur(60px)' }}
         />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-20">
             <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-4">Timeline</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
-              The Mobile{' '}
-              <span style={{
-                backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
-              }}>
-                Publishing Process
+              From introduction to{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
+                live revenue
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              A structured path from initial evaluation to live market operations — built around clear responsibilities and developer control at every stage.
+              A clear sequence with defined responsibilities at every stage — no ambiguity about who does what or when you get paid.
             </p>
           </div>
 
           <div className="relative">
-            {/* SVG timeline line */}
             <svg
-              ref={svgRef}
               className="absolute left-[27px] sm:left-1/2 top-0 bottom-0 pointer-events-none"
               style={{ width: 2, height: '100%', transform: 'translateX(-1px)', overflow: 'visible' }}
               aria-hidden="true"
@@ -463,27 +549,20 @@ export default function MobilePublishingPage() {
               {mobileProcessSteps.map((step, index) => {
                 const accent = STEP_ACCENTS[index] ?? STEP_ACCENTS[0]
                 const isRight = index % 2 !== 0
-
                 return (
                   <div
                     key={index}
-                    className={`roadmap-card relative flex items-start gap-6 sm:gap-0 ${
-                      isRight ? 'sm:flex-row-reverse' : 'sm:flex-row'
-                    }`}
+                    className={`roadmap-card relative flex items-start gap-6 sm:gap-0 ${isRight ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}
                   >
                     <div className={`flex-1 sm:w-[45%] sm:flex-none ${isRight ? 'sm:mr-[10%]' : 'sm:ml-[10%]'} pl-14 sm:pl-0`}>
                       <div
-                        className={`relative rounded-2xl border-l-4 ${accent.border} bg-black/60 backdrop-blur-sm p-6 transition-all duration-300 hover:-translate-y-1`}
+                        className={`relative rounded-2xl border-l-4 ${accent.border} p-6 transition-all duration-300 hover:-translate-y-1`}
                         style={{
                           background: 'linear-gradient(135deg, rgba(12,4,24,0.92) 0%, rgba(6,2,14,0.96) 100%)',
                           boxShadow: `0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px ${accent.glow.replace('0.35', '0.08')}`,
                         }}
-                        onMouseEnter={e => {
-                          (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.08), 0 16px 48px ${accent.glow.replace('0.35', '0.18')}`
-                        }}
-                        onMouseLeave={e => {
-                          (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px ${accent.glow.replace('0.35', '0.08')}`
-                        }}
+                        onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.08), 0 16px 48px ${accent.glow.replace('0.35', '0.18')}` }}
+                        onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = `0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px ${accent.glow.replace('0.35', '0.08')}` }}
                       >
                         <span className={`inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full border mb-3 ${accent.tag}`}>
                           {step.when}
@@ -492,10 +571,7 @@ export default function MobilePublishingPage() {
                         <ul className="space-y-2">
                           {step.details.split('\n').map((detail, i) => (
                             <li key={i} className="flex items-start gap-2.5 text-sm text-gray-400">
-                              <span
-                                className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5"
-                                style={{ background: accent.glow }}
-                              />
+                              <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-1.5" style={{ background: accent.glow }} />
                               {detail.substring(2)}
                             </li>
                           ))}
@@ -521,39 +597,31 @@ export default function MobilePublishingPage() {
         </div>
       </section>
 
-      {/* ── Key Considerations ────────────────────────────────────────── */}
+      {/* ── Two key considerations ─────────────────────────────────────── */}
       <section className="relative py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">What to Know</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-              Key considerations for{' '}
-              <span style={{
-                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}>
-                mobile in China
+              Two things developers ask{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                before signing
               </span>
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              Two things developers ask about before signing. Here&apos;s exactly how both work.
+              Here&apos;s exactly how both work — no vague reassurances.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {/* Source Code Access */}
+            {/* Source Code */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="relative rounded-2xl p-8"
-              style={{
-                background: 'linear-gradient(135deg, rgba(124,58,237,0.10) 0%, rgba(12,4,24,0.97) 100%)',
-                boxShadow: '0 0 0 1px rgba(168,85,247,0.18), 0 8px 32px rgba(0,0,0,0.3)',
-              }}
+              style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.10) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(168,85,247,0.18), 0 8px 32px rgba(0,0,0,0.3)' }}
             >
               <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
                 style={{ background: 'rgba(168,85,247,0.08)', border: '1px solid rgba(168,85,247,0.2)' }}>
@@ -564,42 +632,80 @@ export default function MobilePublishingPage() {
                 Chinese publishers need access to your source build to localise the game, integrate CN-specific SDKs, and handle platform submission. This is standard across the CN mobile ecosystem — not unique to any one deal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Pixsell advises on deal terms so the source build usage is clearly scoped — what it can be used for, IP reversion clauses, and data obligations. You retain full ownership and never sign anything that compromises that.
+                Pixsell advises on deal terms so source build usage is clearly scoped — what it can be used for, IP reversion clauses, and data handling obligations. You retain full ownership and never sign anything that compromises that.
               </p>
-              <div className="mt-5 flex items-center gap-2 text-purple-300 text-sm font-medium">
+              <div className="mt-5 pt-4 border-t border-white/5 flex items-center gap-2 text-purple-300 text-sm font-medium">
                 <CheckCircleIcon className="w-4 h-4 flex-shrink-0" />
                 <span>IP protection built into every agreement</span>
               </div>
             </motion.div>
 
-            {/* Publisher Communication */}
+            {/* Publisher accountability */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="relative rounded-2xl p-8"
-              style={{
-                background: 'linear-gradient(135deg, rgba(236,72,153,0.08) 0%, rgba(12,4,24,0.97) 100%)',
-                boxShadow: '0 0 0 1px rgba(236,72,153,0.15), 0 8px 32px rgba(0,0,0,0.3)',
-              }}
+              style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(236,72,153,0.15), 0 8px 32px rgba(0,0,0,0.3)' }}
             >
               <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"
                 style={{ background: 'rgba(236,72,153,0.07)', border: '1px solid rgba(236,72,153,0.2)' }}>
                 <UserGroupIcon className="w-5 h-5 text-pink-400" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Publisher Communication & Accountability</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Publisher Accountability</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Once you&apos;re matched with a publisher, the technical and operational work is entirely theirs — localisation, platform integration, UA campaigns, and ad monetisation. Your role as a developer is minimal after sign-off.
+                Once matched, all technical and operational work is the publisher&apos;s responsibility — localisation, platform integration, UA, and ad monetisation. Your time commitment after sign-off is minimal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Pixsell stays in the picture throughout. We monitor marketing commitments, track performance data, and ensure the publisher communicates clearly and pays out correctly. If there are issues, we escalate on your behalf.
+                Pixsell monitors marketing commitments, tracks performance data, and ensures the publisher communicates clearly and pays out correctly. If there are issues, we escalate. You deal with us, not the Chinese publisher directly.
               </p>
-              <div className="mt-5 flex items-center gap-2 text-pink-300 text-sm font-medium">
+              <div className="mt-5 pt-4 border-t border-white/5 flex items-center gap-2 text-pink-300 text-sm font-medium">
                 <CheckCircleIcon className="w-4 h-4 flex-shrink-0" />
-                <span>You deal with us, not the Chinese publisher directly</span>
+                <span>You deal with us, not the publisher directly</span>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ────────────────────────────────────────────────────────── */}
+      <section className="relative py-20">
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(168,85,247,0.06) 0%, transparent 70%)', filter: 'blur(60px)' }}
+        />
+
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12">
+            <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">Due Diligence</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Questions we get{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                from every developer
+              </span>
+            </h2>
+            <p className="text-gray-400 max-w-lg mx-auto">
+              Direct answers. If yours isn&apos;t here, it&apos;ll be covered in your free consultation.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            {FAQS.map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: i * 0.06, ease: 'easeOut' }}
+                viewport={{ once: true, margin: '-40px' }}
+                className="rounded-2xl px-6 py-5"
+                style={{ background: 'linear-gradient(135deg, rgba(12,4,24,0.97) 0%, rgba(6,2,14,0.98) 100%)', boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 4px 16px rgba(0,0,0,0.2)' }}
+              >
+                <h3 className="text-base font-bold text-white mb-2">{faq.q}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{faq.a}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -609,11 +715,10 @@ export default function MobilePublishingPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           aria-hidden="true"
-          style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(236,72,153,0.10) 0%, rgba(124,58,237,0.06) 40%, transparent 70%)',
-            filter: 'blur(40px)',
-          }}
+          style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(236,72,153,0.10) 0%, rgba(124,58,237,0.06) 40%, transparent 70%)', filter: 'blur(40px)' }}
         />
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-black to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none" />
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.div
@@ -628,36 +733,33 @@ export default function MobilePublishingPage() {
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.05] text-white mb-6">
-              Launch your mobile game{' '}
-              <span style={{
-                backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
-              }}>
-                in China.
+              Find out what your game{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
+                could earn in China.
               </span>
             </h2>
 
             <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
-              Book a free call and we&apos;ll assess your game&apos;s fit for the Chinese mobile market, show you what a typical deal looks like, and explain what you&apos;d realistically earn. No pitch, no obligation — just a straight answer on whether it makes sense for your game.
+              Book a free 30-minute call. We&apos;ll assess your game&apos;s fit for the CN mobile market, show you what a typical deal looks like, and give you a realistic earnings estimate. No pitch, no obligation.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-10">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/30 hover:-translate-y-0.5"
+                className="group relative inline-flex items-center gap-2 px-9 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/30 hover:-translate-y-0.5"
                 style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #7c3aed 100%)' }}
               >
+                <span
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%)', backgroundSize: '200% 100%', animation: 'shimmerSweep 0.6s ease forwards' }}
+                />
                 <span className="relative">Book a Free Consultation</span>
                 <ArrowRightIcon className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-              {['No upfront cost', 'IP protection built in', 'Honest market assessment', 'No obligation'].map((item, i) => (
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              {['No upfront cost', 'IP protection built in', 'Honest market assessment', '30 minutes', 'No obligation'].map((item, i) => (
                 <span key={i} className="flex items-center gap-2 text-sm text-gray-400">
                   <svg className="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
