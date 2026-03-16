@@ -15,7 +15,8 @@ export default function Footer() {
     {
       title: 'Services',
       links: [
-        { label: 'Co-Publishing', href: '/services/co-publishing' },
+        { label: 'Steam Publishing in China', href: '/services/co-publishing' },
+        { label: 'Mobile Publishing in China', href: '/services/mobile-publishing' },
         { label: 'Localisation', href: '/services/localisation' },
         { label: 'Marketing', href: '/services/marketing' },
       ]

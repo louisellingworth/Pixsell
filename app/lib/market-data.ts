@@ -232,5 +232,39 @@ export const processSteps = [
   },
 ] as const
 
+// Mobile publishing process steps
+export const mobileProcessSteps = [
+  {
+    when: 'Week 1–2',
+    what: 'Game Evaluation',
+    details: "• Pixsell: Assess genre fit for China mobile (hypercasual, casual, merge, lightweight adventure).\n• Pixsell: Review monetisation model and UA economics.\n• You: Share game build, DAU/revenue data, and market goals.",
+  },
+  {
+    when: 'Week 3–5',
+    what: 'Commercial Structuring',
+    details: "• Pixsell: Identify suitable mobile co-publisher or distributor candidates.\n• Pixsell: Model revenue share and UA budget commitments.\n• You: Review deal structures and approve preferred approach.",
+  },
+  {
+    when: 'Month 2–3',
+    what: 'Product Adaptation',
+    details: "• Pixsell: Coordinate UI/UX localisation for simplified Chinese.\n• Pixsell: Advise on content compliance and feature adjustments for CN platforms.\n• You: Provide source build access, approve localised assets.",
+  },
+  {
+    when: 'Month 3–5',
+    what: 'Platform Integration',
+    details: "• Pixsell: Oversee integration with target CN app stores (TapTap, Bilibili Games, Kuaishou, etc.).\n• Pixsell: Coordinate SDK and payment gateway integration via publisher.\n• You: Provide technical resource for integration milestones.",
+  },
+  {
+    when: 'Month 5–6',
+    what: 'Marketing & User Acquisition',
+    details: "• Pixsell: Review co-publisher's UA plan across ByteDance, Kuaishou, Bilibili, and WeChat Mini Games.\n• Pixsell: Track spend commitments and campaign performance.\n• You: Approve creative direction and messaging.",
+  },
+  {
+    when: 'Month 6+',
+    what: 'Live Ops & Ongoing Oversight',
+    details: "• Pixsell: Monitor retention, ARPU, and revenue reporting accuracy.\n• Pixsell: Hold publisher accountable for agreed KPIs and escalate issues.\n• You: Receive monthly performance summaries and approve major content decisions.",
+  },
+] as const
+
 // Re-export icons used across market sub-components for convenience
 export { ArrowRightIcon }

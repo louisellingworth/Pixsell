@@ -150,7 +150,7 @@ export default function WhyChooseSection() {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Compare the approaches to entering the Chinese gaming market and see why developers choose us.
+            Compare the approaches to entering the Chinese gaming market — for PC and mobile — and see why developers choose us.
           </p>
         </div>
 
