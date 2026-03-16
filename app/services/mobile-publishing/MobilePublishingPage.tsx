@@ -191,7 +191,7 @@ export default function MobilePublishingPage() {
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto mb-10">
-              China has 700M+ mobile gamers and a rapidly growing ecosystem of platforms — TapTap, Bilibili Games, WeChat Mini Games, and major Android stores. We give Western mobile developers a structured, low-risk path into that market, handling partner matching, commercial negotiations, adaptation oversight, and ongoing revenue monitoring so you don&apos;t have to build a China team.
+              China has 700M+ mobile gamers across WeChat Mini Games, TapTap, Bilibili Games, and major Android stores. Pixsell connects you with vetted Chinese publishers — so you receive multiple competing offers, negotiate from a position of strength, and enter on terms that protect your IP. The publisher handles the build and distribution. You earn 50% of in-game ad revenue.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
@@ -265,6 +265,64 @@ export default function MobilePublishingPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── How the Revenue Model Works ──────────────────────────────── */}
+      <section className="relative py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-60px' }}
+            className="relative rounded-2xl p-8 md:p-12"
+            style={{
+              background: 'linear-gradient(135deg, rgba(236,72,153,0.07) 0%, rgba(124,58,237,0.07) 50%, rgba(12,4,24,0.97) 100%)',
+              boxShadow: '0 0 0 1px rgba(168,85,247,0.14), 0 8px 40px rgba(0,0,0,0.35)',
+            }}
+          >
+            <div className="flex flex-col md:flex-row md:items-start gap-8">
+              <div className="flex-1">
+                <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-4">Revenue Model</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 leading-snug">
+                  The publisher does the work.<br />You earn 50% of ad revenue.
+                </h2>
+                <p className="text-gray-400 text-base leading-relaxed mb-4">
+                  Chinese publishers adapt your game for WeChat Mini Games and other CN platforms, then monetise it through in-game advertising. You receive 50% of that advertising revenue — paid out by the publisher on agreed cycles.
+                </p>
+                <p className="text-gray-400 text-base leading-relaxed">
+                  Pixsell&apos;s role is to ensure you get multiple offers from reputable publishers, negotiate favourable terms, and then stay in the loop so the publisher holds up their end of the deal once you&apos;re live.
+                </p>
+              </div>
+              <div className="md:w-64 flex-shrink-0 flex flex-col gap-4">
+                {[
+                  { label: 'Your revenue share', value: '50%', color: '#ec4899' },
+                  { label: 'Upfront cost to you', value: '$0', color: '#a855f7' },
+                  { label: 'Competing publisher offers', value: 'Multiple', color: '#6366f1' },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="rounded-xl px-5 py-4 flex items-center justify-between"
+                    style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
+                  >
+                    <span className="text-gray-400 text-sm">{item.label}</span>
+                    <span
+                      className="text-2xl font-black"
+                      style={{
+                        backgroundImage: `linear-gradient(135deg, ${item.color}, rgba(255,255,255,0.7))`,
+                        backgroundClip: 'text',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                      }}
+                    >
+                      {item.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -480,7 +538,7 @@ export default function MobilePublishingPage() {
               </span>
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              Two things distinguish mobile publishing in China from Steam/PC. We handle both — transparently.
+              Two things developers ask about before signing. Here&apos;s exactly how both work.
             </p>
           </div>
 
@@ -503,10 +561,10 @@ export default function MobilePublishingPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Source Code Access</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Most Chinese mobile publishing partners require access to your game&apos;s source build to integrate CN-specific SDKs, adapt for local app store requirements, and run platform QA. This is standard practice in the CN mobile ecosystem.
+                Chinese publishers need access to your source build to localise the game, integrate CN-specific SDKs, and handle platform submission. This is standard across the CN mobile ecosystem — not unique to any one deal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Pixsell structures agreements that protect your IP — including clear terms on what the source build can be used for, data handling obligations, and IP reversion clauses. You retain full ownership throughout.
+                Pixsell advises on deal terms so the source build usage is clearly scoped — what it can be used for, IP reversion clauses, and data obligations. You retain full ownership and never sign anything that compromises that.
               </p>
               <div className="mt-5 flex items-center gap-2 text-purple-300 text-sm font-medium">
                 <CheckCircleIcon className="w-4 h-4 flex-shrink-0" />
@@ -514,7 +572,7 @@ export default function MobilePublishingPage() {
               </div>
             </motion.div>
 
-            {/* Platform Adaptation */}
+            {/* Publisher Communication */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -530,16 +588,16 @@ export default function MobilePublishingPage() {
                 style={{ background: 'rgba(236,72,153,0.07)', border: '1px solid rgba(236,72,153,0.2)' }}>
                 <UserGroupIcon className="w-5 h-5 text-pink-400" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Platform-Specific Adaptation</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Publisher Communication & Accountability</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Chinese app stores — TapTap, Bilibili Games, Kuaishou Mini Games, and others — each have distinct technical and content requirements. Payment gateways, SDK layers, anti-addiction system compliance, and content localisation all need to be addressed.
+                Once you&apos;re matched with a publisher, the technical and operational work is entirely theirs — localisation, platform integration, UA campaigns, and ad monetisation. Your role as a developer is minimal after sign-off.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Pixsell coordinates this entirely through the publisher under the agreed deal terms. You don&apos;t need a China team, a local entity, or any platform-specific technical knowledge. We ensure the adaptation work happens and that it meets your quality bar.
+                Pixsell stays in the picture throughout. We monitor marketing commitments, track performance data, and ensure the publisher communicates clearly and pays out correctly. If there are issues, we escalate on your behalf.
               </p>
               <div className="mt-5 flex items-center gap-2 text-pink-300 text-sm font-medium">
                 <CheckCircleIcon className="w-4 h-4 flex-shrink-0" />
-                <span>No China team required on your side</span>
+                <span>You deal with us, not the Chinese publisher directly</span>
               </div>
             </motion.div>
           </div>
@@ -584,7 +642,7 @@ export default function MobilePublishingPage() {
             </h2>
 
             <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
-              Book a free consultation and let us assess your game&apos;s China mobile market potential. We&apos;ll identify the right publisher type, walk you through a typical deal structure, and give you a realistic picture of what to expect — all in 30 minutes.
+              Book a free call and we&apos;ll assess your game&apos;s fit for the Chinese mobile market, show you what a typical deal looks like, and explain what you&apos;d realistically earn. No pitch, no obligation — just a straight answer on whether it makes sense for your game.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">

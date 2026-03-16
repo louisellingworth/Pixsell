@@ -237,32 +237,32 @@ export const mobileProcessSteps = [
   {
     when: 'Week 1–2',
     what: 'Game Evaluation',
-    details: "• Pixsell: Assess genre fit for China mobile (hypercasual, casual, merge, lightweight adventure).\n• Pixsell: Review monetisation model and UA economics.\n• You: Share game build, DAU/revenue data, and market goals.",
+    details: "• Pixsell: Review your game's genre fit, existing metrics, and suitability for the CN mobile market.\n• Pixsell: Assess the ad-revenue potential and likely deal parameters publishers would offer.\n• You: Share game build, DAU/revenue data, and your goals for the Chinese market.",
   },
   {
     when: 'Week 3–5',
-    what: 'Commercial Structuring',
-    details: "• Pixsell: Identify suitable mobile co-publisher or distributor candidates.\n• Pixsell: Model revenue share and UA budget commitments.\n• You: Review deal structures and approve preferred approach.",
+    what: 'Publisher Introductions',
+    details: "• Pixsell: Tap our network to source multiple Chinese publisher candidates suited to your game.\n• Pixsell: Facilitate introductions and manage initial conversations so you receive competing offers.\n• You: Review offers and select the publisher that best fits your goals and terms.",
   },
   {
-    when: 'Month 2–3',
-    what: 'Product Adaptation',
-    details: "• Pixsell: Coordinate UI/UX localisation for simplified Chinese.\n• Pixsell: Advise on content compliance and feature adjustments for CN platforms.\n• You: Provide source build access, approve localised assets.",
+    when: 'Month 2',
+    what: 'Deal Negotiation',
+    details: "• Pixsell: Advise on deal structure — publishers typically pay 50% of in-game ad revenue to the developer.\n• Pixsell: Ensure IP protection, source build usage terms, and reversion clauses are clearly agreed.\n• You: Approve final deal terms before anything is signed.",
   },
   {
-    when: 'Month 3–5',
-    what: 'Platform Integration',
-    details: "• Pixsell: Oversee integration with target CN app stores (TapTap, Bilibili Games, Kuaishou, etc.).\n• Pixsell: Coordinate SDK and payment gateway integration via publisher.\n• You: Provide technical resource for integration milestones.",
+    when: 'Month 2–4',
+    what: 'Build & Platform Launch',
+    details: "• Publisher: Handles all technical work — localisation, CN SDK integration, WeChat Mini Game build, and store submission.\n• Pixsell: Monitors progress and ensures the publisher is communicating clearly and hitting milestones.\n• You: Provide source build access and sign off on the localised version before launch.",
   },
   {
-    when: 'Month 5–6',
-    what: 'Marketing & User Acquisition',
-    details: "• Pixsell: Review co-publisher's UA plan across ByteDance, Kuaishou, Bilibili, and WeChat Mini Games.\n• Pixsell: Track spend commitments and campaign performance.\n• You: Approve creative direction and messaging.",
+    when: 'Month 4–5',
+    what: 'Marketing Commitment Review',
+    details: "• Publisher: Executes UA campaigns across ByteDance, Kuaishou, Bilibili, and WeChat channels.\n• Pixsell: Reviews the publisher's marketing plan and spend commitment before and after launch.\n• You: Receive a summary of the marketing approach and confirm you're comfortable with the direction.",
   },
   {
-    when: 'Month 6+',
-    what: 'Live Ops & Ongoing Oversight',
-    details: "• Pixsell: Monitor retention, ARPU, and revenue reporting accuracy.\n• Pixsell: Hold publisher accountable for agreed KPIs and escalate issues.\n• You: Receive monthly performance summaries and approve major content decisions.",
+    when: 'Month 5+',
+    what: 'Revenue & Performance Monitoring',
+    details: "• Publisher: Pays you 50% of all in-game advertising revenue on agreed reporting cycles.\n• Pixsell: Tracks performance data, verifies revenue reporting, and holds the publisher accountable to KPIs.\n• You: Receive regular updates from Pixsell and escalate any concerns through us — no direct publisher management required.",
   },
 ] as const
 
