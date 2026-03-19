@@ -146,7 +146,7 @@ export const ComparisonTable = ({ registerSectionRef }: SectionProps) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.4 }}
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -164,7 +164,7 @@ export const ComparisonTable = ({ registerSectionRef }: SectionProps) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.2, delay: index * 0.15 }}
+              transition={{ duration: 1.9, delay: index * 0.15 }}
               className={`rounded-xl p-6 ${option.highlight ? 'bg-gradient-to-br from-purple-900/70 to-pink-900/70 border-2 border-purple-500/50' : 'bg-white/5 border border-white/10'}`}
             >
               <div className="flex items-center mb-6">

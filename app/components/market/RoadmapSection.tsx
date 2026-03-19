@@ -29,7 +29,7 @@ export default function RoadmapSection() {
       gsap.from(headingRef.current, {
         y: 32,
         opacity: 0,
-        duration: 1.1,
+        duration: 1.7,
         ease: 'power3.out',
         immediateRender: false,
         scrollTrigger: {
@@ -47,7 +47,7 @@ export default function RoadmapSection() {
           gsap.from(card, {
             x: fromLeft ? -40 : 40,
             opacity: 0,
-            duration: 1.0,
+            duration: 1.6,
             ease: 'power3.out',
             immediateRender: false,
             scrollTrigger: {
@@ -63,7 +63,7 @@ export default function RoadmapSection() {
             gsap.from(bullets, {
               x: -12,
               opacity: 0,
-              duration: 0.35,
+              duration: 0.55,
               stagger: 0.06,
               ease: 'power2.out',
               delay: 0.3,
@@ -102,7 +102,7 @@ export default function RoadmapSection() {
           gsap.from(dot, {
             scale: 0,
             opacity: 0,
-            duration: 0.4,
+            duration: 0.6,
             ease: 'back.out(2)',
             immediateRender: false,
             scrollTrigger: {

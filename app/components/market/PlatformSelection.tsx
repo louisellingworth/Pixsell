@@ -17,7 +17,7 @@ export default function PlatformSelection() {
       gsap.from(headingRef.current, {
         y: 32,
         opacity: 0,
-        duration: 1.1,
+        duration: 1.7,
         ease: 'power3.out',
         immediateRender: false,
         scrollTrigger: { trigger: headingRef.current, start: 'top 85%', once: true },
@@ -28,7 +28,7 @@ export default function PlatformSelection() {
         gsap.from(cards, {
           y: 40,
           opacity: 0,
-          duration: 1.0,
+          duration: 1.6,
           stagger: 0.15,
           ease: 'power3.out',
           immediateRender: false,

@@ -35,13 +35,13 @@ export default function FinalCTA() {
       tl.from(headingRef.current, {
         y: 40,
         opacity: 0,
-        duration: 1.2,
+        duration: 1.9,
         ease: 'power3.out',
       })
       tl.from(subRef.current, {
         y: 24,
         opacity: 0,
-        duration: 0.95,
+        duration: 1.5,
         ease: 'power2.out',
       }, '-=0.4')
       const trustItems = trustRef.current?.querySelectorAll<HTMLSpanElement>('span.trust-item')
@@ -49,7 +49,7 @@ export default function FinalCTA() {
         tl.from(trustItems, {
           y: 16,
           opacity: 0,
-          duration: 0.75,
+          duration: 1.2,
           stagger: 0.12,
           ease: 'power2.out',
         }, '-=0.3')
@@ -57,14 +57,14 @@ export default function FinalCTA() {
         tl.from(trustRef.current, {
           y: 16,
           opacity: 0,
-          duration: 1.2,
+          duration: 1.9,
           ease: 'power2.out',
         }, '-=0.3')
       }
       tl.from(btnWrapRef.current, {
         y: 20,
         opacity: 0,
-        duration: 1.2,
+        duration: 1.9,
         ease: 'power2.out',
       }, '-=0.2')
     }, sectionRef)
@@ -84,7 +84,7 @@ export default function FinalCTA() {
     }
 
     const handleMouseLeave = () => {
-      gsap.to(btn, { x: 0, y: 0, duration: 1.2, ease: 'elastic.out(1, 0.5)' })
+      gsap.to(btn, { x: 0, y: 0, duration: 1.9, ease: 'elastic.out(1, 0.5)' })
     }
 
     btn.addEventListener('mousemove', handleMouseMove)

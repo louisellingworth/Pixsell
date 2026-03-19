@@ -42,7 +42,7 @@ export const CtaSection = ({ registerSectionRef }: SectionProps) => {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.4 }}
           className="space-y-6"
         >
           <h2 className="section-title text-left">
@@ -95,7 +95,7 @@ export const CtaSection = ({ registerSectionRef }: SectionProps) => {
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.2, delay: 0.2 }}
+          transition={{ duration: 1.9, delay: 0.2 }}
         >
           <form 
             ref={formRef}

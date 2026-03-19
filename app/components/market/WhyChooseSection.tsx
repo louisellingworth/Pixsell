@@ -28,7 +28,7 @@ export default function WhyChooseSection() {
       gsap.from(headingRef.current, {
         y: 32,
         opacity: 0,
-        duration: 1.1,
+        duration: 1.7,
         ease: 'power3.out',
         immediateRender: false,
         scrollTrigger: {
@@ -44,7 +44,7 @@ export default function WhyChooseSection() {
         gsap.from(rows, {
           x: -24,
           opacity: 0,
-          duration: 1.2,
+          duration: 1.9,
           stagger: 0.1,
           ease: 'power2.out',
           immediateRender: false,
@@ -62,7 +62,7 @@ export default function WhyChooseSection() {
         gsap.from(cards, {
           y: 40,
           opacity: 0,
-          duration: 0.95,
+          duration: 1.5,
           stagger: 0.1,
           ease: 'power3.out',
           immediateRender: false,
@@ -78,7 +78,7 @@ export default function WhyChooseSection() {
       gsap.from(ctaBannerRef.current, {
         y: 32,
         opacity: 0,
-        duration: 1.1,
+        duration: 1.7,
         ease: 'power3.out',
         immediateRender: false,
         scrollTrigger: {
@@ -98,9 +98,9 @@ export default function WhyChooseSection() {
             scale: 0,
             rotate: -15,
             opacity: 0,
-            duration: 0.4,
+            duration: 0.6,
             ease: 'back.out(2)',
-            delay: 0.1,
+            delay: 0.18,
             immediateRender: false,
             scrollTrigger: {
               trigger: card,
