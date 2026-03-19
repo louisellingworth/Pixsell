@@ -1,16 +1,16 @@
-// Service Worker for Pixsell Games
-const CACHE_NAME = 'pixsell-v1'
-const STATIC_CACHE = 'pixsell-static-v1'
-const DYNAMIC_CACHE = 'pixsell-dynamic-v1'
-const API_CACHE = 'pixsell-api-v1'
+// Service Worker for EightSix Games
+const CACHE_NAME = 'eightsix-v1'
+const STATIC_CACHE = 'eightsix-static-v1'
+const DYNAMIC_CACHE = 'eightsix-dynamic-v1'
+const API_CACHE = 'eightsix-api-v1'
 
 // Files to cache immediately
 const STATIC_FILES = [
   '/',
   '/offline.html',
   '/manifest.json',
-  '/Pixsell Logo.png',
-  '/pixsell-meta-image.jpg',
+  '/EightSix Logo.png',
+  '/eightsix-meta-image.jpg',
   '/fonts/inter-var.woff2',
   '/favicon.ico'
 ]
@@ -200,8 +200,8 @@ async function doBackgroundSync() {
 self.addEventListener('push', (event) => {
   const options = {
     body: event.data ? event.data.text() : 'New update available',
-    icon: '/Pixsell Logo.png',
-    badge: '/Pixsell Logo.png',
+    icon: '/EightSix Logo.png',
+    badge: '/EightSix Logo.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -211,18 +211,18 @@ self.addEventListener('push', (event) => {
       {
         action: 'explore',
         title: 'View',
-        icon: '/Pixsell Logo.png'
+        icon: '/EightSix Logo.png'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/Pixsell Logo.png'
+        icon: '/EightSix Logo.png'
       }
     ]
   }
 
   event.waitUntil(
-    self.registration.showNotification('Pixsell Games', options)
+    self.registration.showNotification('EightSix Games', options)
   )
 })
 

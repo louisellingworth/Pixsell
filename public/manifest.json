@@ -1,6 +1,6 @@
 {
-  "name": "Pixsell Games",
-  "short_name": "Pixsell",
+  "name": "EightSix Games",
+  "short_name": "EightSix",
   "description": "Game Publishing in China - Helping Western developers enter the Chinese market",
   "start_url": "/",
   "display": "standalone",
@@ -37,7 +37,7 @@
     {
       "name": "Contact Us",
       "short_name": "Contact",
-      "description": "Get in touch with Pixsell Games",
+      "description": "Get in touch with EightSix Games",
       "url": "/contact",
       "icons": [{ "src": "/icons/contact-icon.png", "sizes": "192x192" }]
     },
@@ -55,7 +55,7 @@
       "sizes": "1280x720",
       "type": "image/jpeg",
       "platform": "wide",
-      "label": "Homepage of Pixsell Games"
+      "label": "Homepage of EightSix Games"
     }
   ],
   "categories": ["business", "games", "entertainment"],

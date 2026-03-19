@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Page Not Found - Pixsell Games | China Game Publishing Services',
+  title: 'Page Not Found - EightSix Games | China Game Publishing Services',
   description: 'The page you are looking for doesn\'t exist. Explore our China game publishing services including co-publishing, localization, and marketing.',
   robots: {
     index: false,

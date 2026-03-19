@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://pixsellgames.com',
+  siteUrl: process.env.SITE_URL || 'https://eightsixgames.com',
   generateRobotsTxt: true,
   generateIndexSitemap: true,
   exclude: ['/404', '/500', '/api/*'],
@@ -13,7 +13,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://pixsellgames.com/sitemap.xml',
+      'https://eightsixgames.com/sitemap.xml',
     ],
   },
   changefreq: 'weekly',

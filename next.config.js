@@ -6,7 +6,7 @@ const { cacheHeaders } = require('./cache-config');
 const nextConfig = {
   reactStrictMode: true,
   // CDN Configuration
-  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://cdn.pixsellgames.com' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://cdn.eightsixgames.com' : '',
   images: {
     remotePatterns: [
       {
@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'cdn.pixsellgames.com',
+        hostname: 'cdn.eightsixgames.com',
       }
     ],
     deviceSizes: [320, 420, 640, 750, 828, 1080, 1200, 1920, 2048],

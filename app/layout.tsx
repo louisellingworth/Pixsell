@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 import { siteConfig } from '@/lib/config'
 import Navigation from './components/Navigation'
 import Script from 'next/script'
@@ -24,12 +24,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: 'Pixsell - Game Publishing in China | Co-Publishing & Localization Services',
+  title: 'EightSix - Game Publishing in China | Co-Publishing & Localization Services',
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  authors: [{ name: 'Pixsell Games' }],
-  creator: 'Pixsell Games',
-  publisher: 'Pixsell Games',
+  authors: [{ name: 'EightSix Games' }],
+  creator: 'EightSix Games',
+  publisher: 'EightSix Games',
   alternates: {
     canonical: '/',
     languages: {
@@ -51,33 +51,33 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://pixsellgames.com',
-    title: 'Pixsell - Game Publishing in China | Co-Publishing & Localization Services',
+    url: 'https://eightsixgames.com',
+    title: 'EightSix - Game Publishing in China | Co-Publishing & Localization Services',
     description: 'Launch your game in China with trusted co-publishing partners. We handle game approvals, marketing, localization, and partnerships for Western developers entering the Chinese game market.',
-    siteName: 'Pixsell Games',
+    siteName: 'EightSix Games',
     images: [
       {
         url: '/pixsell-meta-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Pixsell Games - China Game Publishing Services for Western Developers',
+        alt: 'EightSix Games - China Game Publishing Services for Western Developers',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pixsell - Game Publishing in China | Co-Publishing & Localization Services',
+    title: 'EightSix - Game Publishing in China | Co-Publishing & Localization Services',
     description: 'Launch your game in China with trusted co-publishing partners. We handle game approvals, marketing, localization, and partnerships.',
     images: ['/pixsell-meta-image.jpg'],
-    creator: '@pixsell_games',
-    site: '@pixsell_games',
+    creator: '@eightsixgames',
+    site: '@eightsixgames',
   },
   other: {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'format-detection': 'telephone=no',
     'mobile-web-app-capable': 'yes',
-    'application-name': 'Pixsell',
+    'application-name': 'EightSix',
     'msapplication-TileColor': '#000000',
     'msapplication-tap-highlight': 'no',
     'google-site-verification': 'your-verification-code',
@@ -121,7 +121,7 @@ export default function RootLayout({
         
         {/* Add preload for critical resources */}
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/Pixsell Logo-640w.webp" as="image" />
+        <link rel="preload" href="/6ight-games-logo.png" as="image" />
         
         {/* Font preloading from our optimization script */}
         <FontPreload />
@@ -133,15 +133,15 @@ export default function RootLayout({
         <meta name="google" content="notranslate" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-touch-fullscreen" content="yes" />
-        <meta name="apple-mobile-web-app-title" content="Pixsell" />
+        <meta name="apple-mobile-web-app-title" content="EightSix" />
         <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         
         {/* Hreflang tags for internationalization */}
-        <link rel="alternate" hrefLang="en" href="https://pixsellgames.com" />
-        <link rel="alternate" hrefLang="x-default" href="https://pixsellgames.com" />
+        <link rel="alternate" hrefLang="en" href="https://eightsixgames.com" />
+        <link rel="alternate" hrefLang="x-default" href="https://eightsixgames.com" />
         
         {/* Google Analytics */}
         <Script
@@ -185,12 +185,12 @@ export default function RootLayout({
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Pixsell Games",
-              "url": "https://pixsellgames.com",
+              "name": "EightSix Games",
+              "url": "https://eightsixgames.com",
               "description": "Launch your game in China with trusted co-publishing partners",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://pixsellgames.com/search?q={search_term_string}",
+                "target": "https://eightsixgames.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }
@@ -208,19 +208,19 @@ export default function RootLayout({
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": "https://pixsellgames.com"
+                  "item": "https://eightsixgames.com"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Services",
-                  "item": "https://pixsellgames.com/services"
+                  "item": "https://eightsixgames.com/services"
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": "About",
-                  "item": "https://pixsellgames.com/about"
+                  "item": "https://eightsixgames.com/about"
                 }
               ]
             }
@@ -233,19 +233,19 @@ export default function RootLayout({
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Pixsell Games",
-              "url": "https://pixsellgames.com",
-              "logo": "https://pixsellgames.com/favicon/android-chrome-512x512.png",
+              "name": "EightSix Games",
+              "url": "https://eightsixgames.com",
+              "logo": "https://eightsixgames.com/favicon/android-chrome-512x512.png",
               "description": "Launch your game in China with trusted co-publishing partners. We handle approvals, marketing, and partnerships.",
               "sameAs": [
-                "https://twitter.com/pixsellgames",
-                "https://linkedin.com/company/pixsellgames"
+                "https://twitter.com/eightsixgames",
+                "https://linkedin.com/company/eightsixgames"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "",
                 "contactType": "customer service",
-                "email": "contact@pixsellgames.com",
+                "email": "contact@eightsixgames.com",
                 "availableLanguage": ["English", "Chinese"]
               },
               "serviceType": "Game Publishing",
@@ -270,7 +270,7 @@ export default function RootLayout({
               "description": "Comprehensive game publishing services for Western developers entering the Chinese market",
               "provider": {
                 "@type": "Organization",
-                "name": "Pixsell Games"
+                "name": "EightSix Games"
               },
               "serviceType": "Game Publishing",
               "areaServed": "China",
@@ -311,11 +311,11 @@ export default function RootLayout({
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Pixsell Games",
-              "url": "https://pixsellgames.com",
+              "name": "EightSix Games",
+              "url": "https://eightsixgames.com",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://pixsellgames.com/search?q={search_term_string}",
+                "target": "https://eightsixgames.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             }

@@ -1,20 +1,20 @@
 /**
- * Runtime configuration for the Pixsell website
+ * Runtime configuration for the EightSix website
  * This centralizes key constants and settings used throughout the application
  */
 
 export const siteConfig = {
-  name: "Pixsell Games",
-  shortName: "Pixsell",
+  name: "EightSix Games",
+  shortName: "EightSix",
   description: "Launch your game in China with trusted co-publishing partners. We handle game approvals, marketing, localization, and partnerships for Western developers entering the Chinese game market.",
-  url: "https://pixsellgames.com",
-  ogImageUrl: "https://pixsellgames.com/images/og-image.jpg",
+  url: "https://eightsixgames.com",
+  ogImageUrl: "https://eightsixgames.com/images/og-image.jpg",
   links: {
-    twitter: "https://twitter.com/pixsellgames",
-    linkedin: "https://linkedin.com/company/pixsellgames",
+    twitter: "https://twitter.com/eightsixgames",
+    linkedin: "https://linkedin.com/company/eightsixgames",
   },
   contact: {
-    email: "contact@pixsellgames.com",
+    email: "contact@eightsixgames.com",
   },
   metaTags: {
     themeColor: "#000000",
