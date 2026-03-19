@@ -165,7 +165,7 @@ export default function PartnershipPage() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-lg sm:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed text-center"
               >
-                At Pixsell Games, we believe that successful partnerships are built on{' '}
+                At EightSix Games, we believe that successful partnerships are built on{' '}
                 <motion.span
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}

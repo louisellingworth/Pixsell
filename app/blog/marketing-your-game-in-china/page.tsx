@@ -20,7 +20,7 @@ export default function BlogPost() {
       To tap into this audience, developers need more than just a translated game – they need a localised 
       marketing strategy. In this guide, we'll cover five practical strategies to build awareness and a 
       strong community in China, all geared towards boosting your Steam title's success. We'll also show 
-      how Pixsell Games can simplify the process by serving as your expert partner in Chinese game 
+      how EightSix Games can simplify the process by serving as your expert partner in Chinese game 
       marketing and publishing.
       
       Chinese social media and video platforms are essential for reaching gamers. Western channels like Twitter 
@@ -45,29 +45,29 @@ export default function BlogPost() {
         '@type': 'Article',
         headline: 'Marketing Your Game in China: 5 Strategies for Steam Titles',
         description: 'A guide to marketing your Steam game in China, with five actionable strategies for Western developers.',
-        image: 'https://pixsellgames.com/blog/marketing-china-games.jpg',
+        image: 'https://eightsixgames.com/blog/marketing-china-games.jpg',
         author: {
           '@type': 'Person',
-          name: 'Pixsell Team',
+          name: 'EightSix Team',
           description: 'China Gaming Market Specialists'
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsellgames.com/blog/marketing-your-game-in-china'
+          '@id': 'https://eightsixgames.com/blog/marketing-your-game-in-china'
         },
         wordCount: 1400,
         timeRequired: 'PT9M',
-        url: 'https://pixsellgames.com/blog/marketing-your-game-in-china',
+        url: 'https://eightsixgames.com/blog/marketing-your-game-in-china',
         articleSection: 'Marketing'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -79,13 +79,13 @@ export default function BlogPost() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsellgames.com/blog'
+            item: 'https://eightsixgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Marketing Your Game in China: 5 Strategies for Steam Titles',
-            item: 'https://pixsellgames.com/blog/marketing-your-game-in-china'
+            item: 'https://eightsixgames.com/blog/marketing-your-game-in-china'
           }
         ]
       })}} />
@@ -165,7 +165,7 @@ export default function BlogPost() {
               To tap into this audience, developers need more than just a translated game – they need a localised 
               marketing strategy. In this guide, we'll cover five practical strategies to build awareness and a 
               strong community in China, all geared towards boosting your Steam title's success. We'll also show 
-              how Pixsell Games can simplify the process by serving as your expert partner in Chinese game 
+              how EightSix Games can simplify the process by serving as your expert partner in Chinese game 
               marketing and publishing.
             </p>
 
@@ -453,7 +453,7 @@ export default function BlogPost() {
               with loyalty and advocacy.
             </p>
 
-            <h2>5. The Role of a Chinese Co-Publisher (and How Pixsell Games Can Help)</h2>
+            <h2>5. The Role of a Chinese Co-Publisher (and How EightSix Games Can Help)</h2>
 
             <p>
               While it's entirely possible to self-publish on Steam and manually handle your China marketing, many Western 
@@ -512,42 +512,42 @@ export default function BlogPost() {
             </p>
 
             <div className="bg-white/5 border border-white/10 p-5 rounded-lg my-8">
-              <h4 className="text-purple-400 font-bold">How Pixsell Games Can Help</h4>
+              <h4 className="text-purple-400 font-bold">How EightSix Games Can Help</h4>
               <p>
-                Pixsell Games specialises in bridging Western developers to the Chinese market – essentially acting as the facilitator 
-                and co-publisher you need. Here are ways Pixsell can support you:
+                EightSix Games specialises in bridging Western developers to the Chinese market – essentially acting as the facilitator 
+                and co-publisher you need. Here are ways EightSix can support you:
               </p>
               
               <ul>
                 <li>
-                  <strong>Partner Matchmaking:</strong> Not every game needs the same type of local publisher. Pixsell will evaluate 
+                  <strong>Partner Matchmaking:</strong> Not every game needs the same type of local publisher. EightSix will evaluate 
                   your game and connect you with the right Chinese co-publishing partner for your genre and scale. Whether it's a major 
-                  publisher for full distribution or a lean marketing-focused agency, Pixsell's knowledge of the landscape ensures you 
-                  get a reliable partner. This saves you the headache of vetting agencies or publishers that may not deliver; Pixsell 
+                  publisher for full distribution or a lean marketing-focused agency, EightSix's knowledge of the landscape ensures you 
+                  get a reliable partner. This saves you the headache of vetting agencies or publishers that may not deliver; EightSix 
                   has a network of trusted contacts.
                 </li>
                 <li>
-                  <strong>Marketing Execution:</strong> Pixsell Games can take the reins of your Chinese marketing campaign from start 
+                  <strong>Marketing Execution:</strong> EightSix Games can take the reins of your Chinese marketing campaign from start 
                   to finish. They will set up and manage your accounts on Weibo, Bilibili, Douyin, and more, create localised content 
-                  calendars, and push out regular updates to build hype. Pixsell coordinates influencer outreach – getting popular streamers 
+                  calendars, and push out regular updates to build hype. EightSix coordinates influencer outreach – getting popular streamers 
                   to play your game around launch, organising Bilibili video drops, and even running paid ad campaigns on platforms like 
                   WeChat or Toutiao if needed. Essentially, they act as your marketing department for China, making sure your game is 
                   visible on all the channels we discussed (and doing so with culturally tuned messaging).
                 </li>
                 <li>
-                  <strong>Community Building and PR:</strong> Through Pixsell, you can get community managers who speak the language of 
+                  <strong>Community Building and PR:</strong> Through EightSix, you can get community managers who speak the language of 
                   your fans. They'll moderate your Chinese Discord-equivalents (QQ/WeChat groups), engage fans with events, and keep 
-                  the enthusiasm up. Pixsell can also handle Chinese PR – sending press releases to gaming news sites, securing coverage 
+                  the enthusiasm up. EightSix can also handle Chinese PR – sending press releases to gaming news sites, securing coverage 
                   on portals like 17173 or Sina Games, and liaising with app stores for featuring opportunities. All of this ongoing 
                   effort results in sustained awareness. As seen in one case study, consistent content creation and community engagement 
                   on Chinese platforms yielded +26,000 Steam wishlists in 6 months for a game, with 31% of total wishlists coming from 
-                  China after the campaign. That's the kind of impact a focused Chinese marketing push (the kind Pixsell delivers) can have.
+                  China after the campaign. That's the kind of impact a focused Chinese marketing push (the kind EightSix delivers) can have.
                 </li>
                 <li>
-                  <strong>Data and Revenue Optimisation:</strong> Pixsell will keep you informed with local player feedback and 
+                  <strong>Data and Revenue Optimisation:</strong> EightSix will keep you informed with local player feedback and 
                   performance metrics. You'll get reports on how your game is doing with Chinese audiences – user acquisition costs, 
                   conversion rates, peak play times, etc. This data helps in tweaking your strategies (maybe adjusting store page 
-                  visuals or tutorial difficulty if Chinese players struggle early). Additionally, Pixsell's experience means they'll 
+                  visuals or tutorial difficulty if Chinese players struggle early). Additionally, EightSix's experience means they'll 
                   negotiate fair terms if any revenue-sharing deals are involved, and ensure you repatriate your earnings smoothly. 
                   They also help avoid common pitfalls, like recognising if a potential local partner is asking for too high a cut 
                   or if a particular app store isn't worth the effort. In short, they aim to maximise your success while minimising risk.
@@ -556,8 +556,8 @@ export default function BlogPost() {
               
               <p className="mb-0">
                 Launching and marketing a game in China can involve many moving parts – but you don't have to navigate it alone. 
-                A co-publisher like Pixsell Games essentially becomes your guide, translator, marketing team, and advocate rolled 
-                into one. By handling the heavy lifting in China, Pixsell lets you focus on what you do best (making a great game) 
+                A co-publisher like EightSix Games essentially becomes your guide, translator, marketing team, and advocate rolled 
+                into one. By handling the heavy lifting in China, EightSix lets you focus on what you do best (making a great game) 
                 while they ensure it gets the spotlight it deserves in the East.
               </p>
             </div>
@@ -601,8 +601,8 @@ export default function BlogPost() {
             </p>
 
             <p>
-              Now, a helping hand can make all the difference. This is where Pixsell Games comes in. If you're a developer or 
-              studio looking to amplify your game's reach in China without the stress and steep learning curve, Pixsell Games 
+              Now, a helping hand can make all the difference. This is where EightSix Games comes in. If you're a developer or 
+              studio looking to amplify your game's reach in China without the stress and steep learning curve, EightSix Games 
               is ready to be your co-publisher partner. We specialise in navigating the Chinese gaming sphere for you – from 
               finding the perfect local publisher match to executing end-to-end marketing campaigns that get results.
             </p>
@@ -610,12 +610,12 @@ export default function BlogPost() {
             <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 p-6 rounded-xl border border-purple-500/20 my-8">
               <h3 className="text-2xl font-bold text-white mb-4">Ready to Launch Your Game in China?</h3>
               <p className="mb-6">
-                Reach out to Pixsell Games today and let our team of experts craft a custom China marketing strategy for your title. 
+                Reach out to EightSix Games today and let our team of experts craft a custom China marketing strategy for your title. 
                 We'll handle the platforms, the influencers, the translations, and the promotions – you get the growth and revenue. 
                 Don't miss out on the world's largest PC gaming market.
               </p>
               <Link href="/contact" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center">
-                Contact Pixsell Games Now
+                Contact EightSix Games Now
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

@@ -16,29 +16,29 @@ export default function CoPublishingVsSelfPublishingChina() {
         '@type': 'Article',
         headline: 'Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global',
         description: 'A comparison of self-publishing and co-publishing models for launching games in China, including pros, cons, and regulatory insights.',
-        image: 'https://pixsellgames.com/blog/co-publishing-vs-self-publishing-china.jpg',
+        image: 'https://eightsixgames.com/blog/co-publishing-vs-self-publishing-china.jpg',
         author: {
           '@type': 'Person',
-          name: 'Pixsell Team',
+          name: 'EightSix Team',
           description: 'China Gaming Market Specialists'
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsellgames.com/blog/co-publishing-vs-self-publishing-china'
+          '@id': 'https://eightsixgames.com/blog/co-publishing-vs-self-publishing-china'
         },
         wordCount: 1600,
         timeRequired: 'PT10M',
-        url: 'https://pixsellgames.com/blog/co-publishing-vs-self-publishing-china',
+        url: 'https://eightsixgames.com/blog/co-publishing-vs-self-publishing-china',
         articleSection: 'Strategy'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -50,13 +50,13 @@ export default function CoPublishingVsSelfPublishingChina() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsellgames.com/blog'
+            item: 'https://eightsixgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global',
-            item: 'https://pixsellgames.com/blog/co-publishing-vs-self-publishing-china'
+            item: 'https://eightsixgames.com/blog/co-publishing-vs-self-publishing-china'
           }
         ]
       })}} />
@@ -560,13 +560,13 @@ export default function CoPublishingVsSelfPublishingChina() {
             <h2 className="text-2xl font-semibold mt-8 mb-4">Case Studies: Co-Publishing Success Stories</h2>
             <p>
               To better illustrate how co-publishing can transform a game's fortunes in China, let's look at a few examples of successful 
-              partnerships facilitated by Pixsell Games:
+              partnerships facilitated by EightSix Games:
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3">Case Study 1: Payday 3 – A AAA Co-Op Shooter Breaks Out in China</h3>
             <p>
               When the co-op heist shooter Payday 3 was gearing up for release, the developers knew the Chinese PC audience loved 
-              cooperative shooters (the Payday 2 community in China was already large). With Pixsell's facilitation, they partnered 
+              cooperative shooters (the Payday 2 community in China was already large). With EightSix's facilitation, they partnered 
               with a Chinese co-publisher who executed an aggressive marketing campaign on Bilibili and Douyin leading up to launch. 
               Influencers streamed the game in early access, and localized content (like Chinese subtitled trailers and heist tip videos) 
               circulated widely on Weibo. The result was tremendous Day-1 buzz in China. Payday 3 quickly climbed the global top-seller 
@@ -578,51 +578,51 @@ export default function CoPublishingVsSelfPublishingChina() {
             <p>
               A small European studio had a turn-based strategy RPG on Steam. The game received critical praise in the West but initially 
               saw minimal traction in China (only a few dozen Chinese reviews, mostly from users who found it by chance). After engaging 
-              Pixsell, the developers struck a co-publishing deal with a niche Chinese publisher specializing in strategy titles. The 
+              EightSix, the developers struck a co-publishing deal with a niche Chinese publisher specializing in strategy titles. The 
               publisher localized the game to Simplified Chinese and ran a targeted campaign on Tieba forums and strategy game communities, 
               positioning the game as "XCOM meets Wuxia" to appeal to local tastes. They also arranged a few sponsored livestreams with 
               strategy enthusiasts. Over the next six months, the game's sales in China exploded – going from essentially zero to accounting 
               for over 30% of the game's total worldwide sales.
             </p>
 
-            <h2 className="text-2xl font-semibold mt-8 mb-4">How Pixsell Games Supports Developers in Co-Publishing</h2>
+            <h2 className="text-2xl font-semibold mt-8 mb-4">How EightSix Games Supports Developers in Co-Publishing</h2>
             <p>
-              As highlighted above, Pixsell Games has played a key role in facilitating many successful co-publishing partnerships. 
-              But what exactly does Pixsell do, and how can they help developers navigate China? In short, Pixsell Games acts as a bridge 
+              As highlighted above, EightSix Games has played a key role in facilitating many successful co-publishing partnerships. 
+              But what exactly does EightSix do, and how can they help developers navigate China? In short, EightSix Games acts as a bridge 
               between Western developers and the Chinese market, offering end-to-end guidance and support. Here are the specific ways 
-              Pixsell assists developers:
+              EightSix assists developers:
             </p>
 
             <ul className="list-disc pl-6 my-4">
               <li className="mb-2">
-                <strong>Co-Publishing Deal Facilitation:</strong> Pixsell leverages its network of trusted Chinese publishers to find the 
+                <strong>Co-Publishing Deal Facilitation:</strong> EightSix leverages its network of trusted Chinese publishers to find the 
                 right fit for your game. The team will evaluate your game's genre, style, and target audience to identify potential 
                 co-publishing partners in China that have relevant experience.
               </li>
               <li className="mb-2">
-                <strong>Marketing and Launch Strategy:</strong> Once a co-publisher is on board, Pixsell stays involved as an advisor and 
+                <strong>Marketing and Launch Strategy:</strong> Once a co-publisher is on board, EightSix stays involved as an advisor and 
                 coordinator. They help manage marketing campaigns with the publisher from start to finish, ensuring that the agreed plans 
                 are executed effectively.
               </li>
               <li className="mb-2">
                 <strong>Localization and Culturalization Guidance:</strong> While the co-publisher will typically handle the actual localization, 
-                Pixsell provides strategic localization advice and cultural adaptation guidance. They act as a second pair of eyes to ensure 
+                EightSix provides strategic localization advice and cultural adaptation guidance. They act as a second pair of eyes to ensure 
                 the translation is high quality and that cultural nuances are addressed.
               </li>
               <li className="mb-2">
-                <strong>Regulatory Navigation:</strong> Pixsell provides clear guidance on Chinese regulations. In most cases, as we've 
-                discussed, the strategy is to avoid needing an ISBN by using Steam Global. Pixsell keeps an eye on the regulatory climate 
+                <strong>Regulatory Navigation:</strong> EightSix provides clear guidance on Chinese regulations. In most cases, as we've 
+                discussed, the strategy is to avoid needing an ISBN by using Steam Global. EightSix keeps an eye on the regulatory climate 
                 and can help you navigate any changes.
               </li>
               <li className="mb-2">
                 <strong>Ongoing Partnership Management:</strong> A co-publishing relationship is not a one-and-done deal; it's ongoing. 
-                Pixsell stays involved post-launch to manage the partnership dynamics. They serve as a liaison between you and the 
+                EightSix stays involved post-launch to manage the partnership dynamics. They serve as a liaison between you and the 
                 co-publisher if any issues arise.
               </li>
             </ul>
 
             <p>
-              In essence, Pixsell Games offers a comprehensive support system for co-publishing: from matchmaking you with a trustworthy 
+              In essence, EightSix Games offers a comprehensive support system for co-publishing: from matchmaking you with a trustworthy 
               Chinese publisher, to shaping the marketing strategy, to ensuring the execution is top-notch and compliant. This kind of 
               partnership service is especially valuable for studios that have never tackled the Chinese market before.
             </p>
@@ -659,7 +659,7 @@ export default function CoPublishingVsSelfPublishingChina() {
             <p>
               For developers eyeing China, the message is clear: you don't have to go it alone, and you don't have to wait years for 
               permission – by partnering up, you can launch now on Steam Global, connect with Chinese gamers on day one, and build a 
-              thriving community and business in this lucrative market. With the right co-publishing strategy (and allies like Pixsell 
+              thriving community and business in this lucrative market. With the right co-publishing strategy (and allies like EightSix 
               Games to support you), conquering the Chinese games market becomes a very achievable reality.
             </p>
             
@@ -674,7 +674,7 @@ export default function CoPublishingVsSelfPublishingChina() {
                 </Link>
                 
                 <Link href="/contact" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-colors">
-                  Contact Pixsell Games
+                  Contact EightSix Games
                 </Link>
               </div>
             </div>

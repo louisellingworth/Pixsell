@@ -89,7 +89,7 @@ const FAQS = [
   { q: 'Do I lose my IP?', a: 'No. You retain full ownership throughout. We ensure the publisher agreement clearly scopes what the source build can be used for, with IP reversion clauses and data handling obligations built in.' },
   { q: 'Why does the publisher need my source code?', a: 'To localise the game for simplified Chinese, integrate CN-specific SDKs (payment, analytics, anti-addiction compliance), and handle platform submission for WeChat Mini Games and Android stores. This is standard practice across CN mobile publishing — not specific to any one deal.' },
   { q: 'How does the revenue model work exactly?', a: 'The publisher monetises your game through in-game advertising on CN platforms. They pay you 50% of that ad revenue on agreed reporting cycles. There are no upfront costs to you — the publisher funds all localisation and UA.' },
-  { q: 'How do I know the publisher is reporting revenue accurately?', a: 'Pixsell tracks performance data independently and cross-references publisher reports. If there are discrepancies or communication gaps, we escalate on your behalf. You deal with us, not the publisher directly.' },
+  { q: 'How do I know the publisher is reporting revenue accurately?', a: 'EightSix tracks performance data independently and cross-references publisher reports. If there are discrepancies or communication gaps, we escalate on your behalf. You deal with us, not the publisher directly.' },
   { q: 'How many publisher offers will I receive?', a: 'We aim to generate multiple competing offers so you can evaluate terms side by side. The number depends on your genre and metrics, but we never present you with a single take-it-or-leave-it option.' },
   { q: 'What happens if the publisher underperforms post-launch?', a: 'We monitor marketing spend commitments and performance KPIs. If the publisher isn\'t delivering, we hold them accountable and can advise on whether renegotiation or exit is the right path.' },
 ]
@@ -257,7 +257,7 @@ export default function MobilePublishingPage() {
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8">
-              Pixsell connects your game with vetted Chinese publishers across WeChat Mini Games, TapTap, Bilibili Games, and major Android stores. Multiple competing offers. 50% ad revenue. Zero upfront cost.
+              EightSix connects your game with vetted Chinese publishers across WeChat Mini Games, TapTap, Bilibili Games, and major Android stores. Multiple competing offers. 50% ad revenue. Zero upfront cost.
             </p>
 
             {/* Authority row */}
@@ -360,7 +360,7 @@ export default function MobilePublishingPage() {
                 Chinese publishers adapt your game for WeChat Mini Games and other CN platforms at their own cost, then monetise through in-game advertising. You receive 50% of that revenue on agreed reporting cycles — no capital outlay required.
               </p>
               <p className="text-gray-500 text-sm leading-relaxed mb-7">
-                Pixsell&apos;s role is to ensure you receive multiple competing offers, that deal terms genuinely protect your interests, and that the publisher pays out correctly after launch.
+                EightSix&apos;s role is to ensure you receive multiple competing offers, that deal terms genuinely protect your interests, and that the publisher pays out correctly after launch.
               </p>
               <div className="flex flex-col gap-2.5">
                 {['No upfront investment', 'Publisher funds all localisation & UA', 'You approve before anything is signed'].map((item, i) => (
@@ -408,7 +408,7 @@ export default function MobilePublishingPage() {
         </div>
       </section>
 
-      {/* ── What Pixsell Delivers ───────────────────────────────────────── */}
+      {/* ── What EightSix Delivers ───────────────────────────────────────── */}
       <section className="relative py-24">
         <div
           className="absolute left-0 top-1/3 w-[500px] h-[400px] pointer-events-none"
@@ -421,7 +421,7 @@ export default function MobilePublishingPage() {
             <div>
               <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Scope of Work</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
-                What Pixsell{' '}
+                What EightSix{' '}
                 <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   delivers
                 </span>
@@ -477,7 +477,7 @@ export default function MobilePublishingPage() {
           >
             <BanknotesIcon className="w-4 h-4 text-emerald-500/50 flex-shrink-0" />
             <p className="text-gray-600 text-sm">
-              Performance-based — Pixsell earns when you earn. No retainer, no upfront fee.
+              Performance-based — EightSix earns when you earn. No retainer, no upfront fee.
             </p>
           </motion.div>
         </div>
@@ -692,7 +692,7 @@ export default function MobilePublishingPage() {
                 Chinese publishers need access to your source build to localise the game, integrate CN-specific SDKs, and handle platform submission. This is standard across the CN mobile ecosystem — not unique to any one deal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Pixsell advises on deal terms so source build usage is clearly scoped — what it can be used for, IP reversion clauses, and data handling obligations. You retain full ownership and never sign anything that compromises that.
+                EightSix advises on deal terms so source build usage is clearly scoped — what it can be used for, IP reversion clauses, and data handling obligations. You retain full ownership and never sign anything that compromises that.
               </p>
               <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-purple-300 text-xs font-semibold">
                 <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
@@ -717,7 +717,7 @@ export default function MobilePublishingPage() {
                 Once matched, all technical and operational work is the publisher&apos;s responsibility — localisation, platform integration, UA, and ad monetisation. Your time commitment after sign-off is minimal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Pixsell monitors marketing commitments, tracks performance data, and ensures the publisher pays out correctly. If there are issues, we escalate. You deal with us, not the Chinese publisher directly.
+                EightSix monitors marketing commitments, tracks performance data, and ensures the publisher pays out correctly. If there are issues, we escalate. You deal with us, not the Chinese publisher directly.
               </p>
               <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-pink-300 text-xs font-semibold">
                 <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />

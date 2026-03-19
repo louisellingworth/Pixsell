@@ -1,776 +1,730 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { 
-  GlobeAltIcon, 
-  DocumentCheckIcon,
-  CurrencyDollarIcon,
-  ChartBarIcon,
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
+import {
   UserGroupIcon,
-  RocketLaunchIcon,
   ArrowRightIcon,
   CheckCircleIcon,
-  SparklesIcon,
   BanknotesIcon,
-  DocumentMagnifyingGlassIcon,
   ShieldCheckIcon,
-  StarIcon,
-  TrophyIcon
+  ChevronDownIcon,
 } from '@heroicons/react/24/outline'
-import Link from 'next/link'
 
 import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import FloatingConsultButton from '../../components/FloatingConsultButton'
 
-// Animation variants
-const animations = {
-  fadeIn: {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+// ── Data ─────────────────────────────────────────────────────────────────────
+
+const STATS = [
+  { value: '50M+', label: 'Steam China Accounts', sub: 'Active players on Steam in the Chinese market', color: '#a855f7' },
+  { value: '#2', label: 'Global Gaming Market', sub: 'China is the second-largest PC gaming market by revenue', color: '#ec4899' },
+  { value: '$0', label: 'Upfront Cost to You', sub: 'Performance-based — we earn when you earn', color: '#6366f1' },
+]
+
+const WHAT_WE_DELIVER = [
+  {
+    step: '01',
+    title: 'Publisher Matching',
+    body: 'We screen our network of vetted Chinese co-publishers and shortlist candidates based on your game\'s genre, audience, and commercial track record. You review each option and approve before we move forward.',
+    outcome: 'A shortlist of publishers suited to your game — not a single take-it-or-leave-it option.',
+    accentColor: '#a855f7',
   },
-  staggerContainer: {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
+  {
+    step: '02',
+    title: 'Deal Negotiation',
+    body: 'We handle all contract negotiations — revenue share structure, marketing spend commitments, recoupment thresholds, and reporting obligations. We flag anything that isn\'t in your favour. You approve the final terms before anything is signed.',
+    outcome: 'Agreement terms that protect your IP and your earnings.',
+    accentColor: '#ec4899',
   },
-  cardVariants: {
-    hidden: { opacity: 0, y: 30, scale: 0.95 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    },
-    hover: { 
-      scale: 1.02,
-      y: -8,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    }
-  }
-}
+  {
+    step: '03',
+    title: 'Marketing & Localisation Oversight',
+    body: 'We hold the co-publisher accountable for their commitments on WeChat, Weibo, Bilibili, and Douyin — reviewing campaign plans, approving content direction, and coordinating localisation through our partner network.',
+    outcome: 'The marketing spend they committed to is the spend that gets deployed.',
+    accentColor: '#6366f1',
+  },
+  {
+    step: '04',
+    title: 'Revenue Monitoring',
+    body: 'We track revenue reports, cross-reference accuracy, escalate discrepancies with the co-publisher, and send you regular performance summaries. You deal with us, not the publisher directly.',
+    outcome: 'You always know exactly where things stand.',
+    accentColor: '#10b981',
+  },
+]
 
-// Style constants 
-const styles = {
-  gradientText: "bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent",
-  cardStyle: "p-8 lg:p-10 rounded-2xl bg-black/40 backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative overflow-hidden group text-center h-full",
-  cardGlow: "absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500",
-  shimmer: "before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent"
-}
+const GENRE_FIT = [
+  {
+    title: 'Indie & Mid-core PC',
+    description: 'Strong cultural appetite for polished indie titles on Steam China. Genre-bending and narrative-driven games have strong word-of-mouth traction with CN PC players.',
+    fit: 'Best fit',
+    fitStyle: { color: '#34d399', background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' },
+  },
+  {
+    title: 'Action / RPG / Strategy',
+    description: 'Historically dominant genres on Steam China. Deep mechanics and replayability drive high retention and community growth on platforms like Bilibili.',
+    fit: 'Best fit',
+    fitStyle: { color: '#34d399', background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' },
+  },
+  {
+    title: 'Survival & Sandbox',
+    description: 'Open-world and survival mechanics resonate well. Co-publishers in this space have established communities and influencer networks ready to activate.',
+    fit: 'Good fit',
+    fitStyle: { color: '#60a5fa', background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.2)' },
+  },
+  {
+    title: 'Simulation & Management',
+    description: 'Growing segment with engaged player base on Steam China. Localisation complexity is moderate and co-publishers increasingly have experience here.',
+    fit: 'Good fit',
+    fitStyle: { color: '#60a5fa', background: 'rgba(59,130,246,0.08)', border: '1px solid rgba(59,130,246,0.2)' },
+  },
+  {
+    title: 'AAA / Large Live-Service',
+    description: 'High localisation cost, ongoing live ops demands, and CN platform compliance requirements make large-scale titles harder to place through a co-publishing model without significant commitment.',
+    fit: 'Harder to place',
+    fitStyle: { color: '#fbbf24', background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)' },
+  },
+]
 
-// Types for card props
-type FeatureCardProps = {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-  color?: string;
-};
+const FAQS = [
+  {
+    q: 'Do I lose my IP?',
+    a: 'No. You retain full ownership of your game and intellectual property throughout. The co-publishing agreement scopes exactly what the publisher is authorised to do — marketing, localisation, and Steam China operations — with clear boundaries and no assignment of IP.',
+  },
+  {
+    q: 'Do I need an ISBN to publish on Steam China?',
+    a: 'Not for Steam Global, which is accessible to Chinese players. We focus exclusively on Steam Global, avoiding the ISBN licensing process required for domestic Chinese platforms like WeGame. This significantly reduces regulatory complexity and time to market.',
+  },
+  {
+    q: 'How does the revenue share work?',
+    a: 'The co-publisher typically covers localisation and marketing costs upfront, recouped from revenue before profit-sharing begins. Once the recoupment threshold is cleared, you receive your agreed share — negotiated by us before you sign anything. Some deals include non-recoupable marketing budgets, which means your revenue share kicks in sooner.',
+  },
+  {
+    q: 'How many publisher offers will I receive?',
+    a: 'We aim to generate multiple competing offers so you can evaluate terms side by side. The number depends on your game\'s genre and commercial profile, but we never present a single take-it-or-leave-it option.',
+  },
+  {
+    q: 'What does the co-publisher actually do?',
+    a: 'They handle localisation into Simplified Chinese, run marketing campaigns on Weibo, WeChat, Bilibili, and Douyin, manage community and customer support, and handle Steam China operations and payment processing. EightSix oversees all of this and holds them accountable to what was agreed.',
+  },
+  {
+    q: 'What happens if the publisher underperforms after launch?',
+    a: 'We monitor marketing spend commitments and revenue reporting. If the publisher isn\'t delivering, we escalate directly. Depending on the circumstances, we can advise on whether renegotiation or early termination is the right path — and we\'ll have the contract terms to back it up.',
+  },
+]
 
-// Reusable FeatureCard component
-const FeatureCard = ({ icon: Icon, title, description, color = "from-purple-500 to-pink-500" }: FeatureCardProps) => (
-  <motion.div
-    variants={animations.cardVariants}
-    whileHover="hover"
-    className={styles.cardStyle}
-  >
-    <div className={styles.cardGlow} />
-    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    
-    <div className="relative z-10">
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${color} p-4 mb-8 mx-auto group-hover:shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300`}
-      >
-        <Icon className="w-full h-full text-white" aria-hidden="true" />
-      </motion.div>
-      <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-pink-400 transition-colors duration-300">{title}</h3>
-      <p className="text-white/60 text-lg leading-relaxed">{description}</p>
-    </div>
-  </motion.div>
-);
+// ── Sub-components ────────────────────────────────────────────────────────────
 
-// Reusable CTAButton component
-type CTAButtonProps = {
-  children: React.ReactNode;
-  primary?: boolean;
-  href?: string;
-};
-
-const CTAButton = ({ children, primary = false, href }: CTAButtonProps) => {
-  const ButtonContent = (
-    <motion.div 
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className={`group px-6 py-3 rounded-xl text-white font-medium text-base transition-all duration-300 relative overflow-hidden ${
-        primary 
-          ? "bg-gradient-to-r from-pink-500 to-purple-500 hover:shadow-lg hover:shadow-pink-500/20" 
-          : "border-2 border-purple-500/20 hover:border-purple-500/40 bg-black/40 backdrop-blur-sm"
-      }`}
-    >
-      <motion.div
-        initial={{ x: "100%" }}
-        whileHover={{ x: "-100%" }}
-        transition={{ duration: 0.7, ease: "easeInOut" }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-      />
-      <span className="relative z-10 flex items-center gap-2">
-        {children}
-      </span>
-    </motion.div>
-  );
-
-  return href ? (
-    <Link href={href}>
-      {ButtonContent}
-    </Link>
-  ) : ButtonContent;
-};
-
-// Reusable SectionHeading component
-type SectionHeadingProps = {
-  children: React.ReactNode;
-  subtitle?: string;
-  badge?: string;
-};
-
-const SectionHeading = ({ children, subtitle, badge }: SectionHeadingProps) => (
-  <div className="text-center mb-20">
-    {badge && (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
-      >
-        <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
-          {badge}
-        </span>
-      </motion.div>
-    )}
-    <h2 className={`text-4xl sm:text-5xl font-bold mb-8 ${styles.gradientText}`}>
-      {children}
-    </h2>
-    {subtitle && (
-      <p className="text-white/50 text-lg leading-relaxed max-w-3xl mx-auto">
-        {subtitle}
-      </p>
-    )}
-  </div>
-);
-
-// Main component
-export default function CoPublishingPage() {
-  const [activeStep, setActiveStep] = useState(0);
-  const targetRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end start"]
-  });
-  
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
-
-  // Data for cards in sections
-  const whyNeedData = [
-    {
-      icon: DocumentCheckIcon,
-      title: "Market Access Without ISBN Restrictions",
-      description: "While obtaining an ISBN is required for domestic Chinese platforms, Steam Global allows foreign developers to publish without it. However, a Chinese co-publisher provides vital expertise to navigate localisation, marketing, and community engagement, ensuring a game's success in this unique market.",
-      color: "from-blue-500 to-indigo-500"
-    },
-    {
-      icon: GlobeAltIcon,
-      title: "Local Marketing & Player Engagement",
-      description: "A successful game in China requires more than just translation. Cultural adaptation, localised marketing, and influencer engagement are key. Co-publishers help developers launch tailored campaigns, run effective promotions on Chinese social media platforms like Weibo and Bilibili, and collaborate with streamers to drive engagement.",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: UserGroupIcon,
-      title: "Community Building & Customer Support",
-      description: "Chinese gamers highly value ongoing interaction and support. A co-publisher manages player engagement, provides localised customer service, and builds strong communities on platforms like QQ and WeChat, fostering long-term player retention.",
-      color: "from-emerald-500 to-teal-500"
-    },
-    {
-      icon: CurrencyDollarIcon,
-      title: "Revenue Optimisation & Payment Handling",
-      description: "China's gaming market has distinct payment processing and monetisation structures. A co-publisher ensures smooth transactions, optimises monetisation models, and helps navigate local payment gateways to maximise revenue.",
-      color: "from-orange-500 to-red-500"
-    }
-  ];
-
-  const howWeHelpData = [
-    {
-      icon: UserGroupIcon,
-      title: "Strategic Partner Selection",
-      description: "We leverage our deep industry connections to identify and secure the ideal co-publisher for your game, ensuring alignment with your genre, audience, and revenue goals.",
-      color: "from-cyan-500 to-blue-500"
-    },
-    {
-      icon: DocumentCheckIcon,
-      title: "Negotiating the Best Terms",
-      description: "Our expertise ensures you get the best possible revenue share, fair recoupment structures, and transparent financial agreements, so you maximise profitability.",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      icon: ChartBarIcon,
-      title: "Comprehensive Market Strategy",
-      description: "We coordinate the entire market entry process, ensuring marketing efforts meet the highest industry standards and align with both Western and Chinese player expectations for a seamless and impactful launch.",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: RocketLaunchIcon,
-      title: "Ongoing Performance Optimisation",
-      description: "Through real-time data tracking and analytics, we continuously optimise campaigns and partnerships to ensure maximum return on investment.",
-      color: "from-yellow-500 to-orange-500"
-    }
-  ];
-
-  const revenueData = [
-    {
-      icon: BanknotesIcon,
-      title: "Marketing & Localisation Costs",
-      description: "Typically covered by the co-publisher upfront and recouped from revenue before profit-sharing begins.",
-      color: "from-emerald-500 to-teal-500"
-    },
-    {
-      icon: ChartBarIcon,
-      title: "Recoupment Thresholds",
-      description: "Once initial costs are covered, revenue splits become more favourable to the developer.",
-      color: "from-blue-500 to-indigo-500"
-    },
-    {
-      icon: DocumentMagnifyingGlassIcon,
-      title: "Non-Recoupable Spend",
-      description: "Some deals include non-recoupable marketing budgets, allowing you to earn a higher revenue share sooner.",
-      color: "from-purple-500 to-pink-500"
-    }
-  ];
-
-  const benefitsData = [
-    {
-      icon: ShieldCheckIcon,
-      title: "No IP Loss",
-      description: "You keep full control of your game and intellectual property."
-    },
-    {
-      icon: StarIcon,
-      title: "Best Deal Negotiation",
-      description: "We secure the most favourable terms on your behalf."
-    },
-    {
-      icon: TrophyIcon,
-      title: "Risk-Free Entry",
-      description: "No upfront investment, just a performance-based revenue share."
-    },
-    {
-      icon: GlobeAltIcon,
-      title: "Local Expertise",
-      description: "Your game gets top-tier marketing and support in China."
-    },
-    {
-      icon: DocumentCheckIcon,
-      title: "No ISBN Needed",
-      description: "We focus on Steam Global to avoid complex regulations."
-    }
-  ];
-
+function FaqItem({ faq, index }: { faq: typeof FAQS[0]; index: number }) {
+  const [open, setOpen] = useState(false)
   return (
-    <main className="min-h-screen bg-black text-white overflow-x-hidden">
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
+    <motion.div
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
+      viewport={{ once: true, margin: '-40px' }}
+      className="border-b"
+      style={{ borderColor: 'rgba(255,255,255,0.07)' }}
+    >
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between gap-6 py-6 text-left group"
       >
-        <Navigation />
-      </div>
-      
-      {/* Spacer for fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-
-      {/* Enhanced Background Effects - Premium Design */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-black" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-black/50 to-black opacity-80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-pink-900/20 via-black/50 to-black opacity-60" />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.15, 0.25, 0.15] 
-          }} 
-          transition={{ 
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut" 
-          }}
-          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-pink-500/20 rounded-full filter blur-[150px]" 
+        <span className="text-base font-semibold text-white group-hover:text-purple-200 transition-colors duration-200">
+          {faq.q}
+        </span>
+        <ChevronDownIcon
+          className="w-4 h-4 flex-shrink-0 text-gray-500 transition-transform duration-300"
+          style={{ transform: open ? 'rotate(180deg)' : 'rotate(0deg)' }}
         />
-        <motion.div 
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.15, 0.25, 0.15] 
-          }} 
-          transition={{ 
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 5 
-          }}
-          className="absolute bottom-1/4 right-1/4 w-[800px] h-[800px] bg-purple-500/20 rounded-full filter blur-[150px]" 
-        />
-      </div>
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.28, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <p className="text-gray-400 text-sm leading-relaxed pb-6 max-w-2xl">
+              {faq.a}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  )
+}
 
-      <div className="relative z-10 pt-24 pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          {/* Premium Hero Section */}
-          <div className="min-h-[80vh] flex flex-col justify-center items-center mb-32 relative">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-              className="max-w-4xl mx-auto space-y-8 text-center relative"
-            >
-              {/* Decorative Elements */}
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full blur-2xl"
-              />
-              
-              <div className="relative">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 1, delay: 0.5 }}
-                  className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"
+// ── Main component ────────────────────────────────────────────────────────────
+
+export default function CoPublishingPage() {
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <Navigation />
+
+      {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <section className="relative pt-36 pb-28 overflow-hidden">
+        {/* Glow */}
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none"
+          aria-hidden="true"
+          style={{
+            background: 'radial-gradient(ellipse at center, rgba(168,85,247,0.14) 0%, rgba(236,72,153,0.07) 50%, transparent 70%)',
+            filter: 'blur(80px)',
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'linear-gradient(to bottom, transparent, black)' }}
+        />
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="text-center"
+          >
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/25 bg-purple-500/8 text-purple-300 text-xs font-medium tracking-widest uppercase mb-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+              Co-Publishing on Steam China
+            </div>
+
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.04] tracking-tight text-white mb-7">
+              Reach China&apos;s{' '}
+              <span style={{
+                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899, #a855f7)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundSize: '200% 200%',
+                animation: 'premiumGradient 3s ease-in-out infinite',
+              }}>
+                50M Steam players
+              </span>
+              <br className="hidden sm:block" />
+              {' '}without building a China team
+            </h1>
+
+            <p className="text-lg sm:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8">
+              EightSix matches your game with vetted Chinese co-publishers, negotiates the deal terms, and holds the publisher accountable post-launch. You keep your IP. You approve every step.
+            </p>
+
+            {/* Authority row */}
+            <div className="flex flex-wrap items-center justify-center gap-x-7 gap-y-2.5 mb-10">
+              {[
+                'No upfront cost',
+                'Multiple publisher offers',
+                'IP stays yours',
+                'No ISBN required',
+                'Steam Global only',
+              ].map((item, i) => (
+                <span key={i} className="flex items-center gap-2 text-sm text-gray-400">
+                  <svg className="w-3.5 h-3.5 text-purple-500/70 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z" />
+                  </svg>
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+              <Link
+                href="/contact"
+                className="group relative inline-flex items-center gap-2 px-9 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-0.5"
+                style={{ background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #7c3aed 100%)' }}
+              >
+                <span
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%)', backgroundSize: '200% 100%' }}
                 />
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent inline-block">
-                    Co-Publishing
+                <span className="relative">Book a Free Consultation</span>
+                <ArrowRightIcon className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/services/mobile-publishing"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-sm text-gray-400 border border-white/8 hover:border-white/16 hover:text-gray-200 transition-all duration-300"
+              >
+                Mobile publishing instead?
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Market Stats ─────────────────────────────────────────────── */}
+      <section className="relative py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.07]"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.07)', borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            {STATS.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+                viewport={{ once: true, margin: '-60px' }}
+                className="px-8 py-10 sm:py-12 flex flex-col"
+              >
+                <div
+                  className="text-5xl sm:text-6xl font-black leading-none mb-3 tabular-nums"
+                  style={{ backgroundImage: `linear-gradient(135deg, ${stat.color}, rgba(255,255,255,0.55))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                >
+                  {stat.value}
+                </div>
+                <p className="text-white font-semibold text-sm mb-1.5">{stat.label}</p>
+                <p className="text-gray-600 text-xs leading-relaxed">{stat.sub}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why a co-publisher ───────────────────────────────────────── */}
+      <section className="relative py-24">
+        <div
+          className="absolute right-0 top-0 w-[600px] h-[500px] pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'radial-gradient(ellipse at top right, rgba(168,85,247,0.07) 0%, transparent 65%)', filter: 'blur(80px)' }}
+        />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            {/* Left: copy */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, margin: '-60px' }}
+            >
+              <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Why Co-Publishing</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
+                China&apos;s market rewards<br />
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  local expertise.
+                </span>
+              </h2>
+              <p className="text-gray-400 text-base leading-relaxed mb-5">
+                A great game isn&apos;t enough on its own. Chinese players discover games through Bilibili, Weibo, and Douyin — not through the Steam global storefront. A co-publisher brings the platform relationships, community infrastructure, and localisation capability that determine whether your game finds its audience or gets ignored.
+              </p>
+              <p className="text-gray-500 text-sm leading-relaxed mb-7">
+                EightSix&apos;s role is to ensure you find the right co-publisher, negotiate terms that genuinely protect your interests, and hold the publisher accountable post-launch.
+              </p>
+              <div className="flex flex-col gap-2.5">
+                {[
+                  'Localised marketing across CN social platforms',
+                  'Community management on QQ and WeChat',
+                  'CN payment processing and revenue optimisation',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2.5 text-sm text-gray-300">
+                    <CheckCircleIcon className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right: key numbers */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, margin: '-60px' }}
+              className="flex flex-col gap-0"
+            >
+              {[
+                { label: 'Revenue split', value: 'Negotiated', color: '#a855f7', sub: 'we push for the best possible terms' },
+                { label: 'Upfront cost to you', value: '$0', color: '#ec4899', sub: 'co-publisher funds localisation & marketing' },
+                { label: 'ISBN required', value: 'No', color: '#6366f1', sub: 'Steam Global bypasses domestic CN regulations' },
+                { label: 'IP ownership', value: 'Yours', color: '#10b981', sub: 'always — built into the contract' },
+              ].map((item, i, arr) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-between py-6"
+                  style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.06)' : 'none' }}
+                >
+                  <div>
+                    <p className="text-gray-500 text-xs mb-0.5">{item.label}</p>
+                    <p className="text-gray-600 text-xs">{item.sub}</p>
+                  </div>
+                  <span
+                    className="text-3xl font-black tabular-nums"
+                    style={{ backgroundImage: `linear-gradient(135deg, ${item.color}, rgba(255,255,255,0.6))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                  >
+                    {item.value}
                   </span>
-                </h1>
-              </div>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-2xl sm:text-3xl text-white/90 font-light"
-              >
-                Strategic Market Entry
-              </motion.p>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed text-center"
-              >
-                Partner with trusted Chinese publishers and{' '}
-                <motion.span
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
-                >
-                  optimise your game's success
-                </motion.span>
-                {' '}in the Chinese market – on Steam Global.
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="pt-8"
-              >
-                <CTAButton primary href="/contact">
-                  Schedule a Consultation
-                  <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </CTAButton>
-              </motion.div>
-            </motion.div>
-
-            {/* Scroll Indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="absolute bottom-8 left-1/2 -translate-x-1/2"
-            >
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center p-2"
-              >
-                <div className="w-1 h-2 bg-white/60 rounded-full" />
-              </motion.div>
+                </div>
+              ))}
             </motion.div>
           </div>
+        </div>
+      </section>
 
-          {/* Enhanced Introduction Section */}
-          <div className="mb-40">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8 }}
-              className="max-w-5xl mx-auto"
-            >
-              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                
-                <div className="space-y-8 text-center">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
-                  >
-                    <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
-                      Our Approach
+      {/* ── What EightSix Delivers ───────────────────────────────────── */}
+      <section className="relative py-24">
+        <div
+          className="absolute left-0 top-1/3 w-[500px] h-[400px] pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
+        />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <div>
+              <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Scope of Work</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+                What EightSix{' '}
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  delivers
+                </span>
+              </h2>
+            </div>
+            <p className="text-gray-500 md:max-w-xs text-sm leading-relaxed md:text-right">
+              Your advocate and deal architect — from first publisher conversation to ongoing revenue monitoring.
+            </p>
+          </div>
+
+          <div>
+            {WHAT_WE_DELIVER.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+                viewport={{ once: true, margin: '-60px' }}
+                className="group relative"
+              >
+                {i === 0 && <div className="h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />}
+                <div className="flex items-start gap-8 py-9 sm:py-10">
+                  <div className="flex-shrink-0 w-8 pt-0.5">
+                    <span className="text-xs font-black tracking-widest tabular-nums select-none" style={{ color: item.accentColor, opacity: 0.45 }}>
+                      {item.step}
                     </span>
-                  </motion.div>
-                  
-                  <motion.p 
-                    variants={animations.fadeIn} 
-                    className="text-xl sm:text-2xl leading-relaxed text-white/90 font-medium"
-                  >
-                    Expanding your game into the Chinese market requires strategic partnerships to navigate its unique challenges. At Pixsell Games, we specialise in securing the best co-publishing deals, ensuring compliance, and optimising revenue structures to maximise your success—all while focusing exclusively on Steam Global, avoiding the complexities of mobile storefronts, WeGame, and ISBN requirements.
-                  </motion.p>
+                  </div>
+                  <div className="flex-1 min-w-0 grid md:grid-cols-[1fr_auto] gap-6 md:gap-14 items-start">
+                    <div>
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-3" style={{ lineHeight: 1.2 }}>
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-500 text-sm leading-relaxed">{item.body}</p>
+                    </div>
+                    <div className="md:text-right md:pt-0.5 md:w-52 flex-shrink-0">
+                      <p className="text-xs font-semibold leading-relaxed" style={{ color: item.accentColor }}>
+                        {item.outcome}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Enhanced Why Need Section */}
-          <div className="mb-40">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={animations.staggerContainer}
-              className="max-w-6xl mx-auto"
-            >
-              <SectionHeading 
-                badge="Market Entry"
-                subtitle="China's gaming industry is highly competitive and comes with regulatory hurdles that make it difficult for foreign developers to succeed without the right local partner. A co-publisher is essential for:"
-              >
-                Why Do You Need a Co-Publisher in China?
-              </SectionHeading>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                {whyNeedData.map((item, index) => (
-                  <FeatureCard 
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    color={item.color}
-                  />
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Enhanced How Our Co-Publishing Model Works Section */}
-          <div className="mb-40">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={animations.staggerContainer}
-              className="max-w-6xl mx-auto"
-            >
-              <SectionHeading 
-                badge="Our Process"
-                subtitle="We match you with the right Chinese co-publisher and negotiate the best possible terms—from revenue share to marketing commitments—so you stay in control while ensuring your success."
-              >
-                How Our Co-Publishing Model Works
-              </SectionHeading>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16 mb-12">
-                <motion.div 
-                  variants={animations.cardVariants}
-                  className="bg-black/40 backdrop-blur-sm p-8 lg:p-10 rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full"
-                >
-                  <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  
-                  <div className="flex items-center mb-6">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mr-4">
-                      <span className="text-xl font-bold text-white">1</span>
-                    </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Find the Right Partner</h3>
-                  </div>
-                  <p className="text-white/60 leading-relaxed">
-                    We screen our network of vetted Chinese co-publishers and shortlist candidates based on your game&apos;s genre, audience, and commercial goals. You review the shortlist and approve your preferred publisher before we move forward.
-                  </p>
-                </motion.div>
-                
-                <motion.div 
-                  variants={animations.cardVariants}
-                  className="bg-black/40 backdrop-blur-sm p-8 lg:p-10 rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full"
-                >
-                  <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  
-                  <div className="flex items-center mb-6">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mr-4">
-                      <span className="text-xl font-bold text-white">2</span>
-                    </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Negotiate Deal Terms</h3>
-                  </div>
-                  <p className="text-white/60 leading-relaxed">
-                    We handle all contract negotiations — revenue share, marketing spend commitments, recoupment thresholds — and flag anything that isn&apos;t in your favour. You approve the final terms before anything is signed.
-                  </p>
-                </motion.div>
-                
-                <motion.div 
-                  variants={animations.cardVariants}
-                  className="bg-black/40 backdrop-blur-sm p-8 lg:p-10 rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full"
-                >
-                  <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  
-                  <div className="flex items-center mb-6">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mr-4">
-                      <span className="text-xl font-bold text-white">3</span>
-                    </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Oversee Marketing & Localisation</h3>
-                  </div>
-                  <p className="text-white/60 leading-relaxed">
-                    We hold the co-publisher accountable for their marketing commitments on WeChat, Weibo, Bilibili, and Douyin — reviewing campaign plans, approving content direction, and coordinating localisation through our partner network.
-                  </p>
-                </motion.div>
-                
-                <motion.div 
-                  variants={animations.cardVariants}
-                  className="bg-black/40 backdrop-blur-sm p-8 lg:p-10 rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full"
-                >
-                  <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                  
-                  <div className="flex items-center mb-6">
-                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center mr-4">
-                      <span className="text-xl font-bold text-white">4</span>
-                    </div>
-                    <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Monitor Revenue & Performance</h3>
-                  </div>
-                  <p className="text-white/60 leading-relaxed">
-                    We track revenue reports, verify accuracy, escalate issues with the co-publisher, and send you regular performance summaries — so you always know exactly where things stand.
-                  </p>
-                </motion.div>
-              </div>
-              
-              <motion.div 
-                variants={animations.cardVariants}
-                className="bg-gradient-to-r from-pink-900/30 via-black/50 to-purple-900/30 backdrop-blur-sm p-8 lg:p-12 rounded-2xl border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300 relative overflow-hidden"
-              >
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                
-                <h3 className="text-2xl font-bold mb-8 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Why Choose This Model?</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {benefitsData.map((benefit, index) => (
-                    <motion.div 
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <div className="flex-shrink-0 h-6 w-6 rounded-full bg-emerald-500/20 flex items-center justify-center mt-1">
-                        <CheckCircleIcon className="h-4 w-4 text-emerald-400" />
-                      </div>
-                      <div>
-                        <span className="font-bold text-emerald-400">{benefit.title}</span>
-                        <p className="text-white/60 text-sm mt-1">{benefit.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
+                <div className="h-px" style={{ background: 'rgba(255,255,255,0.06)' }} />
               </motion.div>
-            </motion.div>
+            ))}
           </div>
 
-          {/* Enhanced How We Help Section */}
-          <div className="mb-40">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true, margin: '-40px' }}
+            className="mt-10 flex items-center gap-3"
+          >
+            <BanknotesIcon className="w-4 h-4 text-emerald-500/50 flex-shrink-0" />
+            <p className="text-gray-600 text-sm">
+              Performance-based — EightSix earns when you earn. No retainer, no upfront fee.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Game Fit ─────────────────────────────────────────────────── */}
+      <section className="relative py-24">
+        <div
+          className="absolute right-0 top-1/4 w-[500px] h-[400px] pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
+        />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
+            {/* Left: sticky label column */}
             <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={animations.staggerContainer}
-              className="max-w-6xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, margin: '-60px' }}
+              className="md:sticky md:top-28"
             >
-              <SectionHeading 
-                badge="Partnership Strategy"
-                subtitle="Not all co-publishers are the same. Some specialise in indie games, while others focus on high-budget titles. Pixsell Games ensures your game is matched with the right partner through a structured approach:"
-              >
-                How We Secure the Best Co-Publishing Partnership for You
-              </SectionHeading>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                {howWeHelpData.map((item, index) => (
-                  <FeatureCard 
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    color={item.color}
-                  />
+              <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Game Fit</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
+                Is your game a{' '}
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  good fit?
+                </span>
+              </h2>
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                CN PC players on Steam have broad tastes, but some genres have stronger publisher infrastructure than others. We&apos;ll give you an honest read in your consultation.
+              </p>
+              {/* Legend */}
+              <div className="flex flex-col gap-2">
+                {[
+                  { label: 'Best fit', color: '#34d399' },
+                  { label: 'Good fit', color: '#60a5fa' },
+                  { label: 'Harder to place', color: '#fbbf24' },
+                ].map((l) => (
+                  <div key={l.label} className="flex items-center gap-2.5">
+                    <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: l.color }} />
+                    <span className="text-xs text-gray-500">{l.label}</span>
+                  </div>
                 ))}
               </div>
             </motion.div>
+
+            {/* Right: genre list */}
+            <div>
+              {GENRE_FIT.map((card, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.45, delay: i * 0.07, ease: 'easeOut' }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  className="group"
+                >
+                  {i === 0 && <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />}
+                  <div className="flex items-start gap-5 py-7">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-3 mb-2 flex-wrap">
+                        <h3 className="text-base font-bold text-white">{card.title}</h3>
+                        <span
+                          className="text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                          style={card.fitStyle}
+                        >
+                          {card.fit}
+                        </span>
+                      </div>
+                      <p className="text-gray-500 text-sm leading-relaxed">{card.description}</p>
+                    </div>
+                  </div>
+                  <div className="h-px" style={{ background: 'rgba(255,255,255,0.07)' }} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Two key considerations ────────────────────────────────────── */}
+      <section className="relative py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-16">
+            <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">What to Know</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+              Two things developers ask{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                before signing
+              </span>
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
+              Here&apos;s exactly how both work — no vague reassurances.
+            </p>
           </div>
 
-          {/* Enhanced Revenue Section */}
-          <div className="mb-40">
+          <div className="grid md:grid-cols-2 gap-6">
             <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={animations.staggerContainer}
-              className="max-w-6xl mx-auto"
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, margin: '-60px' }}
+              className="relative rounded-2xl p-8"
+              style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.10) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(168,85,247,0.15)' }}
             >
-              <SectionHeading 
-                badge="Financial Terms"
-                subtitle="Understanding the financial structure is crucial for making informed decisions about your China market entry."
-              >
-                Revenue Recoupment & Financial Commitments
-              </SectionHeading>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-                {revenueData.map((item, index) => (
-                  <FeatureCard 
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    color={item.color}
-                  />
-                ))}
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6"
+                style={{ background: 'rgba(168,85,247,0.08)', border: '1px solid rgba(168,85,247,0.18)' }}>
+                <ShieldCheckIcon className="w-5 h-5 text-purple-400" />
               </div>
-              
-              <motion.p 
-                variants={animations.fadeIn}
-                className="text-xl text-white/60 mt-12 text-center max-w-3xl mx-auto"
-              >
-                Pixsell Games ensures favourable financial terms, reducing risk while maximising earnings for developers.
-              </motion.p>
+              <h3 className="text-xl font-bold text-white mb-4">IP Protection</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                You retain full ownership throughout. The co-publishing agreement clearly scopes what the publisher can do — localisation, marketing, and Steam China operations — with no IP assignment and explicit reversion clauses.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                EightSix reviews every contract term before you see it, flags anything that isn&apos;t in your favour, and ensures the agreement you sign actually protects you.
+              </p>
+              <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-purple-300 text-xs font-semibold">
+                <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                IP protection built into every agreement
+              </div>
             </motion.div>
-          </div>
 
-          {/* Enhanced Final CTA Section */}
-          <div className="mb-40">
             <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={animations.fadeIn}
-              className="max-w-5xl mx-auto"
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, margin: '-60px' }}
+              className="relative rounded-2xl p-8"
+              style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(236,72,153,0.13)' }}
             >
-              <div className="bg-gradient-to-br from-pink-900/30 via-black/50 to-purple-900/30 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                
-                <div className="text-center relative z-10">
-                  <motion.div
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 mb-8"
-                  >
-                    <RocketLaunchIcon className="w-10 h-10 text-white" />
-                  </motion.div>
-                  
-                  <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">Get Started Today</h2>
-                  <p className="text-white/70 text-xl mb-8">
-                    Expand into China with confidence—while retaining full control over your game.
-                  </p>
-                  <p className="text-white/60 text-lg mb-12">
-                    Book a free consultation and let us help you secure the best co-publishing partnership for your title.
-                  </p>
-                  
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-6"
-                  >
-                    <CTAButton primary href="/contact">
-                      Schedule a Consultation
-                      <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </CTAButton>
-                    <CTAButton href="/blog">
-                      View Success Stories
-                      <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </CTAButton>
-                  </motion.div>
-                </div>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6"
+                style={{ background: 'rgba(236,72,153,0.07)', border: '1px solid rgba(236,72,153,0.18)' }}>
+                <UserGroupIcon className="w-5 h-5 text-pink-400" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-4">Publisher Accountability</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                Once matched, all localisation, marketing, and CN platform operations are the publisher&apos;s responsibility. Your post-sign-off time commitment is minimal.
+              </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                EightSix monitors marketing commitments, tracks revenue reporting, and escalates if the publisher isn&apos;t delivering. You deal with us — not the Chinese publisher directly.
+              </p>
+              <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-pink-300 text-xs font-semibold">
+                <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
+                You deal with us, not the publisher directly
               </div>
             </motion.div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Internal Links Section for SEO */}
-      <div className="max-w-5xl mx-auto mb-20">
-        <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/10">
-          <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">Explore More</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-semibold text-white mb-2">Related Services</h4>
-              <ul className="list-disc list-inside text-white/80 space-y-1">
-                <li><Link href="/services/localisation" className="hover:underline text-pink-400">Game Localisation</Link></li>
-                <li><Link href="/services/market-strategy" className="hover:underline text-pink-400">Market Strategy</Link></li>
-                <li><Link href="/services/marketing" className="hover:underline text-pink-400">Game Marketing</Link></li>
-                <li><Link href="/services/publisher-matching" className="hover:underline text-pink-400">Publisher Matching</Link></li>
+      {/* ── FAQ ──────────────────────────────────────────────────────── */}
+      <section className="relative py-24">
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'radial-gradient(ellipse at center, rgba(168,85,247,0.05) 0%, transparent 70%)', filter: 'blur(80px)' }}
+        />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="mb-14">
+            <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Due Diligence</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Questions we get{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                from every developer
+              </span>
+            </h2>
+            <p className="text-gray-500 text-sm leading-relaxed">
+              Direct answers. If yours isn&apos;t here, it&apos;ll be covered in your free consultation.
+            </p>
+          </div>
+
+          <div>
+            {FAQS.map((faq, i) => (
+              <FaqItem key={i} faq={faq} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Internal links ───────────────────────────────────────────── */}
+      <section className="relative py-16">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/[0.07]"
+            style={{ borderTop: '1px solid rgba(255,255,255,0.07)', borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <div className="px-0 sm:px-10 py-10">
+              <p className="text-xs font-medium tracking-widest uppercase text-gray-500 mb-5">Related Services</p>
+              <ul className="space-y-3">
+                {[
+                  { href: '/services/localisation', label: 'Game Localisation' },
+                  { href: '/services/market-strategy', label: 'Market Strategy' },
+                  { href: '/services/marketing', label: 'Game Marketing' },
+                  { href: '/services/publisher-matching', label: 'Publisher Matching' },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="flex items-center gap-2 text-sm text-gray-400 hover:text-purple-300 transition-colors duration-200 group">
+                      <ArrowRightIcon className="w-3.5 h-3.5 text-purple-500/50 group-hover:text-purple-400 transition-colors" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div>
-              <h4 className="font-semibold text-white mb-2">Related Blog Posts</h4>
-              <ul className="list-disc list-inside text-white/80 space-y-1">
-                <li><Link href="/blog/co-publishing-vs-self-publishing-china" className="hover:underline text-pink-400">Co-Publishing vs Self-Publishing in China</Link></li>
-                <li><Link href="/blog/how-to-find-chinese-co-publisher" className="hover:underline text-pink-400">How to Find a Chinese Co-Publisher</Link></li>
-                <li><Link href="/blog/revenue-share-models-chinese-game-publishing" className="hover:underline text-pink-400">Revenue Share Models in Chinese Game Publishing</Link></li>
-                <li><Link href="/blog/5-mistakes-western-developers-make-in-china" className="hover:underline text-pink-400">5 Mistakes Western Developers Make in China</Link></li>
+            <div className="px-0 sm:px-10 py-10">
+              <p className="text-xs font-medium tracking-widest uppercase text-gray-500 mb-5">Related Reading</p>
+              <ul className="space-y-3">
+                {[
+                  { href: '/blog/co-publishing-vs-self-publishing-china', label: 'Co-Publishing vs Self-Publishing in China' },
+                  { href: '/blog/how-to-find-chinese-co-publisher', label: 'How to Find a Chinese Co-Publisher' },
+                  { href: '/blog/revenue-share-models-chinese-game-publishing', label: 'Revenue Share Models in Chinese Publishing' },
+                  { href: '/blog/5-mistakes-western-developers-make-in-china', label: '5 Mistakes Western Developers Make in China' },
+                ].map((link) => (
+                  <li key={link.href}>
+                    <Link href={link.href} className="flex items-center gap-2 text-sm text-gray-400 hover:text-pink-300 transition-colors duration-200 group">
+                      <ArrowRightIcon className="w-3.5 h-3.5 text-pink-500/50 group-hover:text-pink-400 transition-colors" />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ── CTA ──────────────────────────────────────────────────────── */}
+      <section className="relative py-32 overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(168,85,247,0.09) 0%, rgba(236,72,153,0.05) 40%, transparent 70%)', filter: 'blur(60px)' }}
+        />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
+
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-60px' }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/25 bg-purple-500/8 text-purple-300 text-xs font-medium tracking-widest uppercase mb-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
+              Free consultation — no obligation
+            </div>
+
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.04] text-white mb-6">
+              Find out what your game{' '}
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
+                could earn in China.
+              </span>
+            </h2>
+
+            <p className="text-base text-gray-500 leading-relaxed mb-10 max-w-lg mx-auto">
+              A free 30-minute call. We&apos;ll assess your game&apos;s fit for the CN market, explain what a typical deal looks like, and give you a realistic view of what to expect. No pitch, no obligation.
+            </p>
+
+            <Link
+              href="/contact"
+              className="group relative inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-0.5 mb-10"
+              style={{ background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #7c3aed 100%)' }}
+            >
+              <span
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                style={{ background: 'linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%)', backgroundSize: '200% 100%' }}
+              />
+              <span className="relative">Book a Free Consultation</span>
+              <ArrowRightIcon className="relative w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Link>
+
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+              {['No upfront cost', 'IP protection built in', 'Honest market assessment', '30 minutes', 'No obligation'].map((item, i) => (
+                <span key={i} className="flex items-center gap-2 text-xs text-gray-500">
+                  <svg className="w-3.5 h-3.5 text-emerald-500/70 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
       <Footer />
       <FloatingConsultButton />
-    </main>
+    </div>
   )
-} 
+}

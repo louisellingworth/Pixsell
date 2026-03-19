@@ -45,12 +45,8 @@ const Home = () => {
   }, [])
 
   return (
-    <main 
-      className="min-h-screen bg-black text-white overflow-x-hidden relative will-change-transform"
-      style={{ 
-        contentVisibility: 'auto',
-        containIntrinsicSize: '0 100vh',
-      }}
+    <main
+      className="min-h-screen bg-black text-white overflow-x-hidden relative"
     >
       {/* Skip to main content link for accessibility */}
       <a 
@@ -75,14 +71,8 @@ const Home = () => {
       {/* Content - optimized with content-visibility */}
       <div id="main-content" className="relative z-10">
         {/* Market Content - Optimized with contain and content-visibility */}
-        <section 
+        <section
           className="relative pt-10 sm:pt-14 px-4 sm:px-6 lg:px-8"
-          style={{ 
-            contentVisibility: 'auto',
-            containIntrinsicSize: '0 600px',
-            transform: 'translateZ(0)',
-            contain: 'layout paint style',
-          }}
         >
           <Suspense fallback={<MarketContentFallback />}>
             <MarketContent />
@@ -90,14 +80,8 @@ const Home = () => {
         </section>
         
         {/* Footer - Static content optimized with content-visibility */}
-        <div 
+        <div
           className="relative bg-black/80 backdrop-blur-xl mt-10"
-          style={{ 
-            contentVisibility: 'auto',
-            containIntrinsicSize: '0 300px',
-            transform: 'translateZ(0)',
-            contain: 'layout paint',
-          }}
         >
           <div 
             className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"

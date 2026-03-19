@@ -76,7 +76,7 @@ export interface ComparisonOption {
 
 export const comparisonData: ComparisonOption[] = [
   {
-    name: 'Pixsell Games',
+    name: 'EightSix Games',
     subtitle: '(Developer-First Partnership)',
     icon: '🚀',
     features: [
@@ -203,32 +203,32 @@ export const processSteps = [
   {
     when: 'Months 1-2',
     what: 'Strategic Assessment',
-    details: "• Pixsell: Market opportunity analysis for your specific game.\n• Pixsell: Identify ideal co-publisher profile and deal structure.\n• You: Provide game build, genre details, and revenue targets.",
+    details: "• EightSix: Market opportunity analysis for your specific game.\n• EightSix: Identify ideal co-publisher profile and deal structure.\n• You: Provide game build, genre details, and revenue targets.",
   },
   {
     when: 'Months 3-5',
     what: 'Publisher Shortlisting & Vetting',
-    details: "• Pixsell: Research and screen co-publisher candidates.\n• Pixsell: Conduct introductory calls and assess publisher fit.\n• You: Review shortlist and select preferred candidates.",
+    details: "• EightSix: Research and screen co-publisher candidates.\n• EightSix: Conduct introductory calls and assess publisher fit.\n• You: Review shortlist and select preferred candidates.",
   },
   {
     when: 'Months 5-7',
     what: 'Deal Negotiation & Signing',
-    details: "• Pixsell: Negotiate revenue share, marketing commitments, and recoupment terms.\n• Pixsell: Review contract for developer-unfavourable clauses.\n• You: Approve final deal terms and sign agreement.",
+    details: "• EightSix: Negotiate revenue share, marketing commitments, and recoupment terms.\n• EightSix: Review contract for developer-unfavourable clauses.\n• You: Approve final deal terms and sign agreement.",
   },
   {
     when: 'Months 8-10',
     what: 'Launch Preparation',
-    details: "• Pixsell: Coordinate localisation and cultural QA via partner network.\n• Pixsell: Review co-publisher's marketing campaign plan.\n• You: Provide game assets, approve localised content and marketing direction.",
+    details: "• EightSix: Coordinate localisation and cultural QA via partner network.\n• EightSix: Review co-publisher's marketing campaign plan.\n• You: Provide game assets, approve localised content and marketing direction.",
   },
   {
     when: 'Months 11-12',
     what: 'Steam Global Launch',
-    details: "• Pixsell: Monitor launch performance and hold co-publisher accountable.\n• Pixsell: Escalate issues and track revenue reporting accuracy.\n• You: Receive weekly performance summaries during launch window.",
+    details: "• EightSix: Monitor launch performance and hold co-publisher accountable.\n• EightSix: Escalate issues and track revenue reporting accuracy.\n• You: Receive weekly performance summaries during launch window.",
   },
   {
     when: 'Months 12+',
     what: 'Growth & Oversight',
-    details: "• Pixsell: Ongoing revenue verification and partner performance reviews.\n• Pixsell: Identify growth opportunities (DLC, events, platform expansion).\n• You: Receive monthly reports, approve major strategic decisions.",
+    details: "• EightSix: Ongoing revenue verification and partner performance reviews.\n• EightSix: Identify growth opportunities (DLC, events, platform expansion).\n• You: Receive monthly reports, approve major strategic decisions.",
   },
 ] as const
 
@@ -237,32 +237,32 @@ export const mobileProcessSteps = [
   {
     when: 'Week 1–2',
     what: 'Game Evaluation',
-    details: "• Pixsell: Review your game's genre fit, existing metrics, and suitability for the CN mobile market.\n• Pixsell: Assess the ad-revenue potential and likely deal parameters publishers would offer.\n• You: Share game build, DAU/revenue data, and your goals for the Chinese market.",
+    details: "• EightSix: Review your game's genre fit, existing metrics, and suitability for the CN mobile market.\n• EightSix: Assess the ad-revenue potential and likely deal parameters publishers would offer.\n• You: Share game build, DAU/revenue data, and your goals for the Chinese market.",
   },
   {
     when: 'Week 3–5',
     what: 'Publisher Introductions',
-    details: "• Pixsell: Tap our network to source multiple Chinese publisher candidates suited to your game.\n• Pixsell: Facilitate introductions and manage initial conversations so you receive competing offers.\n• You: Review offers and select the publisher that best fits your goals and terms.",
+    details: "• EightSix: Tap our network to source multiple Chinese publisher candidates suited to your game.\n• EightSix: Facilitate introductions and manage initial conversations so you receive competing offers.\n• You: Review offers and select the publisher that best fits your goals and terms.",
   },
   {
     when: 'Month 2',
     what: 'Deal Negotiation',
-    details: "• Pixsell: Advise on deal structure — publishers typically pay 50% of in-game ad revenue to the developer.\n• Pixsell: Ensure IP protection, source build usage terms, and reversion clauses are clearly agreed.\n• You: Approve final deal terms before anything is signed.",
+    details: "• EightSix: Advise on deal structure — publishers typically pay 50% of in-game ad revenue to the developer.\n• EightSix: Ensure IP protection, source build usage terms, and reversion clauses are clearly agreed.\n• You: Approve final deal terms before anything is signed.",
   },
   {
     when: 'Month 2–4',
     what: 'Build & Platform Launch',
-    details: "• Publisher: Handles all technical work — localisation, CN SDK integration, WeChat Mini Game build, and store submission.\n• Pixsell: Monitors progress and ensures the publisher is communicating clearly and hitting milestones.\n• You: Provide source build access and sign off on the localised version before launch.",
+    details: "• Publisher: Handles all technical work — localisation, CN SDK integration, WeChat Mini Game build, and store submission.\n• EightSix: Monitors progress and ensures the publisher is communicating clearly and hitting milestones.\n• You: Provide source build access and sign off on the localised version before launch.",
   },
   {
     when: 'Month 4–5',
     what: 'Marketing Commitment Review',
-    details: "• Publisher: Executes UA campaigns across ByteDance, Kuaishou, Bilibili, and WeChat channels.\n• Pixsell: Reviews the publisher's marketing plan and spend commitment before and after launch.\n• You: Receive a summary of the marketing approach and confirm you're comfortable with the direction.",
+    details: "• Publisher: Executes UA campaigns across ByteDance, Kuaishou, Bilibili, and WeChat channels.\n• EightSix: Reviews the publisher's marketing plan and spend commitment before and after launch.\n• You: Receive a summary of the marketing approach and confirm you're comfortable with the direction.",
   },
   {
     when: 'Month 5+',
     what: 'Revenue & Performance Monitoring',
-    details: "• Publisher: Pays you 50% of all in-game advertising revenue on agreed reporting cycles.\n• Pixsell: Tracks performance data, verifies revenue reporting, and holds the publisher accountable to KPIs.\n• You: Receive regular updates from Pixsell and escalate any concerns through us — no direct publisher management required.",
+    details: "• Publisher: Pays you 50% of all in-game advertising revenue on agreed reporting cycles.\n• EightSix: Tracks performance data, verifies revenue reporting, and holds the publisher accountable to KPIs.\n• You: Receive regular updates from EightSix and escalate any concerns through us — no direct publisher management required.",
   },
 ] as const
 

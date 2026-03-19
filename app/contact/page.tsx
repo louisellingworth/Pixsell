@@ -46,15 +46,15 @@ export default function ContactPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'ContactPage',
-        name: 'Contact Pixsell Games',
-        description: 'Contact Pixsell Games to discuss your project, get expert advice, or start your journey to publishing success in China.',
-        url: 'https://pixsellgames.com/contact',
+        name: 'Contact EightSix Games',
+        description: 'Contact EightSix Games to discuss your project, get expert advice, or start your journey to publishing success in China.',
+        url: 'https://eightsixgames.com/contact',
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         }
       })}} />
@@ -237,8 +237,8 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div>
                   <p className="text-gray-400">Email</p>
-                  <a href="mailto:info@pixsellgames.com" className="text-purple-400 hover:text-purple-300 transition-colors">
-                    info@pixsellgames.com
+                  <a href="mailto:info@eightsixgames.com" className="text-purple-400 hover:text-purple-300 transition-colors">
+                    info@eightsixgames.com
                   </a>
                 </div>
                 <div>

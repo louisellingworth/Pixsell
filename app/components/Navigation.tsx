@@ -115,16 +115,15 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-lg">
           <img
-            src="/Pixsell Logo-640w.webp"
-            alt="Pixsell Games - Game Publishing in China"
-            className="h-24 md:h-32 w-auto"
+            src="/6ight-games-logo.png"
+            alt="6ight Games - Game Publishing in China"
+            className="h-16 md:h-20 w-auto"
             style={{
-              objectFit: 'cover',
-              objectPosition: 'center',
+              objectFit: 'contain',
               width: 'auto',
               maxWidth: 'none',
-              marginTop: '-0.75rem',
-              marginBottom: '-0.75rem'
+              marginTop: '-0.25rem',
+              marginBottom: '-0.25rem'
             }}
           />
         </Link>

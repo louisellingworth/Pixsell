@@ -9,21 +9,21 @@ const DEFAULT_AVATAR = "https://images.unsplash.com/photo-1472099645785-5658abf4
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Pixsell's deep understanding of the Chinese market was a game-changer for us. They handled everything from compliance to marketing, and our revenue increased by 300% in just three months.",
+    quote: "EightSix's deep understanding of the Chinese market was a game-changer for us. They handled everything from compliance to marketing, and our revenue increased by 300% in just three months.",
     author: "Jane Cooper",
     role: "CEO",
     company: "Stellar Games",
     avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
   },
   {
-    quote: "We tried working with traditional publishers in China but got lost in the complexity. Pixsell streamlined everything and maintained our game's integrity while adapting it perfectly for Chinese players.",
+    quote: "We tried working with traditional publishers in China but got lost in the complexity. EightSix streamlined everything and maintained our game's integrity while adapting it perfectly for Chinese players.",
     author: "Michael Chen",
     role: "CTO",
     company: "Quantum Interactive",
     avatarUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
   },
   {
-    quote: "As a small indie studio, we never thought China was accessible to us. Pixsell not only made it possible but made it our most profitable market. Their team feels like an extension of our own.",
+    quote: "As a small indie studio, we never thought China was accessible to us. EightSix not only made it possible but made it our most profitable market. Their team feels like an extension of our own.",
     author: "Sarah Williams",
     role: "Founder",
     company: "Neon Arcade",

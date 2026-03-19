@@ -16,29 +16,29 @@ export default function BlogPost() {
         '@type': 'Article',
         headline: 'ISBN Licence in China: The Complete Guide for Game Developers',
         description: 'A comprehensive guide to ISBN licensing for games in China, including requirements, process, and alternatives for indie developers.',
-        image: 'https://pixsellgames.com/blog/isbn-license-china.jpg',
+        image: 'https://eightsixgames.com/blog/isbn-license-china.jpg',
         author: {
           '@type': 'Person',
-          name: 'Pixsell Team',
+          name: 'EightSix Team',
           description: 'China Gaming Market Specialists'
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsellgames.com/blog/isbn-license-china-game-release'
+          '@id': 'https://eightsixgames.com/blog/isbn-license-china-game-release'
         },
         wordCount: 1200,
         timeRequired: 'PT8M',
-        url: 'https://pixsellgames.com/blog/isbn-license-china-game-release',
+        url: 'https://eightsixgames.com/blog/isbn-license-china-game-release',
         articleSection: 'Regulation'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -50,13 +50,13 @@ export default function BlogPost() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsellgames.com/blog'
+            item: 'https://eightsixgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'ISBN Licence in China: The Complete Guide for Game Developers',
-            item: 'https://pixsellgames.com/blog/isbn-license-china-game-release'
+            item: 'https://eightsixgames.com/blog/isbn-license-china-game-release'
           }
         ]
       })}} />
@@ -589,9 +589,9 @@ export default function BlogPost() {
                 </p>
               </div>
 
-              <h2 className="text-3xl font-bold mt-12 mb-6">How Pixsell Can Help Navigate China's Game Market</h2>
+              <h2 className="text-3xl font-bold mt-12 mb-6">How EightSix Can Help Navigate China's Game Market</h2>
               <p className="mb-6 leading-relaxed">
-                Whether you're pursuing an ISBN or exploring alternative routes to the Chinese market, Pixsell offers specialized services to help developers navigate this complex landscape:
+                Whether you're pursuing an ISBN or exploring alternative routes to the Chinese market, EightSix offers specialized services to help developers navigate this complex landscape:
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -636,7 +636,7 @@ export default function BlogPost() {
               <div className="bg-gradient-to-r from-purple-900/30 to-black/30 rounded-xl p-8 my-12 border border-purple-500/30 shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-white">Ready to Explore the Chinese Market?</h3>
                 <p className="mb-6 text-lg leading-relaxed">
-                  Whether you're considering applying for an ISBN or exploring alternative strategies, Pixsell can help navigate China's complex gaming landscape. Contact us today for a consultation on your China market entry options.
+                  Whether you're considering applying for an ISBN or exploring alternative strategies, EightSix can help navigate China's complex gaming landscape. Contact us today for a consultation on your China market entry options.
                 </p>
                 
                 <div className="flex justify-center">

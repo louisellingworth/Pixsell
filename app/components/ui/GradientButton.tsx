@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react'
 import Link from 'next/link'
-import { cn } from '@/lib/utils'
+import { cn } from '@/utils/cn'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 
 interface GradientButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

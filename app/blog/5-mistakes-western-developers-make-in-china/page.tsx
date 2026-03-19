@@ -69,29 +69,29 @@ export default function MistakesWesternDevelopersMake() {
         '@type': 'Article',
         headline: '5 Mistakes Western Developers Make in China',
         description: 'The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them.',
-        image: 'https://pixsellgames.com/blog/mistakes-hero.jpg',
+        image: 'https://eightsixgames.com/blog/mistakes-hero.jpg',
         author: {
           '@type': 'Person',
-          name: 'Pixsell Team',
+          name: 'EightSix Team',
           description: 'China Gaming Market Specialists'
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-02-07',
         dateModified: '2024-02-07',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsellgames.com/blog/5-mistakes-western-developers-make-in-china'
+          '@id': 'https://eightsixgames.com/blog/5-mistakes-western-developers-make-in-china'
         },
         wordCount: 1200,
         timeRequired: 'PT8M',
-        url: 'https://pixsellgames.com/blog/5-mistakes-western-developers-make-in-china',
+        url: 'https://eightsixgames.com/blog/5-mistakes-western-developers-make-in-china',
         articleSection: 'Strategy'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -103,13 +103,13 @@ export default function MistakesWesternDevelopersMake() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsellgames.com/blog'
+            item: 'https://eightsixgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: '5 Mistakes Western Developers Make in China',
-            item: 'https://pixsellgames.com/blog/5-mistakes-western-developers-make-in-china'
+            item: 'https://eightsixgames.com/blog/5-mistakes-western-developers-make-in-china'
           }
         ]
       })}} />
@@ -180,17 +180,17 @@ export default function MistakesWesternDevelopersMake() {
               <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border border-purple-500/30">
                 <Image
                   src="/team/author-avatar.jpg"
-                  alt="Portrait of Pixsell Team, China Gaming Market Specialists"
+                  alt="Portrait of EightSix Team, China Gaming Market Specialists"
                   width={48}
                   height={48}
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.currentTarget.src = "https://ui-avatars.com/api/?name=Pixsell+Team&background=8B5CF6&color=fff";
+                    e.currentTarget.src = "https://ui-avatars.com/api/?name=EightSix+Team&background=8B5CF6&color=fff";
                   }}
                 />
               </div>
               <div>
-                <div className="font-medium text-transparent bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text">Pixsell Team</div>
+                <div className="font-medium text-transparent bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text">EightSix Team</div>
                 <div className="text-sm text-gray-300">China Gaming Market Specialists</div>
               </div>
             </div>
@@ -265,7 +265,7 @@ export default function MistakesWesternDevelopersMake() {
                 <div className="relative">
                   <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-clip-text text-transparent animate-gradient">How to Succeed in China</h2>
                   <p className="mb-0 text-gray-300">
-                    To avoid these mistakes, consider working with experienced partners who understand both Western game development and the Chinese market. At Pixsell Games, we help Western developers navigate these challenges through our comprehensive co-publishing and localisation services. Our team ensures your game not only meets regulatory requirements but also resonates with Chinese players while maintaining its core appeal.
+                    To avoid these mistakes, consider working with experienced partners who understand both Western game development and the Chinese market. At EightSix Games, we help Western developers navigate these challenges through our comprehensive co-publishing and localisation services. Our team ensures your game not only meets regulatory requirements but also resonates with Chinese players while maintaining its core appeal.
                   </p>
                 </div>
               </div>

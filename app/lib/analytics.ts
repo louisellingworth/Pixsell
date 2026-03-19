@@ -1,22 +1,69 @@
 // Performance monitoring and analytics utilities
 
-// Add this at the top of the file for TypeScript support
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (...args: any[]) => void
   }
 }
 
+// ── Metric batching ──────────────────────────────────────────────────────────
+
+interface Metric {
+  name: string
+  value: number
+  rating?: string
+  timestamp?: number
+}
+
+let metricBatch: Metric[] = []
+let batchTimer: ReturnType<typeof setTimeout> | null = null
+const BATCH_DELAY_MS = 2000
+const MAX_RETRIES = 2
+
+async function sendBatch(metrics: Metric[], attempt = 0): Promise<void> {
+  try {
+    const res = await fetch('/api/analytics/performance', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(metrics),
+    })
+    if (!res.ok && attempt < MAX_RETRIES) {
+      await new Promise(r => setTimeout(r, 500 * (attempt + 1)))
+      return sendBatch(metrics, attempt + 1)
+    }
+    if (!res.ok) {
+      console.error('[analytics] Failed to send batch after retries', { status: res.status })
+    }
+  } catch (err) {
+    if (attempt < MAX_RETRIES) {
+      await new Promise(r => setTimeout(r, 500 * (attempt + 1)))
+      return sendBatch(metrics, attempt + 1)
+    }
+    console.error('[analytics] Network error sending batch', err)
+  }
+}
+
+function queueMetric(metric: Metric): void {
+  metricBatch.push({ ...metric, timestamp: metric.timestamp ?? Date.now() })
+  if (batchTimer) clearTimeout(batchTimer)
+  batchTimer = setTimeout(() => {
+    const toSend = metricBatch.splice(0)
+    batchTimer = null
+    if (toSend.length > 0) sendBatch(toSend)
+  }, BATCH_DELAY_MS)
+}
+
+// ── Public API ───────────────────────────────────────────────────────────────
+
 export function trackPerformance() {
   if (typeof window !== 'undefined') {
-    // Track Core Web Vitals - make it optional to prevent SSR issues
     try {
       import('web-vitals').then(({ onCLS, onFCP, onLCP, onTTFB, onINP }) => {
-        onCLS(console.log)
-        onFCP(console.log)
-        onLCP(console.log)
-        onTTFB(console.log)
-        onINP(console.log)
+        onCLS(m => queueMetric({ name: m.name, value: m.value, rating: m.rating }))
+        onFCP(m => queueMetric({ name: m.name, value: m.value, rating: m.rating }))
+        onLCP(m => queueMetric({ name: m.name, value: m.value, rating: m.rating }))
+        onTTFB(m => queueMetric({ name: m.name, value: m.value, rating: m.rating }))
+        onINP(m => queueMetric({ name: m.name, value: m.value, rating: m.rating }))
       }).catch((error) => {
         console.warn('Web Vitals not available:', error)
       })
@@ -28,10 +75,7 @@ export function trackPerformance() {
 
 export function trackEvent(eventName: string, properties?: Record<string, any>) {
   if (typeof window !== 'undefined') {
-    // Send to analytics service (replace with your preferred analytics)
     console.log('Event tracked:', eventName, properties)
-    
-    // Example: Google Analytics 4
     if (window.gtag) {
       window.gtag('event', eventName, properties)
     }
@@ -54,10 +98,8 @@ export function trackScrollDepth(depth: number) {
   trackEvent('scroll_depth', { depth })
 }
 
-// Performance monitoring
 export function monitorPerformance() {
   if (typeof window !== 'undefined') {
-    // Monitor long tasks
     if ('PerformanceObserver' in window) {
       try {
         const observer = new PerformanceObserver((list) => {
@@ -73,19 +115,18 @@ export function monitorPerformance() {
         console.warn('Failed to set up performance observer:', error)
       }
     }
-    
-    // Monitor memory usage
+
     if ('memory' in performance) {
       try {
         setInterval(() => {
           const memory = (performance as any).memory
-          if (memory.usedJSHeapSize > 50 * 1024 * 1024) { // 50MB threshold
-            trackEvent('high_memory_usage', { 
+          if (memory.usedJSHeapSize > 50 * 1024 * 1024) {
+            trackEvent('high_memory_usage', {
               used: memory.usedJSHeapSize,
-              total: memory.totalJSHeapSize 
+              total: memory.totalJSHeapSize,
             })
           }
-        }, 30000) // Check every 30 seconds
+        }, 30000)
       } catch (error) {
         console.warn('Failed to monitor memory usage:', error)
       }
@@ -93,16 +134,14 @@ export function monitorPerformance() {
   }
 }
 
-// Error tracking
 export function trackError(error: Error, context?: Record<string, any>) {
-  trackEvent('error', { 
-    message: error.message, 
+  trackEvent('error', {
+    message: error.message,
     stack: error.stack,
-    context 
+    context,
   })
 }
 
-// User engagement tracking
 export function trackEngagement(action: string, value?: any) {
   trackEvent('engagement', { action, value })
-} 
+}

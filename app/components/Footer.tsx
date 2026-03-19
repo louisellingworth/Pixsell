@@ -38,7 +38,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold heading-gradient">
-                Pixsell
+                EightSix
               </span>
             </Link>
             <p className="mt-4 text-gray-400 text-sm">
@@ -72,11 +72,11 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Pixsell Games. All rights reserved.
+              © {currentYear} EightSix Games. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a
-                href="https://twitter.com/pixsellgames"
+                href="https://twitter.com/eightsixgames"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -84,7 +84,7 @@ export default function Footer() {
                 Twitter
               </a>
               <a
-                href="https://linkedin.com/company/pixsellgames"
+                href="https://linkedin.com/company/eightsixgames"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"

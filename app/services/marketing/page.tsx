@@ -252,7 +252,7 @@ export default function MarketingPage() {
               Streamlining Your Entry to China's Gaming Market
             </h2>
             <p className="text-xl text-gray-300 leading-relaxed font-light">
-              At Pixsell Games, we provide comprehensive marketing solutions tailored for successful market entry and sustained growth in China's gaming sector. Our strategic approach combines data-driven insights with deep market understanding to ensure optimal resource allocation and maximum return on investment.
+              At EightSix Games, we provide comprehensive marketing solutions tailored for successful market entry and sustained growth in China's gaming sector. Our strategic approach combines data-driven insights with deep market understanding to ensure optimal resource allocation and maximum return on investment.
             </p>
           </div>
         </motion.div>
@@ -429,7 +429,7 @@ export default function MarketingPage() {
               Strategic Advantages
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Why leading game developers choose Pixsell Games for their China market entry
+              Why leading game developers choose EightSix Games for their China market entry
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

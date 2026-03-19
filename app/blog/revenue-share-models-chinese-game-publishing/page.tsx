@@ -71,29 +71,29 @@ export default function RevenueShareModelsChineseGamePublishing() {
         '@type': 'Article',
         headline: 'Understanding Revenue-Share Models for Co-Publishing PC Games in China: A Comprehensive Guide',
         description: 'A comprehensive guide to revenue-share models for co-publishing PC games in China, including negotiation tips, pitfalls, and market insights.',
-        image: 'https://pixsellgames.com/blog/revenue-share-china.jpg',
+        image: 'https://eightsixgames.com/blog/revenue-share-china.jpg',
         author: {
           '@type': 'Person',
-          name: 'Pixsell Team',
+          name: 'EightSix Team',
           description: 'China Gaming Market Specialists'
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         },
         datePublished: '2024-03-05',
         dateModified: '2024-03-05',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': 'https://pixsellgames.com/blog/revenue-share-models-chinese-game-publishing'
+          '@id': 'https://eightsixgames.com/blog/revenue-share-models-chinese-game-publishing'
         },
         wordCount: 2000,
         timeRequired: 'PT12M',
-        url: 'https://pixsellgames.com/blog/revenue-share-models-chinese-game-publishing',
+        url: 'https://eightsixgames.com/blog/revenue-share-models-chinese-game-publishing',
         articleSection: 'Business'
       })}} />
       {/* BreadcrumbList Schema for SEO */}
@@ -105,13 +105,13 @@ export default function RevenueShareModelsChineseGamePublishing() {
             '@type': 'ListItem',
             position: 1,
             name: 'Blog',
-            item: 'https://pixsellgames.com/blog'
+            item: 'https://eightsixgames.com/blog'
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Understanding Revenue-Share Models for Co-Publishing PC Games in China: A Comprehensive Guide',
-            item: 'https://pixsellgames.com/blog/revenue-share-models-chinese-game-publishing'
+            item: 'https://eightsixgames.com/blog/revenue-share-models-chinese-game-publishing'
           }
         ]
       })}} />

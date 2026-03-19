@@ -48,7 +48,7 @@ const nextConfig = {
     // Keep only the most stable experimental features
     optimizeCss: true,
     scrollRestoration: true,
-    optimizePackageImports: ['framer-motion', 'gsap', '@heroicons/react', 'lodash', 'react-intersection-observer'],
+    optimizePackageImports: ['framer-motion', 'gsap', '@heroicons/react', 'react-intersection-observer'],
     // Updated turbo config using rules instead of loaders
     turbo: {
       rules: {

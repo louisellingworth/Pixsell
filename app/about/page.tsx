@@ -9,15 +9,15 @@ export default function AboutPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'AboutPage',
-        name: 'About Pixsell Games',
-        description: 'Learn about Pixsell Games, our mission, and our team of experts helping Western developers succeed in the Chinese gaming market.',
-        url: 'https://pixsellgames.com/about',
+        name: 'About EightSix Games',
+        description: 'Learn about EightSix Games, our mission, and our team of experts helping Western developers succeed in the Chinese gaming market.',
+        url: 'https://eightsixgames.com/about',
         publisher: {
           '@type': 'Organization',
-          name: 'Pixsell Games',
+          name: 'EightSix Games',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://pixsellgames.com/favicon_io/android-chrome-192x192.png'
+            url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
           }
         }
       })}} />

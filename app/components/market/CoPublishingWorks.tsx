@@ -17,7 +17,7 @@ const steps = [
   {
     title: 'Find the Right Partner',
     description: "We screen our network of vetted Chinese co-publishers and shortlist candidates based on your game's genre, audience, and commercial goals.",
-    pixsellDoes: 'Candidate research, vetting & shortlisting',
+    eightsixDoes: 'Candidate research, vetting & shortlisting',
     youDo: 'Review shortlist & approve preferred publisher',
     tag: 'Week 1–2',
     stat: { value: '50+', label: 'vetted co-publishers in our network' },
@@ -25,7 +25,7 @@ const steps = [
   {
     title: 'Negotiate Deal Terms',
     description: "We handle all contract negotiations — revenue share, marketing spend commitments, recoupment thresholds — and flag anything that isn't in your favour.",
-    pixsellDoes: 'Contract negotiation, term review & red-flagging',
+    eightsixDoes: 'Contract negotiation, term review & red-flagging',
     youDo: 'Approve final deal terms before signing',
     tag: 'Week 3–4',
     stat: { value: '0%', label: 'upfront cost — performance-based only' },
@@ -33,7 +33,7 @@ const steps = [
   {
     title: 'Oversee Marketing & Localisation',
     description: 'We hold the co-publisher accountable for their marketing commitments on WeChat, Weibo, Bilibili, and Douyin — and coordinate localisation through our partner network.',
-    pixsellDoes: 'Marketing oversight & localisation coordination',
+    eightsixDoes: 'Marketing oversight & localisation coordination',
     youDo: 'Provide build, assets & approve creative direction',
     tag: 'Month 2–6',
     stat: { value: '4', label: 'major platforms covered' },
@@ -41,7 +41,7 @@ const steps = [
   {
     title: 'Monitor Revenue & Performance',
     description: 'We track revenue reports, verify accuracy, escalate issues with the co-publisher, and send you plain-English summaries so you always know where things stand.',
-    pixsellDoes: 'Revenue verification, reporting & escalation',
+    eightsixDoes: 'Revenue verification, reporting & escalation',
     youDo: 'Receive monthly reports & approve strategic decisions',
     tag: 'Ongoing',
     stat: { value: 'Monthly', label: 'verified revenue reports' },
@@ -183,8 +183,8 @@ export default function CoPublishingWorks() {
                   {/* Responsibility rows */}
                   <div className="space-y-2">
                     <div className="flex items-start gap-3">
-                      <span className="text-[10px] font-bold tracking-widest uppercase text-purple-400 w-14 flex-shrink-0 pt-0.5">Pixsell</span>
-                      <span className="text-sm text-gray-300">{step.pixsellDoes}</span>
+                      <span className="text-[10px] font-bold tracking-widest uppercase text-purple-400 w-14 flex-shrink-0 pt-0.5">EightSix</span>
+                      <span className="text-sm text-gray-300">{step.eightsixDoes}</span>
                     </div>
                     <div className="flex items-start gap-3">
                       <span className="text-[10px] font-bold tracking-widest uppercase text-gray-600 w-14 flex-shrink-0 pt-0.5">You</span>

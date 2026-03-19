@@ -46,9 +46,9 @@ export default function PlatformSelection() {
 
         {/* Heading */}
         <div ref={headingRef} className="text-center mb-12">
-          <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">Choose Your Path</p>
+          <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">Two Publishing Pathways</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Which platform are you{' '}
+            PC or Mobile —{' '}
             <span style={{
               backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
               backgroundClip: 'text',
@@ -57,11 +57,11 @@ export default function PlatformSelection() {
               backgroundSize: '200% 200%',
               animation: 'premiumGradient 3s ease-in-out infinite',
             }}>
-              publishing on?
+              we cover both
             </span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-base leading-relaxed">
-            We support both Steam/PC and mobile publishing in China. Select your platform to see the relevant pathway.
+            China's gaming market spans 320M PC players and 700M+ mobile users. EightSix Games has dedicated pathways for each — select yours to see how it works.
           </p>
         </div>
 
@@ -89,11 +89,19 @@ export default function PlatformSelection() {
               <h3 className="text-2xl font-bold text-white mb-3 leading-snug">
                 Steam Publishing<br />in China
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-8">
-                Launch your PC game on Steam Global with a vetted Chinese co-publisher. No ISBN required — full IP control, performance-based model, 90 days to market.
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Reach 320M PC gamers through Steam Global with a vetted Chinese co-publisher. No ISBN required, no upfront cost — full IP control with a performance-based model.
               </p>
+              <ul className="space-y-2 mb-8">
+                {['No ISBN or local entity required', 'Co-publisher vetted & negotiated by us', '90-day average time to market'].map(point => (
+                  <li key={point} className="flex items-center gap-2.5 text-sm text-gray-300">
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }} />
+                    {point}
+                  </li>
+                ))}
+              </ul>
               <div className="flex items-center gap-2 text-purple-300 text-sm font-semibold">
-                <span>Explore the Steam pathway</span>
+                <span>View the Steam pathway</span>
                 <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -128,11 +136,19 @@ export default function PlatformSelection() {
               <h3 className="text-2xl font-bold text-white mb-3 leading-snug">
                 Mobile Publishing<br />in China
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-8">
-                Publish your mobile game across China&apos;s top platforms — TapTap, Bilibili Games, and more. We handle partner matching, UA oversight, and ongoing performance monitoring.
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Access 700M+ mobile players across TapTap, Bilibili Games, and China&apos;s major app stores. We match you with the right publisher and oversee every stage of the deal.
               </p>
+              <ul className="space-y-2 mb-8">
+                {['Publisher matching & deal negotiation', 'UA spend oversight & KPI accountability', 'Monthly verified revenue reporting'].map(point => (
+                  <li key={point} className="flex items-center gap-2.5 text-sm text-gray-300">
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #ec4899, #f472b6)' }} />
+                    {point}
+                  </li>
+                ))}
+              </ul>
               <div className="flex items-center gap-2 text-pink-300 text-sm font-semibold">
-                <span>Explore the Mobile pathway</span>
+                <span>View the Mobile pathway</span>
                 <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
