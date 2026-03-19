@@ -43,36 +43,36 @@ export default function HeroSection() {
         gsap.from(words, {
           y: '110%',
           opacity: 0,
-          duration: 0.7,
-          stagger: 0.08,
+          duration: 1.1,
+          stagger: 0.13,
           ease: 'power3.out',
           delay: 0.1,
         })
       }
 
       // ── Sub-heading + CTA fade up ────────────────────────────────
-      const tl = gsap.timeline({ delay: 0.5 })
+      const tl = gsap.timeline({ delay: 0.7 })
       tl.from(subRef.current, {
         y: 24,
         opacity: 0,
-        duration: 0.6,
+        duration: 0.9,
         ease: 'power2.out',
       })
       tl.from(ctaRef.current, {
         y: 20,
         opacity: 0,
-        duration: 0.5,
+        duration: 0.8,
         ease: 'power2.out',
       }, '-=0.3')
       tl.from(tickerRef.current, {
         opacity: 0,
-        duration: 0.6,
+        duration: 0.9,
         ease: 'power2.out',
       }, '-=0.2')
       tl.from(scrollRef.current, {
         opacity: 0,
         y: -8,
-        duration: 0.4,
+        duration: 0.65,
         ease: 'power2.out',
       }, '-=0.1')
 
@@ -83,10 +83,10 @@ export default function HeroSection() {
         gsap.from(statBlocks, {
           y: 20,
           opacity: 0,
-          duration: 0.55,
-          stagger: 0.12,
+          duration: 0.85,
+          stagger: 0.18,
           ease: 'power3.out',
-          delay: 0.9,
+          delay: 1.2,
         })
       }
       if (statEls) {
@@ -187,7 +187,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
+              transition={{ duration: 0.65, ease: 'easeOut' }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs sm:text-sm font-medium tracking-widest uppercase"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />

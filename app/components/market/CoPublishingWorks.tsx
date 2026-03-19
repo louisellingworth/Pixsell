@@ -67,7 +67,7 @@ export default function CoPublishingWorks() {
       gsap.from(headingRef.current, {
         y: 32,
         opacity: 0,
-        duration: 0.7,
+        duration: 1.1,
         ease: 'power3.out',
         immediateRender: false,
         scrollTrigger: { trigger: headingRef.current, start: 'top 85%', once: true },
@@ -80,7 +80,7 @@ export default function CoPublishingWorks() {
           gsap.from(row, {
             x: fromLeft ? -40 : 40,
             opacity: 0,
-            duration: 0.7,
+            duration: 1.1,
             ease: 'power3.out',
             immediateRender: false,
             scrollTrigger: { trigger: row, start: 'top 82%', once: true },
@@ -93,7 +93,7 @@ export default function CoPublishingWorks() {
         gsap.from(benefitItems, {
           y: 24,
           opacity: 0,
-          duration: 0.5,
+          duration: 1.2,
           stagger: 0.08,
           ease: 'power3.out',
           immediateRender: false,

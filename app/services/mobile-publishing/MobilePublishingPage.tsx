@@ -101,7 +101,7 @@ function FaqItem({ faq, index }: { faq: typeof FAQS[0]; index: number }) {
     <motion.div
       initial={{ opacity: 0, y: 14 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.05, ease: 'easeOut' }}
+      transition={{ duration: 1.0, delay: index * 0.05, ease: 'easeOut' }}
       viewport={{ once: true, margin: '-40px' }}
       className="border-b"
       style={{ borderColor: 'rgba(255,255,255,0.07)' }}
@@ -151,7 +151,7 @@ export default function MobilePublishingPage() {
           gsap.from(card, {
             x: fromLeft ? -40 : 40,
             opacity: 0,
-            duration: 0.65,
+            duration: 1.0,
             ease: 'power3.out',
             immediateRender: false,
             scrollTrigger: { trigger: card, start: 'top 82%', once: true },
@@ -194,7 +194,7 @@ export default function MobilePublishingPage() {
           gsap.from(dot, {
             scale: 0,
             opacity: 0,
-            duration: 0.4,
+            duration: 1.0,
             ease: 'back.out(2)',
             immediateRender: false,
             scrollTrigger: { trigger: dot, start: 'top 85%', once: true },
@@ -231,7 +231,7 @@ export default function MobilePublishingPage() {
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 1.1, ease: 'easeOut' }}
             className="text-center"
           >
             {/* Eyebrow */}
@@ -314,7 +314,7 @@ export default function MobilePublishingPage() {
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+                transition={{ duration: 1.2, delay: i * 0.15, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-60px' }}
                 className="px-8 py-10 sm:py-12 flex flex-col"
                 style={{ borderColor: 'rgba(255,255,255,0.07)' }}
@@ -346,7 +346,7 @@ export default function MobilePublishingPage() {
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.95, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
             >
               <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Revenue Model</p>
@@ -376,7 +376,7 @@ export default function MobilePublishingPage() {
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.95, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="flex flex-col gap-0"
             >
@@ -438,7 +438,7 @@ export default function MobilePublishingPage() {
                 key={i}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: 'easeOut' }}
+                transition={{ duration: 1.2, delay: i * 0.13, ease: 'easeOut' }}
                 viewport={{ once: true, margin: '-60px' }}
                 className="group relative"
               >
@@ -471,7 +471,7 @@ export default function MobilePublishingPage() {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
             viewport={{ once: true, margin: '-40px' }}
             className="mt-10 flex items-center gap-3"
           >
@@ -497,7 +497,7 @@ export default function MobilePublishingPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.95, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="md:sticky md:top-28"
             >
@@ -533,7 +533,7 @@ export default function MobilePublishingPage() {
                   key={i}
                   initial={{ opacity: 0, x: 16 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.45, delay: i * 0.07, ease: 'easeOut' }}
+                  transition={{ duration: 0.75, delay: i * 0.11, ease: 'easeOut' }}
                   viewport={{ once: true, margin: '-60px' }}
                   className="group"
                 >
@@ -678,7 +678,7 @@ export default function MobilePublishingPage() {
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.95, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="relative rounded-2xl p-8"
               style={{ background: 'linear-gradient(135deg, rgba(124,58,237,0.10) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(168,85,247,0.15)' }}
@@ -703,7 +703,7 @@ export default function MobilePublishingPage() {
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 0.95, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="relative rounded-2xl p-8"
               style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(236,72,153,0.13)' }}
@@ -771,7 +771,7 @@ export default function MobilePublishingPage() {
           <motion.div
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 1.1, ease: 'easeOut' }}
             viewport={{ once: true, margin: '-60px' }}
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/25 bg-pink-500/8 text-pink-300 text-xs font-medium tracking-widest uppercase mb-10">

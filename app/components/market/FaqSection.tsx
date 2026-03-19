@@ -90,7 +90,7 @@ export const FaqSection = ({ registerSectionRef }: SectionProps) => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.8 }}
         className="text-center mb-16"
       >
         <h2 className="section-title">
@@ -108,7 +108,7 @@ export const FaqSection = ({ registerSectionRef }: SectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: 0.05 * (index + 1) }}
+            transition={{ duration: 1.2, delay: 0.05 * (index + 1) }}
           >
             <FaqItem faq={faq} index={index} />
           </motion.div>
@@ -119,7 +119,7 @@ export const FaqSection = ({ registerSectionRef }: SectionProps) => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.5, delay: 0.4 }}
+        transition={{ duration: 1.2, delay: 0.4 }}
         className="text-center mt-16 bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10"
       >
         <h3 className="text-2xl font-semibold mb-4">Still have questions?</h3>
