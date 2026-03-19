@@ -1,12 +1,15 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://pixsellgames.com',
+  siteUrl: process.env.SITE_URL || 'https://pixsellgames.com',
   generateRobotsTxt: true,
+  generateIndexSitemap: true,
+  exclude: ['/404', '/500', '/api/*'],
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/api/', '/admin/', '/private/'],
       },
     ],
     additionalSitemaps: [
@@ -16,51 +19,40 @@ module.exports = {
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 5000,
-  exclude: ['/404', '/500'],
-  generateIndexSitemap: true,
-  outDir: 'out',
   transform: async (config, path) => {
-    // Custom transformation for URL
-    
-    // Set different priorities for different paths
+    // Custom priority and changefreq based on path
     let priority = 0.7;
-    
-    if (path === '/' || path === '/index') {
+    let changefreq = 'weekly';
+
+    // Homepage gets highest priority
+    if (path === '/') {
       priority = 1.0;
-    } else if (path.startsWith('/blog/')) {
-      priority = 0.8;
-    } else if (path.startsWith('/about')) {
-      priority = 0.9;
-    } else if (path.startsWith('/contact')) {
-      priority = 0.9;
-    } else if (path.startsWith('/services')) {
-      priority = 0.9;
+      changefreq = 'daily';
     }
     
-    // Set change frequency based on path
-    let changefreq = 'weekly';
-    
-    if (path === '/' || path === '/index') {
-      changefreq = 'daily';
-    } else if (path.startsWith('/blog/')) {
+    // Service pages get high priority
+    if (path.startsWith('/services/')) {
+      priority = 0.9;
       changefreq = 'weekly';
     }
     
+    // Blog posts get medium priority
+    if (path.startsWith('/blog/')) {
+      priority = 0.8;
+      changefreq = 'monthly';
+    }
+    
+    // About and contact pages
+    if (path === '/about' || path === '/contact') {
+      priority = 0.8;
+      changefreq = 'monthly';
+    }
+
     return {
-      loc: path, // URL
+      loc: path,
       changefreq,
       priority,
       lastmod: new Date().toISOString(),
-      alternateRefs: [
-        {
-          href: `https://pixsellgames.com${path}`,
-          hreflang: 'en',
-        },
-        {
-          href: `https://pixsellgames.com${path}`,
-          hreflang: 'x-default',
-        },
-      ],
     };
   },
 }; 

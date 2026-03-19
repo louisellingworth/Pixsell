@@ -1,19 +1,12 @@
-# Robots.txt for Pixsell Games
+# *
 User-agent: *
 Allow: /
-
-# Sitemap location
-Sitemap: https://pixsell.games/sitemap.xml
-
-# Prevent access to admin or sensitive areas
-Disallow: /admin/
 Disallow: /api/
-Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
 
-# Allow Googlebot full access
-User-agent: Googlebot
-Allow: /
+# Host
+Host: https://pixsellgames.com
 
-# Allow Bingbot full access
-User-agent: Bingbot
-Allow: / 
+# Sitemaps
+Sitemap: https://pixsellgames.com/sitemap.xml

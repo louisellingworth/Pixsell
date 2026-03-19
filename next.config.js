@@ -5,11 +5,17 @@ const { cacheHeaders } = require('./cache-config');
 
 const nextConfig = {
   reactStrictMode: true,
+  // CDN Configuration
+  assetPrefix: process.env.NODE_ENV === 'production' ? 'https://cdn.pixsellgames.com' : '',
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixsellgames.com',
       }
     ],
     deviceSizes: [320, 420, 640, 750, 828, 1080, 1200, 1920, 2048],
@@ -22,6 +28,9 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    // CDN loader for production
+    loader: process.env.NODE_ENV === 'production' ? 'custom' : 'default',
+    loaderFile: process.env.NODE_ENV === 'production' ? './image-loader.js' : undefined,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -56,12 +65,15 @@ const nextConfig = {
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
+        maxInitialRequests: 10,
+        maxAsyncRequests: 10,
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
             priority: 10,
+            reuseExistingChunk: true,
           },
           common: {
             name: 'common',
@@ -84,8 +96,25 @@ const nextConfig = {
             chunks: 'all',
             priority: 20,
           },
+          // Separate React for better caching
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: 'react',
+            chunks: 'all',
+            priority: 30,
+          },
+          // Separate Next.js for better caching
+          next: {
+            test: /[\\/]node_modules[\\/]next[\\/]/,
+            name: 'next',
+            chunks: 'all',
+            priority: 25,
+          },
         },
       }
+      
+      // Optimize CSS extraction
+      config.optimization.minimize = true;
     }
 
     // Add bundle analyzer

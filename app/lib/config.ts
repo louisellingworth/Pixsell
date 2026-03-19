@@ -6,7 +6,7 @@
 export const siteConfig = {
   name: "Pixsell Games",
   shortName: "Pixsell",
-  description: "Game Publishing in China - Helping Western developers enter the Chinese market",
+  description: "Launch your game in China with trusted co-publishing partners. We handle game approvals, marketing, localization, and partnerships for Western developers entering the Chinese game market.",
   url: "https://pixsellgames.com",
   ogImageUrl: "https://pixsellgames.com/images/og-image.jpg",
   links: {
@@ -18,6 +18,29 @@ export const siteConfig = {
   },
   metaTags: {
     themeColor: "#000000",
+  },
+  // SEO Keywords
+  keywords: [
+    'game publishing China',
+    'China game market entry', 
+    'game localization China',
+    'mobile game publishing China',
+    'Western developers China',
+    'Chinese game market',
+    'game co-publishing China',
+    'Steam China publishing',
+    'game approval China',
+    'Chinese game distribution',
+    'game marketing China',
+    'China game industry',
+    'game partnership China',
+    'Chinese player preferences',
+    'game revenue China'
+  ],
+  // Google Analytics
+  analytics: {
+    measurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'GA_MEASUREMENT_ID',
+    enabled: process.env.NEXT_PUBLIC_ENABLE_ANALYTICS !== 'false',
   },
 }
 

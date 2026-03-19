@@ -2,6 +2,7 @@ import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import { siteConfig } from '@/lib/config'
 import Navigation from './components/Navigation'
 import Script from 'next/script'
 import FontPreload from './components/FontPreload'
@@ -22,10 +23,10 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pixsellgames.com'),
-  title: 'Pixsell - Game Publishing in China',
-  description: 'Launch your game in China with trusted co-publishing partners. We handle approvals, marketing, and partnerships so you can focus on making great games.',
-  keywords: ['game publishing', 'China market entry', 'game localization', 'mobile game publishing', 'Western developers', 'China game market', 'game co-publishing', 'Chinese game market'],
+  metadataBase: new URL(siteConfig.url),
+  title: 'Pixsell - Game Publishing in China | Co-Publishing & Localization Services',
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
   authors: [{ name: 'Pixsell Games' }],
   creator: 'Pixsell Games',
   publisher: 'Pixsell Games',
@@ -51,22 +52,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://pixsellgames.com',
-    title: 'Pixsell - Game Publishing in China',
-    description: 'Launch your game in China with trusted co-publishing partners. We handle approvals, marketing, and partnerships.',
+    title: 'Pixsell - Game Publishing in China | Co-Publishing & Localization Services',
+    description: 'Launch your game in China with trusted co-publishing partners. We handle game approvals, marketing, localization, and partnerships for Western developers entering the Chinese game market.',
     siteName: 'Pixsell Games',
     images: [
       {
         url: '/pixsell-meta-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Pixsell Games - China Game Publishing',
+        alt: 'Pixsell Games - China Game Publishing Services for Western Developers',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Pixsell - Game Publishing in China',
-    description: 'Launch your game in China with trusted co-publishing partners.',
+    title: 'Pixsell - Game Publishing in China | Co-Publishing & Localization Services',
+    description: 'Launch your game in China with trusted co-publishing partners. We handle game approvals, marketing, localization, and partnerships.',
     images: ['/pixsell-meta-image.jpg'],
     creator: '@pixsell_games',
     site: '@pixsell_games',
@@ -142,6 +143,24 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="en" href="https://pixsellgames.com" />
         <link rel="alternate" hrefLang="x-default" href="https://pixsellgames.com" />
         
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.measurementId}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${siteConfig.analytics.measurementId}', {
+              page_title: document.title,
+              page_location: window.location.href,
+              send_page_view: true
+            });
+          `}
+        </Script>
+
         {/* Service Worker Registration */}
         <Script id="register-sw" strategy="lazyOnload">
           {`
