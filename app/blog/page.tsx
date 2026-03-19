@@ -84,7 +84,7 @@ export default function BlogIndex() {
       slug: 'how-to-publish-a-game-on-steam-in-china',
       title: 'How to Publish a Game on Steam in China – A Step-by-Step Guide',
       excerpt: 'Navigate the complex process of publishing your game on Steam in China with our comprehensive step-by-step guide.',
-      date: 'March 5, 2024',
+      date: 'January 14, 2025',
       readTime: calculateBlogReadingTime('how-to-publish-a-game-on-steam-in-china'),
       imageUrl: '/blog/steam-china-publishing.jpg',
       category: 'Publishing',
@@ -93,7 +93,7 @@ export default function BlogIndex() {
       slug: 'steam-global-vs-steam-china',
       title: 'Steam Global vs Steam China: What\'s the Difference for Developers?',
       excerpt: 'Understand the key differences between Steam Global and Steam China and how they impact your game development and publishing strategy.',
-      date: 'March 5, 2024',
+      date: 'December 18, 2024',
       readTime: calculateBlogReadingTime('steam-global-vs-steam-china'),
       imageUrl: '/blog/steam-global-vs-china.jpg',
       category: 'Platform Insights',
@@ -102,7 +102,7 @@ export default function BlogIndex() {
       slug: 'isbn-license-china-game-release',
       title: 'Do I Need an ISBN Licence to Release My Game in China?',
       excerpt: 'Learn about ISBN licensing requirements for game releases in China and what it means for your publishing plans.',
-      date: 'March 5, 2024',
+      date: 'November 29, 2024',
       readTime: calculateBlogReadingTime('isbn-license-china-game-release'),
       imageUrl: '/blog/isbn-license-china.jpg',
       category: 'Regulation',
@@ -111,7 +111,7 @@ export default function BlogIndex() {
       slug: 'marketing-your-game-in-china',
       title: 'Marketing Your Game in China: 5 Strategies for Steam Titles',
       excerpt: 'Discover five practical strategies to market your game effectively to Chinese players on Steam.',
-      date: 'March 5, 2024',
+      date: 'November 5, 2024',
       readTime: calculateBlogReadingTime('marketing-your-game-in-china'),
       imageUrl: '/blog/marketing-china-games.jpg',
       category: 'Marketing',
@@ -120,7 +120,7 @@ export default function BlogIndex() {
       slug: 'co-publishing-vs-self-publishing-china',
       title: 'Co-Publishing vs Self-Publishing in China – Which is Right for You?',
       excerpt: 'Compare the benefits and challenges of co-publishing versus self-publishing your game in China to make the best choice for your project.',
-      date: 'March 5, 2024',
+      date: 'October 22, 2024',
       readTime: calculateBlogReadingTime('co-publishing-vs-self-publishing-china'),
       imageUrl: '/blog/publishing-models-china.jpg',
       category: 'Publishing',
@@ -129,7 +129,7 @@ export default function BlogIndex() {
       slug: 'how-to-find-chinese-co-publisher',
       title: 'How to Find a Chinese Co-Publisher for Your Game',
       excerpt: 'Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximise your game\'s success in the market.',
-      date: 'March 5, 2024',
+      date: 'September 30, 2024',
       readTime: calculateBlogReadingTime('how-to-find-chinese-co-publisher'),
       imageUrl: '/blog/finding-chinese-publisher.jpg',
       category: 'Partnerships',
@@ -138,7 +138,7 @@ export default function BlogIndex() {
       slug: 'revenue-share-models-chinese-game-publishing',
       title: 'Revenue Share Models in Chinese Game Publishing – What to Expect',
       excerpt: 'Understand common revenue sharing models in Chinese game publishing and how to negotiate terms that benefit your studio.',
-      date: 'March 5, 2024',
+      date: 'September 9, 2024',
       readTime: calculateBlogReadingTime('revenue-share-models-chinese-game-publishing'),
       imageUrl: '/blog/revenue-share-china.jpg',
       category: 'Business',
@@ -147,7 +147,7 @@ export default function BlogIndex() {
       slug: '5-mistakes-western-developers-make-in-china',
       title: '5 Mistakes Western Developers Make in China',
       excerpt: 'Avoid these common pitfalls that Western developers encounter when entering the Chinese gaming market.',
-      date: 'February 7, 2024',
+      date: 'August 14, 2024',
       readTime: calculateBlogReadingTime('5-mistakes-western-developers-make-in-china'),
       imageUrl: '/blog/mistakes-hero.jpg',
       category: 'Strategy',
@@ -196,10 +196,7 @@ export default function BlogIndex() {
     
     // Add loading state for visual feedback
     setIsLoading(true);
-    
-    // Log for debugging
-    console.log('Category selected:', category);
-    
+
     // Small timeout to ensure state updates correctly
     setTimeout(() => {
       setSelectedCategory(category);
@@ -442,22 +439,18 @@ export default function BlogIndex() {
             />
             <div className="relative z-10 text-center">
               <h2 className="text-3xl font-bold mb-6">
-                Stay <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-clip-text text-transparent animate-gradient">Updated</span>
+                Get the <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-clip-text text-transparent animate-gradient">Latest Insights</span>
               </h2>
-              <p className="text-gray-300 mb-8 group-hover:text-gray-200 transition-colors duration-500">Subscribe to our newsletter to get the latest insights on game publishing in China</p>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="px-4 py-3 rounded-lg bg-black/30 border border-purple-500/20 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500 flex-grow"
-                />
-                <button 
-                  type="button"
-                  className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium rounded-lg transition-colors whitespace-nowrap transform-gpu hover:scale-[1.02] transition-transform duration-300"
-                >
-                  Subscribe
-                </button>
-              </div>
+              <p className="text-gray-300 mb-8 group-hover:text-gray-200 transition-colors duration-500">Want expert advice on publishing your game in China? Talk to our team directly.</p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium rounded-xl transition-all transform-gpu hover:scale-[1.02] duration-300"
+              >
+                Get in Touch
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

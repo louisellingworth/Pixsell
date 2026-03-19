@@ -7,13 +7,12 @@ import GradientButton from './ui/GradientButton'
 // Navigation items with services submenu
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Steam Publishing', href: '/services/co-publishing' },
-  { name: 'Mobile Publishing', href: '/services/mobile-publishing' },
   {
     name: 'Services',
     href: '/services',
     submenu: [
-      { name: 'Co-Publishing', href: '/services/co-publishing' },
+      { name: 'Steam Publishing', href: '/services/co-publishing' },
+      { name: 'Mobile Publishing', href: '/services/mobile-publishing' },
       { name: 'Localisation', href: '/services/localisation' },
       { name: 'Marketing', href: '/services/marketing' },
       { name: 'How we Deliver', href: '/services/partnership' }

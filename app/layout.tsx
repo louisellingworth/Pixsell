@@ -305,22 +305,6 @@ export default function RootLayout({
           `}
         </Script>
         
-        {/* Structured Data for SEO - WebSite */}
-        <Script id="schema-website" type="application/ld+json" strategy="beforeInteractive">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "EightSix Games",
-              "url": "https://eightsixgames.com",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://eightsixgames.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            }
-          `}
-        </Script>
       </head>
       <body className="relative min-h-screen w-full bg-black text-white antialiased">
         <ParticlesBackgroundClient />

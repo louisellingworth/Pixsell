@@ -199,7 +199,7 @@ export default function HeroSection() {
               ref={headingRef}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white"
             >
-              {['Streamlining', 'Your', 'Entry', 'to'].map((word, i) => (
+              {['Your', 'Game,', 'Live', 'in'].map((word, i) => (
                 <span key={i} className="word-reveal-clip mr-[0.25em]">
                   <span className="hero-word inline-block">{word}</span>
                 </span>
@@ -234,9 +234,9 @@ export default function HeroSection() {
               ref={subRef}
               className="max-w-xl text-base sm:text-lg text-gray-400 leading-relaxed"
             >
-              Most Western developers miss China&apos;s 320M PC gamers and 700M+ mobile
-              players because they can&apos;t find a trustworthy publisher, negotiate deal
-              terms blind, or afford the upfront cost. We fix all three — for both PC and mobile.
+              We connect Western developers with vetted Chinese publishers, negotiate
+              deal terms on your behalf, and monitor revenue after launch — for both PC and mobile.
+              No upfront cost. No IP loss.
             </p>
 
             {/* ── CTA Buttons ──────────────────────────────────────── */}
