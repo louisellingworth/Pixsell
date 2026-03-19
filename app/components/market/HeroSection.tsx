@@ -44,7 +44,7 @@ export default function HeroSection() {
           y: '110%',
           opacity: 0,
           duration: 1.1,
-          stagger: 0.13,
+          stagger: 0.15,
           ease: 'power3.out',
           delay: 0.1,
         })
@@ -197,20 +197,25 @@ export default function HeroSection() {
             {/* ── Heading ───────────────────────────────────────────── */}
             <h1
               ref={headingRef}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-white"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight text-white"
             >
-              {['Your', 'Game,', 'Live', 'in'].map((word, i) => (
-                <span key={i} className="word-reveal-clip mr-[0.25em]">
+              {/* Line 1: "Launch Your Game" */}
+              {['Launch', 'Your', 'Game'].map((word, i) => (
+                <span key={i} className="word-reveal-clip inline-block mr-[0.22em]">
                   <span className="hero-word inline-block">{word}</span>
                 </span>
               ))}
               <br />
-              {["China's", 'Gaming', 'Market'].map((word, i) => (
-                <span key={i + 4} className="word-reveal-clip mr-[0.25em]">
+              {/* Line 2: "in China" — "in" white, "China" gradient */}
+              {[
+                { text: 'in', gradient: false },
+                { text: 'China', gradient: true },
+              ].map((item, i) => (
+                <span key={i + 3} className="word-reveal-clip inline-block mr-[0.22em]">
                   <span
                     className="hero-word inline-block"
                     style={
-                      i === 0
+                      item.gradient
                         ? {
                             backgroundImage:
                               'linear-gradient(135deg, #a855f7, #ec4899, #7c3aed)',
@@ -223,7 +228,7 @@ export default function HeroSection() {
                         : undefined
                     }
                   >
-                    {word}
+                    {item.text}
                   </span>
                 </span>
               ))}
@@ -234,8 +239,8 @@ export default function HeroSection() {
               ref={subRef}
               className="max-w-xl text-base sm:text-lg text-gray-400 leading-relaxed"
             >
-              We connect Western developers with vetted Chinese publishers, negotiate
-              deal terms on your behalf, and monitor revenue after launch — for both PC and mobile.
+              We help Western developers launch their games in China — finding the right publisher,
+              negotiating your deal, and monitoring revenue after launch.
               No upfront cost. No IP loss.
             </p>
 
