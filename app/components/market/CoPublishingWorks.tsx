@@ -78,10 +78,11 @@ export default function CoPublishingWorks() {
         stepRows.forEach((row, i) => {
           const fromLeft = i % 2 === 0
           gsap.from(row, {
-            x: fromLeft ? -40 : 40,
+            x: fromLeft ? -48 : 48,
             opacity: 0,
+            scale: 0.97,
             duration: 1.7,
-            ease: 'power3.out',
+            ease: 'expo.out',
             immediateRender: false,
             scrollTrigger: { trigger: row, start: 'top 82%', once: true },
           })
@@ -91,11 +92,12 @@ export default function CoPublishingWorks() {
       const benefitItems = benefitsRef.current?.querySelectorAll<HTMLDivElement>('.benefit-item')
       if (benefitItems) {
         gsap.from(benefitItems, {
-          y: 24,
+          y: 28,
           opacity: 0,
-          duration: 1.9,
-          stagger: 0.08,
-          ease: 'power3.out',
+          scale: 0.92,
+          duration: 1.6,
+          stagger: 0.1,
+          ease: 'back.out(1.4)',
           immediateRender: false,
           scrollTrigger: { trigger: benefitsRef.current, start: 'top 85%', once: true },
         })

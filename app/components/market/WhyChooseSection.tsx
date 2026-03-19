@@ -60,11 +60,12 @@ export default function WhyChooseSection() {
       const cards = featuresRef.current?.querySelectorAll<HTMLDivElement>('.feature-card')
       if (cards) {
         gsap.from(cards, {
-          y: 40,
+          y: 44,
           opacity: 0,
-          duration: 1.5,
-          stagger: 0.1,
-          ease: 'power3.out',
+          scale: 0.95,
+          duration: 1.6,
+          stagger: 0.12,
+          ease: 'expo.out',
           immediateRender: false,
           scrollTrigger: {
             trigger: featuresRef.current,
@@ -96,11 +97,11 @@ export default function WhyChooseSection() {
           if (!iconEl) return
           gsap.from(iconEl, {
             scale: 0,
-            rotate: -15,
+            rotate: -25,
             opacity: 0,
-            duration: 0.6,
-            ease: 'back.out(2)',
-            delay: 0.18,
+            duration: 0.75,
+            ease: 'back.out(3.5)',
+            delay: 0.2,
             immediateRender: false,
             scrollTrigger: {
               trigger: card,

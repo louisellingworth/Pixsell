@@ -45,11 +45,14 @@ export default function RoadmapSection() {
         cards.forEach((card, i) => {
           const fromLeft = i % 2 === 0
           gsap.from(card, {
-            x: fromLeft ? -40 : 40,
+            x: fromLeft ? -50 : 50,
             opacity: 0,
-            duration: 1.6,
-            ease: 'power3.out',
+            scale: 0.96,
+            rotateY: fromLeft ? -4 : 4,
+            duration: 1.7,
+            ease: 'expo.out',
             immediateRender: false,
+            transformOrigin: fromLeft ? '0% 50%' : '100% 50%',
             scrollTrigger: {
               trigger: card,
               start: 'top 82%',
@@ -102,8 +105,9 @@ export default function RoadmapSection() {
           gsap.from(dot, {
             scale: 0,
             opacity: 0,
-            duration: 0.6,
-            ease: 'back.out(2)',
+            rotate: -20,
+            duration: 0.7,
+            ease: 'back.out(3)',
             immediateRender: false,
             scrollTrigger: {
               trigger: dot,

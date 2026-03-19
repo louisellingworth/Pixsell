@@ -72,11 +72,12 @@ export default function ServicesSection() {
       const cards = gridRef.current?.querySelectorAll<HTMLDivElement>('.service-card')
       if (cards) {
         gsap.from(cards, {
-          y: 60,
+          y: 64,
           opacity: 0,
+          scale: 0.94,
           duration: 1.7,
-          stagger: 0.13,
-          ease: 'power3.out',
+          stagger: 0.14,
+          ease: 'expo.out',
           immediateRender: false,
           scrollTrigger: {
             trigger: gridRef.current,
@@ -94,10 +95,10 @@ export default function ServicesSection() {
           if (!iconWrap) return
           gsap.from(iconWrap, {
             scale: 0,
-            rotate: -10,
+            rotate: -20,
             opacity: 0,
-            duration: 1.2,
-            ease: 'back.out(2)',
+            duration: 0.8,
+            ease: 'back.out(3.5)',
             delay: 0.15,
             immediateRender: false,
             scrollTrigger: {

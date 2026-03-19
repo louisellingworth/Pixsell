@@ -121,19 +121,19 @@ export const UniqueFeatures = ({ registerSectionRef }: UniqueFeaturesProps) => {
     >
       <div className="text-center mb-16">
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 28, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.9, delay: 0.18 }}
+          transition={{ duration: 1.8, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           className="section-title"
         >
           Why EightSix Games for China?
         </motion.h2>
         <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 28, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.9, delay: 0.3 }}
+          transition={{ duration: 1.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="section-subtitle"
         >
           Our specialized knowledge and experience create a bridge between Western developers and China's lucrative gaming market.
@@ -144,10 +144,10 @@ export const UniqueFeatures = ({ registerSectionRef }: UniqueFeaturesProps) => {
         {uniqueFeatures.map((feature, index) => (
           <motion.div
             key={feature.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 32, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.9, delay: 0.186 * (index + 3) }}
+            transition={{ duration: 1.7, delay: 0.15 * (index + 2), ease: [0.16, 1, 0.3, 1] }}
           >
             <FeatureCard feature={feature} />
           </motion.div>

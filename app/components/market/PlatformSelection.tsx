@@ -26,11 +26,12 @@ export default function PlatformSelection() {
       const cards = cardsRef.current?.querySelectorAll<HTMLDivElement>('.platform-card')
       if (cards) {
         gsap.from(cards, {
-          y: 40,
+          y: 48,
           opacity: 0,
-          duration: 1.6,
-          stagger: 0.15,
-          ease: 'power3.out',
+          scale: 0.94,
+          duration: 1.7,
+          stagger: 0.18,
+          ease: 'expo.out',
           immediateRender: false,
           scrollTrigger: { trigger: cardsRef.current, start: 'top 80%', once: true },
         })

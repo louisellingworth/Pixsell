@@ -41,52 +41,58 @@ export default function HeroSection() {
       if (heading) {
         const words = heading.querySelectorAll<HTMLSpanElement>('.hero-word')
         gsap.from(words, {
-          y: '110%',
+          y: '115%',
           opacity: 0,
-          duration: 1.7,
-          stagger: 0.15,
-          ease: 'power3.out',
+          scale: 0.88,
+          rotateX: 8,
+          duration: 1.8,
+          stagger: 0.14,
+          ease: 'expo.out',
           delay: 0.1,
+          transformOrigin: '50% 100%',
         })
       }
 
       // ── Sub-heading + CTA fade up ────────────────────────────────
-      const tl = gsap.timeline({ delay: 0.7 })
+      const tl = gsap.timeline({ delay: 0.8 })
       tl.from(subRef.current, {
-        y: 24,
+        y: 32,
         opacity: 0,
-        duration: 1.4,
-        ease: 'power2.out',
+        duration: 1.5,
+        ease: 'power3.out',
       })
       tl.from(ctaRef.current, {
-        y: 20,
+        y: 24,
         opacity: 0,
-        duration: 1.3,
-        ease: 'power2.out',
-      }, '-=0.3')
+        scale: 0.97,
+        duration: 1.4,
+        ease: 'power3.out',
+      }, '-=0.4')
       tl.from(tickerRef.current, {
+        y: 14,
         opacity: 0,
         duration: 1.4,
         ease: 'power2.out',
-      }, '-=0.2')
+      }, '-=0.3')
       tl.from(scrollRef.current, {
         opacity: 0,
-        y: -8,
+        y: -12,
         duration: 1.0,
         ease: 'power2.out',
-      }, '-=0.1')
+      }, '-=0.2')
 
       // ── Stat counter animation ───────────────────────────────────
       const statEls = statsRef.current?.querySelectorAll<HTMLSpanElement>('.stat-number')
       const statBlocks = statsRef.current?.querySelectorAll<HTMLDivElement>('.stat-block')
       if (statBlocks) {
         gsap.from(statBlocks, {
-          y: 20,
+          y: 24,
           opacity: 0,
-          duration: 1.3,
-          stagger: 0.18,
+          scale: 0.94,
+          duration: 1.4,
+          stagger: 0.2,
           ease: 'power3.out',
-          delay: 1.2,
+          delay: 1.3,
         })
       }
       if (statEls) {
