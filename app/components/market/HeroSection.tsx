@@ -40,59 +40,63 @@ export default function HeroSection() {
       const heading = headingRef.current
       if (heading) {
         const words = heading.querySelectorAll<HTMLSpanElement>('.hero-word')
+        // words start at 0.2s, each word takes 0.75s, stagger 0.07s
+        // last word finishes at ~0.2 + 4*0.07 + 0.75 = ~1.23s
         gsap.from(words, {
           y: '110%',
           opacity: 0,
           scale: 0.9,
           rotateX: 6,
-          duration: 0.9,
-          stagger: 0.08,
+          duration: 0.75,
+          stagger: 0.07,
           ease: 'expo.out',
-          delay: 0.05,
+          delay: 0.2,
           transformOrigin: '50% 100%',
         })
       }
 
-      // ── Sub-heading + CTA fade up ────────────────────────────────
-      const tl = gsap.timeline({ delay: 0.5 })
+      // ── One master timeline — everything flows together ───────────
+      // starts 0.7s after page load (words are mid-reveal by then)
+      const tl = gsap.timeline({ delay: 0.7 })
       tl.from(subRef.current, {
-        y: 20,
+        y: 18,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.7,
         ease: 'power3.out',
       })
       tl.from(ctaRef.current, {
-        y: 16,
+        y: 14,
         opacity: 0,
         scale: 0.97,
-        duration: 0.7,
+        duration: 0.6,
         ease: 'power3.out',
-      }, '-=0.3')
+      }, '-=0.25')
       tl.from(tickerRef.current, {
         y: 10,
         opacity: 0,
-        duration: 0.7,
+        duration: 0.6,
         ease: 'power2.out',
       }, '-=0.2')
       tl.from(scrollRef.current, {
         opacity: 0,
         y: -8,
-        duration: 0.6,
+        duration: 0.5,
         ease: 'power2.out',
-      }, '-=0.1')
+      }, '-=0.15')
 
       // ── Stat counter animation ───────────────────────────────────
       const statEls = statsRef.current?.querySelectorAll<HTMLSpanElement>('.stat-number')
       const statBlocks = statsRef.current?.querySelectorAll<HTMLDivElement>('.stat-block')
       if (statBlocks) {
+        // stats appear shortly after sub-copy
         gsap.from(statBlocks, {
-          y: 16,
+          y: 14,
           opacity: 0,
           scale: 0.94,
-          duration: 0.7,
-          stagger: 0.1,
+          duration: 0.65,
+          stagger: 0.09,
           ease: 'power3.out',
-          delay: 0.8,
+          delay: 1.0,
         })
       }
       if (statEls) {
