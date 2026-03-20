@@ -42,7 +42,7 @@ export const TestimonialSection = ({ registerSectionRef }: SectionProps) => {
         initial={{ opacity: 0, y: 28, scale: 0.97 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
         className="text-center mb-16"
       >
         <h2 className="section-title">
@@ -60,7 +60,7 @@ export const TestimonialSection = ({ registerSectionRef }: SectionProps) => {
             initial={{ opacity: 0, y: 36, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.7, delay: 0.18 * (index + 1), ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 2.3, delay: 0.18 * (index + 1), ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="testimonial-card h-full">
               <p className="testimonial-quote">

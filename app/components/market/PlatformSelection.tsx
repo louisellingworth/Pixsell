@@ -17,7 +17,7 @@ export default function PlatformSelection() {
       gsap.from(headingRef.current, {
         y: 32,
         opacity: 0,
-        duration: 1.7,
+        duration: 2.3,
         ease: 'power3.out',
         immediateRender: false,
         scrollTrigger: { trigger: headingRef.current, start: 'top 85%', once: true },
@@ -29,7 +29,7 @@ export default function PlatformSelection() {
           y: 48,
           opacity: 0,
           scale: 0.94,
-          duration: 1.7,
+          duration: 2.3,
           stagger: 0.18,
           ease: 'expo.out',
           immediateRender: false,

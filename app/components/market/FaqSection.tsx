@@ -90,7 +90,7 @@ export const FaqSection = ({ registerSectionRef }: SectionProps) => {
         initial={{ opacity: 0, y: 28, scale: 0.97 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
         className="text-center mb-16"
       >
         <h2 className="section-title">
@@ -108,7 +108,7 @@ export const FaqSection = ({ registerSectionRef }: SectionProps) => {
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.6, delay: 0.07 * (index + 1), ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 2.2, delay: 0.07 * (index + 1), ease: [0.16, 1, 0.3, 1] }}
           >
             <FaqItem faq={faq} index={index} />
           </motion.div>
@@ -119,7 +119,7 @@ export const FaqSection = ({ registerSectionRef }: SectionProps) => {
         initial={{ opacity: 0, y: 32, scale: 0.96 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 1.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 2.3, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="text-center mt-16 bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10"
       >
         <h3 className="text-2xl font-semibold mb-4">Still have questions?</h3>

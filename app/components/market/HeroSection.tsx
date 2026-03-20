@@ -41,58 +41,58 @@ export default function HeroSection() {
       if (heading) {
         const words = heading.querySelectorAll<HTMLSpanElement>('.hero-word')
         gsap.from(words, {
-          y: '115%',
+          y: '110%',
           opacity: 0,
-          scale: 0.88,
-          rotateX: 8,
-          duration: 1.8,
-          stagger: 0.14,
+          scale: 0.9,
+          rotateX: 6,
+          duration: 0.9,
+          stagger: 0.08,
           ease: 'expo.out',
-          delay: 0.1,
+          delay: 0.05,
           transformOrigin: '50% 100%',
         })
       }
 
       // ── Sub-heading + CTA fade up ────────────────────────────────
-      const tl = gsap.timeline({ delay: 0.8 })
+      const tl = gsap.timeline({ delay: 0.5 })
       tl.from(subRef.current, {
-        y: 32,
+        y: 20,
         opacity: 0,
-        duration: 1.5,
+        duration: 0.8,
         ease: 'power3.out',
       })
       tl.from(ctaRef.current, {
-        y: 24,
+        y: 16,
         opacity: 0,
         scale: 0.97,
-        duration: 1.4,
+        duration: 0.7,
         ease: 'power3.out',
-      }, '-=0.4')
-      tl.from(tickerRef.current, {
-        y: 14,
-        opacity: 0,
-        duration: 1.4,
-        ease: 'power2.out',
       }, '-=0.3')
-      tl.from(scrollRef.current, {
+      tl.from(tickerRef.current, {
+        y: 10,
         opacity: 0,
-        y: -12,
-        duration: 1.0,
+        duration: 0.7,
         ease: 'power2.out',
       }, '-=0.2')
+      tl.from(scrollRef.current, {
+        opacity: 0,
+        y: -8,
+        duration: 0.6,
+        ease: 'power2.out',
+      }, '-=0.1')
 
       // ── Stat counter animation ───────────────────────────────────
       const statEls = statsRef.current?.querySelectorAll<HTMLSpanElement>('.stat-number')
       const statBlocks = statsRef.current?.querySelectorAll<HTMLDivElement>('.stat-block')
       if (statBlocks) {
         gsap.from(statBlocks, {
-          y: 24,
+          y: 16,
           opacity: 0,
           scale: 0.94,
-          duration: 1.4,
-          stagger: 0.2,
+          duration: 0.7,
+          stagger: 0.1,
           ease: 'power3.out',
-          delay: 1.3,
+          delay: 0.8,
         })
       }
       if (statEls) {

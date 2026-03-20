@@ -59,7 +59,7 @@ export default function ServicesSection() {
       gsap.from(headingRef.current, {
         y: 32,
         opacity: 0,
-        duration: 1.7,
+        duration: 2.3,
         ease: 'power3.out',
         immediateRender: false,
         scrollTrigger: {
@@ -75,8 +75,8 @@ export default function ServicesSection() {
           y: 64,
           opacity: 0,
           scale: 0.94,
-          duration: 1.7,
-          stagger: 0.14,
+          duration: 2.3,
+          stagger: 0.2,
           ease: 'expo.out',
           immediateRender: false,
           scrollTrigger: {
@@ -97,7 +97,7 @@ export default function ServicesSection() {
             scale: 0,
             rotate: -20,
             opacity: 0,
-            duration: 0.8,
+            duration: 1.1,
             ease: 'back.out(3.5)',
             delay: 0.15,
             immediateRender: false,
