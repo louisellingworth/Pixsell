@@ -41,7 +41,7 @@ export const CtaSection = ({ registerSectionRef }: SectionProps) => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px 0px" }}
           transition={{ duration: 1.4 }}
           className="space-y-6"
         >
@@ -94,7 +94,7 @@ export const CtaSection = ({ registerSectionRef }: SectionProps) => {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px 0px" }}
           transition={{ duration: 2.5, delay: 0.2 }}
         >
           <form 

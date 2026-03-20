@@ -123,7 +123,7 @@ export const UniqueFeatures = ({ registerSectionRef }: UniqueFeaturesProps) => {
         <motion.h2 
           initial={{ opacity: 0, y: 28, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px 0px" }}
           transition={{ duration: 2.4, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           className="section-title"
         >
@@ -132,7 +132,7 @@ export const UniqueFeatures = ({ registerSectionRef }: UniqueFeaturesProps) => {
         <motion.p 
           initial={{ opacity: 0, y: 28, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-80px 0px" }}
           transition={{ duration: 2.4, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className="section-subtitle"
         >
@@ -146,7 +146,7 @@ export const UniqueFeatures = ({ registerSectionRef }: UniqueFeaturesProps) => {
             key={feature.title}
             initial={{ opacity: 0, y: 32, scale: 0.95 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "-80px 0px" }}
             transition={{ duration: 2.3, delay: 0.15 * (index + 2), ease: [0.16, 1, 0.3, 1] }}
           >
             <FeatureCard feature={feature} />

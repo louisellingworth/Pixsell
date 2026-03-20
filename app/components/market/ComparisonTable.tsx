@@ -142,10 +142,10 @@ export const ComparisonTable = ({ registerSectionRef }: SectionProps) => {
       className="relative z-10 py-24 px-4 sm:px-6 lg:px-8 bg-black/40"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 28, scale: 0.97 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-80px 0px" }}
           transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16"
         >
@@ -163,7 +163,7 @@ export const ComparisonTable = ({ registerSectionRef }: SectionProps) => {
               key={option.name}
               initial={{ opacity: 0, y: 36, scale: 0.94 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-80px 0px" }}
               transition={{ duration: 2.3, delay: index * 0.18, ease: [0.16, 1, 0.3, 1] }}
               className={`rounded-xl p-6 ${option.highlight ? 'bg-gradient-to-br from-purple-900/70 to-pink-900/70 border-2 border-purple-500/50' : 'bg-white/5 border border-white/10'}`}
             >
