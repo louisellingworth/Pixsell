@@ -114,8 +114,8 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-lg">
           <img
-            src="/6ight-games-logo.png"
-            alt="6ight Games - Game Publishing in China"
+            src="/6ight-games-logo-160h.webp"
+            alt="EightSix Games - Game Publishing in China"
             className="h-16 md:h-20 w-auto"
             style={{
               objectFit: 'contain',
@@ -224,9 +224,12 @@ export default function Navigation() {
         <div 
           id="mobile-menu"
           data-mobile-menu
-          className="md:hidden fixed inset-x-0 top-[48px] bg-black/95 backdrop-blur-xl border-t border-purple-500/10 z-50 overflow-y-auto transition-all duration-300 animate-fadeIn"
+          className="md:hidden absolute inset-x-0 top-full bg-[#0A0A0B] border-t border-purple-500/10 z-50 overflow-y-auto transition-all duration-300 animate-fadeIn"
           style={{
-            height: 'calc(100vh - 48px)', 
+            /* 100% resolves to the fixed nav's height, so the panel fills
+               exactly from the nav's bottom edge to the viewport bottom
+               regardless of logo size or scroll-collapsed padding. */
+            height: 'calc(100dvh - 100%)',
             boxShadow: '0 10px 25px -5px rgba(138, 75, 175, 0.2)'
           }}
           role="dialog"

@@ -475,15 +475,12 @@
     touch-action: pan-x pan-y;
   }
   
+  /* Keep tap behaviour touch-friendly without changing layout — forcing
+     inline-flex/min-size on every link breaks inline links and menu
+     alignment. Use the .touch-target utility where 44px targets are needed. */
   button, a {
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    user-select: none;
-    min-height: 44px; /* Minimum touch target size */
-    min-width: 44px; /* Minimum touch target size */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
   
   p {
