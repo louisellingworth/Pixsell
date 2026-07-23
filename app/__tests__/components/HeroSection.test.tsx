@@ -28,9 +28,11 @@ describe('HeroSection', () => {
     render(<HeroSection />)
   })
 
-  it('contains the headline text "Streamlining"', () => {
+  it('contains the headline text "Launch Your Game"', () => {
     render(<HeroSection />)
-    expect(screen.getByText('Streamlining')).toBeInTheDocument()
+    // The headline is animated word-by-word, so each word is its own element
+    expect(screen.getByText('Launch')).toBeInTheDocument()
+    expect(screen.getByText('Game')).toBeInTheDocument()
   })
 
   it('renders a contact link with /contact href', () => {

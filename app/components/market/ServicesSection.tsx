@@ -137,18 +137,18 @@ export default function ServicesSection() {
             Our{' '}
             <span
               style={{
-                backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
+                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundSize: '200% 200%',
+                backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
               }}
             >
               Services
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Four specific things we do — partner matching, localisation, marketing oversight, and ongoing performance monitoring. Click any service to learn exactly what&apos;s included.
+            Four specific things we do, partner matching, localisation, marketing oversight, and ongoing performance monitoring. Click any service to learn exactly what&apos;s included.
           </p>
         </div>
 

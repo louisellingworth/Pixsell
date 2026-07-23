@@ -93,7 +93,7 @@ export default function CoPublishingVsSelfPublishingChina() {
               <p className="text-xl leading-relaxed">
                 Publishing a game in China requires a tailored approach due to the country's unique regulations, culture, and market dynamics. 
                 China is the world's largest gaming market with 674 million gamers generating $44.8 billion in revenue annually, making it an 
-                unparalleled opportunity for game developers. However, reaching Chinese players isn't as simple as releasing your game worldwide — 
+                unparalleled opportunity for game developers. However, reaching Chinese players isn't as simple as releasing your game worldwide;
                 the market operates under different rules. Developers typically pursue one of two paths to enter China: self-publishing (usually via 
                 Steam's global platform) or co-publishing on Steam Global with a Chinese partner. In this article, we'll compare self-publishing vs 
                 co-publishing in China, especially for PC game developers, and explore why working with a local co-publisher on Steam Global often 
@@ -474,7 +474,7 @@ export default function CoPublishingVsSelfPublishingChina() {
                 For most developers, especially indie and mid-size studios, the Steam China route is simply not worth the effort or risk. 
                 It's usually far more effective to launch on the global Steam (to reach Chinese players immediately) and leverage a 
                 co-publisher to maximize that opportunity. Many studios figure that if their game explodes in popularity, they can always 
-                later attempt an official China release — but not until it's proven, because the cost and uncertainty are so high.
+                later attempt an official China release, but not until it's proven, because the cost and uncertainty are so high.
               </p>
             </div>
 
@@ -482,7 +482,7 @@ export default function CoPublishingVsSelfPublishingChina() {
             <p>
               Choosing a co-publisher is arguably the most important decision you'll make for your China strategy. A great partner 
               can send your game's sales soaring, while a bad one can lead to disappointment or worse. Here are some guidelines to 
-              identify a reliable co-publishing partner — and red flags to watch out for:
+              identify a reliable co-publishing partner, and red flags to watch out for:
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3">Key Criteria for a Reliable Co-Publisher</h3>

@@ -25,7 +25,7 @@ const AccessibleButton = forwardRef<HTMLButtonElement, AccessibleButtonProps>(({
   const baseClasses = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 disabled:opacity-50 disabled:cursor-not-allowed'
   
   const variantClasses = {
-    primary: 'bg-violet-600 text-white hover:bg-violet-500',
+    primary: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600',
     secondary: 'bg-white/10 text-white border border-white/20 hover:bg-white/20',
     outline: 'border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white',
     ghost: 'text-gray-300 hover:text-white hover:bg-white/5'

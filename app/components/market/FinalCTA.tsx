@@ -138,7 +138,7 @@ export default function FinalCTA() {
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-purple-500/10 text-purple-300 text-xs font-medium tracking-widest uppercase">
           <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
-          Your game is missing China revenue — PC and Mobile
+          Your game is missing China revenue, PC and Mobile
         </div>
 
         {/* Heading */}
@@ -149,11 +149,11 @@ export default function FinalCTA() {
           Your game could be{' '}
           <span
             style={{
-              backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
+              backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundSize: '200% 200%',
+              backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
             }}
           >
             earning in China
@@ -168,7 +168,7 @@ export default function FinalCTA() {
         >
           We&apos;ll assess your game&apos;s China market potential across PC and mobile,
           identify the right publishing partners, and give you a clear picture of what
-          a deal would look like — all in a single 30-minute call. No pitch, no obligation.
+          a deal would look like, all in a single 30-minute call. No pitch, no obligation.
         </p>
 
         {/* Trust signals */}
@@ -186,14 +186,14 @@ export default function FinalCTA() {
           ))}
         </div>
 
-        {/* CTA Button — magnetic */}
+        {/* CTA Button, magnetic */}
         <div ref={btnWrapRef} className="magnetic-btn-wrapper mt-2">
           <Link
             ref={btnRef}
             href="/contact"
             className="group inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-semibold text-lg text-white relative overflow-hidden transition-shadow duration-300 hover:shadow-2xl hover:shadow-purple-500/30"
             style={{
-              background: 'linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%)',
+              background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)',
             }}
             aria-label="Get started with EightSix"
           >

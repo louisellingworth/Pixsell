@@ -386,7 +386,7 @@ export default function RevenueShareModelsChineseGamePublishing() {
             <p className="text-lg mb-8">Our experts can help you navigate revenue share negotiations and find the right publishing partner for your game in China.</p>
             <Link 
               href="/contact" 
-              className="inline-block bg-violet-600 hover:bg-violet-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               Contact Us
             </Link>

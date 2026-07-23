@@ -21,7 +21,7 @@ const inter = Inter({
   adjustFontFallback: true,
 })
 
-// Display face for headings — gives the type system a deliberate voice
+// Display face for headings, gives the type system a deliberate voice
 // instead of Inter-everywhere. Referenced by globals.css heading rules
 // and the `font-space-grotesk` Tailwind family.
 const spaceGrotesk = Space_Grotesk({
@@ -151,7 +151,7 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="en" href="https://eightsixgames.com" />
         <link rel="alternate" hrefLang="x-default" href="https://eightsixgames.com" />
         
-        {/* Google Analytics — only rendered when a measurement ID is configured */}
+        {/* Google Analytics, only rendered when a measurement ID is configured */}
         {siteConfig.analytics.measurementId && siteConfig.analytics.enabled && (
           <>
             <Script

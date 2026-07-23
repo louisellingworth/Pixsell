@@ -35,7 +35,7 @@ export default function MarketStrategyContent() {
       </div>
       
       <div className="mt-16">
-        <Link href="/contact" className="inline-block bg-violet-600 text-white font-medium px-8 py-3 rounded-lg">
+        <Link href="/contact" className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium px-8 py-3 rounded-lg">
           Contact Us
         </Link>
       </div>

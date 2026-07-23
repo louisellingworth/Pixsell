@@ -591,14 +591,14 @@ export default function BlogPost() {
               finding the perfect local publisher match to executing end-to-end marketing campaigns that get results.
             </p>
 
-            <div className="bg-gradient-to-r from-purple-900/30 to-violet-900/30 p-6 rounded-xl border border-white/10 my-8">
+            <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 p-6 rounded-xl border border-white/10 my-8">
               <h3 className="text-2xl font-bold text-white mb-4">Ready to Launch Your Game in China?</h3>
               <p className="mb-6">
                 Reach out to EightSix Games today and let our team of experts craft a custom China marketing strategy for your title. 
                 We'll handle the platforms, the influencers, the translations, and the promotions – you get the growth and revenue. 
                 Don't miss out on the world's largest PC gaming market.
               </p>
-              <Link href="/contact" className="bg-violet-600 hover:bg-violet-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center">
+              <Link href="/contact" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 inline-flex items-center">
                 Contact EightSix Games Now
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

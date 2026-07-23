@@ -22,7 +22,7 @@ import {
 import Image from 'next/image'
 
 const gradientText = "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
-const cardStyle = "bg-gradient-to-br from-purple-900/30 to-violet-900/30 border border-white/10 hover:border-white/20 transition-colors backdrop-blur-sm"
+const cardStyle = "bg-gradient-to-br from-purple-900/30 to-pink-900/30 border border-white/10 hover:border-white/20 transition-colors backdrop-blur-sm"
 
 const marketStats = [
   {
@@ -213,7 +213,7 @@ export default function MarketingPage() {
                 transition: { duration: 0.2 }
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
               <div className="relative">
                 <div className={`text-4xl font-bold mb-2 ${gradientText}`}>{stat.value}</div>
                 <div className="text-lg font-semibold text-white mb-1">{stat.label}</div>
@@ -253,7 +253,7 @@ export default function MarketingPage() {
           }}
           className={`mb-40 rounded-2xl p-12 ${cardStyle} relative overflow-hidden`}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-violet-500/5"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5"></div>
           <div className="relative">
             <div className="text-center mb-12">
               <span className="text-sm font-semibold text-purple-400 tracking-widest uppercase mb-4 block">
@@ -266,7 +266,7 @@ export default function MarketingPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {platformReach.map((platform) => (
                 <div key={platform.platform} className={`text-center p-6 rounded-xl ${cardStyle} group`}>
-                  <div className="w-14 h-14 rounded-2xl bg-violet-600 p-3 mb-6 mx-auto">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 p-3 mb-6 mx-auto">
                     <platform.icon className="w-full h-full text-white" />
                   </div>
                   <div className="text-xl font-semibold text-white mb-2">{platform.platform}</div>
@@ -310,10 +310,10 @@ export default function MarketingPage() {
                 }}
                 className="relative group"
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                 <div className={`rounded-xl p-8 h-full relative ${cardStyle}`}>
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mr-4 group-hover:bg-violet-500/20 transition-colors duration-300">
+                    <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mr-4 group-hover:from-purple-600 hover:to-pink-600/20 transition-colors duration-300">
                       <step.icon className="w-8 h-8 text-purple-400 group-hover:text-violet-400 transition-colors duration-300" />
                     </div>
                     <span className="text-purple-400 group-hover:text-violet-400 transition-colors duration-300 font-bold text-sm tracking-widest uppercase">Phase {index + 1}</span>
@@ -345,7 +345,7 @@ export default function MarketingPage() {
           viewport={{ once: true, margin: "-100px" }}
           className={`rounded-2xl p-20 ${cardStyle} mb-40 relative overflow-hidden`}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-violet-500/5"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5"></div>
           <div className="relative">
             <span className="text-sm font-semibold text-purple-400 tracking-widest uppercase mb-4 block">
               Services
@@ -382,7 +382,7 @@ export default function MarketingPage() {
                         transition={{ delay: 0.5 + (pointIndex * 0.1) }}
                         className="flex items-start group"
                       >
-                        <span className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center mr-4 group-hover:bg-violet-500/20 transition-colors duration-300">
+                        <span className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center mr-4 group-hover:from-purple-600 hover:to-pink-600/20 transition-colors duration-300">
                           <svg className="w-5 h-5 text-purple-400 group-hover:text-violet-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
@@ -428,9 +428,9 @@ export default function MarketingPage() {
                 className="group"
               >
                 <div className={`rounded-xl p-8 h-full ${cardStyle} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-violet-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:bg-violet-500/20 transition-colors duration-300">
+                    <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:from-purple-600 hover:to-pink-600/20 transition-colors duration-300">
                       <benefit.icon className="w-8 h-8 text-purple-400 group-hover:text-violet-400 transition-colors duration-300" />
                     </div>
                     <div className="text-sm text-purple-400 group-hover:text-violet-400 transition-colors duration-300 font-semibold mb-4">{benefit.stats}</div>
@@ -455,7 +455,7 @@ export default function MarketingPage() {
           }}
           className={`text-center rounded-2xl p-20 ${cardStyle} relative overflow-hidden`}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-violet-500/5"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5"></div>
           <div className="relative">
             <span className="text-sm font-semibold text-purple-400 tracking-widest uppercase mb-4 block">
               Get Started
@@ -469,7 +469,7 @@ export default function MarketingPage() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 bg-violet-600 rounded-full text-white font-semibold text-xl hover:opacity-90 transition-opacity shadow-lg shadow-purple-500/20 flex items-center gap-2"
+              className="px-10 py-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white font-semibold text-xl hover:opacity-90 transition-opacity shadow-lg shadow-purple-500/20 flex items-center gap-2"
             >
               Schedule Strategic Consultation
               <ArrowRightIcon className="w-6 h-6" />

@@ -67,7 +67,7 @@ export default function MistakesWesternDevelopersMake() {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: '5 Mistakes Western Developers Make in China',
-        description: 'The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them.',
+        description: 'The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China, and how to avoid them.',
         image: 'https://eightsixgames.com/blog/mistakes-hero.jpg',
         author: {
           '@type': 'Person',
@@ -197,7 +197,7 @@ export default function MistakesWesternDevelopersMake() {
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px]">
           <div className="max-w-3xl mx-auto backdrop-blur-xl bg-black/30 border border-white/10 rounded-2xl p-8 md:p-12 relative">
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 rounded-2xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 rounded-2xl" />
             
             {/* Animated corner accents */}
             <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-white/20 rounded-tl-lg" />
@@ -210,7 +210,7 @@ export default function MistakesWesternDevelopersMake() {
               className="relative prose prose-invert prose-lg max-w-none"
             >
               <p className="lead text-xl md:text-2xl mb-8 font-light text-gray-300 leading-relaxed">
-                The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them.
+                The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China, and how to avoid them.
               </p>
 
               <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-white/10 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">1. Ignoring Cultural Nuances</h2>
@@ -244,7 +244,7 @@ export default function MistakesWesternDevelopersMake() {
 
               <div className="backdrop-blur-sm bg-black/40 border border-white/10 p-8 rounded-xl my-12 relative">
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 rounded-xl" />
                 
                 <div className="relative">
                   <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">How to Succeed in China</h2>
@@ -301,10 +301,10 @@ export default function MistakesWesternDevelopersMake() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-700 group hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-purple-500/20 relative"
+                className="card-premium rounded-2xl overflow-hidden transition-all duration-700 group hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-purple-500/20 relative"
               >
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 
                 <Link href={`/blog/${post.slug}`} className="relative block">
                   <div className="aspect-video overflow-hidden">
@@ -339,13 +339,13 @@ export default function MistakesWesternDevelopersMake() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-violet-500/10 to-purple-500/10 blur-3xl"
+            className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10 blur-3xl"
           />
-          <div className="max-w-4xl mx-auto backdrop-blur-xl bg-black/40 rounded-3xl p-8 md:p-12 border border-white/10 relative overflow-hidden group transform-gpu hover:scale-[1.01] transition-transform duration-700">
+          <div className="max-w-4xl mx-auto card-premium rounded-3xl p-8 md:p-12 relative overflow-hidden group transform-gpu hover:scale-[1.01] transition-transform duration-700">
             <motion.div
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
-              className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-violet-500/5 to-purple-500/5 transition-opacity duration-700"
+              className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-purple-500/5 transition-opacity duration-700"
             />
             <div className="flex flex-col md:flex-row items-center justify-between relative z-10">
               <div className="mb-6 md:mb-0 md:mr-12">
@@ -355,7 +355,7 @@ export default function MistakesWesternDevelopersMake() {
               <div className="flex-shrink-0">
                 <Link 
                   href="/contact" 
-                  className="px-6 py-3 bg-violet-600 hover:bg-violet-500 text-white font-medium rounded-lg transition-colors inline-block whitespace-nowrap transform-gpu hover:scale-[1.05] transition-transform duration-300"
+                  className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium rounded-lg transition-colors inline-block whitespace-nowrap transform-gpu hover:scale-[1.05] transition-transform duration-300"
                 >
                   Contact Us
                 </Link>

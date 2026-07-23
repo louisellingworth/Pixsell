@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const STATS = [
   { value: 320, suffix: 'M+', label: 'PC Gamers in China', color: 'rgba(168,85,247,0.7)' },
-  { value: 700, suffix: 'M+', label: 'Mobile Gamers in China', color: 'rgba(139,92,246,0.7)' },
+  { value: 700, suffix: 'M+', label: 'Mobile Gamers in China', color: 'rgba(236,72,153,0.7)' },
   { value: 90, suffix: ' days', label: 'Avg. Time to Launch', color: 'rgba(99,102,241,0.7)' },
 ]
 
@@ -54,7 +54,7 @@ export default function HeroSection() {
         })
       }
 
-      // ── One master timeline — everything flows together ───────────
+      // ── One master timeline, everything flows together ───────────
       // starts 0.7s after page load (words are mid-reveal by then)
       const tl = gsap.timeline({ delay: 0.7 })
       tl.from(subRef.current, {
@@ -169,7 +169,7 @@ export default function HeroSection() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(124,58,237,0.28) 0%, rgba(139,92,246,0.12) 45%, transparent 70%)',
+            'radial-gradient(ellipse at center, rgba(124,58,237,0.28) 0%, rgba(236,72,153,0.12) 45%, transparent 70%)',
           filter: 'blur(60px)',
         }}
       />
@@ -215,7 +215,7 @@ export default function HeroSection() {
                 </span>
               ))}
               <br />
-              {/* Line 2: "in China" — "in" white, "China" gradient */}
+              {/* Line 2: "in China", "in" white, "China" gradient */}
               {[
                 { text: 'in', gradient: false },
                 { text: 'China', gradient: true },
@@ -227,11 +227,11 @@ export default function HeroSection() {
                       item.gradient
                         ? {
                             backgroundImage:
-                              'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
+                              'linear-gradient(135deg, #a855f7, #ec4899)',
                             backgroundClip: 'text',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            backgroundSize: '200% 200%',
+                            backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
                           }
                         : undefined
                     }
@@ -247,7 +247,7 @@ export default function HeroSection() {
               ref={subRef}
               className="max-w-xl text-base sm:text-lg text-gray-400 leading-relaxed"
             >
-              We help Western developers launch their games in China — finding the right publisher,
+              We help Western developers launch their games in China, finding the right publisher,
               negotiating your deal, and monitoring revenue after launch.
               No upfront cost. No IP loss.
             </p>
@@ -346,7 +346,7 @@ export default function HeroSection() {
                 }}
                 className="absolute inset-0 rounded-full"
                 style={{
-                  background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.35) 0%, rgba(139,92,246,0.15) 50%, transparent 70%)',
+                  background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.35) 0%, rgba(236,72,153,0.15) 50%, transparent 70%)',
                   filter: 'blur(20px)',
                 }}
               />

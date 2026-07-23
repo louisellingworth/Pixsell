@@ -87,14 +87,14 @@ export default function SurveyForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-3 px-6 text-white bg-violet-600 rounded-lg font-medium transition-all duration-200 hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50"
+            className="w-full py-3 px-6 text-white bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg font-medium transition-all duration-200 hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:opacity-50"
           >
             {isSubmitting ? 'Submitting...' : 'Submit Survey'}
           </button>
         </div>
 
         {submitStatus === 'success' && (
-          <p className="text-emerald-400 text-center">Thanks — we&apos;ll be in touch within 24 hours.</p>
+          <p className="text-emerald-400 text-center">Thanks, we&apos;ll be in touch within 24 hours.</p>
         )}
         {submitStatus === 'error' && (
           <p className="text-red-400 text-center">Something went wrong. Please try again or email info@eightsixgames.com.</p>

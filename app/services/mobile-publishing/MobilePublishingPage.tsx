@@ -46,7 +46,7 @@ const WHAT_WE_DELIVER = [
     icon: MagnifyingGlassIcon,
     step: '01',
     title: 'Game Assessment',
-    body: 'We review your genre, existing metrics, and monetisation model to assess how your game is likely to perform in the CN mobile market — and give you an honest read before any introductions are made.',
+    body: 'We review your genre, existing metrics, and monetisation model to assess how your game is likely to perform in the CN mobile market, and give you an honest read before any introductions are made.',
     outcome: 'You know where you stand before any commitment.',
     accentColor: '#a855f7',
   },
@@ -54,7 +54,7 @@ const WHAT_WE_DELIVER = [
     icon: UserGroupIcon,
     step: '02',
     title: 'Publisher Introductions',
-    body: 'We tap our established CN publisher network to source multiple candidates suited to your game\'s genre and metrics. You receive competing offers — not a single take-it-or-leave-it option.',
+    body: 'We tap our established CN publisher network to source multiple candidates suited to your game\'s genre and metrics. You receive competing offers, not a single take-it-or-leave-it option.',
     outcome: 'Multiple competing offers to evaluate side by side.',
     accentColor: '#8b5cf6',
   },
@@ -62,7 +62,7 @@ const WHAT_WE_DELIVER = [
     icon: DocumentCheckIcon,
     step: '03',
     title: 'Deal Negotiation',
-    body: 'We advise on every material term — revenue share structure, source build usage scope, IP reversion clauses, and reporting obligations — so you sign from a position of full understanding.',
+    body: 'We advise on every material term, revenue share structure, source build usage scope, IP reversion clauses, and reporting obligations, so you sign from a position of full understanding.',
     outcome: 'Agreement terms that protect your IP and your earnings.',
     accentColor: '#6366f1',
   },
@@ -86,8 +86,8 @@ const GENRE_FIT = [
 
 const FAQS = [
   { q: 'Do I lose my IP?', a: 'No. You retain full ownership throughout. We ensure the publisher agreement clearly scopes what the source build can be used for, with IP reversion clauses and data handling obligations built in.' },
-  { q: 'Why does the publisher need my source code?', a: 'To localise the game for simplified Chinese, integrate CN-specific SDKs (payment, analytics, anti-addiction compliance), and handle platform submission for WeChat Mini Games and Android stores. This is standard practice across CN mobile publishing — not specific to any one deal.' },
-  { q: 'How does the revenue model work exactly?', a: 'The publisher monetises your game through in-game advertising on CN platforms. They pay you 50% of that ad revenue on agreed reporting cycles. There are no upfront costs to you — the publisher funds all localisation and UA.' },
+  { q: 'Why does the publisher need my source code?', a: 'To localise the game for simplified Chinese, integrate CN-specific SDKs (payment, analytics, anti-addiction compliance), and handle platform submission for WeChat Mini Games and Android stores. This is standard practice across CN mobile publishing, not specific to any one deal.' },
+  { q: 'How does the revenue model work exactly?', a: 'The publisher monetises your game through in-game advertising on CN platforms. They pay you 50% of that ad revenue on agreed reporting cycles. There are no upfront costs to you, the publisher funds all localisation and UA.' },
   { q: 'How do I know the publisher is reporting revenue accurately?', a: 'EightSix tracks performance data independently and cross-references publisher reports. If there are discrepancies or communication gaps, we escalate on your behalf. You deal with us, not the publisher directly.' },
   { q: 'How many publisher offers will I receive?', a: 'We aim to generate multiple competing offers so you can evaluate terms side by side. The number depends on your genre and metrics, but we never present you with a single take-it-or-leave-it option.' },
   { q: 'What happens if the publisher underperforms post-launch?', a: 'We monitor marketing spend commitments and performance KPIs. If the publisher isn\'t delivering, we hold them accountable and can advise on whether renegotiation or exit is the right path.' },
@@ -240,11 +240,11 @@ export default function MobilePublishingPage() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.04] tracking-tight text-white mb-7">
               Access China&apos;s{' '}
               <span style={{
-                backgroundImage: 'linear-gradient(135deg, #8b5cf6, #c4b5fd, #8b5cf6)',
+                backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7, #ec4899)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundSize: '200% 200%',
+                backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
               }}>
                 700M mobile gamers
               </span>
@@ -298,7 +298,7 @@ export default function MobilePublishingPage() {
         </div>
       </section>
 
-      {/* ── Market Stats — open row, no card boxes ─────────────────────── */}
+      {/* ── Market Stats, open row, no card boxes ─────────────────────── */}
       <section className="relative py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div
@@ -317,7 +317,7 @@ export default function MobilePublishingPage() {
               >
                 <div
                   className="text-5xl sm:text-6xl font-black leading-none mb-3 tabular-nums"
-                  style={{ backgroundImage: `linear-gradient(135deg, ${stat.color}, rgba(255,255,255,0.55))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                  style={{ backgroundImage: `linear-gradient(135deg, ${stat.color}, rgba(255,255,255,0.55))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}
                 >
                   {stat.value}
                 </div>
@@ -348,12 +348,12 @@ export default function MobilePublishingPage() {
               <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Revenue Model</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
                 The publisher does the work.<br />
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                   You earn 50% of ad revenue.
                 </span>
               </h2>
               <p className="text-gray-400 text-base leading-relaxed mb-5">
-                Chinese publishers adapt your game for WeChat Mini Games and other CN platforms at their own cost, then monetise through in-game advertising. You receive 50% of that revenue on agreed reporting cycles — no capital outlay required.
+                Chinese publishers adapt your game for WeChat Mini Games and other CN platforms at their own cost, then monetise through in-game advertising. You receive 50% of that revenue on agreed reporting cycles, no capital outlay required.
               </p>
               <p className="text-gray-500 text-sm leading-relaxed mb-7">
                 EightSix&apos;s role is to ensure you receive multiple competing offers, that deal terms genuinely protect your interests, and that the publisher pays out correctly after launch.
@@ -368,7 +368,7 @@ export default function MobilePublishingPage() {
               </div>
             </motion.div>
 
-            {/* Right: key numbers — no boxes, just typography */}
+            {/* Right: key numbers, no boxes, just typography */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -393,7 +393,7 @@ export default function MobilePublishingPage() {
                   </div>
                   <span
                     className="text-3xl font-black tabular-nums"
-                    style={{ backgroundImage: `linear-gradient(135deg, ${item.color}, rgba(255,255,255,0.6))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                    style={{ backgroundImage: `linear-gradient(135deg, ${item.color}, rgba(255,255,255,0.6))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}
                   >
                     {item.value}
                   </span>
@@ -418,13 +418,13 @@ export default function MobilePublishingPage() {
               <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Scope of Work</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                 What EightSix{' '}
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                   delivers
                 </span>
               </h2>
             </div>
             <p className="text-gray-500 md:max-w-xs text-sm leading-relaxed md:text-right">
-              Your advocate and deal architect — ensuring you don&apos;t enter China&apos;s mobile market blind, under-informed, or alone.
+              Your advocate and deal architect, ensuring you don&apos;t enter China&apos;s mobile market blind, under-informed, or alone.
             </p>
           </div>
 
@@ -473,7 +473,7 @@ export default function MobilePublishingPage() {
           >
             <BanknotesIcon className="w-4 h-4 text-emerald-500/50 flex-shrink-0" />
             <p className="text-gray-600 text-sm">
-              Performance-based — EightSix earns when you earn. No retainer, no upfront fee.
+              Performance-based, EightSix earns when you earn. No retainer, no upfront fee.
             </p>
           </motion.div>
         </div>
@@ -500,7 +500,7 @@ export default function MobilePublishingPage() {
               <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Game Fit</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
                 Is your game a{' '}
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                   good fit?
                 </span>
               </h2>
@@ -568,12 +568,12 @@ export default function MobilePublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Timeline</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               From introduction to{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                 live revenue
               </span>
             </h2>
             <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
-              Defined responsibilities at every stage — no ambiguity about who does what or when you get paid.
+              Defined responsibilities at every stage, no ambiguity about who does what or when you get paid.
             </p>
           </div>
 
@@ -661,12 +661,12 @@ export default function MobilePublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">What to Know</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Two things developers ask{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                 before signing
               </span>
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-              Here&apos;s exactly how both work — no vague reassurances.
+              Here&apos;s exactly how both work, no vague reassurances.
             </p>
           </div>
 
@@ -685,10 +685,10 @@ export default function MobilePublishingPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Source Code Access</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Chinese publishers need access to your source build to localise the game, integrate CN-specific SDKs, and handle platform submission. This is standard across the CN mobile ecosystem — not unique to any one deal.
+                Chinese publishers need access to your source build to localise the game, integrate CN-specific SDKs, and handle platform submission. This is standard across the CN mobile ecosystem, not unique to any one deal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                EightSix advises on deal terms so source build usage is clearly scoped — what it can be used for, IP reversion clauses, and data handling obligations. You retain full ownership and never sign anything that compromises that.
+                EightSix advises on deal terms so source build usage is clearly scoped, what it can be used for, IP reversion clauses, and data handling obligations. You retain full ownership and never sign anything that compromises that.
               </p>
               <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-purple-300 text-xs font-semibold">
                 <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
@@ -710,7 +710,7 @@ export default function MobilePublishingPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Publisher Accountability</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Once matched, all technical and operational work is the publisher&apos;s responsibility — localisation, platform integration, UA, and ad monetisation. Your time commitment after sign-off is minimal.
+                Once matched, all technical and operational work is the publisher&apos;s responsibility, localisation, platform integration, UA, and ad monetisation. Your time commitment after sign-off is minimal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
                 EightSix monitors marketing commitments, tracks performance data, and ensures the publisher pays out correctly. If there are issues, we escalate. You deal with us, not the Chinese publisher directly.
@@ -724,7 +724,7 @@ export default function MobilePublishingPage() {
         </div>
       </section>
 
-      {/* ── FAQ — accordion ────────────────────────────────────────────── */}
+      {/* ── FAQ, accordion ────────────────────────────────────────────── */}
       <section className="relative py-24">
         <div
           className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] pointer-events-none"
@@ -736,7 +736,7 @@ export default function MobilePublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Due Diligence</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Questions we get{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                 from every developer
               </span>
             </h2>
@@ -772,12 +772,12 @@ export default function MobilePublishingPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-300 text-xs font-medium tracking-widest uppercase mb-10">
               <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-              Free consultation — no obligation
+              Free consultation, no obligation
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.04] text-white mb-6">
               Find out what your game{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                 could earn in China.
               </span>
             </h2>

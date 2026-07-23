@@ -68,7 +68,7 @@ export default function ContactPage() {
             repeat: Infinity,
             ease: "easeInOut" 
           }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-violet-500/20 rounded-full filter blur-[100px]" 
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full filter blur-[100px]" 
         />
         <motion.div 
           animate={{ 
@@ -98,7 +98,7 @@ export default function ContactPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Tell us about your game and we&apos;ll come back within 24 hours with an honest assessment of its China market potential — including which co-publisher types are the best fit and what a realistic revenue share looks like.
+            Tell us about your game and we&apos;ll come back within 24 hours with an honest assessment of its China market potential, including which co-publisher types are the best fit and what a realistic revenue share looks like.
           </p>
         </motion.div>
 
@@ -108,7 +108,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="backdrop-blur-xl bg-black/40 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300"
+            className="card-premium rounded-2xl p-8 transition-all duration-300"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -182,7 +182,7 @@ export default function ContactPage() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-violet-600 text-white rounded-xl font-medium disabled:opacity-50 group relative overflow-hidden"
+                className="w-full px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-medium disabled:opacity-50 group relative overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -215,7 +215,7 @@ export default function ContactPage() {
           >
             <motion.div 
               whileHover={{ scale: 1.02 }}
-              className="backdrop-blur-xl bg-black/40 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300"
+              className="card-premium rounded-2xl p-8 transition-all duration-300"
             >
               <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
               <div className="space-y-4">
@@ -234,7 +234,7 @@ export default function ContactPage() {
 
             <motion.div 
               whileHover={{ scale: 1.02 }}
-              className="backdrop-blur-xl bg-black/40 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300"
+              className="card-premium rounded-2xl p-8 transition-all duration-300"
             >
               <h3 className="text-2xl font-bold text-white mb-4">Office Hours</h3>
               <div className="space-y-4">
@@ -258,7 +258,7 @@ export default function ContactPage() {
 
             <motion.div 
               whileHover={{ scale: 1.02 }}
-              className="backdrop-blur-xl bg-black/40 rounded-2xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300"
+              className="card-premium rounded-2xl p-8 transition-all duration-300"
             >
               <h3 className="text-2xl font-bold text-white mb-4">Quick Response</h3>
               <p className="text-gray-300">

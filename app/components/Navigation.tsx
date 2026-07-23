@@ -154,7 +154,7 @@ export default function Navigation() {
                 {/* Sliding underline */}
                 <span
                   className="absolute bottom-0.5 left-3 right-3 h-px scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
-                  style={{ background: 'linear-gradient(90deg, #c4b5fd, #8b5cf6)' }}
+                  style={{ background: 'linear-gradient(90deg, #a855f7, #ec4899)' }}
                   aria-hidden="true"
                 />
               </Link>

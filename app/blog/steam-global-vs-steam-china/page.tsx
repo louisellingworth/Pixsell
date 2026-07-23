@@ -349,7 +349,7 @@ export default function BlogPost() {
                 <p className="mb-6 text-lg leading-relaxed">
                   EightSix Games offers specialized consulting for developers considering Steam Global or Steam China. Our team can help you make strategic decisions based on your game type and business goals.
                 </p>
-                <Link href="/contact" className="inline-flex items-center bg-violet-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-violet-500 transition-all">
+                <Link href="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all">
                   Get in touch
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

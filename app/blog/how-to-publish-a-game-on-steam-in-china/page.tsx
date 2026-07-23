@@ -327,7 +327,7 @@ export default function BlogPost() {
                 <p className="mb-4">
                   At EightSix Games, we specialize in helping Western developers navigate the complexities of the Chinese market. Our team of experts can guide you through the entire process, from choosing the right publishing route to finding a Chinese partner and marketing your game to Chinese players.
                 </p>
-                <Link href="/contact" className="inline-flex items-center bg-violet-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-violet-500 transition-all">
+                <Link href="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all">
                   Get in touch
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

@@ -90,18 +90,18 @@ const scaleIn: Variants = {
 
 const styles = {
   gradientText: "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent",
-  gradientBorder: "before:absolute before:inset-0 before:rounded-2xl before:p-[1px] before:bg-gradient-to-r before:from-purple-500/50 before:via-violet-500/50 before:to-purple-500/50 before:-z-10",
-  gradientBg: "bg-gradient-to-r from-purple-500/10 via-violet-500/10 to-purple-500/10",
+  gradientBorder: "before:absolute before:inset-0 before:rounded-2xl before:p-[1px] before:bg-gradient-to-r before:from-purple-500/50 before:via-pink-500/50 before:to-purple-500/50 before:-z-10",
+  gradientBg: "bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10",
   sectionClass: "py-24 md:py-32 relative overflow-hidden",
   containerClass: "container mx-auto px-4 sm:px-6 lg:px-8 relative z-10",
   headingClass: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight break-words sm:break-normal",
   subheadingClass: "text-xl md:text-2xl text-gray-400 leading-relaxed",
   cardStyle: "p-8 md:p-10 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/10",
-  cardGlow: "absolute inset-0 bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10",
-  iconContainer: "w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 p-3 mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-300 border border-white/20",
+  cardGlow: "absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10",
+  iconContainer: "w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-3 mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-300 border border-white/20",
   sectionLabel: "inline-block mb-4 px-6 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm font-medium tracking-wide uppercase",
   button: "px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 transform hover:-translate-y-1",
-  buttonPrimary: "bg-violet-600 text-white hover:shadow-lg hover:shadow-purple-500/20",
+  buttonPrimary: "bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:shadow-lg hover:shadow-purple-500/20",
   buttonSecondary: "border-2 border-purple-500 text-purple-400 hover:bg-purple-500/10",
   glowEffect: "absolute w-[500px] h-[500px] rounded-full blur-[100px] animate-pulse",
   featureCard: "p-6 rounded-xl bg-black/40 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm",
@@ -188,7 +188,7 @@ export default function LocalisationPage() {
                 animate="animate"
                 className={`p-6 rounded-2xl ${styles.gradientBg} backdrop-blur-sm shadow-2xl shadow-purple-500/20 relative group`}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 <LanguageIcon className="w-16 h-16 text-purple-400 relative z-10 transform group-hover:scale-110 transition-transform duration-300" />
               </motion.div>
             </motion.div>
@@ -263,7 +263,7 @@ export default function LocalisationPage() {
                       className="p-6 rounded-xl bg-black/40 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm text-center"
                     >
                       <div className="relative mb-4">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 p-3 mb-4 mx-auto shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 border border-white/20">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-3 mb-4 mx-auto shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 border border-white/20">
                           <Icon className="w-8 h-8 text-purple-400" />
                         </div>
                         {index < 3 && (
@@ -287,7 +287,7 @@ export default function LocalisationPage() {
                 <motion.a
                   href="/contact"
                   variants={fadeIn}
-                  className="px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 bg-violet-600 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 relative z-20 backdrop-blur-sm flex items-center justify-center"
+                  className="px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 relative z-20 backdrop-blur-sm flex items-center justify-center"
                   whileHover={{ scale: 1.05, y: -4 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -383,8 +383,8 @@ export default function LocalisationPage() {
                   whileHover="hover"
                   className="p-6 md:p-8 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10" />
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 p-3 mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-300 border border-white/20">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-3 mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-300 border border-white/20">
                     <Icon className="w-8 h-8 text-purple-400" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
@@ -497,7 +497,7 @@ export default function LocalisationPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 bg-violet-600 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 relative z-20 backdrop-blur-sm inline-flex items-center"
+              className="px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 relative z-20 backdrop-blur-sm inline-flex items-center"
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.98 }}
             >

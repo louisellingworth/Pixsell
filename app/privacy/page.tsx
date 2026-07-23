@@ -30,16 +30,16 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <div className="prose prose-invert max-w-none space-y-8">
-              <section className="relative backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-white/20 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
+              <section className="relative card-premium rounded-2xl p-8 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">1. Introduction</h2>
                 <p className="text-white/80 mb-4">
                   Welcome to EightSix Games! We're committed to protecting your privacy while providing you with an amazing gaming experience. This Privacy Policy explains how we collect, use, and protect your information when you play our games or use our services.
                 </p>
               </section>
 
-              <section className="relative backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-white/20 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
+              <section className="relative card-premium rounded-2xl p-8 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">2. Information We Collect</h2>
                 <h3 className="text-xl font-semibold mb-3 text-purple-300">2.1 Game-Related Information</h3>
                 <p className="text-white/80 mb-4">
@@ -96,8 +96,8 @@ export default function PrivacyPolicyPage() {
                 </ul>
               </section>
 
-              <section className="relative backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-white/20 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
+              <section className="relative card-premium rounded-2xl p-8 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">3. How We Use Your Information</h2>
                 <p className="text-white/80 mb-4">
                   We use your information to:
@@ -130,24 +130,24 @@ export default function PrivacyPolicyPage() {
                 </ul>
               </section>
 
-              <section className="relative backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-white/20 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
+              <section className="relative card-premium rounded-2xl p-8 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">4. Data Security</h2>
                 <p className="text-white/80 mb-4">
                   We take game security seriously and use industry-standard measures to protect your data. This includes encryption of sensitive information, secure server infrastructure, and regular security audits. While we implement strong security measures, please be aware that no online service is entirely immune to security risks.
                 </p>
               </section>
 
-              <section className="relative backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-white/20 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
+              <section className="relative card-premium rounded-2xl p-8 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">5. Children's Privacy</h2>
                 <p className="text-white/80 mb-4">
                   We are committed to protecting children's privacy. Our games are designed for players aged 13 and above. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.
                 </p>
               </section>
 
-              <section className="relative backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-white/20 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
+              <section className="relative card-premium rounded-2xl p-8 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">6. Your Gaming Rights</h2>
                 <p className="text-white/80 mb-4">
                   As a EightSix player, you have the right to:
@@ -176,8 +176,8 @@ export default function PrivacyPolicyPage() {
                 </ul>
               </section>
 
-              <section className="relative backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-white/20 group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
+              <section className="relative card-premium rounded-2xl p-8 transition-all duration-300 group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
                 <h2 className="text-2xl font-semibold mb-4 text-purple-200">7. Contact Us</h2>
                 <p className="text-white/80 mb-4">
                   If you have any questions about your privacy while playing our games, please reach out to us at:

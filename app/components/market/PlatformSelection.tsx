@@ -49,19 +49,19 @@ export default function PlatformSelection() {
         <div ref={headingRef} className="text-center mb-12">
           <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-4">Two Publishing Pathways</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            PC or Mobile —{' '}
+            PC or Mobile,{' '}
             <span style={{
-              backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
+              backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              backgroundSize: '200% 200%',
+              backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
             }}>
               we cover both
             </span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto text-base leading-relaxed">
-            China's gaming market spans 320M PC players and 700M+ mobile users. EightSix Games has dedicated pathways for each — select yours to see how it works.
+            China's gaming market spans 320M PC players and 700M+ mobile users. EightSix Games has dedicated pathways for each, select yours to see how it works.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export default function PlatformSelection() {
                 Steam Publishing<br />in China
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Reach 320M PC gamers through Steam Global with a vetted Chinese co-publisher. No ISBN required, no upfront cost — full IP control with a performance-based model.
+                Reach 320M PC gamers through Steam Global with a vetted Chinese co-publisher. No ISBN required, no upfront cost, full IP control with a performance-based model.
               </p>
               <ul className="space-y-2 mb-8">
                 {['No ISBN or local entity required', 'Co-publisher vetted & negotiated by us', '90-day average time to market'].map(point => (

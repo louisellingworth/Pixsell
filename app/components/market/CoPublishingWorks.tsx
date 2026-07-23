@@ -24,15 +24,15 @@ const steps = [
   },
   {
     title: 'Negotiate Deal Terms',
-    description: "We handle all contract negotiations — revenue share, marketing spend commitments, recoupment thresholds — and flag anything that isn't in your favour.",
+    description: "We handle all contract negotiations, revenue share, marketing spend commitments, recoupment thresholds, and flag anything that isn't in your favour.",
     eightsixDoes: 'Contract negotiation, term review & red-flagging',
     youDo: 'Approve final deal terms before signing',
     tag: 'Week 3–4',
-    stat: { value: '0%', label: 'upfront cost — performance-based only' },
+    stat: { value: '0%', label: 'upfront cost, performance-based only' },
   },
   {
     title: 'Oversee Marketing & Localisation',
-    description: 'We hold the co-publisher accountable for their marketing commitments on WeChat, Weibo, Bilibili, and Douyin — and coordinate localisation through our partner network.',
+    description: 'We hold the co-publisher accountable for their marketing commitments on WeChat, Weibo, Bilibili, and Douyin, and coordinate localisation through our partner network.',
     eightsixDoes: 'Marketing oversight & localisation coordination',
     youDo: 'Provide build, assets & approve creative direction',
     tag: 'Month 2–6',
@@ -51,9 +51,9 @@ const steps = [
 const benefits = [
   { text: 'No IP Loss', detail: 'You keep full control of your game.', icon: ShieldCheckIcon },
   { text: 'Best Deal Terms', detail: 'We negotiate every clause on your behalf.', icon: StarIcon },
-  { text: 'Zero Upfront Cost', detail: 'Performance-based — we earn when you earn.', icon: CheckCircleIcon },
+  { text: 'Zero Upfront Cost', detail: 'Performance-based, we earn when you earn.', icon: CheckCircleIcon },
   { text: 'Local Expertise', detail: 'Top-tier marketing and support in China.', icon: SparklesIcon },
-  { text: 'No ISBN Needed', detail: 'Steam Global — no complex approvals.', icon: CheckCircleIcon },
+  { text: 'No ISBN Needed', detail: 'Steam Global, no complex approvals.', icon: CheckCircleIcon },
 ]
 
 export default function CoPublishingWorks() {

@@ -36,7 +36,7 @@ export default function NotFound() {
           <div className="mb-12">
             <Link 
               href="/" 
-              className="inline-flex items-center px-8 py-4 bg-violet-600 text-white rounded-lg hover:opacity-90 transition-all font-semibold text-lg mb-6"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-all font-semibold text-lg mb-6"
             >
               Return to Homepage
             </Link>

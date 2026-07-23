@@ -145,25 +145,25 @@ export default function RoadmapSection() {
             Co-Publishing{' '}
             <span
               style={{
-                backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
+                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundSize: '200% 200%',
+                backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
               }}
             >
               Roadmap
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            A structured path from initial assessment to full market launch — typically completed within 12 months.
+            A structured path from initial assessment to full market launch, typically completed within 12 months.
           </p>
         </div>
 
         {/* ── Timeline ────────────────────────────────────────────────── */}
         <div className="relative">
 
-          {/* SVG line — absolutely positioned, drawn via GSAP strokeDashoffset */}
+          {/* SVG line, absolutely positioned, drawn via GSAP strokeDashoffset */}
           <svg
             ref={svgRef}
             className="absolute left-[27px] sm:left-1/2 top-0 bottom-0 pointer-events-none"
@@ -242,7 +242,7 @@ export default function RoadmapSection() {
                     </div>
                   </div>
 
-                  {/* ── Centre dot — absolute on mobile, part of flow on desktop ── */}
+                  {/* ── Centre dot, absolute on mobile, part of flow on desktop ── */}
                   <div
                     className={`timeline-dot absolute left-0 sm:static flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${accent.dot} flex items-center justify-center z-10 shadow-lg mt-4 sm:mt-0 sm:self-center`}
                     style={{

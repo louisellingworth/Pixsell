@@ -104,7 +104,7 @@ export default function AboutContent() {
       icon: SparklesIcon,
       title: "Simplicity",
       description: "Expanding into China should be straightforward, not overwhelming. We handle the complexity so you don't have to.",
-      color: "from-violet-600 to-violet-500"
+      color: "from-purple-500 to-pink-500"
     },
     {
       icon: ChartBarIcon,
@@ -137,7 +137,7 @@ export default function AboutContent() {
         "Influencer partnerships and content strategy",
         "Performance tracking and data-driven optimization"
       ],
-      color: "from-violet-600 to-violet-500"
+      color: "from-purple-500 to-pink-500"
     },
     {
       icon: CogIcon,
@@ -225,7 +225,7 @@ export default function AboutContent() {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-violet-500/50 to-transparent"
+                  className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"
                 />
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
                   <span className="bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent inline-block">
@@ -254,7 +254,7 @@ export default function AboutContent() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-1"
                 >
                   clarity
                 </motion.span>
@@ -263,7 +263,7 @@ export default function AboutContent() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-1"
                 >
                   confidence
                 </motion.span>
@@ -272,7 +272,7 @@ export default function AboutContent() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-1"
                 >
                   control
                 </motion.span>
@@ -330,7 +330,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.8 }}
                 className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Our Story
                 </span>
               </motion.div>
@@ -350,7 +350,7 @@ export default function AboutContent() {
               className="max-w-5xl mx-auto"
             >
               <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-white/10 hover:border-white/20 transition-all duration-300 relative">
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="space-y-8 text-center">
@@ -382,7 +382,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.8 }}
                 className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Our Philosophy
                 </span>
               </motion.div>
@@ -406,7 +406,7 @@ export default function AboutContent() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-300 relative h-full">
-                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="flex items-start gap-6">
@@ -437,7 +437,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.8 }}
                 className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   How We Help
                 </span>
               </motion.div>
@@ -461,7 +461,7 @@ export default function AboutContent() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/10 hover:border-white/20 transition-all duration-300 relative">
-                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="flex flex-col lg:flex-row items-start gap-8">
@@ -507,7 +507,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.8 }}
                 className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Why Choose Us
                 </span>
               </motion.div>
@@ -527,7 +527,7 @@ export default function AboutContent() {
               className="max-w-6xl mx-auto"
             >
               <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/10 hover:border-white/20 transition-all duration-300 relative">
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="grid md:grid-cols-2 gap-12">
@@ -582,7 +582,7 @@ export default function AboutContent() {
                 transition={{ duration: 0.8 }}
                 className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Our Vision
                 </span>
               </motion.div>
@@ -599,14 +599,14 @@ export default function AboutContent() {
               className="max-w-5xl mx-auto"
             >
               <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-white/10 hover:border-white/20 transition-all duration-300 relative">
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
                 <motion.p 
                   variants={textRevealVariants} 
                   className="text-xl sm:text-2xl leading-relaxed text-white/90 font-medium text-center"
                 >
-                  We want to redefine how Western developers succeed in China—no more vague deals, no more complicated partnerships. Just a clear, efficient, and fair way to expand your game's reach and revenue.
+                  We want to redefine how Western developers succeed in China: no more vague deals, no more complicated partnerships. Just a clear, efficient, and fair way to expand your game's reach and revenue.
                 </motion.p>
               </div>
             </motion.div>
@@ -622,7 +622,7 @@ export default function AboutContent() {
               className="max-w-5xl mx-auto"
             >
               <div className="bg-gradient-to-br from-violet-900/30 via-black/50 to-purple-900/30 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="text-center relative z-10">

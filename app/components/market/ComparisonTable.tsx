@@ -102,7 +102,7 @@ const comparisonData: ComparisonOption[] = [
         label: 'Revenue Model', 
         value: 'Keep 100%', 
         status: 'best', 
-        detail: 'Keep all revenue—if you can successfully navigate the complex payment, tax, and regulatory challenges.' 
+        detail: 'Keep all revenue, if you can successfully navigate the complex payment, tax, and regulatory challenges.' 
       },
       { 
         label: 'Local Support', 
@@ -165,7 +165,7 @@ export const ComparisonTable = ({ registerSectionRef }: SectionProps) => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-80px 0px" }}
               transition={{ duration: 2.3, delay: index * 0.18, ease: [0.16, 1, 0.3, 1] }}
-              className={`rounded-xl p-6 ${option.highlight ? 'bg-gradient-to-br from-purple-900/70 to-violet-900/70 border-2 border-white/30' : 'bg-white/5 border border-white/10'}`}
+              className={`rounded-xl p-6 ${option.highlight ? 'bg-gradient-to-br from-purple-900/70 to-pink-900/70 border-2 border-white/30' : 'bg-white/5 border border-white/10'}`}
             >
               <div className="flex items-center mb-6">
                 <span className="text-4xl mr-3">{option.icon}</span>

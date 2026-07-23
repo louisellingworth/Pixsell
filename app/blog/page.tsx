@@ -285,7 +285,7 @@ export default function BlogIndex() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 group"
+              className="card-premium rounded-2xl overflow-hidden transition-all duration-300 group"
             >
               <div className="flex flex-col lg:flex-row">
                 <div className="lg:w-1/2 h-64 lg:h-auto relative overflow-hidden">
@@ -300,7 +300,7 @@ export default function BlogIndex() {
                 </div>
                 <div className="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center relative">
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative">
                     <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 mb-4 border border-white/20">
@@ -342,13 +342,13 @@ export default function BlogIndex() {
               transition={{ duration: 0.5 }}
               className="text-center py-16"
             >
-              <div className="backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl p-8 md:p-12 mx-auto max-w-2xl">
+              <div className="card-premium rounded-2xl p-8 md:p-12 mx-auto max-w-2xl">
                 <h3 className="text-2xl font-bold mb-4 text-transparent bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text">No posts available</h3>
                 <p className="text-gray-300 mb-6">There are currently no posts available for the "{selectedCategory}" category.</p>
                 <button 
                   type="button"
                   onClick={() => handleCategorySelect(null)}
-                  className="px-6 py-3 bg-violet-600 hover:bg-violet-500 text-white font-medium rounded-lg transition-all transform-gpu hover:scale-[1.02]"
+                  className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium rounded-lg transition-all transform-gpu hover:scale-[1.02]"
                 >
                   Show all posts
                 </button>
@@ -366,7 +366,7 @@ export default function BlogIndex() {
                 <motion.div
                   key={post.slug}
                   variants={cardVariants}
-                  className="flex flex-col h-full backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-700 group hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-purple-500/20"
+                  className="flex flex-col h-full card-premium rounded-2xl overflow-hidden transition-all duration-700 group hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-purple-500/20"
                 >
                   <Link href={`/blog/${post.slug}`} className="flex flex-col h-full">
                     <div className="aspect-video overflow-hidden relative">
@@ -385,7 +385,7 @@ export default function BlogIndex() {
                     </div>
                     <div className="p-6 flex flex-col flex-grow relative">
                       {/* Enhanced Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                       
                       <div className="relative">
                         <div className="flex items-center text-xs text-white/60 mb-3">
@@ -423,13 +423,13 @@ export default function BlogIndex() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-violet-500/10 blur-3xl pointer-events-none"
+            className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-3xl pointer-events-none"
           />
-          <div className="max-w-3xl mx-auto backdrop-blur-xl bg-black/40 rounded-2xl p-8 md:p-12 border border-white/10 relative overflow-hidden group transform-gpu hover:scale-[1.01] transition-transform duration-700">
+          <div className="max-w-3xl mx-auto card-premium rounded-2xl p-8 md:p-12 relative overflow-hidden group transform-gpu hover:scale-[1.01] transition-transform duration-700">
             <motion.div
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
-              className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-violet-500/5 to-purple-500/5 transition-opacity duration-700 pointer-events-none"
+              className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-purple-500/5 transition-opacity duration-700 pointer-events-none"
             />
             <div className="relative z-10 text-center">
               <h2 className="text-3xl font-bold mb-6">
@@ -438,7 +438,7 @@ export default function BlogIndex() {
               <p className="text-gray-300 mb-8 group-hover:text-gray-200 transition-colors duration-500">Want expert advice on publishing your game in China? Talk to our team directly.</p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-violet-600 hover:bg-violet-500 text-white font-medium rounded-xl transition-all transform-gpu hover:scale-[1.02] duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium rounded-xl transition-all transform-gpu hover:scale-[1.02] duration-300"
               >
                 Get in Touch
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

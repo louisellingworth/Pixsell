@@ -34,7 +34,7 @@ export const uniqueFeatures: Feature[] = [
   },
   {
     title: 'Seamless Market Entry',
-    description: 'From compliance to marketing and publisher negotiations, we handle everything — so you can focus on making great games.',
+    description: 'From compliance to marketing and publisher negotiations, we handle everything, so you can focus on making great games.',
     icon: 'shield',
     stats: {
       value: '0',
@@ -52,7 +52,7 @@ export const uniqueFeatures: Feature[] = [
   },
   {
     title: 'No Risk, No Hassle',
-    description: 'We work on a transparent revenue-share model, aligning our success with yours. No hidden fees, no restrictive publishing contracts — just results.',
+    description: 'We work on a transparent revenue-share model, aligning our success with yours. No hidden fees, no restrictive publishing contracts, just results.',
     icon: 'check',
     stats: {
       value: '0%',

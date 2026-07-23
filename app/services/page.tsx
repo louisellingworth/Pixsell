@@ -35,7 +35,7 @@ const services = [
     features: ["KOL Partnerships", "Social Media Strategy", "Platform Optimisation", "Community Building"],
     href: "/services/marketing",
     icon: ChartBarIcon,
-    color: "from-violet-600 to-violet-500"
+    color: "from-purple-500 to-pink-500"
   },
   {
     title: "Localisation Services",
@@ -139,7 +139,7 @@ export default function ServicesPage() {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-violet-500/50 to-transparent"
+                  className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"
                 />
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
                   <span className="bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent inline-block">
@@ -168,7 +168,7 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-1"
                 >
                   strategic partnerships
                 </motion.span>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-1"
                 >
                   localized marketing
                 </motion.span>
@@ -212,7 +212,7 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8 }}
                 className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Core Services
                 </span>
               </motion.div>
@@ -237,7 +237,7 @@ export default function ServicesPage() {
                   <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <Link href={service.href}>
                     <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-300 relative h-full">
-                      <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       
                       <div className="text-center">
@@ -295,7 +295,7 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8 }}
                 className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Specialized Support
                 </span>
               </motion.div>
@@ -319,7 +319,7 @@ export default function ServicesPage() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-300 relative h-full">
-                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="flex items-start gap-6">
@@ -350,7 +350,7 @@ export default function ServicesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="bg-gradient-to-br from-violet-900/30 via-black/50 to-purple-900/30 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300 relative overflow-hidden">
-                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="text-center relative z-10">
