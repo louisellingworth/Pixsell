@@ -23,19 +23,18 @@ const GradientButton = ({
     'group relative inline-flex items-center justify-center gap-2',
     variant === 'compact' ? 'px-4 py-2 text-sm' : 'px-8 py-3 text-[16px]',
     'font-medium rounded-lg',
-    'bg-[#111111] hover:bg-[#181818] transition-all duration-200',
-    'border border-primary-400/30 hover:border-primary-300/50',
+    'bg-white text-black hover:bg-gray-200 transition-colors duration-200',
     variant === 'wide' && 'w-full',
     className
   )
 
   const ButtonContent = () => (
     <>
-      <span className="relative text-primary-200">
+      <span className="relative">
         {children}
       </span>
       {showArrow && (
-        <ArrowRightIcon className="w-4 h-4 text-primary-400 transition-transform duration-200 group-hover:translate-x-0.5" />
+        <ArrowRightIcon className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
       )}
     </>
   )

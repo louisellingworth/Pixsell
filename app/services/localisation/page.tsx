@@ -1,9 +1,8 @@
 'use client'
 
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import FloatingConsultButton from '../../components/FloatingConsultButton'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 import { 
   LanguageIcon, 
   DocumentCheckIcon,
@@ -22,7 +21,7 @@ import {
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -34,7 +33,7 @@ const fadeIn = {
   }
 }
 
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -45,7 +44,7 @@ const staggerContainer = {
   }
 }
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -65,7 +64,7 @@ const cardVariants = {
   }
 }
 
-const slideIn = {
+const slideIn: Variants = {
   hidden: { opacity: 0, x: -20 },
   visible: {
     opacity: 1,
@@ -77,7 +76,7 @@ const slideIn = {
   }
 }
 
-const scaleIn = {
+const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
@@ -90,28 +89,28 @@ const scaleIn = {
 }
 
 const styles = {
-  gradientText: "bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient",
-  gradientBorder: "before:absolute before:inset-0 before:rounded-2xl before:p-[1px] before:bg-gradient-to-r before:from-purple-500/50 before:via-pink-500/50 before:to-purple-500/50 before:-z-10",
-  gradientBg: "bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10",
+  gradientText: "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent",
+  gradientBorder: "before:absolute before:inset-0 before:rounded-2xl before:p-[1px] before:bg-gradient-to-r before:from-purple-500/50 before:via-violet-500/50 before:to-purple-500/50 before:-z-10",
+  gradientBg: "bg-gradient-to-r from-purple-500/10 via-violet-500/10 to-purple-500/10",
   sectionClass: "py-24 md:py-32 relative overflow-hidden",
   containerClass: "container mx-auto px-4 sm:px-6 lg:px-8 relative z-10",
   headingClass: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight break-words sm:break-normal",
   subheadingClass: "text-xl md:text-2xl text-gray-400 leading-relaxed",
-  cardStyle: "p-8 md:p-10 rounded-2xl bg-black/40 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 backdrop-blur-sm relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/10",
-  cardGlow: "absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10",
-  iconContainer: "w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-3 mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-300 border border-purple-500/30",
+  cardStyle: "p-8 md:p-10 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/10",
+  cardGlow: "absolute inset-0 bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10",
+  iconContainer: "w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 p-3 mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-300 border border-white/20",
   sectionLabel: "inline-block mb-4 px-6 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm font-medium tracking-wide uppercase",
   button: "px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 transform hover:-translate-y-1",
-  buttonPrimary: "bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 text-white hover:shadow-lg hover:shadow-purple-500/20",
+  buttonPrimary: "bg-violet-600 text-white hover:shadow-lg hover:shadow-purple-500/20",
   buttonSecondary: "border-2 border-purple-500 text-purple-400 hover:bg-purple-500/10",
   glowEffect: "absolute w-[500px] h-[500px] rounded-full blur-[100px] animate-pulse",
-  featureCard: "p-6 rounded-xl bg-black/40 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 backdrop-blur-sm",
+  featureCard: "p-6 rounded-xl bg-black/40 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm",
   featureIcon: "w-10 h-10 text-purple-400 mb-4",
   featureTitle: "text-lg font-semibold text-white mb-2",
   featureText: "text-gray-400 text-sm leading-relaxed",
 }
 
-const floatAnimation = {
+const floatAnimation: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
@@ -123,7 +122,7 @@ const floatAnimation = {
   }
 }
 
-const pulseAnimation = {
+const pulseAnimation: Variants = {
   initial: { scale: 1 },
   animate: {
     scale: [1, 1.02, 1],
@@ -138,10 +137,6 @@ const pulseAnimation = {
 export default function LocalisationPage() {
   return (
     <main className="min-h-screen bg-black text-white overflow-x-hidden">
-      <div className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/90 border-b border-purple-500/10">
-        <Navigation />
-      </div>
-      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-32 sm:pt-40 md:pt-48 pb-24 sm:pb-32 md:pb-40 px-4 sm:px-6 lg:px-8">
         {/* Background gradients */}
@@ -155,7 +150,7 @@ export default function LocalisationPage() {
             className="absolute inset-0 -z-10"
           >
             <div className={`${styles.glowEffect} top-1/4 left-1/4 bg-purple-500/10 -z-10`} />
-            <div className={`${styles.glowEffect} bottom-1/4 right-1/4 bg-pink-400/10 delay-1000 -z-10`} />
+            <div className={`${styles.glowEffect} bottom-1/4 right-1/4 bg-violet-400/10 delay-1000 -z-10`} />
           </motion.div>
           {/* Animated gradient mesh */}
           <div className="absolute inset-0 opacity-30 -z-10">
@@ -193,7 +188,7 @@ export default function LocalisationPage() {
                 animate="animate"
                 className={`p-6 rounded-2xl ${styles.gradientBg} backdrop-blur-sm shadow-2xl shadow-purple-500/20 relative group`}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
                 <LanguageIcon className="w-16 h-16 text-purple-400 relative z-10 transform group-hover:scale-110 transition-transform duration-300" />
               </motion.div>
             </motion.div>
@@ -206,7 +201,7 @@ export default function LocalisationPage() {
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-center mb-8">
                 <span className="block sm:inline">Expert Game</span>{' '}
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient inline-block">
+                <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent inline-block">
                   Localisation
                 </span>{' '}
                 <span className="block sm:inline">for China</span>
@@ -220,7 +215,7 @@ export default function LocalisationPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="bg-purple-900/30 border border-purple-500/30 rounded-xl p-4 md:p-6 max-w-2xl mx-auto mb-10 backdrop-blur-sm"
+                className="bg-purple-900/30 border border-white/20 rounded-xl p-4 md:p-6 max-w-2xl mx-auto mb-10 backdrop-blur-sm"
               >
                 <p className="text-white/80 text-base md:text-lg leading-relaxed">
                   While we don't provide localisation services directly, we work closely with co-publishers to offer expert guidance and can connect you with trusted localisation specialists in our network.
@@ -265,10 +260,10 @@ export default function LocalisationPage() {
                     <motion.div
                       key={step.step}
                       variants={fadeIn}
-                      className="p-6 rounded-xl bg-black/40 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 backdrop-blur-sm text-center"
+                      className="p-6 rounded-xl bg-black/40 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm text-center"
                     >
                       <div className="relative mb-4">
-                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-3 mb-4 mx-auto shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 border border-purple-500/30">
+                        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 p-3 mb-4 mx-auto shadow-lg shadow-purple-500/20 hover:shadow-xl hover:shadow-purple-500/30 transition-all duration-300 border border-white/20">
                           <Icon className="w-8 h-8 text-purple-400" />
                         </div>
                         {index < 3 && (
@@ -292,7 +287,7 @@ export default function LocalisationPage() {
                 <motion.a
                   href="/contact"
                   variants={fadeIn}
-                  className="px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 relative z-20 backdrop-blur-sm flex items-center justify-center"
+                  className="px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 bg-violet-600 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 relative z-20 backdrop-blur-sm flex items-center justify-center"
                   whileHover={{ scale: 1.05, y: -4 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -327,7 +322,7 @@ export default function LocalisationPage() {
             <span className="inline-block mb-4 px-6 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm font-medium tracking-wide uppercase">Our Services</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Comprehensive{' '}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient">Localisation</span>{' '}
+              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Localisation</span>{' '}
               Advisory
             </h2>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
@@ -386,10 +381,10 @@ export default function LocalisationPage() {
                   key={service.title}
                   variants={cardVariants}
                   whileHover="hover"
-                  className="p-6 md:p-8 rounded-2xl bg-black/40 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 backdrop-blur-sm relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/10"
+                  className="p-6 md:p-8 rounded-2xl bg-black/40 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm relative overflow-hidden group hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10" />
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-3 mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-300 border border-purple-500/30">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-violet-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl -z-10" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 p-3 mb-6 shadow-lg shadow-purple-500/20 group-hover:shadow-xl group-hover:shadow-purple-500/30 transition-all duration-300 border border-white/20">
                     <Icon className="w-8 h-8 text-purple-400" />
                   </div>
                   <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
@@ -426,7 +421,7 @@ export default function LocalisationPage() {
             <span className="inline-block mb-4 px-6 py-2 rounded-full bg-purple-500/10 text-purple-400 text-sm font-medium tracking-wide uppercase">Why Choose Us</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Your Trusted{' '}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient">Advisor</span>{' '}
+              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Advisor</span>{' '}
               for China
             </h2>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed">
@@ -490,7 +485,7 @@ export default function LocalisationPage() {
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
               Ready to{' '}
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient">Connect</span>{' '}
+              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Connect</span>{' '}
               With Experts?
             </h2>
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed mb-12">
@@ -502,7 +497,7 @@ export default function LocalisationPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 bg-gradient-to-r from-purple-500 via-pink-500 to-purple-500 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 relative z-20 backdrop-blur-sm inline-flex items-center"
+              className="px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 bg-violet-600 text-white shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 relative z-20 backdrop-blur-sm inline-flex items-center"
               whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.98 }}
             >

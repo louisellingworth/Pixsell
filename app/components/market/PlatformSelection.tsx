@@ -51,12 +51,11 @@ export default function PlatformSelection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
             PC or Mobile —{' '}
             <span style={{
-              backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
+              backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundSize: '200% 200%',
-              animation: 'premiumGradient 3s ease-in-out infinite',
             }}>
               we cover both
             </span>
@@ -121,19 +120,19 @@ export default function PlatformSelection() {
             href="/services/mobile-publishing"
             className="platform-card group block rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5"
             style={{
-              background: 'linear-gradient(135deg, rgba(236,72,153,0.10) 0%, rgba(12,4,24,0.97) 100%)',
-              boxShadow: '0 0 0 1px rgba(236,72,153,0.22), 0 8px 32px rgba(236,72,153,0.07)',
+              background: 'linear-gradient(135deg, rgba(139,92,246,0.10) 0%, rgba(12,4,24,0.97) 100%)',
+              boxShadow: '0 0 0 1px rgba(139,92,246,0.22), 0 8px 32px rgba(139,92,246,0.07)',
             }}
             onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(236,72,153,0.45), 0 24px 60px rgba(236,72,153,0.18)'
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(139,92,246,0.45), 0 24px 60px rgba(139,92,246,0.18)'
             }}
             onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(236,72,153,0.22), 0 8px 32px rgba(236,72,153,0.07)'
+              (e.currentTarget as HTMLElement).style.boxShadow = '0 0 0 1px rgba(139,92,246,0.22), 0 8px 32px rgba(139,92,246,0.07)'
             }}
           >
-            <div className="h-0.5 w-full" style={{ background: 'linear-gradient(90deg, #ec4899, #f472b6)' }} />
+            <div className="h-0.5 w-full" style={{ background: 'linear-gradient(90deg, #8b5cf6, #a78bfa)' }} />
             <div className="p-8 md:p-10">
-              <p className="text-xs font-semibold tracking-widest uppercase text-pink-400 mb-5">Mobile Game Developers</p>
+              <p className="text-xs font-semibold tracking-widest uppercase text-violet-400 mb-5">Mobile Game Developers</p>
               <h3 className="text-2xl font-bold text-white mb-3 leading-snug">
                 Mobile Publishing<br />in China
               </h3>
@@ -143,12 +142,12 @@ export default function PlatformSelection() {
               <ul className="space-y-2 mb-8">
                 {['Publisher matching & deal negotiation', 'UA spend oversight & KPI accountability', 'Monthly verified revenue reporting'].map(point => (
                   <li key={point} className="flex items-center gap-2.5 text-sm text-gray-300">
-                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #ec4899, #f472b6)' }} />
+                    <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #8b5cf6, #a78bfa)' }} />
                     {point}
                   </li>
                 ))}
               </ul>
-              <div className="flex items-center gap-2 text-pink-300 text-sm font-semibold">
+              <div className="flex items-center gap-2 text-violet-300 text-sm font-semibold">
                 <span>View the Mobile pathway</span>
                 <svg
                   className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"

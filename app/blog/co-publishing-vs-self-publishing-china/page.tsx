@@ -3,7 +3,6 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 
@@ -16,7 +15,7 @@ export default function CoPublishingVsSelfPublishingChina() {
         '@type': 'Article',
         headline: 'Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global',
         description: 'A comparison of self-publishing and co-publishing models for launching games in China, including pros, cons, and regulatory insights.',
-        image: 'https://eightsixgames.com/blog/co-publishing-vs-self-publishing-china.jpg',
+        image: 'https://eightsixgames.com/blog/publishing-models-china.webp',
         author: {
           '@type': 'Person',
           name: 'EightSix Team',
@@ -60,21 +59,6 @@ export default function CoPublishingVsSelfPublishingChina() {
           }
         ]
       })}} />
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           {/* Back to Blog Link */}
@@ -96,7 +80,7 @@ export default function CoPublishingVsSelfPublishingChina() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global</h1>
             <img
-              src="/blog/co-publishing-vs-self-publishing-china.jpg"
+              src="/blog/publishing-models-china.webp"
               alt="Hero image for Game Publishing in China: Self-Publishing vs Co-Publishing blog post"
               className="w-full aspect-video object-cover rounded-xl mb-12 shadow-lg"
             />

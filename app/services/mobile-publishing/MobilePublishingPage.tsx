@@ -21,7 +21,6 @@ import {
   ChevronDownIcon,
 } from '@heroicons/react/24/outline'
 import { mobileProcessSteps } from '@/lib/market-data'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import FloatingConsultButton from '../../components/FloatingConsultButton'
 
@@ -29,7 +28,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const STEP_ACCENTS = [
   { border: 'border-l-violet-500/70', dot: 'from-violet-500 to-purple-600', glow: 'rgba(124,58,237,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
-  { border: 'border-l-pink-500/70',   dot: 'from-pink-500 to-rose-600',     glow: 'rgba(236,72,153,0.35)', tag: 'text-pink-400 bg-pink-500/10 border-pink-500/30' },
+  { border: 'border-l-violet-500/70',   dot: 'from-violet-500 to-rose-600',     glow: 'rgba(139,92,246,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
   { border: 'border-l-blue-500/70',   dot: 'from-blue-500 to-indigo-600',   glow: 'rgba(59,130,246,0.35)', tag: 'text-blue-400 bg-blue-500/10 border-blue-500/30' },
   { border: 'border-l-emerald-500/70',dot: 'from-emerald-500 to-green-600', glow: 'rgba(16,185,129,0.35)', tag: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30' },
   { border: 'border-l-amber-500/70',  dot: 'from-amber-500 to-orange-600',  glow: 'rgba(245,158,11,0.35)', tag: 'text-amber-400 bg-amber-500/10 border-amber-500/30' },
@@ -38,7 +37,7 @@ const STEP_ACCENTS = [
 
 const STATS = [
   { value: '700M+', label: 'Mobile Gamers in China', sub: 'The largest mobile gaming market by active player count', color: '#a855f7' },
-  { value: '$28B', label: 'Annual Mobile Revenue', sub: 'In-game advertising and IAP, growing year on year', color: '#ec4899' },
+  { value: '$28B', label: 'Annual Mobile Revenue', sub: 'In-game advertising and IAP, growing year on year', color: '#8b5cf6' },
   { value: '60%', label: 'of CN Gaming Revenue', sub: 'Mobile accounts for the majority of China\'s gaming market', color: '#6366f1' },
 ]
 
@@ -57,7 +56,7 @@ const WHAT_WE_DELIVER = [
     title: 'Publisher Introductions',
     body: 'We tap our established CN publisher network to source multiple candidates suited to your game\'s genre and metrics. You receive competing offers — not a single take-it-or-leave-it option.',
     outcome: 'Multiple competing offers to evaluate side by side.',
-    accentColor: '#ec4899',
+    accentColor: '#8b5cf6',
   },
   {
     icon: DocumentCheckIcon,
@@ -208,8 +207,6 @@ export default function MobilePublishingPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navigation />
-
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-28 overflow-hidden">
         {/* Glow */}
@@ -217,7 +214,7 @@ export default function MobilePublishingPage() {
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none"
           aria-hidden="true"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.14) 0%, rgba(124,58,237,0.07) 50%, transparent 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.14) 0%, rgba(124,58,237,0.07) 50%, transparent 70%)',
             filter: 'blur(80px)',
           }}
         />
@@ -235,20 +232,19 @@ export default function MobilePublishingPage() {
             className="text-center"
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/25 bg-pink-500/8 text-pink-300 text-xs font-medium tracking-widest uppercase mb-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-300 text-xs font-medium tracking-widest uppercase mb-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
               Mobile Publishing in China
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.04] tracking-tight text-white mb-7">
               Access China&apos;s{' '}
               <span style={{
-                backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7, #ec4899)',
+                backgroundImage: 'linear-gradient(135deg, #8b5cf6, #c4b5fd, #8b5cf6)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
               }}>
                 700M mobile gamers
               </span>
@@ -270,7 +266,7 @@ export default function MobilePublishingPage() {
                 'Publisher does the technical work',
               ].map((item, i) => (
                 <span key={i} className="flex items-center gap-2 text-sm text-gray-400">
-                  <svg className="w-3.5 h-3.5 text-pink-500/70 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 text-violet-500/70 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z" />
                   </svg>
                   {item}
@@ -281,8 +277,8 @@ export default function MobilePublishingPage() {
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center gap-2 px-9 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-0.5"
-                style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #7c3aed 100%)' }}
+                className="group relative inline-flex items-center gap-2 px-9 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/25 hover:-translate-y-0.5"
+                style={{ background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #7c3aed 100%)' }}
               >
                 <span
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -338,7 +334,7 @@ export default function MobilePublishingPage() {
         <div
           className="absolute right-0 top-0 w-[600px] h-[500px] pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse at top right, rgba(236,72,153,0.07) 0%, transparent 65%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse at top right, rgba(139,92,246,0.07) 0%, transparent 65%)', filter: 'blur(80px)' }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -349,10 +345,10 @@ export default function MobilePublishingPage() {
               transition={{ duration: 1.5, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
             >
-              <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Revenue Model</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Revenue Model</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
                 The publisher does the work.<br />
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   You earn 50% of ad revenue.
                 </span>
               </h2>
@@ -365,7 +361,7 @@ export default function MobilePublishingPage() {
               <div className="flex flex-col gap-2.5">
                 {['No upfront investment', 'Publisher funds all localisation & UA', 'You approve before anything is signed'].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-sm text-gray-300">
-                    <CheckCircleIcon className="w-4 h-4 text-pink-400 flex-shrink-0" />
+                    <CheckCircleIcon className="w-4 h-4 text-violet-400 flex-shrink-0" />
                     {item}
                   </div>
                 ))}
@@ -381,7 +377,7 @@ export default function MobilePublishingPage() {
               className="flex flex-col gap-0"
             >
               {[
-                { label: 'Your revenue share', value: '50%', color: '#ec4899', sub: 'of all in-game ad revenue' },
+                { label: 'Your revenue share', value: '50%', color: '#8b5cf6', sub: 'of all in-game ad revenue' },
                 { label: 'Upfront cost to you', value: '$0', color: '#a855f7', sub: 'publisher funds everything' },
                 { label: 'Publisher options', value: 'Multiple', color: '#6366f1', sub: 'competing offers, not one' },
                 { label: 'IP ownership', value: 'Yours', color: '#10b981', sub: 'always and entirely' },
@@ -422,7 +418,7 @@ export default function MobilePublishingPage() {
               <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Scope of Work</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                 What EightSix{' '}
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   delivers
                 </span>
               </h2>
@@ -488,7 +484,7 @@ export default function MobilePublishingPage() {
         <div
           className="absolute right-0 top-1/4 w-[500px] h-[400px] pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
 
@@ -501,10 +497,10 @@ export default function MobilePublishingPage() {
               viewport={{ once: true, margin: '-60px' }}
               className="md:sticky md:top-28"
             >
-              <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Game Fit</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Game Fit</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
                 Is your game a{' '}
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   good fit?
                 </span>
               </h2>
@@ -569,10 +565,10 @@ export default function MobilePublishingPage() {
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-20">
-            <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Timeline</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Timeline</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               From introduction to{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 live revenue
               </span>
             </h2>
@@ -590,9 +586,9 @@ export default function MobilePublishingPage() {
             >
               <defs>
                 <linearGradient id="mobileLineGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"   stopColor="rgba(236,72,153,0.8)" />
+                  <stop offset="0%"   stopColor="rgba(139,92,246,0.8)" />
                   <stop offset="40%"  stopColor="rgba(168,85,247,0.7)" />
-                  <stop offset="80%"  stopColor="rgba(236,72,153,0.6)" />
+                  <stop offset="80%"  stopColor="rgba(139,92,246,0.6)" />
                   <stop offset="100%" stopColor="rgba(99,102,241,0.4)" />
                 </linearGradient>
               </defs>
@@ -665,7 +661,7 @@ export default function MobilePublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">What to Know</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Two things developers ask{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 before signing
               </span>
             </h2>
@@ -706,11 +702,11 @@ export default function MobilePublishingPage() {
               transition={{ duration: 1.5, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="relative rounded-2xl p-8"
-              style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(236,72,153,0.13)' }}
+              style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(139,92,246,0.13)' }}
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'rgba(236,72,153,0.07)', border: '1px solid rgba(236,72,153,0.18)' }}>
-                <UserGroupIcon className="w-5 h-5 text-pink-400" />
+                style={{ background: 'rgba(139,92,246,0.07)', border: '1px solid rgba(139,92,246,0.18)' }}>
+                <UserGroupIcon className="w-5 h-5 text-violet-400" />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Publisher Accountability</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
@@ -719,7 +715,7 @@ export default function MobilePublishingPage() {
               <p className="text-gray-400 text-sm leading-relaxed">
                 EightSix monitors marketing commitments, tracks performance data, and ensures the publisher pays out correctly. If there are issues, we escalate. You deal with us, not the Chinese publisher directly.
               </p>
-              <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-pink-300 text-xs font-semibold">
+              <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-violet-300 text-xs font-semibold">
                 <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
                 You deal with us, not the publisher directly
               </div>
@@ -740,7 +736,7 @@ export default function MobilePublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Due Diligence</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Questions we get{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 from every developer
               </span>
             </h2>
@@ -762,7 +758,7 @@ export default function MobilePublishingPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(236,72,153,0.09) 0%, rgba(124,58,237,0.05) 40%, transparent 70%)', filter: 'blur(60px)' }}
+          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139,92,246,0.09) 0%, rgba(124,58,237,0.05) 40%, transparent 70%)', filter: 'blur(60px)' }}
         />
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
@@ -774,14 +770,14 @@ export default function MobilePublishingPage() {
             transition={{ duration: 1.7, ease: 'easeOut' }}
             viewport={{ once: true, margin: '-60px' }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/25 bg-pink-500/8 text-pink-300 text-xs font-medium tracking-widest uppercase mb-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-300 text-xs font-medium tracking-widest uppercase mb-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
               Free consultation — no obligation
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.04] text-white mb-6">
               Find out what your game{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 could earn in China.
               </span>
             </h2>
@@ -792,8 +788,8 @@ export default function MobilePublishingPage() {
 
             <Link
               href="/contact"
-              className="group relative inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-0.5 mb-10"
-              style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #7c3aed 100%)' }}
+              className="group relative inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/25 hover:-translate-y-0.5 mb-10"
+              style={{ background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #7c3aed 100%)' }}
             >
               <span
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"

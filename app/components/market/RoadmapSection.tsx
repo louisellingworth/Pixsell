@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const STEP_ACCENTS = [
   { border: 'border-l-violet-500/70', dot: 'from-violet-500 to-purple-600', glow: 'rgba(124,58,237,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
-  { border: 'border-l-pink-500/70',   dot: 'from-pink-500 to-rose-600',     glow: 'rgba(236,72,153,0.35)', tag: 'text-pink-400 bg-pink-500/10 border-pink-500/30' },
+  { border: 'border-l-violet-500/70',   dot: 'from-violet-500 to-rose-600',     glow: 'rgba(139,92,246,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
   { border: 'border-l-blue-500/70',   dot: 'from-blue-500 to-indigo-600',   glow: 'rgba(59,130,246,0.35)', tag: 'text-blue-400 bg-blue-500/10 border-blue-500/30' },
   { border: 'border-l-emerald-500/70',dot: 'from-emerald-500 to-green-600', glow: 'rgba(16,185,129,0.35)', tag: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30' },
   { border: 'border-l-amber-500/70',  dot: 'from-amber-500 to-orange-600',  glow: 'rgba(245,158,11,0.35)', tag: 'text-amber-400 bg-amber-500/10 border-amber-500/30' },
@@ -145,12 +145,11 @@ export default function RoadmapSection() {
             Co-Publishing{' '}
             <span
               style={{
-                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
+                backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
               }}
             >
               Roadmap
@@ -175,7 +174,7 @@ export default function RoadmapSection() {
             <defs>
               <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%"   stopColor="rgba(168,85,247,0.8)" />
-                <stop offset="40%"  stopColor="rgba(236,72,153,0.7)" />
+                <stop offset="40%"  stopColor="rgba(139,92,246,0.7)" />
                 <stop offset="80%"  stopColor="rgba(168,85,247,0.6)" />
                 <stop offset="100%" stopColor="rgba(59,130,246,0.4)" />
               </linearGradient>

@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { CheckCircleIcon, ArrowRightIcon, ChartBarIcon, ChatBubbleBottomCenterTextIcon, DocumentTextIcon, UserGroupIcon, RocketLaunchIcon, CogIcon } from '@heroicons/react/24/outline'
 
@@ -69,28 +68,13 @@ export default function PartnershipPage() {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-
       {/* Main Content */}
       <div className="pt-24 pb-32 relative">
         {/* Enhanced Background Effects */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 bg-black" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-black/50 to-black opacity-80" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-pink-900/20 via-black/50 to-black opacity-60" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-violet-900/20 via-black/50 to-black opacity-60" />
           <motion.div 
             animate={{ 
               scale: [1, 1.2, 1],
@@ -101,7 +85,7 @@ export default function PartnershipPage() {
               repeat: Infinity,
               ease: "easeInOut" 
             }}
-            className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-pink-500/20 rounded-full filter blur-[150px]" 
+            className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-violet-500/20 rounded-full filter blur-[150px]" 
           />
           <motion.div 
             animate={{ 
@@ -133,7 +117,7 @@ export default function PartnershipPage() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full blur-2xl"
+                className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-violet-500/20 to-purple-500/20 rounded-full blur-2xl"
               />
               
               <div className="relative">
@@ -141,10 +125,10 @@ export default function PartnershipPage() {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{ duration: 1, delay: 0.5 }}
-                  className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"
+                  className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-violet-500/50 to-transparent"
                 />
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent inline-block">
+                  <span className="bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent inline-block">
                     Partnership Success
                   </span>
                 </h1>
@@ -170,7 +154,7 @@ export default function PartnershipPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent px-1"
                 >
                   trust
                 </motion.span>
@@ -179,7 +163,7 @@ export default function PartnershipPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent px-1"
                 >
                   transparency
                 </motion.span>
@@ -188,7 +172,7 @@ export default function PartnershipPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent px-1"
                 >
                   ongoing collaboration
                 </motion.span>
@@ -203,7 +187,7 @@ export default function PartnershipPage() {
               >
                 <Link
                   href="/services/co-publishing"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group hover:shadow-lg hover:shadow-violet-500/20 transition-all duration-300"
                 >
                   <motion.div
                     initial={{ x: "100%" }}
@@ -244,13 +228,13 @@ export default function PartnershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
                   End-to-End Support
                 </span>
               </motion.div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                 Comprehensive Support Structure
               </h2>
               <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
@@ -268,21 +252,21 @@ export default function PartnershipPage() {
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   className="group relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full flex flex-col items-center text-center">
-                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-300 relative h-full flex flex-col items-center text-center">
+                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="w-20 h-20 rounded-xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-4 mb-8 relative group-hover:shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300"
+                      className="w-20 h-20 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 p-4 mb-8 relative group-hover:shadow-lg group-hover:shadow-violet-500/20 transition-all duration-300"
                     >
-                      {index === 0 && <ChatBubbleBottomCenterTextIcon className="w-12 h-12 text-pink-400" />}
-                      {index === 1 && <ChartBarIcon className="w-12 h-12 text-pink-400" />}
-                      {index === 2 && <UserGroupIcon className="w-12 h-12 text-pink-400" />}
+                      {index === 0 && <ChatBubbleBottomCenterTextIcon className="w-12 h-12 text-violet-400" />}
+                      {index === 1 && <ChartBarIcon className="w-12 h-12 text-violet-400" />}
+                      {index === 2 && <UserGroupIcon className="w-12 h-12 text-violet-400" />}
                     </motion.div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-pink-400 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-violet-400 transition-colors duration-300">
                       {feature.title}
                     </h3>
                     <p className="text-white/60 text-lg leading-relaxed">
@@ -302,13 +286,13 @@ export default function PartnershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
                   Information & Insights
                 </span>
               </motion.div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                 Keeping You Informed
               </h2>
               <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
@@ -326,21 +310,21 @@ export default function PartnershipPage() {
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   className="group relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full flex flex-col items-center text-center">
-                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-300 relative h-full flex flex-col items-center text-center">
+                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      className="w-20 h-20 rounded-xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 p-4 mb-8 relative group-hover:shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300"
+                      className="w-20 h-20 rounded-xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 p-4 mb-8 relative group-hover:shadow-lg group-hover:shadow-violet-500/20 transition-all duration-300"
                     >
-                      {index === 0 && <DocumentTextIcon className="w-12 h-12 text-pink-400" />}
-                      {index === 1 && <ChartBarIcon className="w-12 h-12 text-pink-400" />}
-                      {index === 2 && <RocketLaunchIcon className="w-12 h-12 text-pink-400" />}
+                      {index === 0 && <DocumentTextIcon className="w-12 h-12 text-violet-400" />}
+                      {index === 1 && <ChartBarIcon className="w-12 h-12 text-violet-400" />}
+                      {index === 2 && <RocketLaunchIcon className="w-12 h-12 text-violet-400" />}
                     </motion.div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-pink-400 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-6 group-hover:text-violet-400 transition-colors duration-300">
                       {feature.title}
                     </h3>
                     <p className="text-white/60 text-lg leading-relaxed">
@@ -360,13 +344,13 @@ export default function PartnershipPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent font-medium">
                   Extra Mile Service
                 </span>
               </motion.div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                 Going Beyond Expectations
               </h2>
               <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
@@ -384,12 +368,12 @@ export default function PartnershipPage() {
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   className="group relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full flex flex-col items-center">
-                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-300 relative h-full flex flex-col items-center">
+                    <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
-                    <h3 className="text-2xl font-bold text-white mb-8 text-center group-hover:text-pink-400 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-white mb-8 text-center group-hover:text-violet-400 transition-colors duration-300">
                       {feature.title}
                     </h3>
                     
@@ -403,7 +387,7 @@ export default function PartnershipPage() {
                           transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
                           className="flex items-center gap-4 text-white/60 text-lg group-hover:text-white/70 transition-colors duration-300"
                         >
-                          <CheckCircleIcon className="w-6 h-6 text-pink-400 flex-shrink-0" />
+                          <CheckCircleIcon className="w-6 h-6 text-violet-400 flex-shrink-0" />
                           <span className="text-left">{item}</span>
                         </motion.li>
                       ))}
@@ -420,13 +404,13 @@ export default function PartnershipPage() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative group overflow-hidden"
+              className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-white/10 hover:border-white/20 transition-all duration-300 relative group overflow-hidden"
             >
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
+                className="absolute inset-0 bg-gradient-to-r from-violet-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"
               />
               
               <div className="relative z-10 space-y-8">
@@ -434,13 +418,13 @@ export default function PartnershipPage() {
                   initial={{ scale: 0.95 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
-                  className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-500/20 to-purple-500/20 mx-auto mb-8 p-5"
+                  className="w-20 h-20 rounded-full bg-gradient-to-br from-violet-500/20 to-purple-500/20 mx-auto mb-8 p-5"
                 >
-                  <RocketLaunchIcon className="w-full h-full text-pink-400" />
+                  <RocketLaunchIcon className="w-full h-full text-violet-400" />
                 </motion.div>
                 
                 <h2 className="text-4xl sm:text-5xl font-bold">
-                  <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                     Ready to take your game to the next level?
                   </span>
                 </h2>
@@ -452,7 +436,7 @@ export default function PartnershipPage() {
                 <div className="flex justify-center gap-6">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group/button hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300"
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group/button hover:shadow-lg hover:shadow-violet-500/20 transition-all duration-300"
                   >
                     <motion.div
                       initial={{ x: "100%" }}

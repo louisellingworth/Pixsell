@@ -112,7 +112,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                 <button
                   type="submit"
-                  className="w-full py-3 px-6 text-white bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg hover:from-purple-700 hover:to-purple-900 transition-all duration-200 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                  className="w-full py-3 px-6 text-white bg-gradient-to-r from-purple-600 to-purple-800 rounded-lg hover:bg-violet-700 transition-all duration-200 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900"
                 >
                   Send Message
                 </button>

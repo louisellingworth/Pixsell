@@ -126,12 +126,11 @@ export default function CoPublishingWorks() {
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6">
             How Our{' '}
             <span style={{
-              backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)',
+              backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundSize: '200% 200%',
-              animation: 'premiumGradient 3s ease-in-out infinite',
             }}>
               Co-Publishing
             </span>{' '}
@@ -201,7 +200,7 @@ export default function CoPublishingWorks() {
                   style={{
                     background: isEven
                       ? 'linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(8,2,18,0.95) 100%)'
-                      : 'linear-gradient(225deg, rgba(236,72,153,0.10) 0%, rgba(8,2,18,0.95) 100%)',
+                      : 'linear-gradient(225deg, rgba(139,92,246,0.10) 0%, rgba(8,2,18,0.95) 100%)',
                     borderLeft: isEven ? '1px solid rgba(168,85,247,0.10)' : 'none',
                     borderRight: !isEven ? '1px solid rgba(168,85,247,0.10)' : 'none',
                   }}
@@ -211,7 +210,7 @@ export default function CoPublishingWorks() {
                     style={{
                       backgroundImage: isEven
                         ? 'linear-gradient(135deg, #a855f7, rgba(168,85,247,0.5))'
-                        : 'linear-gradient(135deg, #ec4899, rgba(236,72,153,0.5))',
+                        : 'linear-gradient(135deg, #8b5cf6, rgba(139,92,246,0.5))',
                       backgroundClip: 'text',
                       WebkitBackgroundClip: 'text',
                       WebkitTextFillColor: 'transparent',
@@ -250,7 +249,7 @@ export default function CoPublishingWorks() {
             <Link
               href="/contact"
               className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-sm transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-0.5"
-              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 60%, #ec4899 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 60%, #8b5cf6 100%)' }}
             >
               Explore Co-Publishing Options
               <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

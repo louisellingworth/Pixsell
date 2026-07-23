@@ -5,12 +5,11 @@ import { motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 gsap.registerPlugin(ScrollTrigger)
 
 const STATS = [
   { value: 320, suffix: 'M+', label: 'PC Gamers in China', color: 'rgba(168,85,247,0.7)' },
-  { value: 700, suffix: 'M+', label: 'Mobile Gamers in China', color: 'rgba(236,72,153,0.7)' },
+  { value: 700, suffix: 'M+', label: 'Mobile Gamers in China', color: 'rgba(139,92,246,0.7)' },
   { value: 90, suffix: ' days', label: 'Avg. Time to Launch', color: 'rgba(99,102,241,0.7)' },
 ]
 
@@ -170,7 +169,7 @@ export default function HeroSection() {
         aria-hidden="true"
         style={{
           background:
-            'radial-gradient(ellipse at center, rgba(124,58,237,0.28) 0%, rgba(236,72,153,0.12) 45%, transparent 70%)',
+            'radial-gradient(ellipse at center, rgba(124,58,237,0.28) 0%, rgba(139,92,246,0.12) 45%, transparent 70%)',
           filter: 'blur(60px)',
         }}
       />
@@ -198,7 +197,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.0, ease: 'easeOut' }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs sm:text-sm font-medium tracking-widest uppercase"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-purple-500/10 text-purple-300 text-xs sm:text-sm font-medium tracking-widest uppercase"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
               PC & Mobile Publishing in China
@@ -228,12 +227,11 @@ export default function HeroSection() {
                       item.gradient
                         ? {
                             backgroundImage:
-                              'linear-gradient(135deg, #a855f7, #ec4899, #7c3aed)',
+                              'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
                             backgroundClip: 'text',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             backgroundSize: '200% 200%',
-                            animation: 'premiumGradient 3s ease-in-out infinite',
                           }
                         : undefined
                     }
@@ -258,11 +256,7 @@ export default function HeroSection() {
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-0.5"
-                style={{
-                  background:
-                    'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%)',
-                }}
+                className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-black bg-white hover:bg-gray-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-white/10 hover:-translate-y-0.5"
                 role="button"
                 aria-label="Book a free consultation"
               >
@@ -289,7 +283,7 @@ export default function HeroSection() {
 
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-gray-300 border border-white/10 hover:border-purple-500/40 hover:text-white hover:bg-white/5 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-gray-300 border border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5 transition-all duration-300"
                 role="button"
                 aria-label="See our services"
               >
@@ -352,7 +346,7 @@ export default function HeroSection() {
                 }}
                 className="absolute inset-0 rounded-full"
                 style={{
-                  background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.35) 0%, rgba(236,72,153,0.15) 50%, transparent 70%)',
+                  background: 'radial-gradient(ellipse at center, rgba(124,58,237,0.35) 0%, rgba(139,92,246,0.15) 50%, transparent 70%)',
                   filter: 'blur(20px)',
                 }}
               />

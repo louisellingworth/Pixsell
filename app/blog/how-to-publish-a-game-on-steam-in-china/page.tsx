@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -10,21 +9,6 @@ import Image from 'next/image'
 export default function BlogPost() {
   return (
     <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden">
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background glow effects */}
@@ -56,7 +40,7 @@ export default function BlogPost() {
               How to Publish a Game on Steam in China – A Step-by-Step Guide
             </h1>
             <Image
-              src="/blog/steam-china-publishing.jpg"
+              src="/blog/steam-china-publishing-1024w.webp"
               alt="How to Publish a Game on Steam in China"
               width={800}
               height={450}
@@ -244,15 +228,8 @@ export default function BlogPost() {
               </div>
               
               <div className="my-12 bg-white/5 p-8 border border-white/10 rounded-xl shadow-lg">
-                <Image
-                  src="/blog/steam-china-storefront.jpg"
-                  alt="Steam China storefront"
-                  width={800}
-                  height={450}
-                  className="w-full rounded-lg mb-6 shadow-md"
-                />
                 <p className="text-sm text-white/70 italic">
-                  Steam China storefront (early 2021) – launched with only 53 government-approved games, a stark contrast to the thousands of titles on Steam global. Going the official route means entering a much more curated platform, but one backed by government sanction.
+                  Steam China launched in early 2021 with only 53 government-approved games – a stark contrast to the thousands of titles on Steam global. Going the official route means entering a much more curated platform, but one backed by government sanction.
                 </p>
               </div>
 
@@ -350,7 +327,7 @@ export default function BlogPost() {
                 <p className="mb-4">
                   At EightSix Games, we specialize in helping Western developers navigate the complexities of the Chinese market. Our team of experts can guide you through the entire process, from choosing the right publishing route to finding a Chinese partner and marketing your game to Chinese players.
                 </p>
-                <Link href="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all">
+                <Link href="/contact" className="inline-flex items-center bg-violet-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-violet-500 transition-all">
                   Get in touch
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -388,7 +365,7 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/steam-global-vs-steam-china">
                 <div className="aspect-video overflow-hidden">
@@ -418,7 +395,7 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/isbn-license-china-game-release">
                 <div className="aspect-video overflow-hidden">
@@ -448,12 +425,12 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/marketing-your-game-in-china">
                 <div className="aspect-video overflow-hidden">
                   <Image 
-                    src="/blog/marketing-china-games.jpg" 
+                    src="/blog/marketing-china-games-640w.webp" 
                     alt="Marketing Games in China"
                     width={800}
                     height={450}

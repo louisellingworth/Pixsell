@@ -75,7 +75,7 @@ const FeatureIcon = ({ icon }: { icon: string }) => {
     case 'trophy':
       return <TrophyIcon className="w-8 h-8 text-purple-400" />
     case 'target':
-      return <AdjustmentsHorizontalIcon className="w-8 h-8 text-pink-400" />
+      return <AdjustmentsHorizontalIcon className="w-8 h-8 text-violet-400" />
     case 'shield':
       return <ShieldCheckIcon className="w-8 h-8 text-blue-400" />
     case 'chart':

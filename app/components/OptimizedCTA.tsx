@@ -33,7 +33,7 @@ export default function OptimizedCTA({
   const baseClasses = 'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500'
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-xl',
+    primary: 'bg-violet-600 text-white hover:bg-violet-500 shadow-lg hover:shadow-xl',
     secondary: 'bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/30',
     outline: 'border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white',
     ghost: 'text-gray-300 hover:text-white hover:bg-white/5'

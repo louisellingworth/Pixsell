@@ -12,7 +12,6 @@ import {
   ChevronDownIcon,
 } from '@heroicons/react/24/outline'
 
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import FloatingConsultButton from '../../components/FloatingConsultButton'
 
@@ -20,7 +19,7 @@ import FloatingConsultButton from '../../components/FloatingConsultButton'
 
 const STATS = [
   { value: '50M+', label: 'Steam China Accounts', sub: 'Active players on Steam in the Chinese market', color: '#a855f7' },
-  { value: '#2', label: 'Global Gaming Market', sub: 'China is the second-largest PC gaming market by revenue', color: '#ec4899' },
+  { value: '#2', label: 'Global Gaming Market', sub: 'China is the second-largest PC gaming market by revenue', color: '#8b5cf6' },
   { value: '$0', label: 'Upfront Cost to You', sub: 'Performance-based — we earn when you earn', color: '#6366f1' },
 ]
 
@@ -37,7 +36,7 @@ const WHAT_WE_DELIVER = [
     title: 'Deal Negotiation',
     body: 'We handle all contract negotiations — revenue share structure, marketing spend commitments, recoupment thresholds, and reporting obligations. We flag anything that isn\'t in your favour. You approve the final terms before anything is signed.',
     outcome: 'Agreement terms that protect your IP and your earnings.',
-    accentColor: '#ec4899',
+    accentColor: '#8b5cf6',
   },
   {
     step: '03',
@@ -164,8 +163,6 @@ function FaqItem({ faq, index }: { faq: typeof FAQS[0]; index: number }) {
 export default function CoPublishingPage() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navigation />
-
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-28 overflow-hidden">
         {/* Glow */}
@@ -173,7 +170,7 @@ export default function CoPublishingPage() {
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none"
           aria-hidden="true"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(168,85,247,0.14) 0%, rgba(236,72,153,0.07) 50%, transparent 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(168,85,247,0.14) 0%, rgba(139,92,246,0.07) 50%, transparent 70%)',
             filter: 'blur(80px)',
           }}
         />
@@ -191,7 +188,7 @@ export default function CoPublishingPage() {
             className="text-center"
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/25 bg-purple-500/8 text-purple-300 text-xs font-medium tracking-widest uppercase mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-purple-500/8 text-purple-300 text-xs font-medium tracking-widest uppercase mb-10">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
               Co-Publishing on Steam China
             </div>
@@ -199,12 +196,11 @@ export default function CoPublishingPage() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.04] tracking-tight text-white mb-7">
               Reach China&apos;s{' '}
               <span style={{
-                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899, #a855f7)',
+                backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
               }}>
                 50M Steam players
               </span>
@@ -238,7 +234,7 @@ export default function CoPublishingPage() {
               <Link
                 href="/contact"
                 className="group relative inline-flex items-center gap-2 px-9 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-0.5"
-                style={{ background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #7c3aed 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%)' }}
               >
                 <span
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -307,7 +303,7 @@ export default function CoPublishingPage() {
               <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Why Co-Publishing</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
                 China&apos;s market rewards<br />
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   local expertise.
                 </span>
               </h2>
@@ -341,7 +337,7 @@ export default function CoPublishingPage() {
             >
               {[
                 { label: 'Revenue split', value: 'Negotiated', color: '#a855f7', sub: 'we push for the best possible terms' },
-                { label: 'Upfront cost to you', value: '$0', color: '#ec4899', sub: 'co-publisher funds localisation & marketing' },
+                { label: 'Upfront cost to you', value: '$0', color: '#8b5cf6', sub: 'co-publisher funds localisation & marketing' },
                 { label: 'ISBN required', value: 'No', color: '#6366f1', sub: 'Steam Global bypasses domestic CN regulations' },
                 { label: 'IP ownership', value: 'Yours', color: '#10b981', sub: 'always — built into the contract' },
               ].map((item, i, arr) => (
@@ -380,7 +376,7 @@ export default function CoPublishingPage() {
               <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Scope of Work</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                 What EightSix{' '}
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   delivers
                 </span>
               </h2>
@@ -446,7 +442,7 @@ export default function CoPublishingPage() {
         <div
           className="absolute right-0 top-1/4 w-[500px] h-[400px] pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid md:grid-cols-[1fr_2fr] gap-16 items-start">
@@ -458,10 +454,10 @@ export default function CoPublishingPage() {
               viewport={{ once: true, margin: '-60px' }}
               className="md:sticky md:top-28"
             >
-              <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Game Fit</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Game Fit</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
                 Is your game a{' '}
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                   good fit?
                 </span>
               </h2>
@@ -524,7 +520,7 @@ export default function CoPublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">What to Know</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Two things developers ask{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 before signing
               </span>
             </h2>
@@ -565,11 +561,11 @@ export default function CoPublishingPage() {
               transition={{ duration: 1.5, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="relative rounded-2xl p-8"
-              style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(236,72,153,0.13)' }}
+              style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(139,92,246,0.13)' }}
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'rgba(236,72,153,0.07)', border: '1px solid rgba(236,72,153,0.18)' }}>
-                <UserGroupIcon className="w-5 h-5 text-pink-400" />
+                style={{ background: 'rgba(139,92,246,0.07)', border: '1px solid rgba(139,92,246,0.18)' }}>
+                <UserGroupIcon className="w-5 h-5 text-violet-400" />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Publisher Accountability</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
@@ -578,7 +574,7 @@ export default function CoPublishingPage() {
               <p className="text-gray-400 text-sm leading-relaxed">
                 EightSix monitors marketing commitments, tracks revenue reporting, and escalates if the publisher isn&apos;t delivering. You deal with us — not the Chinese publisher directly.
               </p>
-              <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-pink-300 text-xs font-semibold">
+              <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-violet-300 text-xs font-semibold">
                 <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
                 You deal with us, not the publisher directly
               </div>
@@ -599,7 +595,7 @@ export default function CoPublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Due Diligence</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Questions we get{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 from every developer
               </span>
             </h2>
@@ -651,8 +647,8 @@ export default function CoPublishingPage() {
                   { href: '/blog/5-mistakes-western-developers-make-in-china', label: '5 Mistakes Western Developers Make in China' },
                 ].map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="flex items-center gap-2 text-sm text-gray-400 hover:text-pink-300 transition-colors duration-200 group">
-                      <ArrowRightIcon className="w-3.5 h-3.5 text-pink-500/50 group-hover:text-pink-400 transition-colors" />
+                    <Link href={link.href} className="flex items-center gap-2 text-sm text-gray-400 hover:text-violet-300 transition-colors duration-200 group">
+                      <ArrowRightIcon className="w-3.5 h-3.5 text-violet-500/50 group-hover:text-violet-400 transition-colors" />
                       {link.label}
                     </Link>
                   </li>
@@ -668,7 +664,7 @@ export default function CoPublishingPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(168,85,247,0.09) 0%, rgba(236,72,153,0.05) 40%, transparent 70%)', filter: 'blur(60px)' }}
+          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(168,85,247,0.09) 0%, rgba(139,92,246,0.05) 40%, transparent 70%)', filter: 'blur(60px)' }}
         />
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
@@ -680,14 +676,14 @@ export default function CoPublishingPage() {
             transition={{ duration: 1.7, ease: 'easeOut' }}
             viewport={{ once: true, margin: '-60px' }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/25 bg-purple-500/8 text-purple-300 text-xs font-medium tracking-widest uppercase mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-purple-500/8 text-purple-300 text-xs font-medium tracking-widest uppercase mb-10">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
               Free consultation — no obligation
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.04] text-white mb-6">
               Find out what your game{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 could earn in China.
               </span>
             </h2>
@@ -699,7 +695,7 @@ export default function CoPublishingPage() {
             <Link
               href="/contact"
               className="group relative inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-0.5 mb-10"
-              style={{ background: 'linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #7c3aed 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%)' }}
             >
               <span
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"

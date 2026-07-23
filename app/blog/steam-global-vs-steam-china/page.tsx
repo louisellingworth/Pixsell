@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -60,21 +59,6 @@ export default function BlogPost() {
           }
         ]
       })}} />
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background glow effects */}
@@ -360,12 +344,12 @@ export default function BlogPost() {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-r from-purple-900/30 to-black/30 rounded-xl p-8 my-12 border border-purple-500/30 shadow-lg">
+              <div className="bg-gradient-to-r from-purple-900/30 to-black/30 rounded-xl p-8 my-12 border border-white/20 shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-white">Need help navigating Steam in China?</h3>
                 <p className="mb-6 text-lg leading-relaxed">
                   EightSix Games offers specialized consulting for developers considering Steam Global or Steam China. Our team can help you make strategic decisions based on your game type and business goals.
                 </p>
-                <Link href="/contact" className="inline-flex items-center bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg font-medium hover:from-purple-600 hover:to-pink-600 transition-all">
+                <Link href="/contact" className="inline-flex items-center bg-violet-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-violet-500 transition-all">
                   Get in touch
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -386,12 +370,12 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/how-to-publish-a-game-on-steam-in-china">
                 <div className="aspect-video overflow-hidden">
                   <Image 
-                    src="/blog/steam-china-publishing.jpg" 
+                    src="/blog/steam-china-publishing-1024w.webp" 
                     alt="Related article: How to Publish a Game on Steam in China – A Step-by-Step Guide"
                     width={800}
                     height={450}
@@ -416,7 +400,7 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/isbn-license-china-game-release">
                 <div className="aspect-video overflow-hidden">
@@ -446,12 +430,12 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/what-chinese-players-want">
                 <div className="aspect-video overflow-hidden">
                   <Image 
-                    src="/blog/chinese-player-preferences.jpg" 
+                    src="/blog/chinese-player-preferences-1024w.webp" 
                     alt="What Chinese Players Want"
                     width={800}
                     height={450}

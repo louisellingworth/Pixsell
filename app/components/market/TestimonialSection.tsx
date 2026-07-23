@@ -73,7 +73,7 @@ export const TestimonialSection = ({ registerSectionRef }: SectionProps) => {
                     alt={`Avatar of ${testimonial.author}`}
                     width={48}
                     height={48}
-                    className="rounded-full border-2 border-purple-500/30"
+                    className="rounded-full border-2 border-white/20"
                   />
                 </div>
                 <div>

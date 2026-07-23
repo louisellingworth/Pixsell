@@ -21,12 +21,12 @@ const CARD_ACCENTS = [
     tag: 'Partnership',
   },
   {
-    border: 'rgba(236,72,153,0.35)',
-    glow: 'rgba(236,72,153,0.10)',
-    glowHover: 'rgba(236,72,153,0.20)',
-    numColor: 'rgba(236,72,153,0.06)',
-    iconBg: 'from-pink-500/20 to-rose-500/10',
-    iconColor: 'text-pink-400',
+    border: 'rgba(139,92,246,0.35)',
+    glow: 'rgba(139,92,246,0.10)',
+    glowHover: 'rgba(139,92,246,0.20)',
+    numColor: 'rgba(139,92,246,0.06)',
+    iconBg: 'from-violet-500/20 to-rose-500/10',
+    iconColor: 'text-violet-400',
     tag: 'Localisation',
   },
   {
@@ -121,7 +121,7 @@ export default function ServicesSection() {
         className="absolute right-0 top-1/3 w-[500px] h-[500px] pointer-events-none"
         aria-hidden="true"
         style={{
-          background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.08) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }}
       />
@@ -137,12 +137,11 @@ export default function ServicesSection() {
             Our{' '}
             <span
               style={{
-                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
+                backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
               }}
             >
               Services

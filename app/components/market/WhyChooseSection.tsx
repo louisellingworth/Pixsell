@@ -139,12 +139,11 @@ export default function WhyChooseSection() {
             Why Choose{' '}
             <span
               style={{
-                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
+                backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
               }}
             >
               EightSix Games
@@ -184,13 +183,13 @@ export default function WhyChooseSection() {
                     >
                       {option.highlight && (
                         <div className="absolute -top-px left-0 right-0 h-0.5"
-                          style={{ background: 'linear-gradient(90deg, transparent, #a855f7, #ec4899, transparent)' }}
+                          style={{ background: 'linear-gradient(90deg, transparent, #c4b5fd, #8b5cf6, transparent)' }}
                         />
                       )}
                       <div className="relative">
                         {option.highlight && (
                           <span className="absolute -top-2 right-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wide text-white"
-                            style={{ background: 'linear-gradient(135deg, #7c3aed, #ec4899)' }}
+                            style={{ background: 'linear-gradient(135deg, #7c3aed, #8b5cf6)' }}
                           >
                             <SparklesIcon className="w-2.5 h-2.5" />
                             Recommended
@@ -298,7 +297,7 @@ export default function WhyChooseSection() {
                   </div>
                   {option.highlight && (
                     <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-semibold text-white"
-                      style={{ background: 'linear-gradient(135deg, #7c3aed, #ec4899)' }}
+                      style={{ background: 'linear-gradient(135deg, #7c3aed, #8b5cf6)' }}
                     >
                       <SparklesIcon className="w-2.5 h-2.5" />
                       Recommended
@@ -336,7 +335,7 @@ export default function WhyChooseSection() {
           ref={ctaBannerRef}
           className="max-w-4xl mx-auto mb-24 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8"
           style={{
-            background: 'linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(236,72,153,0.08) 100%)',
+            background: 'linear-gradient(135deg, rgba(124,58,237,0.12) 0%, rgba(139,92,246,0.08) 100%)',
             boxShadow: '0 0 0 1px rgba(168,85,247,0.20), 0 20px 60px rgba(124,58,237,0.08)',
           }}
         >
@@ -344,7 +343,7 @@ export default function WhyChooseSection() {
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
               Ready to see what your game{' '}
               <span style={{
-                backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
+                backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -359,7 +358,7 @@ export default function WhyChooseSection() {
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-white text-sm whitespace-nowrap transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 hover:-translate-y-0.5"
-            style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%)' }}
           >
             Schedule a Call
             <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -374,7 +373,7 @@ export default function WhyChooseSection() {
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
             What you get<br className="hidden sm:block" />{' '}
             <span style={{
-              backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)',
+              backgroundImage: 'linear-gradient(135deg, #c4b5fd, #8b5cf6)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -417,12 +416,12 @@ export default function WhyChooseSection() {
           <div
             className="feature-card group md:col-span-5 relative rounded-2xl overflow-hidden p-8 flex flex-col justify-between min-h-[260px] transition-all duration-300 hover:-translate-y-0.5"
             style={{
-              background: 'linear-gradient(135deg, rgba(12,4,24,0.96) 0%, rgba(236,72,153,0.08) 100%)',
-              boxShadow: '0 0 0 1px rgba(236,72,153,0.15), 0 8px 32px rgba(0,0,0,0.3)',
+              background: 'linear-gradient(135deg, rgba(12,4,24,0.96) 0%, rgba(139,92,246,0.08) 100%)',
+              boxShadow: '0 0 0 1px rgba(139,92,246,0.15), 0 8px 32px rgba(0,0,0,0.3)',
             }}
           >
             <div>
-              <p className="text-xs font-medium tracking-widest uppercase text-pink-400/70 mb-5">Speed</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-violet-400/70 mb-5">Speed</p>
               <div className="text-7xl font-black text-white leading-none mb-3"
                 style={{
                   backgroundImage: 'linear-gradient(135deg, #ffffff, rgba(255,255,255,0.6))',

@@ -2,7 +2,6 @@
 
 import React, { useMemo } from 'react'
 import Link from 'next/link'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { motion } from 'framer-motion'
@@ -59,7 +58,7 @@ export default function HowToFindChineseCoPublisher() {
         '@type': 'Article',
         headline: 'How to Find a Chinese Co-Publisher for Your Game',
         description: 'Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game\'s success in the market.',
-        image: 'https://eightsixgames.com/blog/finding-chinese-publisher.jpg',
+        image: 'https://eightsixgames.com/blog/finding-chinese-publisher-optimized.webp',
         author: {
           '@type': 'Person',
           name: 'EightSix Team',
@@ -102,21 +101,6 @@ export default function HowToFindChineseCoPublisher() {
           }
         ]
       })}} />
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       {/* Background gradient */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black/50 to-black" />
@@ -149,7 +133,7 @@ export default function HowToFindChineseCoPublisher() {
             <span>{readingTime}</span>
           </motion.div>
           
-          <article className="prose prose-lg lg:prose-xl prose-invert prose-headings:font-bold prose-h2:text-2xl lg:prose-h2:text-3xl prose-h3:text-xl lg:prose-h3:text-2xl prose-h1:bg-gradient-to-r prose-h1:from-purple-300 prose-h1:to-pink-300 prose-h1:bg-clip-text prose-h1:text-transparent prose-p:text-gray-200 prose-strong:text-purple-300 prose-a:text-purple-400 prose-a:hover:text-purple-300 prose-a:transition-colors prose-a:duration-200 max-w-none">
+          <article className="prose prose-lg lg:prose-xl prose-invert prose-headings:font-bold prose-h2:text-2xl lg:prose-h2:text-3xl prose-h3:text-xl lg:prose-h3:text-2xl prose-h1:bg-gradient-to-r prose-h1:from-white prose-h1:to-gray-400 prose-h1:bg-clip-text prose-h1:text-transparent prose-p:text-gray-200 prose-strong:text-purple-300 prose-a:text-purple-400 prose-a:hover:text-purple-300 prose-a:transition-colors prose-a:duration-200 max-w-none">
             <motion.h1 
               className="text-4xl md:text-5xl lg:text-6xl mb-8"
               initial={{ opacity: 0, y: 20 }}
@@ -188,7 +172,7 @@ export default function HowToFindChineseCoPublisher() {
               <LazyLoad>
                 <motion.div variants={fadeIn}>
                   <h2 className="mt-12 mb-6 flex items-center">
-                    <span className="inline-block w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mr-4 text-white font-bold">1</span>
+                    <span className="inline-block w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center mr-4 text-white font-bold">1</span>
                     Research Publishers with Experience in Your Genre
                   </h2>
                 </motion.div>
@@ -225,7 +209,7 @@ export default function HowToFindChineseCoPublisher() {
               <LazyLoad>
                 <motion.div variants={fadeIn}>
                   <h2 className="mt-12 mb-6 flex items-center">
-                    <span className="inline-block w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mr-4 text-white font-bold">2</span>
+                    <span className="inline-block w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center mr-4 text-white font-bold">2</span>
                     Prepare a Strong Pitch (Localised for China)
                   </h2>
                 </motion.div>
@@ -270,7 +254,7 @@ export default function HowToFindChineseCoPublisher() {
               <LazyLoad>
                 <motion.div variants={fadeIn}>
                   <h2 className="mt-12 mb-6 flex items-center">
-                    <span className="inline-block w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mr-4 text-white font-bold">3</span>
+                    <span className="inline-block w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center mr-4 text-white font-bold">3</span>
                     Industry Networking: Attend Events and Engage Online Communities
                   </h2>
                   
@@ -329,7 +313,7 @@ export default function HowToFindChineseCoPublisher() {
               <LazyLoad>
                 <motion.div variants={fadeIn}>
                   <h2 className="mt-12 mb-6 flex items-center">
-                    <span className="inline-block w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center mr-4 text-white font-bold">4</span>
+                    <span className="inline-block w-10 h-10 rounded-full bg-violet-600 flex items-center justify-center mr-4 text-white font-bold">4</span>
                     Understand Publishing Contracts and Avoid Common Pitfalls
                   </h2>
                   
@@ -377,7 +361,7 @@ export default function HowToFindChineseCoPublisher() {
 
               <LazyLoad>
                 <motion.div variants={fadeIn}>
-                  <h2 className="mt-12 mb-6 text-3xl font-bold bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">EightSix Games: Simplifying Game Publisher Matchmaking</h2>
+                  <h2 className="mt-12 mb-6 text-3xl font-bold bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">EightSix Games: Simplifying Game Publisher Matchmaking</h2>
                   
                   <p>
                     If all of the above sounds like a lot to manage – from researching trustworthy partners, to networking across language barriers, to vetting contracts – that's because it is a lot. This is where EightSix Games comes in as a facilitator and guide to simplify the entire process of finding a Chinese co-publisher. Unlike a traditional publisher, EightSix Games acts as your partner in connecting you with the right publisher, rather than publishing the game ourselves. Here's how EightSix adds value to your journey:
@@ -388,28 +372,28 @@ export default function HowToFindChineseCoPublisher() {
               <LazyLoad>
                 <motion.div variants={fadeIn}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
-                    <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/20 p-6 rounded-xl border border-purple-500/30 transition-transform duration-300 hover:scale-[1.02]">
+                    <div className="bg-gradient-to-br from-purple-900/40 to-violet-900/20 p-6 rounded-xl border border-white/20 transition-transform duration-300 hover:scale-[1.02]">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Publisher Matchmaking</h3>
                       <p>
                         EightSix Games specialises in matching developers with vetted Chinese co-publishers, streamlining the hunt for the ideal partner. We maintain relationships with a network of reliable, pre-vetted publishers in China. This means we already know who has a good track record in various genres, who has fair contract practices, and who might be the best fit for your specific game.
                       </p>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/20 p-6 rounded-xl border border-purple-500/30 transition-transform duration-300 hover:scale-[1.02]">
+                    <div className="bg-gradient-to-br from-purple-900/40 to-violet-900/20 p-6 rounded-xl border border-white/20 transition-transform duration-300 hover:scale-[1.02]">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Industry Expertise & Guidance</h3>
                       <p>
                         Our team has deep knowledge of China's gaming landscape. We stay up-to-date on market trends, player preferences, and regulatory changes. When you partner with EightSix, you get more than just an introduction service – we guide you through the entire co-publishing process.
                       </p>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/20 p-6 rounded-xl border border-purple-500/30 transition-transform duration-300 hover:scale-[1.02]">
+                    <div className="bg-gradient-to-br from-purple-900/40 to-violet-900/20 p-6 rounded-xl border border-white/20 transition-transform duration-300 hover:scale-[1.02]">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Marketing and Launch Support</h3>
                       <p>
                         A big part of successful publishing is marketing. EightSix Games stays involved during your game's launch to coordinate with the co-publisher on marketing campaigns. We help tailor the marketing strategy to Chinese platforms (like Bilibili, Weibo, Douyin) and gamer communities, often working hand-in-hand with the publisher's marketing team.
                       </p>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-purple-900/40 to-pink-900/20 p-6 rounded-xl border border-purple-500/30 transition-transform duration-300 hover:scale-[1.02]">
+                    <div className="bg-gradient-to-br from-purple-900/40 to-violet-900/20 p-6 rounded-xl border border-white/20 transition-transform duration-300 hover:scale-[1.02]">
                       <h3 className="text-xl font-bold text-purple-300 mb-3">Negotiation and Fair Deals</h3>
                       <p>
                         Because we've seen many publishing deals, EightSix can help you evaluate and negotiate contract terms with your Chinese co-publisher. Our goal is to help you secure a fair deal – we aim for terms where both you and the publisher benefit, avoiding the lopsided arrangements we warned about earlier.
@@ -426,17 +410,17 @@ export default function HowToFindChineseCoPublisher() {
               {/* Call to Action Section */}
               <LazyLoad>
                 <motion.div variants={fadeIn}>
-                  <div className="my-16 bg-gradient-to-r from-purple-900/40 to-black p-8 sm:p-10 rounded-2xl border border-purple-500/30 shadow-lg relative overflow-hidden">
+                  <div className="my-16 bg-gradient-to-r from-purple-900/40 to-black p-8 sm:p-10 rounded-2xl border border-white/20 shadow-lg relative overflow-hidden">
                     {/* Animated sparkles in the background */}
                     <div className="absolute inset-0 overflow-hidden opacity-20">
                       <div className="absolute h-2 w-2 rounded-full bg-purple-300 top-[10%] left-[15%] animate-pulse" style={{animationDuration: '3s'}}></div>
-                      <div className="absolute h-3 w-3 rounded-full bg-pink-300 top-[20%] left-[80%] animate-pulse" style={{animationDuration: '4s'}}></div>
+                      <div className="absolute h-3 w-3 rounded-full bg-violet-300 top-[20%] left-[80%] animate-pulse" style={{animationDuration: '4s'}}></div>
                       <div className="absolute h-2 w-2 rounded-full bg-purple-300 top-[70%] left-[25%] animate-pulse" style={{animationDuration: '2.5s'}}></div>
-                      <div className="absolute h-2 w-2 rounded-full bg-pink-300 top-[60%] left-[75%] animate-pulse" style={{animationDuration: '3.5s'}}></div>
+                      <div className="absolute h-2 w-2 rounded-full bg-violet-300 top-[60%] left-[75%] animate-pulse" style={{animationDuration: '3.5s'}}></div>
                     </div>
 
                     <div className="relative z-10">
-                      <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">Ready to Launch Your Game in China?</h2>
+                      <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Ready to Launch Your Game in China?</h2>
                       
                       <p className="text-xl mb-8 max-w-3xl">
                         Let EightSix Games connect you with the perfect Chinese co-publisher. Our expert team will guide you through the entire process, from publisher matching to contract negotiation and launch support.
@@ -467,7 +451,7 @@ export default function HowToFindChineseCoPublisher() {
               <LazyLoad>
                 <motion.div variants={fadeIn}>
                   <div className="flex items-center mt-16 pt-8 border-t border-purple-800/30">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center text-white font-bold text-lg">
+                    <div className="w-12 h-12 rounded-full bg-violet-600 flex items-center justify-center text-white font-bold text-lg">
                       PG
                     </div>
                     <div className="ml-4">
@@ -484,11 +468,11 @@ export default function HowToFindChineseCoPublisher() {
                   <div className="mt-16 pt-8 border-t border-purple-800/30">
                     <h3 className="text-xl font-bold text-white mb-6">Related Articles</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <Link href="/blog" className="block p-5 rounded-xl bg-purple-900/20 border border-purple-500/30 hover:bg-purple-900/30 transition-colors duration-200">
+                      <Link href="/blog" className="block p-5 rounded-xl bg-purple-900/20 border border-white/20 hover:bg-purple-900/30 transition-colors duration-200">
                         <h4 className="font-bold text-purple-300 mb-2">Understanding China's Game Market Regulations</h4>
                         <p className="text-sm text-gray-300">Navigate the complex regulatory landscape for game publishing in mainland China.</p>
                       </Link>
-                      <Link href="/blog" className="block p-5 rounded-xl bg-purple-900/20 border border-purple-500/30 hover:bg-purple-900/30 transition-colors duration-200">
+                      <Link href="/blog" className="block p-5 rounded-xl bg-purple-900/20 border border-white/20 hover:bg-purple-900/30 transition-colors duration-200">
                         <h4 className="font-bold text-purple-300 mb-2">Localizing Your Game for Chinese Players</h4>
                         <p className="text-sm text-gray-300">Best practices for cultural and linguistic adaptation of your game for the Chinese market.</p>
                       </Link>
