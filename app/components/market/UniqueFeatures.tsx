@@ -34,7 +34,7 @@ const uniqueFeatures = [
   },
   {
     title: 'Seamless Market Entry',
-    description: 'From compliance to marketing and publisher negotiations, we handle everything — so you can focus on making great games.',
+    description: 'From compliance to marketing and publisher negotiations, we handle everything, so you can focus on making great games.',
     icon: 'shield',
     stats: {
       value: '0',
@@ -52,7 +52,7 @@ const uniqueFeatures = [
   },
   {
     title: 'No Risk, No Hassle',
-    description: 'We work on a transparent revenue-share model, aligning our success with yours. No hidden fees, no restrictive publishing contracts — just results.',
+    description: 'We work on a transparent revenue-share model, aligning our success with yours. No hidden fees, no restrictive publishing contracts, just results.',
     icon: 'check',
     stats: {
       value: '0%',
@@ -75,7 +75,7 @@ const FeatureIcon = ({ icon }: { icon: string }) => {
     case 'trophy':
       return <TrophyIcon className="w-8 h-8 text-purple-400" />
     case 'target':
-      return <AdjustmentsHorizontalIcon className="w-8 h-8 text-pink-400" />
+      return <AdjustmentsHorizontalIcon className="w-8 h-8 text-violet-400" />
     case 'shield':
       return <ShieldCheckIcon className="w-8 h-8 text-blue-400" />
     case 'chart':

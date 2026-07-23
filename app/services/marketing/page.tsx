@@ -1,10 +1,9 @@
 'use client'
 
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import FloatingConsultButton from '../../components/FloatingConsultButton'
 import { BackgroundBeams } from '../../components/ui/BackgroundBeams'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, type Variants } from 'framer-motion'
 import { 
   BanknotesIcon,
   DocumentMagnifyingGlassIcon,
@@ -22,8 +21,8 @@ import {
 } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
-const gradientText = "bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
-const cardStyle = "bg-gradient-to-br from-purple-900/30 to-pink-900/30 border border-purple-500/20 hover:border-purple-500/40 transition-colors backdrop-blur-sm"
+const gradientText = "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
+const cardStyle = "bg-gradient-to-br from-purple-900/30 to-pink-900/30 border border-white/10 hover:border-white/20 transition-colors backdrop-blur-sm"
 
 const marketStats = [
   {
@@ -138,7 +137,7 @@ const benefits = [
   }
 ]
 
-const fadeInUpVariant = {
+const fadeInUpVariant: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: { 
     opacity: 1, 
@@ -150,7 +149,7 @@ const fadeInUpVariant = {
   }
 }
 
-const staggerContainerVariant = {
+const staggerContainerVariant: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -168,21 +167,6 @@ export default function MarketingPage() {
 
   return (
     <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden relative">
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-32 relative z-10">
         {/* Hero Section */}
         <motion.div 
@@ -191,7 +175,7 @@ export default function MarketingPage() {
         >
           <div className="absolute inset-0 -z-10">
             <div className="absolute inset-0 bg-purple-500/10 blur-3xl rounded-full transform -translate-y-1/2"></div>
-            <div className="absolute inset-0 bg-pink-500/10 blur-3xl rounded-full transform translate-y-1/2"></div>
+            <div className="absolute inset-0 bg-violet-500/10 blur-3xl rounded-full transform translate-y-1/2"></div>
           </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -329,10 +313,10 @@ export default function MarketingPage() {
                 <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                 <div className={`rounded-xl p-8 h-full relative ${cardStyle}`}>
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mr-4 group-hover:bg-pink-500/20 transition-colors duration-300">
-                      <step.icon className="w-8 h-8 text-purple-400 group-hover:text-pink-400 transition-colors duration-300" />
+                    <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mr-4 group-hover:from-purple-600 hover:to-pink-600/20 transition-colors duration-300">
+                      <step.icon className="w-8 h-8 text-purple-400 group-hover:text-violet-400 transition-colors duration-300" />
                     </div>
-                    <span className="text-purple-400 group-hover:text-pink-400 transition-colors duration-300 font-bold text-sm tracking-widest uppercase">Phase {index + 1}</span>
+                    <span className="text-purple-400 group-hover:text-violet-400 transition-colors duration-300 font-bold text-sm tracking-widest uppercase">Phase {index + 1}</span>
                   </div>
                   <h3 className="text-xl font-semibold mb-4 text-white tracking-tight">
                     {step.title}
@@ -342,7 +326,7 @@ export default function MarketingPage() {
                   </p>
                   <ul className="space-y-2">
                     {step.keyPoints.map((point, idx) => (
-                      <li key={idx} className="text-sm text-purple-400/80 group-hover:text-pink-400/80 transition-colors duration-300 font-medium">
+                      <li key={idx} className="text-sm text-purple-400/80 group-hover:text-violet-400/80 transition-colors duration-300 font-medium">
                         • {point}
                       </li>
                     ))}
@@ -398,8 +382,8 @@ export default function MarketingPage() {
                         transition={{ delay: 0.5 + (pointIndex * 0.1) }}
                         className="flex items-start group"
                       >
-                        <span className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center mr-4 group-hover:bg-pink-500/20 transition-colors duration-300">
-                          <svg className="w-5 h-5 text-purple-400 group-hover:text-pink-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center mr-4 group-hover:from-purple-600 hover:to-pink-600/20 transition-colors duration-300">
+                          <svg className="w-5 h-5 text-purple-400 group-hover:text-violet-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         </span>
@@ -446,10 +430,10 @@ export default function MarketingPage() {
                 <div className={`rounded-xl p-8 h-full ${cardStyle} relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-gradient-to-b from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative">
-                    <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:bg-pink-500/20 transition-colors duration-300">
-                      <benefit.icon className="w-8 h-8 text-purple-400 group-hover:text-pink-400 transition-colors duration-300" />
+                    <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center mb-6 group-hover:from-purple-600 hover:to-pink-600/20 transition-colors duration-300">
+                      <benefit.icon className="w-8 h-8 text-purple-400 group-hover:text-violet-400 transition-colors duration-300" />
                     </div>
-                    <div className="text-sm text-purple-400 group-hover:text-pink-400 transition-colors duration-300 font-semibold mb-4">{benefit.stats}</div>
+                    <div className="text-sm text-purple-400 group-hover:text-violet-400 transition-colors duration-300 font-semibold mb-4">{benefit.stats}</div>
                     <h4 className="text-xl font-semibold text-white mb-4 tracking-tight">{benefit.title}</h4>
                     <p className="text-gray-400 leading-relaxed font-light">{benefit.description}</p>
                   </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, type Variants } from 'framer-motion'
 import Link from 'next/link'
 import { useRef } from 'react'
 import { 
@@ -28,7 +28,7 @@ export default function AboutContent() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.8, 0.6])
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -39,7 +39,7 @@ export default function AboutContent() {
     }
   }
 
-  const textRevealVariants = {
+  const textRevealVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -51,7 +51,7 @@ export default function AboutContent() {
     }
   }
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 40, scale: 0.95 },
     visible: {
       opacity: 1,
@@ -64,7 +64,7 @@ export default function AboutContent() {
     }
   }
 
-  const hoverVariants = {
+  const hoverVariants: Variants = {
     hover: {
       scale: 1.02,
       y: -8,
@@ -75,7 +75,7 @@ export default function AboutContent() {
     }
   }
 
-  const listItemVariants = {
+  const listItemVariants: Variants = {
     hidden: { opacity: 0, x: -20 },
     visible: {
       opacity: 1,
@@ -174,7 +174,7 @@ export default function AboutContent() {
       <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-black" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-black/50 to-black opacity-80" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-pink-900/20 via-black/50 to-black opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-violet-900/20 via-black/50 to-black opacity-60" />
         <motion.div 
           animate={{ 
             scale: [1, 1.2, 1],
@@ -185,7 +185,7 @@ export default function AboutContent() {
             repeat: Infinity,
             ease: "easeInOut" 
           }}
-          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-pink-500/20 rounded-full filter blur-[150px]" 
+          className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-violet-500/20 rounded-full filter blur-[150px]" 
         />
         <motion.div 
           animate={{ 
@@ -217,7 +217,7 @@ export default function AboutContent() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-pink-500/20 to-purple-500/20 rounded-full blur-2xl"
+                className="absolute -top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-gradient-to-br from-violet-500/20 to-purple-500/20 rounded-full blur-2xl"
               />
               
               <div className="relative">
@@ -228,7 +228,7 @@ export default function AboutContent() {
                   className="absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent"
                 />
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent inline-block">
+                  <span className="bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent inline-block">
                     About EightSix Games
                   </span>
                 </h1>
@@ -254,7 +254,7 @@ export default function AboutContent() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-1"
                 >
                   clarity
                 </motion.span>
@@ -263,7 +263,7 @@ export default function AboutContent() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-1"
                 >
                   confidence
                 </motion.span>
@@ -272,7 +272,7 @@ export default function AboutContent() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="inline-block font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent px-1"
+                  className="inline-block font-semibold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent px-1"
                 >
                   control
                 </motion.span>
@@ -287,7 +287,7 @@ export default function AboutContent() {
               >
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group hover:shadow-lg hover:shadow-violet-500/20 transition-all duration-300"
                 >
                   <motion.div
                     initial={{ x: "100%" }}
@@ -328,13 +328,13 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Our Story
                 </span>
               </motion.div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                 Built on Experience
               </h2>
               <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
@@ -349,7 +349,7 @@ export default function AboutContent() {
               transition={{ duration: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-white/10 hover:border-white/20 transition-all duration-300 relative">
                 <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
@@ -380,13 +380,13 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Our Philosophy
                 </span>
               </motion.div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                 Building Lasting Partnerships
               </h2>
               <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
@@ -404,20 +404,20 @@ export default function AboutContent() {
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   className="group relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative h-full">
+                  <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-10 border border-white/10 hover:border-white/20 transition-all duration-300 relative h-full">
                     <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="flex items-start gap-6">
                       <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className={`flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br ${item.color} p-4 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300`}
+                        className={`flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br ${item.color} p-4 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-violet-500/20 transition-all duration-300`}
                       >
                         <item.icon className="w-8 h-8 text-white" />
                       </motion.div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-pink-400 transition-colors duration-300">{item.title}</h3>
+                        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-violet-400 transition-colors duration-300">{item.title}</h3>
                         <p className="text-white/60 leading-relaxed">{item.description}</p>
                       </div>
                     </div>
@@ -435,13 +435,13 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   How We Help
                 </span>
               </motion.div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                 Comprehensive Support
               </h2>
               <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
@@ -459,22 +459,22 @@ export default function AboutContent() {
                   transition={{ duration: 0.8, delay: index * 0.2 }}
                   className="group relative"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
+                  <div className="absolute inset-0 bg-gradient-to-b from-violet-500/10 to-purple-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/10 hover:border-white/20 transition-all duration-300 relative">
                     <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     
                     <div className="flex flex-col lg:flex-row items-start gap-8">
                       <motion.div
                         whileHover={{ scale: 1.05 }}
-                        className={`flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br ${service.color} p-5 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-pink-500/20 transition-all duration-300`}
+                        className={`flex-shrink-0 w-20 h-20 rounded-2xl bg-gradient-to-br ${service.color} p-5 flex items-center justify-center group-hover:shadow-lg group-hover:shadow-violet-500/20 transition-all duration-300`}
                       >
                         <service.icon className="w-10 h-10 text-white" />
                       </motion.div>
                       <div className="flex-1">
                         <div className="mb-4">
-                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-pink-400 transition-colors duration-300">{service.title}</h3>
-                          <p className="text-pink-300 font-medium">{service.subtitle}</p>
+                          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-violet-400 transition-colors duration-300">{service.title}</h3>
+                          <p className="text-violet-300 font-medium">{service.subtitle}</p>
                         </div>
                         <p className="text-white/60 leading-relaxed mb-6 text-lg">{service.description}</p>
                         <div className="space-y-3">
@@ -505,13 +505,13 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Why Choose Us
                 </span>
               </motion.div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                 The EightSix Advantage
               </h2>
               <p className="text-white/50 text-lg leading-relaxed max-w-xl mx-auto">
@@ -526,7 +526,7 @@ export default function AboutContent() {
               transition={{ duration: 0.8 }}
               className="max-w-6xl mx-auto"
             >
-              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-white/10 hover:border-white/20 transition-all duration-300 relative">
                 <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
@@ -580,13 +580,13 @@ export default function AboutContent() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/20"
+                className="inline-block mb-4 px-6 py-2 rounded-full bg-gradient-to-r from-violet-500/10 to-purple-500/10 border border-violet-500/20"
               >
-                <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent font-medium">
+                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-medium">
                   Our Vision
                 </span>
               </motion.div>
-              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 bg-gradient-to-r from-violet-500 to-purple-500 bg-clip-text text-transparent">
                 Redefining Success
               </h2>
             </div>
@@ -598,7 +598,7 @@ export default function AboutContent() {
               transition={{ duration: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 relative">
+              <div className="bg-black/40 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-white/10 hover:border-white/20 transition-all duration-300 relative">
                 <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
@@ -606,7 +606,7 @@ export default function AboutContent() {
                   variants={textRevealVariants} 
                   className="text-xl sm:text-2xl leading-relaxed text-white/90 font-medium text-center"
                 >
-                  We want to redefine how Western developers succeed in China—no more vague deals, no more complicated partnerships. Just a clear, efficient, and fair way to expand your game's reach and revenue.
+                  We want to redefine how Western developers succeed in China: no more vague deals, no more complicated partnerships. Just a clear, efficient, and fair way to expand your game's reach and revenue.
                 </motion.p>
               </div>
             </motion.div>
@@ -621,7 +621,7 @@ export default function AboutContent() {
               transition={{ duration: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-gradient-to-br from-pink-900/30 via-black/50 to-purple-900/30 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300 relative overflow-hidden">
+              <div className="bg-gradient-to-br from-violet-900/30 via-black/50 to-purple-900/30 backdrop-blur-sm rounded-2xl p-12 lg:p-16 border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300 relative overflow-hidden">
                 <div className="absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-pink-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute inset-y-0 -right-px w-px bg-gradient-to-b from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
                 
@@ -630,7 +630,7 @@ export default function AboutContent() {
                     initial={{ scale: 0.9, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 mb-8"
+                    className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-violet-500 to-purple-500 mb-8"
                   >
                     <RocketLaunchIcon className="w-10 h-10 text-white" />
                   </motion.div>
@@ -647,7 +647,7 @@ export default function AboutContent() {
                   >
                     <Link
                       href="/contact"
-                      className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group hover:shadow-lg hover:shadow-pink-500/20 transition-all duration-300"
+                      className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-xl text-lg font-medium relative overflow-hidden group hover:shadow-lg hover:shadow-violet-500/20 transition-all duration-300"
                     >
                       <motion.div
                         initial={{ x: "100%" }}

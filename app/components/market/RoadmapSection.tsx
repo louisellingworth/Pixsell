@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const STEP_ACCENTS = [
   { border: 'border-l-violet-500/70', dot: 'from-violet-500 to-purple-600', glow: 'rgba(124,58,237,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
-  { border: 'border-l-pink-500/70',   dot: 'from-pink-500 to-rose-600',     glow: 'rgba(236,72,153,0.35)', tag: 'text-pink-400 bg-pink-500/10 border-pink-500/30' },
+  { border: 'border-l-violet-500/70',   dot: 'from-violet-500 to-rose-600',     glow: 'rgba(139,92,246,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
   { border: 'border-l-blue-500/70',   dot: 'from-blue-500 to-indigo-600',   glow: 'rgba(59,130,246,0.35)', tag: 'text-blue-400 bg-blue-500/10 border-blue-500/30' },
   { border: 'border-l-emerald-500/70',dot: 'from-emerald-500 to-green-600', glow: 'rgba(16,185,129,0.35)', tag: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30' },
   { border: 'border-l-amber-500/70',  dot: 'from-amber-500 to-orange-600',  glow: 'rgba(245,158,11,0.35)', tag: 'text-amber-400 bg-amber-500/10 border-amber-500/30' },
@@ -149,22 +149,21 @@ export default function RoadmapSection() {
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
+                backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
               }}
             >
               Roadmap
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            A structured path from initial assessment to full market launch — typically completed within 12 months.
+            A structured path from initial assessment to full market launch, typically completed within 12 months.
           </p>
         </div>
 
         {/* ── Timeline ────────────────────────────────────────────────── */}
         <div className="relative">
 
-          {/* SVG line — absolutely positioned, drawn via GSAP strokeDashoffset */}
+          {/* SVG line, absolutely positioned, drawn via GSAP strokeDashoffset */}
           <svg
             ref={svgRef}
             className="absolute left-[27px] sm:left-1/2 top-0 bottom-0 pointer-events-none"
@@ -175,7 +174,7 @@ export default function RoadmapSection() {
             <defs>
               <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%"   stopColor="rgba(168,85,247,0.8)" />
-                <stop offset="40%"  stopColor="rgba(236,72,153,0.7)" />
+                <stop offset="40%"  stopColor="rgba(139,92,246,0.7)" />
                 <stop offset="80%"  stopColor="rgba(168,85,247,0.6)" />
                 <stop offset="100%" stopColor="rgba(59,130,246,0.4)" />
               </linearGradient>
@@ -243,7 +242,7 @@ export default function RoadmapSection() {
                     </div>
                   </div>
 
-                  {/* ── Centre dot — absolute on mobile, part of flow on desktop ── */}
+                  {/* ── Centre dot, absolute on mobile, part of flow on desktop ── */}
                   <div
                     className={`timeline-dot absolute left-0 sm:static flex-shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br ${accent.dot} flex items-center justify-center z-10 shadow-lg mt-4 sm:mt-0 sm:self-center`}
                     style={{

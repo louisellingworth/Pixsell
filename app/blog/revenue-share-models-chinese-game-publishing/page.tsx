@@ -2,7 +2,6 @@
 
 import React, { useMemo } from 'react'
 import Link from 'next/link'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import { calculateReadingTime, formatReadingTime } from '../../utils/readingTime'
@@ -37,19 +36,19 @@ export default function RevenueShareModelsChineseGamePublishing() {
       slug: 'co-publishing-vs-self-publishing-china',
       title: 'Co-Publishing vs Self-Publishing in China – Which is Right for You?',
       excerpt: 'Compare the benefits and challenges of co-publishing versus self-publishing your game in China to make the best choice for your project.',
-      imageUrl: '/blog/publishing-models-china.jpg',
+      imageUrl: '/blog/publishing-models-china.webp',
     },
     {
       slug: 'how-to-find-chinese-co-publisher',
       title: 'How to Find a Chinese Co-Publisher for Your Game',
       excerpt: 'Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game\'s success in the market.',
-      imageUrl: '/blog/finding-chinese-publisher.jpg',
+      imageUrl: '/blog/finding-chinese-publisher-optimized.webp',
     },
     {
       slug: 'what-chinese-players-want',
       title: 'What Do Chinese Players Want? Adapting Your Game for the Chinese Market',
       excerpt: 'Gain insights into Chinese player preferences and learn how to adapt your game to meet their expectations without compromising your vision.',
-      imageUrl: '/blog/chinese-player-preferences.jpg',
+      imageUrl: '/blog/chinese-player-preferences-1024w.webp',
     }
   ];
   
@@ -115,21 +114,6 @@ export default function RevenueShareModelsChineseGamePublishing() {
           }
         ]
       })}} />
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       {/* Static background gradient similar to MarketContent */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black/50 to-black" />
@@ -158,7 +142,7 @@ export default function RevenueShareModelsChineseGamePublishing() {
             
             {/* Category */}
             <div className="mb-4">
-              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+              <span className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-purple-500/20 text-purple-300 border border-white/20">
                 Business
               </span>
             </div>
@@ -176,7 +160,7 @@ export default function RevenueShareModelsChineseGamePublishing() {
             </div>
             
             {/* Hero image */}
-            <div className="rounded-xl overflow-hidden shadow-2xl shadow-purple-900/20 mb-12 border border-purple-500/20">
+            <div className="rounded-xl overflow-hidden shadow-2xl shadow-purple-900/20 mb-12 border border-white/10">
               <Image
                 src="/blog/revenue-share-china.jpg"
                 alt="Hero image for Revenue Share Models in Chinese Game Publishing blog post"
@@ -243,7 +227,7 @@ export default function RevenueShareModelsChineseGamePublishing() {
                 While revenue-share models provide an accessible entry point to the Chinese market with limited upfront investment requirements, they come with significant potential pitfalls that developers must recognize and navigate carefully. The most immediate concern involves unfavorable revenue splits that dramatically reduce developers' earnings potential even for successful titles. With some Chinese publishers claiming 40% or more of revenue on top of platform fees, developers may receive less than half of each sale, making profitability challenging even for games with strong performance metrics. This financial squeeze becomes particularly problematic when combined with the substantial development and operational costs required to properly localize and maintain games for the Chinese audience.
               </p>
               
-              <div className="bg-purple-900/20 p-6 rounded-xl border border-purple-500/20 my-8">
+              <div className="bg-purple-900/20 p-6 rounded-xl border border-white/10 my-8">
                 <h4 className="text-xl font-semibold text-purple-300 mb-3">Key Challenges in Revenue Share Arrangements</h4>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Unfavorable revenue splits (sometimes as low as 5-10% for developers)</li>
@@ -372,7 +356,7 @@ export default function RevenueShareModelsChineseGamePublishing() {
                 <Link 
                   href={`/blog/${post.slug}`} 
                   key={index}
-                  className="group bg-white/5 rounded-xl overflow-hidden border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 flex flex-col h-full"
+                  className="group bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
@@ -397,12 +381,12 @@ export default function RevenueShareModelsChineseGamePublishing() {
       {/* CTA Section */}
       <section className="relative pb-20">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px]">
-          <div className="max-w-3xl mx-auto bg-gradient-to-br from-purple-900/40 to-black/40 rounded-2xl p-8 md:p-12 border border-purple-500/20">
+          <div className="max-w-3xl mx-auto bg-gradient-to-br from-purple-900/40 to-black/40 rounded-2xl p-8 md:p-12 border border-white/10">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to enter the Chinese market?</h2>
             <p className="text-lg mb-8">Our experts can help you navigate revenue share negotiations and find the right publishing partner for your game in China.</p>
             <Link 
               href="/contact" 
-              className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               Contact Us
             </Link>

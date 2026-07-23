@@ -21,7 +21,6 @@ import {
   ChevronDownIcon,
 } from '@heroicons/react/24/outline'
 import { mobileProcessSteps } from '@/lib/market-data'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import FloatingConsultButton from '../../components/FloatingConsultButton'
 
@@ -29,7 +28,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const STEP_ACCENTS = [
   { border: 'border-l-violet-500/70', dot: 'from-violet-500 to-purple-600', glow: 'rgba(124,58,237,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
-  { border: 'border-l-pink-500/70',   dot: 'from-pink-500 to-rose-600',     glow: 'rgba(236,72,153,0.35)', tag: 'text-pink-400 bg-pink-500/10 border-pink-500/30' },
+  { border: 'border-l-violet-500/70',   dot: 'from-violet-500 to-rose-600',     glow: 'rgba(139,92,246,0.35)', tag: 'text-violet-400 bg-violet-500/10 border-violet-500/30' },
   { border: 'border-l-blue-500/70',   dot: 'from-blue-500 to-indigo-600',   glow: 'rgba(59,130,246,0.35)', tag: 'text-blue-400 bg-blue-500/10 border-blue-500/30' },
   { border: 'border-l-emerald-500/70',dot: 'from-emerald-500 to-green-600', glow: 'rgba(16,185,129,0.35)', tag: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/30' },
   { border: 'border-l-amber-500/70',  dot: 'from-amber-500 to-orange-600',  glow: 'rgba(245,158,11,0.35)', tag: 'text-amber-400 bg-amber-500/10 border-amber-500/30' },
@@ -38,7 +37,7 @@ const STEP_ACCENTS = [
 
 const STATS = [
   { value: '700M+', label: 'Mobile Gamers in China', sub: 'The largest mobile gaming market by active player count', color: '#a855f7' },
-  { value: '$28B', label: 'Annual Mobile Revenue', sub: 'In-game advertising and IAP, growing year on year', color: '#ec4899' },
+  { value: '$28B', label: 'Annual Mobile Revenue', sub: 'In-game advertising and IAP, growing year on year', color: '#8b5cf6' },
   { value: '60%', label: 'of CN Gaming Revenue', sub: 'Mobile accounts for the majority of China\'s gaming market', color: '#6366f1' },
 ]
 
@@ -47,7 +46,7 @@ const WHAT_WE_DELIVER = [
     icon: MagnifyingGlassIcon,
     step: '01',
     title: 'Game Assessment',
-    body: 'We review your genre, existing metrics, and monetisation model to assess how your game is likely to perform in the CN mobile market — and give you an honest read before any introductions are made.',
+    body: 'We review your genre, existing metrics, and monetisation model to assess how your game is likely to perform in the CN mobile market, and give you an honest read before any introductions are made.',
     outcome: 'You know where you stand before any commitment.',
     accentColor: '#a855f7',
   },
@@ -55,15 +54,15 @@ const WHAT_WE_DELIVER = [
     icon: UserGroupIcon,
     step: '02',
     title: 'Publisher Introductions',
-    body: 'We tap our established CN publisher network to source multiple candidates suited to your game\'s genre and metrics. You receive competing offers — not a single take-it-or-leave-it option.',
+    body: 'We tap our established CN publisher network to source multiple candidates suited to your game\'s genre and metrics. You receive competing offers, not a single take-it-or-leave-it option.',
     outcome: 'Multiple competing offers to evaluate side by side.',
-    accentColor: '#ec4899',
+    accentColor: '#8b5cf6',
   },
   {
     icon: DocumentCheckIcon,
     step: '03',
     title: 'Deal Negotiation',
-    body: 'We advise on every material term — revenue share structure, source build usage scope, IP reversion clauses, and reporting obligations — so you sign from a position of full understanding.',
+    body: 'We advise on every material term, revenue share structure, source build usage scope, IP reversion clauses, and reporting obligations, so you sign from a position of full understanding.',
     outcome: 'Agreement terms that protect your IP and your earnings.',
     accentColor: '#6366f1',
   },
@@ -87,8 +86,8 @@ const GENRE_FIT = [
 
 const FAQS = [
   { q: 'Do I lose my IP?', a: 'No. You retain full ownership throughout. We ensure the publisher agreement clearly scopes what the source build can be used for, with IP reversion clauses and data handling obligations built in.' },
-  { q: 'Why does the publisher need my source code?', a: 'To localise the game for simplified Chinese, integrate CN-specific SDKs (payment, analytics, anti-addiction compliance), and handle platform submission for WeChat Mini Games and Android stores. This is standard practice across CN mobile publishing — not specific to any one deal.' },
-  { q: 'How does the revenue model work exactly?', a: 'The publisher monetises your game through in-game advertising on CN platforms. They pay you 50% of that ad revenue on agreed reporting cycles. There are no upfront costs to you — the publisher funds all localisation and UA.' },
+  { q: 'Why does the publisher need my source code?', a: 'To localise the game for simplified Chinese, integrate CN-specific SDKs (payment, analytics, anti-addiction compliance), and handle platform submission for WeChat Mini Games and Android stores. This is standard practice across CN mobile publishing, not specific to any one deal.' },
+  { q: 'How does the revenue model work exactly?', a: 'The publisher monetises your game through in-game advertising on CN platforms. They pay you 50% of that ad revenue on agreed reporting cycles. There are no upfront costs to you, the publisher funds all localisation and UA.' },
   { q: 'How do I know the publisher is reporting revenue accurately?', a: 'EightSix tracks performance data independently and cross-references publisher reports. If there are discrepancies or communication gaps, we escalate on your behalf. You deal with us, not the publisher directly.' },
   { q: 'How many publisher offers will I receive?', a: 'We aim to generate multiple competing offers so you can evaluate terms side by side. The number depends on your genre and metrics, but we never present you with a single take-it-or-leave-it option.' },
   { q: 'What happens if the publisher underperforms post-launch?', a: 'We monitor marketing spend commitments and performance KPIs. If the publisher isn\'t delivering, we hold them accountable and can advise on whether renegotiation or exit is the right path.' },
@@ -208,8 +207,6 @@ export default function MobilePublishingPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navigation />
-
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-28 overflow-hidden">
         {/* Glow */}
@@ -217,7 +214,7 @@ export default function MobilePublishingPage() {
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none"
           aria-hidden="true"
           style={{
-            background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.14) 0%, rgba(124,58,237,0.07) 50%, transparent 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.14) 0%, rgba(124,58,237,0.07) 50%, transparent 70%)',
             filter: 'blur(80px)',
           }}
         />
@@ -235,20 +232,19 @@ export default function MobilePublishingPage() {
             className="text-center"
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/25 bg-pink-500/8 text-pink-300 text-xs font-medium tracking-widest uppercase mb-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-300 text-xs font-medium tracking-widest uppercase mb-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
               Mobile Publishing in China
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.04] tracking-tight text-white mb-7">
               Access China&apos;s{' '}
               <span style={{
-                backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7, #ec4899)',
+                backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7, #ec4899)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundSize: '200% 200%',
-                animation: 'premiumGradient 3s ease-in-out infinite',
+                backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
               }}>
                 700M mobile gamers
               </span>
@@ -270,7 +266,7 @@ export default function MobilePublishingPage() {
                 'Publisher does the technical work',
               ].map((item, i) => (
                 <span key={i} className="flex items-center gap-2 text-sm text-gray-400">
-                  <svg className="w-3.5 h-3.5 text-pink-500/70 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 text-violet-500/70 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z" />
                   </svg>
                   {item}
@@ -281,8 +277,8 @@ export default function MobilePublishingPage() {
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center gap-2 px-9 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-0.5"
-                style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #7c3aed 100%)' }}
+                className="group relative inline-flex items-center gap-2 px-9 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/25 hover:-translate-y-0.5"
+                style={{ background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #7c3aed 100%)' }}
               >
                 <span
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
@@ -302,7 +298,7 @@ export default function MobilePublishingPage() {
         </div>
       </section>
 
-      {/* ── Market Stats — open row, no card boxes ─────────────────────── */}
+      {/* ── Market Stats, open row, no card boxes ─────────────────────── */}
       <section className="relative py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div
@@ -321,7 +317,7 @@ export default function MobilePublishingPage() {
               >
                 <div
                   className="text-5xl sm:text-6xl font-black leading-none mb-3 tabular-nums"
-                  style={{ backgroundImage: `linear-gradient(135deg, ${stat.color}, rgba(255,255,255,0.55))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                  style={{ backgroundImage: `linear-gradient(135deg, ${stat.color}, rgba(255,255,255,0.55))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}
                 >
                   {stat.value}
                 </div>
@@ -338,7 +334,7 @@ export default function MobilePublishingPage() {
         <div
           className="absolute right-0 top-0 w-[600px] h-[500px] pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse at top right, rgba(236,72,153,0.07) 0%, transparent 65%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse at top right, rgba(139,92,246,0.07) 0%, transparent 65%)', filter: 'blur(80px)' }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -349,15 +345,15 @@ export default function MobilePublishingPage() {
               transition={{ duration: 1.5, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
             >
-              <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Revenue Model</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Revenue Model</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
                 The publisher does the work.<br />
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                   You earn 50% of ad revenue.
                 </span>
               </h2>
               <p className="text-gray-400 text-base leading-relaxed mb-5">
-                Chinese publishers adapt your game for WeChat Mini Games and other CN platforms at their own cost, then monetise through in-game advertising. You receive 50% of that revenue on agreed reporting cycles — no capital outlay required.
+                Chinese publishers adapt your game for WeChat Mini Games and other CN platforms at their own cost, then monetise through in-game advertising. You receive 50% of that revenue on agreed reporting cycles, no capital outlay required.
               </p>
               <p className="text-gray-500 text-sm leading-relaxed mb-7">
                 EightSix&apos;s role is to ensure you receive multiple competing offers, that deal terms genuinely protect your interests, and that the publisher pays out correctly after launch.
@@ -365,14 +361,14 @@ export default function MobilePublishingPage() {
               <div className="flex flex-col gap-2.5">
                 {['No upfront investment', 'Publisher funds all localisation & UA', 'You approve before anything is signed'].map((item, i) => (
                   <div key={i} className="flex items-center gap-2.5 text-sm text-gray-300">
-                    <CheckCircleIcon className="w-4 h-4 text-pink-400 flex-shrink-0" />
+                    <CheckCircleIcon className="w-4 h-4 text-violet-400 flex-shrink-0" />
                     {item}
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Right: key numbers — no boxes, just typography */}
+            {/* Right: key numbers, no boxes, just typography */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -381,7 +377,7 @@ export default function MobilePublishingPage() {
               className="flex flex-col gap-0"
             >
               {[
-                { label: 'Your revenue share', value: '50%', color: '#ec4899', sub: 'of all in-game ad revenue' },
+                { label: 'Your revenue share', value: '50%', color: '#8b5cf6', sub: 'of all in-game ad revenue' },
                 { label: 'Upfront cost to you', value: '$0', color: '#a855f7', sub: 'publisher funds everything' },
                 { label: 'Publisher options', value: 'Multiple', color: '#6366f1', sub: 'competing offers, not one' },
                 { label: 'IP ownership', value: 'Yours', color: '#10b981', sub: 'always and entirely' },
@@ -397,7 +393,7 @@ export default function MobilePublishingPage() {
                   </div>
                   <span
                     className="text-3xl font-black tabular-nums"
-                    style={{ backgroundImage: `linear-gradient(135deg, ${item.color}, rgba(255,255,255,0.6))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+                    style={{ backgroundImage: `linear-gradient(135deg, ${item.color}, rgba(255,255,255,0.6))`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}
                   >
                     {item.value}
                   </span>
@@ -422,13 +418,13 @@ export default function MobilePublishingPage() {
               <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Scope of Work</p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                 What EightSix{' '}
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                   delivers
                 </span>
               </h2>
             </div>
             <p className="text-gray-500 md:max-w-xs text-sm leading-relaxed md:text-right">
-              Your advocate and deal architect — ensuring you don&apos;t enter China&apos;s mobile market blind, under-informed, or alone.
+              Your advocate and deal architect, ensuring you don&apos;t enter China&apos;s mobile market blind, under-informed, or alone.
             </p>
           </div>
 
@@ -477,7 +473,7 @@ export default function MobilePublishingPage() {
           >
             <BanknotesIcon className="w-4 h-4 text-emerald-500/50 flex-shrink-0" />
             <p className="text-gray-600 text-sm">
-              Performance-based — EightSix earns when you earn. No retainer, no upfront fee.
+              Performance-based, EightSix earns when you earn. No retainer, no upfront fee.
             </p>
           </motion.div>
         </div>
@@ -488,7 +484,7 @@ export default function MobilePublishingPage() {
         <div
           className="absolute right-0 top-1/4 w-[500px] h-[400px] pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse at center, rgba(236,72,153,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
+          style={{ background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
 
@@ -501,10 +497,10 @@ export default function MobilePublishingPage() {
               viewport={{ once: true, margin: '-60px' }}
               className="md:sticky md:top-28"
             >
-              <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Game Fit</p>
+              <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Game Fit</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5 leading-tight">
                 Is your game a{' '}
-                <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span style={{ backgroundImage: 'linear-gradient(135deg, #8b5cf6, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                   good fit?
                 </span>
               </h2>
@@ -569,15 +565,15 @@ export default function MobilePublishingPage() {
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-20">
-            <p className="text-xs font-medium tracking-widest uppercase text-pink-400 mb-5">Timeline</p>
+            <p className="text-xs font-medium tracking-widest uppercase text-violet-400 mb-5">Timeline</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
               From introduction to{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                 live revenue
               </span>
             </h2>
             <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed">
-              Defined responsibilities at every stage — no ambiguity about who does what or when you get paid.
+              Defined responsibilities at every stage, no ambiguity about who does what or when you get paid.
             </p>
           </div>
 
@@ -590,9 +586,9 @@ export default function MobilePublishingPage() {
             >
               <defs>
                 <linearGradient id="mobileLineGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%"   stopColor="rgba(236,72,153,0.8)" />
+                  <stop offset="0%"   stopColor="rgba(139,92,246,0.8)" />
                   <stop offset="40%"  stopColor="rgba(168,85,247,0.7)" />
-                  <stop offset="80%"  stopColor="rgba(236,72,153,0.6)" />
+                  <stop offset="80%"  stopColor="rgba(139,92,246,0.6)" />
                   <stop offset="100%" stopColor="rgba(99,102,241,0.4)" />
                 </linearGradient>
               </defs>
@@ -665,12 +661,12 @@ export default function MobilePublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">What to Know</p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
               Two things developers ask{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                 before signing
               </span>
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-              Here&apos;s exactly how both work — no vague reassurances.
+              Here&apos;s exactly how both work, no vague reassurances.
             </p>
           </div>
 
@@ -689,10 +685,10 @@ export default function MobilePublishingPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Source Code Access</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Chinese publishers need access to your source build to localise the game, integrate CN-specific SDKs, and handle platform submission. This is standard across the CN mobile ecosystem — not unique to any one deal.
+                Chinese publishers need access to your source build to localise the game, integrate CN-specific SDKs, and handle platform submission. This is standard across the CN mobile ecosystem, not unique to any one deal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                EightSix advises on deal terms so source build usage is clearly scoped — what it can be used for, IP reversion clauses, and data handling obligations. You retain full ownership and never sign anything that compromises that.
+                EightSix advises on deal terms so source build usage is clearly scoped, what it can be used for, IP reversion clauses, and data handling obligations. You retain full ownership and never sign anything that compromises that.
               </p>
               <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-purple-300 text-xs font-semibold">
                 <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
@@ -706,20 +702,20 @@ export default function MobilePublishingPage() {
               transition={{ duration: 1.5, ease: 'easeOut' }}
               viewport={{ once: true, margin: '-60px' }}
               className="relative rounded-2xl p-8"
-              style={{ background: 'linear-gradient(135deg, rgba(236,72,153,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(236,72,153,0.13)' }}
+              style={{ background: 'linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(12,4,24,0.97) 100%)', boxShadow: '0 0 0 1px rgba(139,92,246,0.13)' }}
             >
               <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-6"
-                style={{ background: 'rgba(236,72,153,0.07)', border: '1px solid rgba(236,72,153,0.18)' }}>
-                <UserGroupIcon className="w-5 h-5 text-pink-400" />
+                style={{ background: 'rgba(139,92,246,0.07)', border: '1px solid rgba(139,92,246,0.18)' }}>
+                <UserGroupIcon className="w-5 h-5 text-violet-400" />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Publisher Accountability</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Once matched, all technical and operational work is the publisher&apos;s responsibility — localisation, platform integration, UA, and ad monetisation. Your time commitment after sign-off is minimal.
+                Once matched, all technical and operational work is the publisher&apos;s responsibility, localisation, platform integration, UA, and ad monetisation. Your time commitment after sign-off is minimal.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
                 EightSix monitors marketing commitments, tracks performance data, and ensures the publisher pays out correctly. If there are issues, we escalate. You deal with us, not the Chinese publisher directly.
               </p>
-              <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-pink-300 text-xs font-semibold">
+              <div className="mt-6 pt-5 border-t border-white/5 flex items-center gap-2 text-violet-300 text-xs font-semibold">
                 <CheckCircleIcon className="w-3.5 h-3.5 flex-shrink-0" />
                 You deal with us, not the publisher directly
               </div>
@@ -728,7 +724,7 @@ export default function MobilePublishingPage() {
         </div>
       </section>
 
-      {/* ── FAQ — accordion ────────────────────────────────────────────── */}
+      {/* ── FAQ, accordion ────────────────────────────────────────────── */}
       <section className="relative py-24">
         <div
           className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] pointer-events-none"
@@ -740,7 +736,7 @@ export default function MobilePublishingPage() {
             <p className="text-xs font-medium tracking-widest uppercase text-purple-400 mb-5">Due Diligence</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
               Questions we get{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                 from every developer
               </span>
             </h2>
@@ -762,7 +758,7 @@ export default function MobilePublishingPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           aria-hidden="true"
-          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(236,72,153,0.09) 0%, rgba(124,58,237,0.05) 40%, transparent 70%)', filter: 'blur(60px)' }}
+          style={{ background: 'radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139,92,246,0.09) 0%, rgba(124,58,237,0.05) 40%, transparent 70%)', filter: 'blur(60px)' }}
         />
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black to-transparent pointer-events-none" />
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none" />
@@ -774,14 +770,14 @@ export default function MobilePublishingPage() {
             transition={{ duration: 1.7, ease: 'easeOut' }}
             viewport={{ once: true, margin: '-60px' }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-pink-500/25 bg-pink-500/8 text-pink-300 text-xs font-medium tracking-widest uppercase mb-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-              Free consultation — no obligation
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-300 text-xs font-medium tracking-widest uppercase mb-10">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+              Free consultation, no obligation
             </div>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.04] text-white mb-6">
               Find out what your game{' '}
-              <span style={{ backgroundImage: 'linear-gradient(135deg, #ec4899, #a855f7)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
+              <span style={{ backgroundImage: 'linear-gradient(135deg, #a855f7, #ec4899)', backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite' }}>
                 could earn in China.
               </span>
             </h2>
@@ -792,8 +788,8 @@ export default function MobilePublishingPage() {
 
             <Link
               href="/contact"
-              className="group relative inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-0.5 mb-10"
-              style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #7c3aed 100%)' }}
+              className="group relative inline-flex items-center gap-2 px-10 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-violet-500/25 hover:-translate-y-0.5 mb-10"
+              style={{ background: 'linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #7c3aed 100%)' }}
             >
               <span
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"

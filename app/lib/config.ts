@@ -37,9 +37,9 @@ export const siteConfig = {
     'Chinese player preferences',
     'game revenue China'
   ],
-  // Google Analytics
+  // Google Analytics — leave measurementId empty to disable GA entirely
   analytics: {
-    measurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'GA_MEASUREMENT_ID',
+    measurementId: process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || '',
     enabled: process.env.NEXT_PUBLIC_ENABLE_ANALYTICS !== 'false',
   },
 }

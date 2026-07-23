@@ -21,7 +21,7 @@ export default function NotFound() {
           {/* 404 Error */}
           <div className="mb-8">
             <h1 className="text-8xl md:text-9xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 404
               </span>
             </h1>
@@ -36,7 +36,7 @@ export default function NotFound() {
           <div className="mb-12">
             <Link 
               href="/" 
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:opacity-90 transition-all font-semibold text-lg mb-6"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-all font-semibold text-lg mb-6"
             >
               Return to Homepage
             </Link>

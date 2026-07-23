@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
 gsap.registerPlugin(ScrollTrigger)
 
 const STATS = [
@@ -55,7 +54,7 @@ export default function HeroSection() {
         })
       }
 
-      // ── One master timeline — everything flows together ───────────
+      // ── One master timeline, everything flows together ───────────
       // starts 0.7s after page load (words are mid-reveal by then)
       const tl = gsap.timeline({ delay: 0.7 })
       tl.from(subRef.current, {
@@ -198,7 +197,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.0, ease: 'easeOut' }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-purple-300 text-xs sm:text-sm font-medium tracking-widest uppercase"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-purple-500/10 text-purple-300 text-xs sm:text-sm font-medium tracking-widest uppercase"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
               PC & Mobile Publishing in China
@@ -216,7 +215,7 @@ export default function HeroSection() {
                 </span>
               ))}
               <br />
-              {/* Line 2: "in China" — "in" white, "China" gradient */}
+              {/* Line 2: "in China", "in" white, "China" gradient */}
               {[
                 { text: 'in', gradient: false },
                 { text: 'China', gradient: true },
@@ -228,12 +227,11 @@ export default function HeroSection() {
                       item.gradient
                         ? {
                             backgroundImage:
-                              'linear-gradient(135deg, #a855f7, #ec4899, #7c3aed)',
+                              'linear-gradient(135deg, #a855f7, #ec4899)',
                             backgroundClip: 'text',
                             WebkitBackgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
-                            backgroundSize: '200% 200%',
-                            animation: 'premiumGradient 3s ease-in-out infinite',
+                            backgroundSize: '200% 200%', animation: 'premiumGradient 3s ease-in-out infinite',
                           }
                         : undefined
                     }
@@ -249,7 +247,7 @@ export default function HeroSection() {
               ref={subRef}
               className="max-w-xl text-base sm:text-lg text-gray-400 leading-relaxed"
             >
-              We help Western developers launch their games in China — finding the right publisher,
+              We help Western developers launch their games in China, finding the right publisher,
               negotiating your deal, and monitoring revenue after launch.
               No upfront cost. No IP loss.
             </p>
@@ -258,11 +256,7 @@ export default function HeroSection() {
             <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-white overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/30 hover:-translate-y-0.5"
-                style={{
-                  background:
-                    'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%)',
-                }}
+                className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-black bg-white hover:bg-gray-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-white/10 hover:-translate-y-0.5"
                 role="button"
                 aria-label="Book a free consultation"
               >
@@ -289,7 +283,7 @@ export default function HeroSection() {
 
               <Link
                 href="/services"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-gray-300 border border-white/10 hover:border-purple-500/40 hover:text-white hover:bg-white/5 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base text-gray-300 border border-white/10 hover:border-white/20 hover:text-white hover:bg-white/5 transition-all duration-300"
                 role="button"
                 aria-label="See our services"
               >

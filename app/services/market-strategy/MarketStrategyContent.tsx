@@ -15,7 +15,7 @@ export default function MarketStrategyContent() {
       </p>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div className="bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-purple-500/20">
+        <div className="bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-white/10">
           <h2 className="text-2xl font-bold text-white mb-4">Our Approach</h2>
           <p className="text-gray-300">
             We provide comprehensive market analysis and strategic planning to maximize your game's 
@@ -23,7 +23,7 @@ export default function MarketStrategyContent() {
           </p>
         </div>
         
-        <div className="bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-purple-500/20">
+        <div className="bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-white/10">
           <h2 className="text-2xl font-bold text-white mb-4">Benefits</h2>
           <ul className="text-gray-300 space-y-2">
             <li>• Expert market insights</li>
@@ -35,7 +35,7 @@ export default function MarketStrategyContent() {
       </div>
       
       <div className="mt-16">
-        <Link href="/contact" className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium px-8 py-3 rounded-lg">
+        <Link href="/contact" className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium px-8 py-3 rounded-lg">
           Contact Us
         </Link>
       </div>

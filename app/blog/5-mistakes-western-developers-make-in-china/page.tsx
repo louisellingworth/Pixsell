@@ -2,7 +2,6 @@
 
 import React, { useMemo } from 'react'
 import Link from 'next/link'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import { calculateReadingTime, formatReadingTime } from '../../utils/readingTime'
@@ -35,7 +34,7 @@ export default function MistakesWesternDevelopersMake() {
       slug: 'what-chinese-players-want',
       title: 'What Do Chinese Players Want? Adapting Your Game for the Chinese Market',
       excerpt: 'Gain insights into Chinese player preferences and learn how to adapt your game to meet their expectations without compromising your vision.',
-      imageUrl: '/blog/chinese-player-preferences.jpg',
+      imageUrl: '/blog/chinese-player-preferences-1024w.webp',
     },
     {
       slug: 'revenue-share-models-chinese-game-publishing',
@@ -47,7 +46,7 @@ export default function MistakesWesternDevelopersMake() {
       slug: 'how-to-find-chinese-co-publisher',
       title: 'How to Find a Chinese Co-Publisher for Your Game',
       excerpt: 'Learn how to identify, evaluate, and partner with the right Chinese co-publisher to maximize your game\'s success in the market.',
-      imageUrl: '/blog/finding-chinese-publisher.jpg',
+      imageUrl: '/blog/finding-chinese-publisher-optimized.webp',
     }
   ];
   
@@ -68,7 +67,7 @@ export default function MistakesWesternDevelopersMake() {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: '5 Mistakes Western Developers Make in China',
-        description: 'The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them.',
+        description: 'The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China, and how to avoid them.',
         image: 'https://eightsixgames.com/blog/mistakes-hero.jpg',
         author: {
           '@type': 'Person',
@@ -113,21 +112,6 @@ export default function MistakesWesternDevelopersMake() {
           }
         ]
       })}} />
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       {/* Static background gradient similar to MarketContent */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black/50 to-black" />
@@ -156,7 +140,7 @@ export default function MistakesWesternDevelopersMake() {
 
             {/* Category chip */}
             <div className="mb-6">
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/30">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-purple-500/20 text-purple-300 border border-white/20">
                 Strategy
               </span>
             </div>
@@ -177,7 +161,7 @@ export default function MistakesWesternDevelopersMake() {
             
             {/* Author section */}
             <div className="flex items-center mb-10">
-              <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border border-purple-500/30">
+              <div className="w-12 h-12 rounded-full overflow-hidden mr-4 border border-white/20">
                 <Image
                   src="/team/author-avatar.jpg"
                   alt="Portrait of EightSix Team, China Gaming Market Specialists"
@@ -195,7 +179,7 @@ export default function MistakesWesternDevelopersMake() {
               </div>
             </div>
             
-            <div className="aspect-video overflow-hidden rounded-xl mb-12 backdrop-blur-sm bg-black/40 border border-purple-500/20 p-1">
+            <div className="aspect-video overflow-hidden rounded-xl mb-12 backdrop-blur-sm bg-black/40 border border-white/10 p-1">
               <Image
                 src="/blog/mistakes-hero.jpg"
                 alt="Hero image for 5 Mistakes Western Developers Make in China blog post"
@@ -211,13 +195,13 @@ export default function MistakesWesternDevelopersMake() {
       {/* Article Content */}
       <article className="py-8">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px]">
-          <div className="max-w-3xl mx-auto backdrop-blur-xl bg-black/30 border border-purple-500/20 rounded-2xl p-8 md:p-12 relative">
+          <div className="max-w-3xl mx-auto backdrop-blur-xl bg-black/30 border border-white/10 rounded-2xl p-8 md:p-12 relative">
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 rounded-2xl" />
             
             {/* Animated corner accents */}
-            <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-purple-500/30 rounded-tl-lg" />
-            <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-purple-500/30 rounded-br-lg" />
+            <div className="absolute -top-1 -left-1 w-8 h-8 border-t-2 border-l-2 border-white/20 rounded-tl-lg" />
+            <div className="absolute -bottom-1 -right-1 w-8 h-8 border-b-2 border-r-2 border-white/20 rounded-br-lg" />
             
             <motion.div
               initial="hidden"
@@ -226,15 +210,15 @@ export default function MistakesWesternDevelopersMake() {
               className="relative prose prose-invert prose-lg max-w-none"
             >
               <p className="lead text-xl md:text-2xl mb-8 font-light text-gray-300 leading-relaxed">
-                The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China—and how to avoid them.
+                The Chinese gaming market offers immense opportunities, but it also comes with unique challenges. Here are the five most common mistakes Western developers make when entering China, and how to avoid them.
               </p>
 
-              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-purple-500/20 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">1. Ignoring Cultural Nuances</h2>
+              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-white/10 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">1. Ignoring Cultural Nuances</h2>
               <p className="text-gray-300">
                 Many Western developers assume that a successful game in their home market will automatically resonate with Chinese players. However, Chinese gamers have distinct preferences in terms of art style, storytelling, and gameplay mechanics. It's crucial to understand and adapt to these cultural differences.
               </p>
 
-              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-purple-500/20 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">2. Underestimating Regulatory Requirements</h2>
+              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-white/10 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">2. Underestimating Regulatory Requirements</h2>
               <p className="text-gray-300">
                 China's gaming regulations are complex and constantly evolving. From content restrictions to licensing requirements, failing to comply with these regulations can result in costly delays or even market entry denial. Working with experienced partners who understand the regulatory landscape is essential.
               </p>
@@ -243,27 +227,27 @@ export default function MistakesWesternDevelopersMake() {
                 <p className="mb-0 text-white">"Navigating China's regulatory landscape requires local expertise and constant vigilance as rules frequently change."</p>
               </blockquote>
 
-              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-purple-500/20 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">3. Poor Localisation Strategy</h2>
+              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-white/10 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">3. Poor Localisation Strategy</h2>
               <p className="text-gray-300">
                 Simply translating text from English to Chinese isn't enough. Effective localisation involves adapting cultural references, UI elements, and even gameplay mechanics to suit local preferences. A comprehensive localisation strategy should be part of your development process from the start.
               </p>
 
-              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-purple-500/20 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">4. Wrong Monetisation Approach</h2>
+              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-white/10 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">4. Wrong Monetisation Approach</h2>
               <p className="text-gray-300">
                 Chinese players have different spending habits and expectations when it comes to in-game purchases. What works in Western markets might not resonate in China. Understanding local monetisation trends and player psychology is crucial for financial success.
               </p>
 
-              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-purple-500/20 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">5. Going It Alone</h2>
+              <h2 className="text-3xl font-bold mt-16 mb-6 border-b border-white/10 pb-3 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">5. Going It Alone</h2>
               <p className="text-gray-300">
                 Many developers try to enter the Chinese market without local partners, thinking they can handle everything internally. This often leads to costly mistakes and missed opportunities. Working with experienced local partners who understand the market, regulations, and player preferences can significantly increase your chances of success.
               </p>
 
-              <div className="backdrop-blur-sm bg-black/40 border border-purple-500/20 p-8 rounded-xl my-12 relative">
+              <div className="backdrop-blur-sm bg-black/40 border border-white/10 p-8 rounded-xl my-12 relative">
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 rounded-xl" />
                 
                 <div className="relative">
-                  <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-clip-text text-transparent animate-gradient">How to Succeed in China</h2>
+                  <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">How to Succeed in China</h2>
                   <p className="mb-0 text-gray-300">
                     To avoid these mistakes, consider working with experienced partners who understand both Western game development and the Chinese market. At EightSix Games, we help Western developers navigate these challenges through our comprehensive co-publishing and localisation services. Our team ensures your game not only meets regulatory requirements but also resonates with Chinese players while maintaining its core appeal.
                   </p>
@@ -271,27 +255,27 @@ export default function MistakesWesternDevelopersMake() {
               </div>
               
               {/* Social share section */}
-              <div className="border-t border-b border-purple-500/20 py-8 my-12">
+              <div className="border-t border-b border-white/10 py-8 my-12">
                 <h3 className="text-lg font-medium mb-4 text-transparent bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text">Share this article</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors p-3 rounded-full border border-purple-500/20 hover:border-purple-500/40 group">
+                  <a href="#" className="backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors p-3 rounded-full border border-white/10 hover:border-white/20 group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-gray-300 group-hover:text-purple-400 transition-colors">
                       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                     </svg>
                   </a>
-                  <a href="#" className="backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors p-3 rounded-full border border-purple-500/20 hover:border-purple-500/40 group">
+                  <a href="#" className="backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors p-3 rounded-full border border-white/10 hover:border-white/20 group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-gray-300 group-hover:text-purple-400 transition-colors">
                       <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
                     </svg>
                   </a>
-                  <a href="#" className="backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors p-3 rounded-full border border-purple-500/20 hover:border-purple-500/40 group">
+                  <a href="#" className="backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors p-3 rounded-full border border-white/10 hover:border-white/20 group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-gray-300 group-hover:text-purple-400 transition-colors">
                       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                       <rect x="2" y="9" width="4" height="12"></rect>
                       <circle cx="4" cy="4" r="2"></circle>
                     </svg>
                   </a>
-                  <a href="#" className="backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors p-3 rounded-full border border-purple-500/20 hover:border-purple-500/40 group">
+                  <a href="#" className="backdrop-blur-sm bg-black/30 hover:bg-black/50 transition-colors p-3 rounded-full border border-white/10 hover:border-white/20 group">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-gray-300 group-hover:text-purple-400 transition-colors">
                       <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                       <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -308,7 +292,7 @@ export default function MistakesWesternDevelopersMake() {
       <section className="py-16">
         <div className="container mx-auto px-6 sm:px-8 lg:px-12 max-w-[1400px]">
           <h2 className="text-3xl font-bold mb-12 text-center">
-            <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-clip-text text-transparent animate-gradient">You Might Also Like</span>
+            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">You Might Also Like</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedPosts.map((post) => (
@@ -317,7 +301,7 @@ export default function MistakesWesternDevelopersMake() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="backdrop-blur-xl bg-black/40 border border-purple-500/20 rounded-2xl overflow-hidden hover:border-purple-500/40 transition-all duration-700 group hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-purple-500/20 relative"
+                className="card-premium rounded-2xl overflow-hidden transition-all duration-700 group hover:translate-y-[-4px] hover:shadow-2xl hover:shadow-purple-500/20 relative"
               >
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-2xl" />
@@ -357,7 +341,7 @@ export default function MistakesWesternDevelopersMake() {
             transition={{ duration: 1 }}
             className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10 blur-3xl"
           />
-          <div className="max-w-4xl mx-auto backdrop-blur-xl bg-black/40 rounded-3xl p-8 md:p-12 border border-purple-500/20 relative overflow-hidden group transform-gpu hover:scale-[1.01] transition-transform duration-700">
+          <div className="max-w-4xl mx-auto card-premium rounded-3xl p-8 md:p-12 relative overflow-hidden group transform-gpu hover:scale-[1.01] transition-transform duration-700">
             <motion.div
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
@@ -384,7 +368,7 @@ export default function MistakesWesternDevelopersMake() {
       <Footer />
       
       <style jsx global>{`
-        .animate-gradient {
+        .{
           background-size: 200% 200%;
           animation: gradient 8s linear infinite;
           will-change: background-position;

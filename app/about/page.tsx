@@ -1,7 +1,6 @@
 'use client'
 
 import AboutContent from '../components/AboutContent'
-import Navigation from '../components/Navigation'
 
 export default function AboutPage() {
   return (
@@ -21,9 +20,6 @@ export default function AboutPage() {
           }
         }
       })}} />
-      <div className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/90 border-b border-purple-500/10">
-        <Navigation />
-      </div>
       <AboutContent />
     </main>
   )

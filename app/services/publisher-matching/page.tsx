@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Publisher Matching Services | EightSix Games',
   description: 'Connect with trusted Chinese game publishers. Expert partner matching, negotiation support, and long-term relationship management.',
   keywords: ['publisher matching', 'chinese publishers', 'game publishing', 'partnership negotiation', 'china market entry'],
+  alternates: {
+    canonical: '/services/publisher-matching',
+  },
 }
 
 export default function PublisherMatchingPage() {

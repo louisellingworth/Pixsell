@@ -187,7 +187,7 @@ export default function AboutSection() {
                   <h4 className="text-lg font-medium text-white/90">Our Approach</h4>
                 </div>
                 <p className="text-white/70">
-                  We do not handle ISBN licensing—instead, we focus on alternative distribution strategies that allow developers 
+                  We do not handle ISBN licensing. Instead, we focus on alternative distribution strategies that allow developers 
                   to legally access the Chinese market without requiring government approvals.
                 </p>
               </div>

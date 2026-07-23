@@ -1,14 +1,13 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import { cn } from '@/utils/cn'
 import { siteConfig } from '@/lib/config'
 import Navigation from './components/Navigation'
 import Script from 'next/script'
 import FontPreload from './components/FontPreload'
 import PerformanceMonitor from './components/PerformanceMonitor'
-import ParticlesBackgroundClient from './components/ui/ParticlesBackgroundClient'
-import CriticalCSS from './components/CriticalCSS'
+import PageTransition from './components/ui/PageTransition'
 
 
 // Optimize font loading with display swap and preload
@@ -20,6 +19,17 @@ const inter = Inter({
   variable: '--font-inter',
   fallback: ['system-ui', 'Arial', 'sans-serif'],
   adjustFontFallback: true,
+})
+
+// Display face for headings, gives the type system a deliberate voice
+// instead of Inter-everywhere. Referenced by globals.css heading rules
+// and the `font-space-grotesk` Tailwind family.
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['500', '600', '700'],
+  variable: '--font-space-grotesk',
+  fallback: ['system-ui', 'Arial', 'sans-serif'],
 })
 
 export const metadata: Metadata = {
@@ -80,8 +90,6 @@ export const metadata: Metadata = {
     'application-name': 'EightSix',
     'msapplication-TileColor': '#000000',
     'msapplication-tap-highlight': 'no',
-    'google-site-verification': 'your-verification-code',
-    'msvalidate.01': 'your-bing-verification-code',
   }
 }
 
@@ -103,7 +111,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={cn(inter.variable)} style={{ scrollBehavior: 'smooth' }}>
+    <html lang="en" className={cn(inter.variable, spaceGrotesk.variable)} style={{ scrollBehavior: 'smooth' }}>
       <head>
         {/* Favicon */}
         <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
@@ -121,7 +129,7 @@ export default function RootLayout({
         
         {/* Add preload for critical resources */}
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/6ight-games-logo.png" as="image" />
+        <link rel="preload" href="/6ight-games-logo-160h.webp" as="image" />
         
         {/* Font preloading from our optimization script */}
         <FontPreload />
@@ -143,23 +151,27 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="en" href="https://eightsixgames.com" />
         <link rel="alternate" hrefLang="x-default" href="https://eightsixgames.com" />
         
-        {/* Google Analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.measurementId}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${siteConfig.analytics.measurementId}', {
-              page_title: document.title,
-              page_location: window.location.href,
-              send_page_view: true
-            });
-          `}
-        </Script>
+        {/* Google Analytics, only rendered when a measurement ID is configured */}
+        {siteConfig.analytics.measurementId && siteConfig.analytics.enabled && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.measurementId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${siteConfig.analytics.measurementId}', {
+                  page_title: document.title,
+                  page_location: window.location.href,
+                  send_page_view: true
+                });
+              `}
+            </Script>
+          </>
+        )}
 
         {/* Service Worker Registration */}
         <Script id="register-sw" strategy="lazyOnload">
@@ -187,12 +199,7 @@ export default function RootLayout({
               "@type": "WebSite",
               "name": "EightSix Games",
               "url": "https://eightsixgames.com",
-              "description": "Launch your game in China with trusted co-publishing partners",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://eightsixgames.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
+              "description": "Launch your game in China with trusted co-publishing partners"
             }
           `}
         </Script>
@@ -307,11 +314,11 @@ export default function RootLayout({
         
       </head>
       <body className="relative min-h-screen w-full bg-black text-white antialiased">
-        <ParticlesBackgroundClient />
         <Navigation />
         <PerformanceMonitor />
-        <CriticalCSS />
-        <main className="relative z-10 pt-16 md:pt-20">{children}</main>
+        <main className="relative z-10 pt-16 md:pt-20">
+          <PageTransition>{children}</PageTransition>
+        </main>
       </body>
     </html>
   )

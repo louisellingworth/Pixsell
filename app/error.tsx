@@ -19,7 +19,7 @@ export default function Error({
     <div className="min-h-screen bg-black text-white flex items-center justify-center">
       <div className="max-w-lg mx-auto text-center px-6 py-16">
         <h1 className="text-6xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-red-400 via-pink-400 to-red-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-red-400 via-violet-400 to-red-400 bg-clip-text text-transparent">
             Error
           </span>
         </h1>
@@ -30,7 +30,7 @@ export default function Error({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => reset()}
-            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:opacity-90 transition-all"
+            className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90 transition-all"
           >
             Try Again
           </button>

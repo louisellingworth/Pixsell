@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { CardSpotlight } from '../../components/ui/card-spotlight'
 import GradientButton from '../../components/ui/GradientButton'
@@ -29,21 +28,6 @@ const features = [
 export default function ReportingPage() {
   return (
     <main className="min-h-screen bg-[#0A0A0B] text-white overflow-x-hidden">
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background glow effects */}

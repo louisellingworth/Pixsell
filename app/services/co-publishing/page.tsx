@@ -4,6 +4,9 @@ import CoPublishingPage from './CoPublishingPage'
 export const metadata: Metadata = {
   title: 'Co-Publishing | EightSix',
   description: 'Partner with trusted Chinese publishers and optimise your games success in the Chinese market',
+  alternates: {
+    canonical: '/services/co-publishing',
+  },
   openGraph: {
     title: 'Co-Publishing | EightSix',
     description: 'Partner with trusted Chinese publishers and optimise your games success in the Chinese market',
@@ -11,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://eightsixgames.com/eightsix-meta-image.jpg',
+        url: 'https://eightsixgames.com/pixsell-meta-image.jpg',
         width: 1200,
         height: 630,
         alt: 'EightSix Games - Co-Publishing Service',
@@ -22,15 +25,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Co-Publishing | EightSix',
     description: 'Partner with trusted Chinese publishers and optimise your games success in the Chinese market',
-    images: ['https://eightsixgames.com/eightsix-meta-image.jpg'],
+    images: ['https://eightsixgames.com/pixsell-meta-image.jpg'],
   },
 }
 
-export default function Page() {
-  return <CoPublishingPage />
-}
-
-<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Co-Publishing',
@@ -41,7 +40,19 @@ export default function Page() {
     name: 'EightSix Games',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png'
-    }
-  }
-})}} /> 
+      url: 'https://eightsixgames.com/favicon_io/android-chrome-192x192.png',
+    },
+  },
+}
+
+export default function Page() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <CoPublishingPage />
+    </>
+  )
+}

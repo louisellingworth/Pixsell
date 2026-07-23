@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -60,21 +59,6 @@ export default function BlogPost() {
           }
         ]
       })}} />
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background glow effects */}
@@ -633,7 +617,7 @@ export default function BlogPost() {
                 </div>
               </div>
               
-              <div className="bg-gradient-to-r from-purple-900/30 to-black/30 rounded-xl p-8 my-12 border border-purple-500/30 shadow-lg">
+              <div className="bg-gradient-to-r from-purple-900/30 to-black/30 rounded-xl p-8 my-12 border border-white/20 shadow-lg">
                 <h3 className="text-2xl font-bold mb-6 text-white">Ready to Explore the Chinese Market?</h3>
                 <p className="mb-6 text-lg leading-relaxed">
                   Whether you're considering applying for an ISBN or exploring alternative strategies, EightSix can help navigate China's complex gaming landscape. Contact us today for a consultation on your China market entry options.
@@ -659,7 +643,7 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/steam-global-vs-steam-china">
                 <div className="aspect-video overflow-hidden">
@@ -689,12 +673,12 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/how-to-publish-a-game-on-steam-in-china">
                 <div className="aspect-video overflow-hidden">
                   <Image 
-                    src="/blog/steam-china-publishing.jpg" 
+                    src="/blog/steam-china-publishing-1024w.webp" 
                     alt="How to Publish a Game on Steam in China"
                     width={800}
                     height={450}
@@ -719,12 +703,12 @@ export default function BlogPost() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-purple-500/50 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-white/30 transition-all duration-300 group"
             >
               <Link href="/blog/co-publishing-vs-self-publishing-china">
                 <div className="aspect-video overflow-hidden">
                   <Image 
-                    src="/blog/publishing-models-china.jpg" 
+                    src="/blog/publishing-models-china.webp" 
                     alt="Co-Publishing vs Self-Publishing in China"
                     width={800}
                     height={450}

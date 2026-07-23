@@ -104,7 +104,7 @@ export default function Navigation() {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 backdrop-blur-xl border-b border-purple-500/10 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 w-full px-4 sm:px-6 lg:px-8 backdrop-blur-xl border-b border-white/10 z-50 transition-all duration-300 ${
         scrolled ? 'py-1' : 'py-2 sm:py-3'
       } ${isScrolling ? 'bg-black/95' : 'bg-black/80'}`}
       role="navigation"
@@ -114,8 +114,8 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center focus:outline-none focus:ring-2 focus:ring-purple-500 rounded-lg">
           <img
-            src="/6ight-games-logo.png"
-            alt="6ight Games - Game Publishing in China"
+            src="/6ight-games-logo-160h.webp"
+            alt="EightSix Games - Game Publishing in China"
             className="h-16 md:h-20 w-auto"
             style={{
               objectFit: 'contain',
@@ -159,7 +159,7 @@ export default function Navigation() {
                 />
               </Link>
               {item.submenu && (
-                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-black/95 backdrop-blur-xl border border-purple-500/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-black/95 backdrop-blur-xl border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   <div className="py-1">
                     {item.submenu.map((subItem) => (
                       <Link
@@ -224,9 +224,12 @@ export default function Navigation() {
         <div 
           id="mobile-menu"
           data-mobile-menu
-          className="md:hidden fixed inset-x-0 top-[48px] bg-black/95 backdrop-blur-xl border-t border-purple-500/10 z-50 overflow-y-auto transition-all duration-300 animate-fadeIn"
+          className="md:hidden absolute inset-x-0 top-full bg-[#0A0A0B] border-t border-white/10 z-50 overflow-y-auto transition-all duration-300 animate-fadeIn"
           style={{
-            height: 'calc(100vh - 48px)', 
+            /* 100% resolves to the fixed nav's height, so the panel fills
+               exactly from the nav's bottom edge to the viewport bottom
+               regardless of logo size or scroll-collapsed padding. */
+            height: 'calc(100dvh - 100%)',
             boxShadow: '0 10px 25px -5px rgba(138, 75, 175, 0.2)'
           }}
           role="dialog"
@@ -238,7 +241,7 @@ export default function Navigation() {
               <div key={item.name} className="mb-2">
                 <Link
                   href={item.href}
-                  className="flex items-center justify-between px-4 py-4 text-base font-medium text-gray-200 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 border-b border-purple-500/10 focus:outline-none focus:ring-2 focus:ring-purple-500 touch-target"
+                  className="flex items-center justify-between px-4 py-4 text-base font-medium text-gray-200 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 border-b border-white/10 focus:outline-none focus:ring-2 focus:ring-purple-500 touch-target"
                   onClick={() => !item.submenu && setMobileMenuOpen(false)}
                   aria-expanded={item.submenu ? undefined : undefined}
                   aria-haspopup={item.submenu ? 'true' : undefined}
@@ -258,7 +261,7 @@ export default function Navigation() {
                 </Link>
                 
                 {item.submenu && (
-                  <div className="pl-4 mt-1 space-y-1 border-l border-purple-500/10 ml-4">
+                  <div className="pl-4 mt-1 space-y-1 border-l border-white/10 ml-4">
                     {item.submenu.map((subItem) => (
                       <Link
                         key={subItem.name}
@@ -275,7 +278,7 @@ export default function Navigation() {
             ))}
             
             {/* Mobile CTA */}
-            <div className="pt-4 border-t border-purple-500/10">
+            <div className="pt-4 border-t border-white/10">
               <GradientButton href="/contact" variant="compact" className="w-full justify-center">
                 Get Started
               </GradientButton>

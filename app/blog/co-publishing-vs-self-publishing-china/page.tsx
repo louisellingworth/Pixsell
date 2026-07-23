@@ -3,7 +3,6 @@
 import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
-import Navigation from '../../components/Navigation'
 import Footer from '../../components/Footer'
 import { motion } from 'framer-motion'
 
@@ -16,7 +15,7 @@ export default function CoPublishingVsSelfPublishingChina() {
         '@type': 'Article',
         headline: 'Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global',
         description: 'A comparison of self-publishing and co-publishing models for launching games in China, including pros, cons, and regulatory insights.',
-        image: 'https://eightsixgames.com/blog/co-publishing-vs-self-publishing-china.jpg',
+        image: 'https://eightsixgames.com/blog/publishing-models-china.webp',
         author: {
           '@type': 'Person',
           name: 'EightSix Team',
@@ -60,21 +59,6 @@ export default function CoPublishingVsSelfPublishingChina() {
           }
         ]
       })}} />
-      {/* Fixed Navigation */}
-      <div 
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/5"
-        style={{ 
-          transform: 'translateZ(0)',
-          willChange: 'transform',
-          contain: 'layout paint style'
-        }}
-      >
-        <Navigation />
-      </div>
-      
-      {/* Spacer to prevent content from being hidden behind the fixed navbar */}
-      <div className="h-12 md:h-16"></div>
-      
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           {/* Back to Blog Link */}
@@ -96,7 +80,7 @@ export default function CoPublishingVsSelfPublishingChina() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">Game Publishing in China: Self-Publishing vs Co-Publishing on Steam Global</h1>
             <img
-              src="/blog/co-publishing-vs-self-publishing-china.jpg"
+              src="/blog/publishing-models-china.webp"
               alt="Hero image for Game Publishing in China: Self-Publishing vs Co-Publishing blog post"
               className="w-full aspect-video object-cover rounded-xl mb-12 shadow-lg"
             />
@@ -109,7 +93,7 @@ export default function CoPublishingVsSelfPublishingChina() {
               <p className="text-xl leading-relaxed">
                 Publishing a game in China requires a tailored approach due to the country's unique regulations, culture, and market dynamics. 
                 China is the world's largest gaming market with 674 million gamers generating $44.8 billion in revenue annually, making it an 
-                unparalleled opportunity for game developers. However, reaching Chinese players isn't as simple as releasing your game worldwide — 
+                unparalleled opportunity for game developers. However, reaching Chinese players isn't as simple as releasing your game worldwide;
                 the market operates under different rules. Developers typically pursue one of two paths to enter China: self-publishing (usually via 
                 Steam's global platform) or co-publishing on Steam Global with a Chinese partner. In this article, we'll compare self-publishing vs 
                 co-publishing in China, especially for PC game developers, and explore why working with a local co-publisher on Steam Global often 
@@ -490,7 +474,7 @@ export default function CoPublishingVsSelfPublishingChina() {
                 For most developers, especially indie and mid-size studios, the Steam China route is simply not worth the effort or risk. 
                 It's usually far more effective to launch on the global Steam (to reach Chinese players immediately) and leverage a 
                 co-publisher to maximize that opportunity. Many studios figure that if their game explodes in popularity, they can always 
-                later attempt an official China release — but not until it's proven, because the cost and uncertainty are so high.
+                later attempt an official China release, but not until it's proven, because the cost and uncertainty are so high.
               </p>
             </div>
 
@@ -498,7 +482,7 @@ export default function CoPublishingVsSelfPublishingChina() {
             <p>
               Choosing a co-publisher is arguably the most important decision you'll make for your China strategy. A great partner 
               can send your game's sales soaring, while a bad one can lead to disappointment or worse. Here are some guidelines to 
-              identify a reliable co-publishing partner — and red flags to watch out for:
+              identify a reliable co-publishing partner, and red flags to watch out for:
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3">Key Criteria for a Reliable Co-Publisher</h3>
